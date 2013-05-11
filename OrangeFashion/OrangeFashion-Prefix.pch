@@ -9,7 +9,43 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
+
+//Native Libraries
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
+//Vendors
+#import "SVProgressHUD.h"
+#import "AFHTTPClient.h"
+#import "UIImageView+AFNetworking.h"
+#import "CoreData+MagicalRecord.h"
+#import "AFJSONRequestOperation.h"
+
+//Models
+#import "OFHTTPClient.h"
+#import "OFProduct.h"
+#import "OFProductImages.h"
+
 #endif
+
+#define BASE_URL @"http://orangefashion.vn/api/api.php"
+
+//For 4 inch checking
+#define IPHONE5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+//For ensuring we don't do loggin in production
+#ifdef DEBUG
+#define DLog(__FORMAT__, ...) NSLog((@"<%@:%d> " __FORMAT__), [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, ##__VA_ARGS__)
+#define ALog(...) [[NSAssertionHandler currentHandler] handleFailureInFunction:[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding] file:[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lineNumber:__LINE__ description:__VA_ARGS__]
+#else
+#define DLog(...) do {} while (0)
+#define ALog(__FORMAT__, ...) NSLog((@"<%@:%d> " __FORMAT__), [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, ##__VA_ARGS__)
+#endif
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+
