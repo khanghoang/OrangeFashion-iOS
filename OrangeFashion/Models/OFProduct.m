@@ -22,7 +22,10 @@
         product.product_id = [NSNumber numberWithInt:[product_id_str intValue]];
         
         product.name = dictionary[@"TenSanPham"];
-        product.price = dictionary[@"GiaBan"];        
+        product.price = dictionary[@"GiaBan"];
+        product.material = dictionary[@"ChatLieu"];
+        product.colors = dictionary[@"Mau"];
+        
     }
     
     DLog(@"%@", [dictionary description]);

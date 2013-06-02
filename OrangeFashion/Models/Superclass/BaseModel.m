@@ -1,15 +1,15 @@
 //
-//  MVModel.m
-//  MyVillage
+//  ADModel.m
+//  AutoDealer
 //
 //  Created by Torin on 10/9/12.
-//  Copyright (c) 2012 2359media. All rights reserved.
+//  Copyright (c) 2012 MyCompany. All rights reserved.
 //
 
-#import "MVModel.h"
+#import "BaseModel.h"
 #import <objc/runtime.h>
 
-@implementation MVModel
+@implementation BaseModel
 
 - (id)initWithDictionary:(NSDictionary*)dict
 {
@@ -34,6 +34,11 @@
   {
     id dictValue = [dict objectForKey:dictKey];
     
+    //Hook
+    BOOL hasHook = [self hookForKey:dictKey value:dictValue];
+    if (hasHook)
+      continue;
+    
     //Special case for "id" property
     if ([dictKey isEqualToString:@"id"])
       dictKey = @"ID";
@@ -55,13 +60,30 @@
         continue;
       }
       
-      //Convert unix timestamp number to NSDate
+      //Handle NSDate type
       if (dictValue != nil
           && [dictValue isEqual:[NSNull null]] == NO
-          && [ivarType isEqual:@"@\"NSDate\""])
+          && [ivarType isEqual:@"@\"NSDate\""]
+          && [dictValue isKindOfClass:[NSString class]] == YES)
       {
-        NSDate *dateTimeValue = [NSDate dateWithTimeIntervalSince1970:[dictValue longLongValue]];
-        dictValue = dateTimeValue;
+        //ISO8601 datetime format
+        if ([dictValue contains:@"-"] || [dictValue contains:@"T"] || [dictValue contains:@":"])
+        {
+          //Once
+          static ISO8601DateFormatter *formatter = nil;
+          if (formatter == nil)
+            formatter = [[ISO8601DateFormatter alloc] init];
+          
+          //Could be nil
+          NSDate *dateTimeValue = [formatter dateFromString:dictValue];
+          dictValue = dateTimeValue;
+        }
+        //Unix timestamp format
+        else
+        {
+          NSDate *dateTimeValue = [NSDate dateWithTimeIntervalSince1970:[dictValue longLongValue]];
+          dictValue = dateTimeValue;
+        }
       }
       
       [self setValue:dictValue forKey:ivarName];
@@ -72,7 +94,13 @@
   return self;
 }
 
-- (id)updateWithModel:(MVModel*)newModel
+- (BOOL)hookForKey:(NSString*)key value:(id)value
+{
+  //Subclass to override this if needed
+  return NO;
+}
+
+- (id)updateWithModel:(BaseModel*)newModel
 {
   unsigned int outCount;
   id class = objc_getClass([NSStringFromClass([self class]) UTF8String]);
@@ -115,9 +143,36 @@
 }
 
 /*
+ * Example: ADTestDrive -> TestDrive
+ */
+- (NSString*)getProperName
+{
+  //Remove AD prefix
+  NSString *className = NSStringFromClass([self class]);
+  return [className substringFromIndex:2];
+}
+
+/*
+ * Example: ADTestDrive -> test_drive
+ */
+- (NSString*)getLowerCaseName
+{
+  //Lowercase, remove AD prefix
+  NSString *className = [NSStringFromClass([self class]) lowercaseString];
+  className = [className substringFromIndex:2];
+  
+  if ([className isEqualToString:@"modeltype"])
+    className = @"model_type";
+  else if ([className isEqualToString:@"testdrive"])
+    className = @"test_drive";
+  
+  return className;
+}
+
+/*
  * Pack all properties into a dictionary, without Null values
  */
-- (NSDictionary*)toDictionary
+- (NSMutableDictionary*)toDictionary
 {
   return [self toDictionaryUseNullValue:NO];
 }
@@ -125,7 +180,7 @@
 /*
  * Pack all properties into a dictionary, with or without Null values
  */
-- (NSDictionary*)toDictionaryUseNullValue:(BOOL)useNull
+- (NSMutableDictionary*)toDictionaryUseNullValue:(BOOL)useNull
 {
   NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
   
@@ -157,10 +212,7 @@
         // check nil
         if (![ivarValue isEqual:[NSNull null]]){
           ivarValue = [NSNumber numberWithUnsignedLongLong:[ivarValue timeIntervalSince1970]];
-        }else if (useNull){
-          ivarValue = [NSNull null];
-        }else {
-          // TODO: some value.
+        }else{
           DLog(@"something wrong may happened!!!!!!!!!!!");
         }
       }
@@ -227,6 +279,52 @@
   free(ivars);
   
   return self;
+}
+
+- (id)copyWithZone:(NSZone*)zone
+{
+  //Simply convert to dictionary
+  NSDictionary * originalDictionary = [self toDictionary];
+  NSMutableDictionary * mutableDictionary = [self toDictionary];
+  
+  //For each top-level property in the dictionary
+  NSEnumerator *enumerator = [originalDictionary keyEnumerator];
+  id dictKey;
+  while ((dictKey = [enumerator nextObject]))
+  {
+    id dictValue = [originalDictionary objectForKey:dictKey];
+    
+    //Replace each element in NSArray with a copy of it (recursive down)
+    if ([dictValue isKindOfClass:[NSArray class]] || [dictValue isKindOfClass:[NSMutableArray class]])
+    {
+      NSArray *array = (NSArray *)dictValue;
+      NSMutableArray *tempMutableArray = [NSMutableArray arrayWithCapacity:[array count]];
+      for (id object in array)
+        [tempMutableArray addObject:[object copy]];
+      
+      [mutableDictionary setObject:tempMutableArray forKey:dictKey];
+    }
+    
+    //Replace each element in NSDictionary with a copy of it (recursive down)
+    else if ([dictValue isKindOfClass:[NSDictionary class]] || [dictValue isKindOfClass:[NSMutableDictionary class]])
+    {
+      NSDictionary *dict = (NSDictionary *)dictValue;
+      NSMutableDictionary *tempMutableDictionary = [NSMutableDictionary dictionary];
+      [dict enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent
+                                    usingBlock:^(id subKey, id subObject, BOOL *stop)
+       {
+         [tempMutableDictionary setObject:[subObject copy] forKey:subKey];
+       }];
+      
+      [mutableDictionary setObject:tempMutableDictionary forKey:dictKey];
+    }
+  }
+  
+  id copySelfObject = [[[self class] alloc] initWithDictionary:mutableDictionary];
+  originalDictionary = nil;
+  mutableDictionary = nil;
+  
+  return copySelfObject;
 }
 
 @end

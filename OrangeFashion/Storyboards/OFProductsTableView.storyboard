@@ -13,11 +13,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCell" textLabel="cLB-fd-5R4" detailTextLabel="uLU-9n-1ap" style="IBUITableViewCellStyleSubtitle" id="lKL-MR-2Gx">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCell" textLabel="cLB-fd-5R4" detailTextLabel="uLU-9n-1ap" style="IBUITableViewCellStyleSubtitle" id="lKL-MR-2Gx">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cLB-fd-5R4">
@@ -45,11 +45,22 @@
                     <navigationItem key="navigationItem" title="Danh sách sản phẩm" id="td0-JL-KNl"/>
                     <connections>
                         <outlet property="productsTableView" destination="xtw-An-MhN" id="50B-md-6mi"/>
+                        <segue destination="WrX-2D-Nvf" kind="push" identifier="View Product Details" id="l1x-Gz-urO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugm-TI-wcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253" y="24"/>
+            <point key="canvasLocation" x="1263" y="24"/>
+        </scene>
+        <!--Product Details View Controller - Thông tin sản phẩm-->
+        <scene sceneID="ccU-7C-HTP">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="WrX-2D-Nvf" customClass="OFProductDetailsViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Thông tin sản phẩm" id="b4d-L6-KUU"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdU-FA-JwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1699" y="24"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Bh-IT-S20">
@@ -138,6 +149,9 @@
                 <relationship kind="outlet" name="tapRecognizer" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="viewVayDam" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="OFProductDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OFProductDetailsViewController.h"/>
         </class>
         <class className="OFProductsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OFProductsViewController.h"/>

@@ -28,7 +28,9 @@
 }
 
 // Custom logic goes here.
-+ (void)getImagesForProduct:(OFProduct *)product successBlock:(OFJSONRequestSuccessBlock)successBlock failureBlock:(OFJSONRequestFailureBlock)failureBlock
++ (void)getImagesForProduct:(OFProduct *)product
+               successBlock:(OFJSONRequestSuccessBlock)successBlock
+               failureBlock:(OFJSONRequestFailureBlock)failureBlock
 {    
     NSDictionary *params = @{@"product_id": product.product_id,
                              @"rquest": @"getimages"};

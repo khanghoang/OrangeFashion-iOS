@@ -8,6 +8,7 @@
 
 #import "OFProductsViewController.h"
 #import "OFProductsTableCell.h"
+#import "OFProductDetailsViewController.h"
 
 @interface OFProductsViewController ()
 
@@ -21,11 +22,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [SVProgressHUD showWithStatus:@"Đang tải sản phẩm"];
     [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
+        [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
         [self.productsTableView reloadData];
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
+        [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
     }];
     
     [self.productsTableView reloadData];
@@ -85,13 +89,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self performSegueWithIdentifier:@"View Product Details" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"View Product Details"]) {
+        OFProductDetailsViewController *desVC = (OFProductDetailsViewController *)[segue destinationViewController];
+        
+        int selectedRow = [self.tableView indexPathForSelectedRow].row;
+        
+        desVC.productID = [[self.productsArr objectAtIndex:selectedRow] objectForKey:@"MaSanPham"];
+    }
 }
 
 - (void)viewDidUnload {
