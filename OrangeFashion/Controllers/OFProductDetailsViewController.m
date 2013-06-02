@@ -35,30 +35,36 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
+    
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
     
     __block NSMutableArray *arrVC = [[NSMutableArray alloc] init];
     
+    self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
     self.pageVC.delegate = self;
     self.pageVC.dataSource = self;
     
-    self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    __weak OFProductDetailsViewController *weakSelf = self;
+//    __block OFProductDetailsViewController *weakSelf = self;
     
     [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
-        weakSelf.images = obj;
-        weakSelf.currentVC = 0;
+        
+        [SVProgressHUD dismiss];
+        
+        self.images = obj;
+        self.currentVC = 0;
 //        [obj enumerateObjectsUsingBlock:^(id obj2, NSUInteger idx, BOOL *stop) {
             OFImageViewController *imageVC = [[OFImageViewController alloc] init];
             imageVC.imageURL = [[obj objectAtIndex:0] picasa_store_source];
             DLog(@"imgURL = %@", [[obj objectAtIndex:0] picasa_store_source]);
+        
             [arrVC addObject:imageVC];
 //        }];
         
         DLog(@"Array ImagesVC = %@", [arrVC description]);
         
-        [self.pageVC setViewControllers:[NSArray arrayWithObject:imageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         
         [self addChildViewController:self.pageVC];
         [self.view addSubview:self.pageVC.view];
@@ -72,20 +78,34 @@
         
     } failureBlock:^(NSInteger statusCode, id obj2) {
         //handle errors
+        [SVProgressHUD showErrorWithStatus:@"Lỗi không tải được hình ảnh, vui lòng thử lại"];
     }];
 }
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
+    if (self.currentVC == self.images.count - 1)
+        return nil;
+    
     OFImageViewController *imageVC = [[OFImageViewController alloc] init];
-    imageVC.imageURL = [[self.images objectAtIndex:self.currentVC+1] picasa_store_source];
+    imageVC.imageURL = [[self.images objectAtIndex:self.currentVC + 1] picasa_store_source];
+    
+    self.currentVC++;
+    
     return imageVC;
 }
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
+    
+    if (self.currentVC == 0)
+        return nil;
+    
     OFImageViewController *imageVC = [[OFImageViewController alloc] init];
-    imageVC.imageURL = [[self.images objectAtIndex:self.currentVC-1] picasa_store_source];
+    imageVC.imageURL = [[self.images objectAtIndex:self.currentVC - 1] picasa_store_source];
+    
+    self.currentVC--;
+    
     return imageVC;
 }
 
@@ -98,9 +118,10 @@
     return 0;
 }
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+-(void)viewWillDisappear:(BOOL)animated
 {
-    return YES;
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
 }
 
 @end
