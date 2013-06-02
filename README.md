@@ -3,7 +3,7 @@ OrangeFashion-iOS
 
 iOS app for OrangeFashion.vn
 
-Base URL : http://orangefashion.vn/api/api?
+Base URL : "http://orangefashion.vn/api/api?"
 
 ### Get all products ###
  * URL: 'rquest=getproducts'
@@ -32,5 +32,20 @@ Base URL : http://orangefashion.vn/api/api?
     "MaHienThi": "2931_T",
     "ChiTiet": ""
   }
+]
+```
+
+### Get all image of a product ###
+ * URL: 'rquest=getimages&product_id=:product_id'
+ * method: 'GET'
+ * success response:
+
+```javascript
+[
+    "https://lh4.googleusercontent.com/-VZ2JcJEq7WY/UVliN12zFrI/AAAAAAAAQO4/8CSp7qo0lHc/001_3.jpg",
+    "https://lh6.googleusercontent.com/-VX6rRXk4eqA/UVliPO5Q_EI/AAAAAAAAQPA/_j6EeANUozw/002_3.jpg",
+    "https://lh6.googleusercontent.com/-vRZOk78Zj1E/UVliQuS-tII/AAAAAAAAQPI/NYzA5ECfx4Q/3.jpg",
+    "https://lh3.googleusercontent.com/-lmOUmYj0SzM/UVliR9YqGlI/AAAAAAAAQPQ/LllO3cyoflY/4.jpg",
+    "https://lh5.googleusercontent.com/--3wACDF885k/UVliS7-gaiI/AAAAAAAAQPc/IuFcrup_Kz0/T27.fgXbVbXXXXXXXX_%2521%2521388462979.jpg"
 ]
 ```
