@@ -7,6 +7,8 @@
 //
 
 #import "OFAppDelegate.h"
+#import "OFMenuViewController.h"
+#import "IIViewDeckController.h"
 
 @implementation OFAppDelegate
 
@@ -17,10 +19,26 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MagicalRecord setupCoreDataStack];
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"OFProductsTableView"
+                                                             bundle: nil];
+    
+    OFMenuViewController *centralViewController = (OFMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Home View Controller"];
+    
+    UINavigationController *centralNavController = [[UINavigationController alloc] initWithRootViewController:centralViewController];
+    
+    OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
+    
+    //right
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController                                                           leftViewController:leftMenuController                                                                 rightViewController:nil];
+    
+    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
+    [deckController centerhiddenInteractivity];
+    
+    //make sure to set the window's root view controller equal
+    //to the deckController
+    self.window.rootViewController = deckController;
+
     return YES;
 }
 

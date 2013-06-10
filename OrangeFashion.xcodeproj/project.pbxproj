@@ -25,6 +25,22 @@
 		0C29A3B5170EC5DD00298265 /* 57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B4170EC5DD00298265 /* 57x57.png */; };
 		0C29A3B7170ED04B00298265 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B6170ED04B00298265 /* Default.png */; };
 		0C29A3B9170ED05600298265 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B8170ED05600298265 /* Default@2x.png */; };
+		0C3527CC17647DE900E07AAB /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527C717647DE900E07AAB /* IISideController.m */; };
+		0C3527CD17647DE900E07AAB /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527C917647DE900E07AAB /* IIViewDeckController.m */; };
+		0C3527CE17647DE900E07AAB /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527CB17647DE900E07AAB /* IIWrapController.m */; };
+		0C3527D017647DFA00E07AAB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C3527CF17647DFA00E07AAB /* QuartzCore.framework */; };
+		0C3527D6176480A500E07AAB /* OFProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527D5176480A500E07AAB /* OFProductsViewController.m */; };
+		0C3527D9176480BC00E07AAB /* OFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527D8176480BC00E07AAB /* OFMenuViewController.m */; };
+		0C3527DF176480DF00E07AAB /* OFImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527DB176480DF00E07AAB /* OFImageViewController.m */; };
+		0C3527E0176480DF00E07AAB /* OFImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3527DC176480DF00E07AAB /* OFImageViewController.xib */; };
+		0C3527E1176480DF00E07AAB /* OFProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527DE176480DF00E07AAB /* OFProductDetailsViewController.m */; };
+		0C3527E61764817200E07AAB /* OFLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527E41764817200E07AAB /* OFLeftMenuViewController.m */; };
+		0C3527E71764817200E07AAB /* OFLeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3527E51764817200E07AAB /* OFLeftMenuViewController.xib */; };
+		0C3527ED17648CA500E07AAB /* fake home.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 0C3527EB17648CA500E07AAB /* fake home.PNG */; };
+		0C3527EE17648CA500E07AAB /* fake left menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3527EC17648CA500E07AAB /* fake left menu.png */; };
+		0C3527F117648D4C00E07AAB /* OFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527F017648D4C00E07AAB /* OFHomeViewController.m */; };
+		0C3527F4176493E000E07AAB /* fake home@2x-568h.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 0C3527F2176493E000E07AAB /* fake home@2x-568h.PNG */; };
+		0C3527F5176493E000E07AAB /* fake home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3527F3176493E000E07AAB /* fake home@2x.png */; };
 		0C4C58D5170D6D9600ED0DF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4C58D4170D6D9600ED0DF8 /* UIKit.framework */; };
 		0C4C58D7170D6D9600ED0DF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4C58D6170D6D9600ED0DF8 /* Foundation.framework */; };
 		0C4C58D9170D6D9600ED0DF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4C58D8170D6D9600ED0DF8 /* CoreGraphics.framework */; };
@@ -86,19 +102,14 @@
 		0C4C5C55170E803900ED0DF8 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5C38170E803900ED0DF8 /* MagicalRecord+ShorthandSupport.m */; };
 		0C4C5C56170E803900ED0DF8 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5C3A170E803900ED0DF8 /* MagicalRecord.m */; };
 		0C4C5C59170E824400ED0DF8 /* OFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5C58170E824400ED0DF8 /* OFHTTPClient.m */; };
-		0C4C5C63170E8D0700ED0DF8 /* OFProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5C62170E8D0700ED0DF8 /* OFProductsViewController.m */; };
 		0C4C5C64170E91F700ED0DF8 /* OFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5BFA170E7CFD00ED0DF8 /* OFProduct.m */; };
 		0C4C5C65170E91FB00ED0DF8 /* OFProductImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5BFC170E7CFD00ED0DF8 /* OFProductImages.m */; };
 		0C4C5C66170E926200ED0DF8 /* _OFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5BF6170E7CFD00ED0DF8 /* _OFProduct.m */; };
 		0C4C5C67170E926400ED0DF8 /* _OFProductImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5BF8170E7CFD00ED0DF8 /* _OFProductImages.m */; };
 		0C4C5C68170E946700ED0DF8 /* OFProductsTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4C5C5F170E8CD800ED0DF8 /* OFProductsTableView.storyboard */; };
-		0C5274A2175A694F00BB15FA /* OFImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5274A0175A694F00BB15FA /* OFImageViewController.m */; };
-		0C5274A3175A694F00BB15FA /* OFImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5274A1175A694F00BB15FA /* OFImageViewController.xib */; };
 		0C8DEFD81759E614004016E0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEFD71759E614004016E0 /* BaseModel.m */; };
-		0C8DEFDB1759E88C004016E0 /* OFProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEFDA1759E88C004016E0 /* OFProductDetailsViewController.m */; };
 		0CD488321710256200C30EEF /* OFProductsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD488311710256200C30EEF /* OFProductsTableCell.xib */; };
 		0CD488351710266600C30EEF /* OFProductsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD488341710266600C30EEF /* OFProductsTableCell.m */; };
-		0CDB462F173E519D00708F6C /* OFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB462E173E519D00708F6C /* OFMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,10 +123,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C29A3B2170EC59D00298265 /* 114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114x114.png; sourceTree = "<group>"; };
-		0C29A3B4170EC5DD00298265 /* 57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57x57.png; sourceTree = "<group>"; };
-		0C29A3B6170ED04B00298265 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		0C29A3B8170ED05600298265 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0C29A3B2170EC59D00298265 /* 114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 114x114.png; path = ../114x114.png; sourceTree = "<group>"; };
+		0C29A3B4170EC5DD00298265 /* 57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 57x57.png; path = ../57x57.png; sourceTree = "<group>"; };
+		0C29A3B6170ED04B00298265 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		0C29A3B8170ED05600298265 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		0C3527C617647DE900E07AAB /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
+		0C3527C717647DE900E07AAB /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
+		0C3527C817647DE900E07AAB /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		0C3527C917647DE900E07AAB /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		0C3527CA17647DE900E07AAB /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
+		0C3527CB17647DE900E07AAB /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+		0C3527CF17647DFA00E07AAB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0C3527D4176480A500E07AAB /* OFProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductsViewController.h; path = "Products List/OFProductsViewController.h"; sourceTree = "<group>"; };
+		0C3527D5176480A500E07AAB /* OFProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductsViewController.m; path = "Products List/OFProductsViewController.m"; sourceTree = "<group>"; };
+		0C3527D7176480BC00E07AAB /* OFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFMenuViewController.h; path = "Central Menu/OFMenuViewController.h"; sourceTree = "<group>"; };
+		0C3527D8176480BC00E07AAB /* OFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFMenuViewController.m; path = "Central Menu/OFMenuViewController.m"; sourceTree = "<group>"; };
+		0C3527DA176480DF00E07AAB /* OFImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFImageViewController.h; path = "Product Details/OFImageViewController.h"; sourceTree = "<group>"; };
+		0C3527DB176480DF00E07AAB /* OFImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFImageViewController.m; path = "Product Details/OFImageViewController.m"; sourceTree = "<group>"; };
+		0C3527DC176480DF00E07AAB /* OFImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFImageViewController.xib; path = "Product Details/OFImageViewController.xib"; sourceTree = "<group>"; };
+		0C3527DD176480DF00E07AAB /* OFProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductDetailsViewController.h; path = "Product Details/OFProductDetailsViewController.h"; sourceTree = "<group>"; };
+		0C3527DE176480DF00E07AAB /* OFProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductDetailsViewController.m; path = "Product Details/OFProductDetailsViewController.m"; sourceTree = "<group>"; };
+		0C3527E31764817200E07AAB /* OFLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFLeftMenuViewController.h; path = "ViewDeck Left Menu/OFLeftMenuViewController.h"; sourceTree = "<group>"; };
+		0C3527E41764817200E07AAB /* OFLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFLeftMenuViewController.m; path = "ViewDeck Left Menu/OFLeftMenuViewController.m"; sourceTree = "<group>"; };
+		0C3527E51764817200E07AAB /* OFLeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFLeftMenuViewController.xib; path = "ViewDeck Left Menu/OFLeftMenuViewController.xib"; sourceTree = "<group>"; };
+		0C3527EB17648CA500E07AAB /* fake home.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fake home.PNG"; sourceTree = "<group>"; };
+		0C3527EC17648CA500E07AAB /* fake left menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fake left menu.png"; sourceTree = "<group>"; };
+		0C3527EF17648D4C00E07AAB /* OFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHomeViewController.h; sourceTree = "<group>"; };
+		0C3527F017648D4C00E07AAB /* OFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHomeViewController.m; sourceTree = "<group>"; };
+		0C3527F2176493E000E07AAB /* fake home@2x-568h.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fake home@2x-568h.PNG"; sourceTree = "<group>"; };
+		0C3527F3176493E000E07AAB /* fake home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fake home@2x.png"; sourceTree = "<group>"; };
 		0C4C58D1170D6D9600ED0DF8 /* OrangeFashion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrangeFashion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4C58D4170D6D9600ED0DF8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0C4C58D6170D6D9600ED0DF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,8 +161,8 @@
 		0C4C58E0170D6D9600ED0DF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C4C58E2170D6D9600ED0DF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0C4C58E4170D6D9600ED0DF8 /* OrangeFashion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrangeFashion-Prefix.pch"; sourceTree = "<group>"; };
-		0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OFAppDelegate.h; sourceTree = "<group>"; };
-		0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFAppDelegate.m; sourceTree = "<group>"; };
+		0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OFAppDelegate.h; path = OrangeFashion/OFAppDelegate.h; sourceTree = "<group>"; };
+		0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OFAppDelegate.m; path = OrangeFashion/OFAppDelegate.m; sourceTree = "<group>"; };
 		0C4C58E8170D6D9600ED0DF8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0C4C58EA170D6D9600ED0DF8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0C4C58EC170D6D9600ED0DF8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -228,20 +264,11 @@
 		0C4C5C57170E824400ED0DF8 /* OFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHTTPClient.h; sourceTree = "<group>"; };
 		0C4C5C58170E824400ED0DF8 /* OFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHTTPClient.m; sourceTree = "<group>"; };
 		0C4C5C5F170E8CD800ED0DF8 /* OFProductsTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OFProductsTableView.storyboard; sourceTree = "<group>"; };
-		0C4C5C61170E8D0700ED0DF8 /* OFProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFProductsViewController.h; sourceTree = "<group>"; };
-		0C4C5C62170E8D0700ED0DF8 /* OFProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFProductsViewController.m; sourceTree = "<group>"; };
-		0C52749F175A694F00BB15FA /* OFImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFImageViewController.h; sourceTree = "<group>"; };
-		0C5274A0175A694F00BB15FA /* OFImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFImageViewController.m; sourceTree = "<group>"; };
-		0C5274A1175A694F00BB15FA /* OFImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFImageViewController.xib; sourceTree = "<group>"; };
 		0C8DEFD61759E614004016E0 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		0C8DEFD71759E614004016E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
-		0C8DEFD91759E88C004016E0 /* OFProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFProductDetailsViewController.h; sourceTree = "<group>"; };
-		0C8DEFDA1759E88C004016E0 /* OFProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFProductDetailsViewController.m; sourceTree = "<group>"; };
 		0CD488311710256200C30EEF /* OFProductsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFProductsTableCell.xib; sourceTree = "<group>"; };
 		0CD488331710266600C30EEF /* OFProductsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFProductsTableCell.h; sourceTree = "<group>"; };
 		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFProductsTableCell.m; sourceTree = "<group>"; };
-		0CDB462D173E519D00708F6C /* OFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFMenuViewController.h; sourceTree = "<group>"; };
-		0CDB462E173E519D00708F6C /* OFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C3527D017647DFA00E07AAB /* QuartzCore.framework in Frameworks */,
 				0C4C58D5170D6D9600ED0DF8 /* UIKit.framework in Frameworks */,
 				0C4C58D7170D6D9600ED0DF8 /* Foundation.framework in Frameworks */,
 				0C4C58D9170D6D9600ED0DF8 /* CoreGraphics.framework in Frameworks */,
@@ -270,15 +298,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C3527C517647DE900E07AAB /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				0C3527C617647DE900E07AAB /* IISideController.h */,
+				0C3527C717647DE900E07AAB /* IISideController.m */,
+				0C3527C817647DE900E07AAB /* IIViewDeckController.h */,
+				0C3527C917647DE900E07AAB /* IIViewDeckController.m */,
+				0C3527CA17647DE900E07AAB /* IIWrapController.h */,
+				0C3527CB17647DE900E07AAB /* IIWrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		0C3527D117647FC700E07AAB /* Products List */ = {
+			isa = PBXGroup;
+			children = (
+				0C3527D4176480A500E07AAB /* OFProductsViewController.h */,
+				0C3527D5176480A500E07AAB /* OFProductsViewController.m */,
+			);
+			name = "Products List";
+			sourceTree = "<group>";
+		};
+		0C3527D21764801100E07AAB /* Central Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0C3527D7176480BC00E07AAB /* OFMenuViewController.h */,
+				0C3527D8176480BC00E07AAB /* OFMenuViewController.m */,
+			);
+			name = "Central Menu";
+			sourceTree = "<group>";
+		};
+		0C3527D31764803000E07AAB /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				0C3527DA176480DF00E07AAB /* OFImageViewController.h */,
+				0C3527DB176480DF00E07AAB /* OFImageViewController.m */,
+				0C3527DC176480DF00E07AAB /* OFImageViewController.xib */,
+				0C3527DD176480DF00E07AAB /* OFProductDetailsViewController.h */,
+				0C3527DE176480DF00E07AAB /* OFProductDetailsViewController.m */,
+			);
+			name = "Product Details";
+			sourceTree = "<group>";
+		};
+		0C3527E21764811800E07AAB /* ViewDeck Left Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0C3527E31764817200E07AAB /* OFLeftMenuViewController.h */,
+				0C3527E41764817200E07AAB /* OFLeftMenuViewController.m */,
+				0C3527E51764817200E07AAB /* OFLeftMenuViewController.xib */,
+			);
+			name = "ViewDeck Left Menu";
+			sourceTree = "<group>";
+		};
+		0C3527EA17648A3200E07AAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C3527F2176493E000E07AAB /* fake home@2x-568h.PNG */,
+				0C3527F3176493E000E07AAB /* fake home@2x.png */,
+				0C3527EB17648CA500E07AAB /* fake home.PNG */,
+				0C3527EC17648CA500E07AAB /* fake left menu.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0C4C58C8170D6D9600ED0DF8 = {
 			isa = PBXGroup;
 			children = (
-				0C29A3B8170ED05600298265 /* Default@2x.png */,
-				0C29A3B6170ED04B00298265 /* Default.png */,
-				0C29A3B4170EC5DD00298265 /* 57x57.png */,
-				0C29A3B2170EC59D00298265 /* 114x114.png */,
+				0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */,
+				0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */,
 				0C4C58DC170D6D9600ED0DF8 /* OrangeFashion */,
-				0C4C5BEC170D71F000ED0DF8 /* OrangeFashion.xcdatamodeld */,
 				0C4C58FE170D6D9600ED0DF8 /* OrangeFashionTests */,
 				0C4C58D3170D6D9600ED0DF8 /* Frameworks */,
 				0C4C58D2170D6D9600ED0DF8 /* Products */,
@@ -297,6 +386,7 @@
 		0C4C58D3170D6D9600ED0DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C3527CF17647DFA00E07AAB /* QuartzCore.framework */,
 				0C4C58D4170D6D9600ED0DF8 /* UIKit.framework */,
 				0C4C58D6170D6D9600ED0DF8 /* Foundation.framework */,
 				0C4C58D8170D6D9600ED0DF8 /* CoreGraphics.framework */,
@@ -317,8 +407,7 @@
 				0C4C590F170D6F4200ED0DF8 /* Categories */,
 				0C4C592C170D6F4200ED0DF8 /* Models */,
 				0C4C5932170D6F4200ED0DF8 /* Vendors */,
-				0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */,
-				0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */,
+				0C3527EA17648A3200E07AAB /* Resources */,
 				0C4C58DD170D6D9600ED0DF8 /* Supporting Files */,
 			);
 			path = OrangeFashion;
@@ -327,6 +416,11 @@
 		0C4C58DD170D6D9600ED0DF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C4C5BEC170D71F000ED0DF8 /* OrangeFashion.xcdatamodeld */,
+				0C29A3B8170ED05600298265 /* Default@2x.png */,
+				0C29A3B6170ED04B00298265 /* Default.png */,
+				0C29A3B4170EC5DD00298265 /* 57x57.png */,
+				0C29A3B2170EC59D00298265 /* 114x114.png */,
 				0C4C58DE170D6D9600ED0DF8 /* OrangeFashion-Info.plist */,
 				0C4C58DF170D6D9600ED0DF8 /* InfoPlist.strings */,
 				0C4C58E2170D6D9600ED0DF8 /* main.m */,
@@ -391,6 +485,7 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0C3527C517647DE900E07AAB /* ViewDeck */,
 				0C4C5C01170E803900ED0DF8 /* MagicalRecord */,
 				0C4C5933170D6F4200ED0DF8 /* AFNetworking */,
 				0C4C5AB6170D6F4300ED0DF8 /* JSONKit */,
@@ -585,15 +680,12 @@
 		0C4C5C5D170E8CD800ED0DF8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0C4C5C61170E8D0700ED0DF8 /* OFProductsViewController.h */,
-				0C4C5C62170E8D0700ED0DF8 /* OFProductsViewController.m */,
-				0CDB462D173E519D00708F6C /* OFMenuViewController.h */,
-				0CDB462E173E519D00708F6C /* OFMenuViewController.m */,
-				0C8DEFD91759E88C004016E0 /* OFProductDetailsViewController.h */,
-				0C8DEFDA1759E88C004016E0 /* OFProductDetailsViewController.m */,
-				0C52749F175A694F00BB15FA /* OFImageViewController.h */,
-				0C5274A0175A694F00BB15FA /* OFImageViewController.m */,
-				0C5274A1175A694F00BB15FA /* OFImageViewController.xib */,
+				0C3527E21764811800E07AAB /* ViewDeck Left Menu */,
+				0C3527D117647FC700E07AAB /* Products List */,
+				0C3527D21764801100E07AAB /* Central Menu */,
+				0C3527D31764803000E07AAB /* Product Details */,
+				0C3527EF17648D4C00E07AAB /* OFHomeViewController.h */,
+				0C3527F017648D4C00E07AAB /* OFHomeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -690,7 +782,12 @@
 				0C29A3B7170ED04B00298265 /* Default.png in Resources */,
 				0C29A3B9170ED05600298265 /* Default@2x.png in Resources */,
 				0CD488321710256200C30EEF /* OFProductsTableCell.xib in Resources */,
-				0C5274A3175A694F00BB15FA /* OFImageViewController.xib in Resources */,
+				0C3527E0176480DF00E07AAB /* OFImageViewController.xib in Resources */,
+				0C3527E71764817200E07AAB /* OFLeftMenuViewController.xib in Resources */,
+				0C3527ED17648CA500E07AAB /* fake home.PNG in Resources */,
+				0C3527EE17648CA500E07AAB /* fake left menu.png in Resources */,
+				0C3527F4176493E000E07AAB /* fake home@2x-568h.PNG in Resources */,
+				0C3527F5176493E000E07AAB /* fake home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,15 +877,20 @@
 				0C4C5C55170E803900ED0DF8 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				0C4C5C56170E803900ED0DF8 /* MagicalRecord.m in Sources */,
 				0C4C5C59170E824400ED0DF8 /* OFHTTPClient.m in Sources */,
-				0C4C5C63170E8D0700ED0DF8 /* OFProductsViewController.m in Sources */,
 				0C4C5C64170E91F700ED0DF8 /* OFProduct.m in Sources */,
 				0C4C5C65170E91FB00ED0DF8 /* OFProductImages.m in Sources */,
 				0C4C5C66170E926200ED0DF8 /* _OFProduct.m in Sources */,
 				0C4C5C67170E926400ED0DF8 /* _OFProductImages.m in Sources */,
 				0CD488351710266600C30EEF /* OFProductsTableCell.m in Sources */,
-				0CDB462F173E519D00708F6C /* OFMenuViewController.m in Sources */,
-				0C8DEFDB1759E88C004016E0 /* OFProductDetailsViewController.m in Sources */,
-				0C5274A2175A694F00BB15FA /* OFImageViewController.m in Sources */,
+				0C3527CC17647DE900E07AAB /* IISideController.m in Sources */,
+				0C3527CD17647DE900E07AAB /* IIViewDeckController.m in Sources */,
+				0C3527CE17647DE900E07AAB /* IIWrapController.m in Sources */,
+				0C3527D6176480A500E07AAB /* OFProductsViewController.m in Sources */,
+				0C3527D9176480BC00E07AAB /* OFMenuViewController.m in Sources */,
+				0C3527DF176480DF00E07AAB /* OFImageViewController.m in Sources */,
+				0C3527E1176480DF00E07AAB /* OFProductDetailsViewController.m in Sources */,
+				0C3527E61764817200E07AAB /* OFLeftMenuViewController.m in Sources */,
+				0C3527F117648D4C00E07AAB /* OFHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,8 +1135,7 @@
 				0C4C5BED170D71F000ED0DF8 /* OrangeFashion.xcdatamodel */,
 			);
 			currentVersion = 0C4C5BED170D71F000ED0DF8 /* OrangeFashion.xcdatamodel */;
-			name = OrangeFashion.xcdatamodeld;
-			path = OrangeFashion/OrangeFashion.xcdatamodeld;
+			path = OrangeFashion.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

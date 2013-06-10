@@ -30,6 +30,9 @@
 #import "OFProduct.h"
 #import "OFProductImages.h"
 
+//Common VC
+#import "OFLeftMenuViewController.h"
+
 #endif
 
 #define BASE_URL @"http://orangefashion.vn/api/api.php"

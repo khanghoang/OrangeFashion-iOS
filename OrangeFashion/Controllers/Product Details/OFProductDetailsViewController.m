@@ -67,6 +67,8 @@
         [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         
         [self addChildViewController:self.pageVC];
+        self.pageVC.view.frame = self.view.frame;
+        
         [self.view addSubview:self.pageVC.view];
         [self.pageVC didMoveToParentViewController:self];
         
