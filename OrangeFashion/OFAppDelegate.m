@@ -18,27 +18,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // start MR
     [MagicalRecord setupCoreDataStack];
     
+    // Make the color of Navigation bar no more effects the status bar
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque
+                                                animated:NO];
+    
+    // Set up ViewDeck
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"OFProductsTableView"
                                                              bundle: nil];
-    
     OFMenuViewController *centralViewController = (OFMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Home View Controller"];
-    
     OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
-    
     OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
-    
-    //right
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController                                                           leftViewController:leftMenuController                                                                 rightViewController:nil];
-    
+
+    // Confif ViewDeck
     [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
     [deckController centerhiddenInteractivity];
-    
-    //make sure to set the window's root view controller equal
-    //to the deckController
-    self.window.rootViewController = deckController;
 
+    // Add to Root ViewController
+    self.window.rootViewController = deckController;
+    
     return YES;
 }
 

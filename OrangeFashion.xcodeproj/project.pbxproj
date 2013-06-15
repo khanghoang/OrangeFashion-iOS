@@ -710,11 +710,11 @@
 			isa = PBXGroup;
 			children = (
 				0CEF5312176CBA86004447E1 /* BaseViewController */,
+				0CEF5311176C918D004447E1 /* Home Page */,
 				0C3527E21764811800E07AAB /* ViewDeck Left Menu */,
 				0C3527D117647FC700E07AAB /* Products List */,
 				0C3527D21764801100E07AAB /* Central Menu */,
 				0C3527D31764803000E07AAB /* Product Details */,
-				0CEF5311176C918D004447E1 /* Home Page */,
 				0CEF5310176C9175004447E1 /* Navigation Controller */,
 			);
 			path = Controllers;
