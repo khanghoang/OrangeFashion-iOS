@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OFImageViewController : UIViewController
+@interface OFImageViewController : BaseViewController
 
 @property (nonatomic, strong) NSString *imageURL;
 

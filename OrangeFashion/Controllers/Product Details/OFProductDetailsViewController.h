@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OFProductDetailsViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface OFProductDetailsViewController : BaseViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) NSNumber *productID;
 

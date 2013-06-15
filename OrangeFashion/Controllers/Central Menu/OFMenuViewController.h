@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OFMenuViewController : UIViewController
+@interface OFMenuViewController : BaseViewController
 
 @end

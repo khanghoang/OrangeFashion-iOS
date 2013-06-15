@@ -25,7 +25,7 @@
     
     OFMenuViewController *centralViewController = (OFMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Home View Controller"];
     
-    UINavigationController *centralNavController = [[UINavigationController alloc] initWithRootViewController:centralViewController];
+    OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
     
     OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
     

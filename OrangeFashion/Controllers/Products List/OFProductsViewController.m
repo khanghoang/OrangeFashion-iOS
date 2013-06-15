@@ -9,8 +9,9 @@
 #import "OFProductsViewController.h"
 #import "OFProductsTableCell.h"
 #import "OFProductDetailsViewController.h"
+#import "IIViewDeckController.h"
 
-@interface OFProductsViewController ()
+@interface OFProductsViewController () <IIViewDeckControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *productsTableView;
 @property (strong, nonatomic) NSMutableArray *productsArr;
@@ -33,6 +34,14 @@
     }];
     
     [self.productsTableView reloadData];
+    
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setImage:[UIImage imageNamed:@"left-nav-button"] forState:UIControlStateNormal];
+    [leftButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventAllTouchEvents];
+    
+    leftButton.frame = CGRectMake(0, 0, 50, 40);
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
 }
 
 - (NSMutableArray *)productsArr

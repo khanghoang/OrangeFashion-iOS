@@ -46,21 +46,18 @@
     self.pageVC.delegate = self;
     self.pageVC.dataSource = self;
     
-//    __block OFProductDetailsViewController *weakSelf = self;
-    
     [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
         
         [SVProgressHUD dismiss];
         
         self.images = obj;
         self.currentVC = 0;
-//        [obj enumerateObjectsUsingBlock:^(id obj2, NSUInteger idx, BOOL *stop) {
-            OFImageViewController *imageVC = [[OFImageViewController alloc] init];
-            imageVC.imageURL = [[obj objectAtIndex:0] picasa_store_source];
-            DLog(@"imgURL = %@", [[obj objectAtIndex:0] picasa_store_source]);
+
+        OFImageViewController *imageVC = [[OFImageViewController alloc] init];
+        imageVC.imageURL = [[obj objectAtIndex:0] picasa_store_source];
+        DLog(@"imgURL = %@", [[obj objectAtIndex:0] picasa_store_source]);
         
-            [arrVC addObject:imageVC];
-//        }];
+        [arrVC addObject:imageVC];
         
         DLog(@"Array ImagesVC = %@", [arrVC description]);
         

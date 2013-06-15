@@ -54,6 +54,10 @@
         
     }];
     
+//    NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", aProduct.product_id, aProduct.product_id];
+//    
+//    [self.productCoverImage setImageWithURL:[[NSURL alloc] initWithString:imgUrl]];
+    
 }
 
 @end
