@@ -22,6 +22,16 @@
     
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg"] forBarMetrics:UIBarMetricsDefault];
     
+//    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(getBackVC)];
+//    
+//    [swipeGesture setDirection:UISwipeGestureRecognizerDirectionRight];
+//    [self.navigationBar addGestureRecognizer:swipeGesture];
+//    
+//    UISwipeGestureRecognizer *swipeGesture2 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(getForwardVC)];
+//    
+//    [swipeGesture2 setDirection:UISwipeGestureRecognizerDirectionLeft];
+//    [self.navigationBar addGestureRecognizer:swipeGesture2];
+    
     return self;
 }
 
@@ -38,10 +48,14 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+//- (void)getBackVC
+//{
+//    DLog(@"RIGHT");
+//}
+//
+//- (void)getforwardVC
+//{
+//    DLog(@"LEFT");
+//}
 
 @end

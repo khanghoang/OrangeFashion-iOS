@@ -32,6 +32,7 @@
 
 //Common VC
 #import "BaseViewController.h"
+#import "BaseTableViewController.h"
 #import "OFLeftMenuViewController.h"
 #import "OFNavigationViewController.h"
 

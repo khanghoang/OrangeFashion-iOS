@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OFProductsViewController : UITableViewController
+@interface OFProductsViewController : BaseTableViewController
 
 @end

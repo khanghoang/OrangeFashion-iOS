@@ -1,23 +1,30 @@
 //
-//  BaseViewController.m
+//  BaseTableViewController.m
 //  OrangeFashion
 //
 //  Created by Khang on 15/6/13.
 //  Copyright (c) 2013 Khang. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 #import "IIViewDeckController.h"
 
-@interface BaseViewController() <IIViewDeckControllerDelegate>
-
-- (void)rightButtonClicked;
+@interface BaseTableViewController () <IIViewDeckControllerDelegate>
 
 @end
 
-@implementation BaseViewController
+@implementation BaseTableViewController
 
--(void)viewDidLoad
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     
@@ -37,6 +44,9 @@
     [rightButton addTarget:self action:@selector(rightButtonClicked) forControlEvents:UIControlEventAllTouchEvents];
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
+    
+    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(getBackVC)];
+    swipeGesture.numberOfTouchesRequired = 1;  
 }
 
 - (void)rightButtonClicked

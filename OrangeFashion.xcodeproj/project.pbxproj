@@ -117,6 +117,7 @@
 		0CD488321710256200C30EEF /* OFProductsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD488311710256200C30EEF /* OFProductsTableCell.xib */; };
 		0CD488351710266600C30EEF /* OFProductsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD488341710266600C30EEF /* OFProductsTableCell.m */; };
 		0CEF5315176CBAA7004447E1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF5314176CBAA7004447E1 /* BaseViewController.m */; };
+		0CEF5318176CD379004447E1 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF5317176CD379004447E1 /* BaseTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +286,8 @@
 		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFProductsTableCell.m; sourceTree = "<group>"; };
 		0CEF5313176CBAA7004447E1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0CEF5314176CBAA7004447E1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0CEF5316176CD379004447E1 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		0CEF5317176CD379004447E1 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -752,6 +755,8 @@
 			children = (
 				0CEF5313176CBAA7004447E1 /* BaseViewController.h */,
 				0CEF5314176CBAA7004447E1 /* BaseViewController.m */,
+				0CEF5316176CD379004447E1 /* BaseTableViewController.h */,
+				0CEF5317176CD379004447E1 /* BaseTableViewController.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -956,6 +961,7 @@
 				0C3527F117648D4C00E07AAB /* OFHomeViewController.m in Sources */,
 				0C3CCCAB176C768500CC8299 /* OFNavigationViewController.m in Sources */,
 				0CEF5315176CBAA7004447E1 /* BaseViewController.m in Sources */,
+				0CEF5318176CD379004447E1 /* BaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

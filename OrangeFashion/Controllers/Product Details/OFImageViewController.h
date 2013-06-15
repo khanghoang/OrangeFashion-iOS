@@ -11,5 +11,6 @@
 @interface OFImageViewController : BaseViewController
 
 @property (nonatomic, strong) NSString *imageURL;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end
