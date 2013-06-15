@@ -43,6 +43,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //Handler when no internet
         DLog(@"%@", [error description]);
+        failureBlock(-1, @"error");
     }];
 }
 

@@ -34,9 +34,9 @@
     OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController                                                           leftViewController:leftMenuController                                                                 rightViewController:nil];
 
-    // Confif ViewDeck
+    // Config ViewDeck
     [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
-    [deckController centerhiddenInteractivity];
+    deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToCloseBouncing;
 
     // Add to Root ViewController
     self.window.rootViewController = deckController;

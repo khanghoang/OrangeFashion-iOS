@@ -23,7 +23,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [SVProgressHUD showWithStatus:@"Đang tải sản phẩm"];
+    [self addNavigationLeftButton];
+    
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [rightButton setTitle:@"Back" forState:UIControlStateNormal];
+    
+    [rightButton addTarget:self action:@selector(rightButtonClicked) forControlEvents:UIControlEventAllTouchEvents];
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
+    
+    [SVProgressHUD showWithStatus:@"Đang tải sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
+    
     [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
@@ -34,14 +44,6 @@
     }];
     
     [self.productsTableView reloadData];
-    
-    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftButton setImage:[UIImage imageNamed:@"left-nav-button"] forState:UIControlStateNormal];
-    [leftButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventAllTouchEvents];
-    
-    leftButton.frame = CGRectMake(0, 0, 50, 40);
-    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
-    self.navigationItem.leftBarButtonItem = leftButtonItem;
 }
 
 - (NSMutableArray *)productsArr
@@ -53,6 +55,16 @@
     return _productsArr;
 }
 
+- (void)addNavigationLeftButton
+{
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setImage:[UIImage imageNamed:@"left-nav-button"] forState:UIControlStateNormal];
+    [leftButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventAllTouchEvents];
+    
+    leftButton.frame = CGRectMake(0, 0, 50, 40);
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
+}
 
 - (void)didReceiveMemoryWarning
 {

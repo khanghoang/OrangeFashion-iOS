@@ -32,8 +32,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 #pragma marks Custom Product Cell
@@ -46,17 +44,17 @@
     [self.productDetails setNumberOfLines:0];
     [self.productDetails sizeToFit];
     
-    [OFProductImages getImagesForProduct:aProduct successBlock:^(NSInteger statusCode, id obj) {
-        NSString *imgUrl = [[obj objectAtIndex:0] picasa_store_source];
-        DLog(@"%@", imgUrl);
-        [self.productCoverImage setImageWithURL:[[NSURL alloc] initWithString:imgUrl] placeholderImage:nil];    
-    } failureBlock:^(NSInteger statusCode, id obj) {
-        
-    }];
+//    [OFProductImages getImagesForProduct:aProduct successBlock:^(NSInteger statusCode, id obj) {
+//        NSString *imgUrl = [[obj objectAtIndex:0] picasa_store_source];
+//        DLog(@"%@", imgUrl);
+//        [self.productCoverImage setImageWithURL:[[NSURL alloc] initWithString:imgUrl] placeholderImage:nil];    
+//    } failureBlock:^(NSInteger statusCode, id obj) {
+//        
+//    }];
     
-//    NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", aProduct.product_id, aProduct.product_id];
-//    
-//    [self.productCoverImage setImageWithURL:[[NSURL alloc] initWithString:imgUrl]];
+    NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", aProduct.product_id, aProduct.product_id];
+    
+    [self.productCoverImage setImageWithURL:[[NSURL alloc] initWithString:imgUrl]];
     
 }
 
