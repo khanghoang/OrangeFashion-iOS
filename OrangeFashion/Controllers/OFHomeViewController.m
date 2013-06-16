@@ -38,13 +38,11 @@
     
     [self.navigationController setNavigationBarHidden:YES];
     
-    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fake home"]];
-    bgImage.contentMode = UIViewContentModeScaleAspectFill;
-    
-    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    bgImage.frame = frame;
-    
-    [self.view addSubview:bgImage];
+//    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fake home"]];
+//    bgImage.contentMode = UIViewContentModeScaleAspectFill;
+//    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    bgImage.frame = frame;
+//    [self.view addSubview:bgImage];
     
     [self.view bringSubviewToFront:self.lbViewProducts];
     
@@ -66,8 +64,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    [self setLbViewProducts:nil];
-    [super viewDidUnload];
-}
 @end

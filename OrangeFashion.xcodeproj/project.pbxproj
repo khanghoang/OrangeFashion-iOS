@@ -592,6 +592,7 @@
 		0C4C5BEB170D6F7D00ED0DF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0CF31794176DF4C5009CC776 /* Facebook login */,
 				0C3CCCAD176C772600CC8299 /* Navigation */,
 			);
 			name = Resources;
@@ -759,6 +760,14 @@
 				0CEF5317176CD379004447E1 /* BaseTableViewController.m */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		0CF31794176DF4C5009CC776 /* Facebook login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Facebook login";
+			path = "Resources/Facebook login";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
