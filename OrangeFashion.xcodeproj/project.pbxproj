@@ -118,6 +118,7 @@
 		0CD488351710266600C30EEF /* OFProductsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD488341710266600C30EEF /* OFProductsTableCell.m */; };
 		0CEF5315176CBAA7004447E1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF5314176CBAA7004447E1 /* BaseViewController.m */; };
 		0CEF5318176CD379004447E1 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF5317176CD379004447E1 /* BaseTableViewController.m */; };
+		0CF31796176DF8C5009CC776 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF31795176DF8C5009CC776 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,6 +289,7 @@
 		0CEF5314176CBAA7004447E1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0CEF5316176CD379004447E1 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		0CEF5317176CD379004447E1 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		0CF31795176DF8C5009CC776 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				0C4C58D7170D6D9600ED0DF8 /* Foundation.framework in Frameworks */,
 				0C4C58D9170D6D9600ED0DF8 /* CoreGraphics.framework in Frameworks */,
 				0C4C58DB170D6D9600ED0DF8 /* CoreData.framework in Frameworks */,
+				0CF31796176DF8C5009CC776 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +420,7 @@
 		0C4C58D3170D6D9600ED0DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CF31795176DF8C5009CC776 /* FacebookSDK.framework */,
 				0C3527CF17647DFA00E07AAB /* QuartzCore.framework */,
 				0C4C58D4170D6D9600ED0DF8 /* UIKit.framework */,
 				0C4C58D6170D6D9600ED0DF8 /* Foundation.framework */,
@@ -1084,6 +1088,10 @@
 		0C4C590A170D6D9600ED0DF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OrangeFashion/OrangeFashion-Prefix.pch";
 				INFOPLIST_FILE = "OrangeFashion/OrangeFashion-Info.plist";
@@ -1103,6 +1111,10 @@
 		0C4C590B170D6D9600ED0DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OrangeFashion/OrangeFashion-Prefix.pch";
 				INFOPLIST_FILE = "OrangeFashion/OrangeFashion-Info.plist";
