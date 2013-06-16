@@ -120,12 +120,12 @@
 		0CEF5318176CD379004447E1 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF5317176CD379004447E1 /* BaseTableViewController.m */; };
 		0CF31798176DFD52009CC776 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0CF31797176DFD52009CC776 /* FacebookSDKResources.bundle */; };
 		0CF3179A176DFD79009CC776 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0CF31799176DFD79009CC776 /* FBUserSettingsViewResources.bundle */; };
-		0CF3179C176DFDAA009CC776 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3179B176DFDAA009CC776 /* AdSupport.framework */; };
-		0CF3179E176DFDB3009CC776 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3179D176DFDB3009CC776 /* Accounts.framework */; };
-		0CF317A0176DFDC5009CC776 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3179F176DFDC5009CC776 /* libsqlite3.dylib */; };
-		0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A1176DFDCC009CC776 /* Security.framework */; };
-		0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A3176DFDD4009CC776 /* Social.framework */; };
-		0CF317A6176DFDF5009CC776 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A5176DFDF5009CC776 /* FacebookSDK.framework */; };
+		0CF3179C176DFDAA009CC776 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3179B176DFDAA009CC776 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0CF3179E176DFDB3009CC776 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3179D176DFDB3009CC776 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0CF317A0176DFDC5009CC776 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3179F176DFDC5009CC776 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A1176DFDCC009CC776 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A3176DFDD4009CC776 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0CF317A6176DFDF5009CC776 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A5176DFDF5009CC776 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
