@@ -9,6 +9,7 @@
 #import "OFAppDelegate.h"
 #import "OFMenuViewController.h"
 #import "IIViewDeckController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation OFAppDelegate
 
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [FBLoginView class];
     
     // start MR
     [MagicalRecord setupCoreDataStack];
