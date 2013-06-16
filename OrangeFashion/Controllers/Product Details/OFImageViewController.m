@@ -32,8 +32,8 @@
 
     [self.productImage setImageWithURL:[[NSURL alloc] initWithString:self.imageURL] placeholderImage:nil];
     
-    self.view.frame = [[super view] frame];
-    self.imgView.frame = [[super view] frame];
+    self.view.backgroundColor = [UIColor blackColor];
+//    self.imgView.frame = [[super view] frame];
     
     self.productImage.userInteractionEnabled = YES;
 }
