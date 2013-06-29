@@ -49,3 +49,77 @@ Base URL : "http://orangefashion.vn/api/api?"
     "https://lh5.googleusercontent.com/--3wACDF885k/UVliS7-gaiI/AAAAAAAAQPc/IuFcrup_Kz0/T27.fgXbVbXXXXXXXX_%2521%2521388462979.jpg"
 ]
 ```
+
+### Get sidebar menu ###
+ * URL: 'rquest=getMenu'
+ * method: 'GET'
+ * success response:
+
+```javascript
+[
+    {
+        "session": [
+            {
+                "name": "Hàng mới về",
+                "id": "21"
+            },
+            {
+                "name": "Tin tức",
+                "id": "22"
+            }
+        ],
+        "name": "Nổi bật"
+    },
+    {
+        "session": [
+            {
+                "name": "Đầm cao cấp",
+                "id": "3"
+            },
+            {
+                "name": "Đầm",
+                "id": "1"
+            },
+            {
+                "name": "Áo",
+                "id": "2"
+            },
+            {
+                "name": "Váy",
+                "id": "4"
+            }
+        ],
+        "name": "Sản phẩm"
+    }
+]
+```
+
+### Get products by category ###
+ * URL: 'rquest=getProductsFromCategory&category_id=:category_id'
+ * method: 'GET'
+ * success response:
+
+```javascript
+[
+  {
+    "MaSanPham": "91",
+    "TenSanPham": "\\u0110\\u1ea7m Voan c\\u00f4ng ch\\u00faa",
+    "GiaBan": "195000",
+    "MaTinhTrangSanPham": "0",
+    "SoLuongXem": "0",
+    "SoLuongBan": "0",
+    "SoLuongTon": "12",
+    "MaLoaiSanPham": "1",
+    "ChatLieu": "Voan",
+    "Mau": "Trang, \\u0111en",
+    "DanhGia": "H\\u00e0ng hot",
+    "NgayDang": "2011-02-08",
+    "MaNhaSanXuat": "1",
+    "MaNguoiDang": "0",
+    "GiaGoc": "80000",
+    "MaBoSuuTap": "3",
+    "MaHienThi": "2931_T",
+    "ChiTiet": ""
+  }
+]
+```
