@@ -82,6 +82,10 @@
 		0C2BE3F5177FFC9500CD2C5B /* BaseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3EC177FFC9500CD2C5B /* BaseNetworkManager.m */; };
 		0C2BE3F6177FFC9500CD2C5B /* BaseSharingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3EE177FFC9500CD2C5B /* BaseSharingManager.m */; };
 		0C2BE3F7177FFC9500CD2C5B /* BaseStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3F0177FFC9500CD2C5B /* BaseStorageManager.m */; };
+		0C2BE3F9177FFD9100CD2C5B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3F8177FFD9100CD2C5B /* CoreTelephony.framework */; };
+		0C2BE3FB177FFDC900CD2C5B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3FA177FFDC900CD2C5B /* MessageUI.framework */; };
+		0C2BE3FD177FFE0A00CD2C5B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3FC177FFE0A00CD2C5B /* Twitter.framework */; };
+		0C2BE3FF177FFE2F00CD2C5B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3FE177FFE2F00CD2C5B /* SystemConfiguration.framework */; };
 		0C3527CC17647DE900E07AAB /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527C717647DE900E07AAB /* IISideController.m */; };
 		0C3527CD17647DE900E07AAB /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527C917647DE900E07AAB /* IIViewDeckController.m */; };
 		0C3527CE17647DE900E07AAB /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527CB17647DE900E07AAB /* IIWrapController.m */; };
@@ -307,6 +311,10 @@
 		0C2BE3EE177FFC9500CD2C5B /* BaseSharingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSharingManager.m; sourceTree = "<group>"; };
 		0C2BE3EF177FFC9500CD2C5B /* BaseStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseStorageManager.h; sourceTree = "<group>"; };
 		0C2BE3F0177FFC9500CD2C5B /* BaseStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseStorageManager.m; sourceTree = "<group>"; };
+		0C2BE3F8177FFD9100CD2C5B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0C2BE3FA177FFDC900CD2C5B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0C2BE3FC177FFE0A00CD2C5B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		0C2BE3FE177FFE2F00CD2C5B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0C3527C617647DE900E07AAB /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
 		0C3527C717647DE900E07AAB /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
 		0C3527C817647DE900E07AAB /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
@@ -475,6 +483,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2BE3FF177FFE2F00CD2C5B /* SystemConfiguration.framework in Frameworks */,
+				0C2BE3FD177FFE0A00CD2C5B /* Twitter.framework in Frameworks */,
+				0C2BE3FB177FFDC900CD2C5B /* MessageUI.framework in Frameworks */,
+				0C2BE3F9177FFD9100CD2C5B /* CoreTelephony.framework in Frameworks */,
 				0C2BE3DF177FFBC700CD2C5B /* CoreLocation.framework in Frameworks */,
 				0C2BE2F7177FEE1200CD2C5B /* MapKit.framework in Frameworks */,
 				0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */,
@@ -1078,6 +1090,10 @@
 		0C4C58C8170D6D9600ED0DF8 = {
 			isa = PBXGroup;
 			children = (
+				0C2BE3FE177FFE2F00CD2C5B /* SystemConfiguration.framework */,
+				0C2BE3FC177FFE0A00CD2C5B /* Twitter.framework */,
+				0C2BE3FA177FFDC900CD2C5B /* MessageUI.framework */,
+				0C2BE3F8177FFD9100CD2C5B /* CoreTelephony.framework */,
 				0C2BE3DE177FFBC700CD2C5B /* CoreLocation.framework */,
 				0C4C58DC170D6D9600ED0DF8 /* OrangeFashion */,
 				0C4C58FE170D6D9600ED0DF8 /* OrangeFashionTests */,
