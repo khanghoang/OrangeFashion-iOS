@@ -20,7 +20,6 @@
 #import <MapKit/MapKit.h>
 
 //Categories
-//Categories/extensions
 #import "ISO8601DateFormatter.h"
 #import "MKMapView+Additions.h"
 #import "NSArray+Additions.h"
@@ -52,6 +51,15 @@
 #import "UIImageView+AFNetworking.h"
 #import "CoreData+MagicalRecord.h"
 #import "AFJSONRequestOperation.h"
+
+//Managers
+#import "BaseManager.h"
+#import "BaseDeviceLibrary.h"
+#import "BaseLocationManager.h"
+#import "BaseStorageManager.h"
+#import "BaseNetworkManager.h"
+#import "BaseSharingManager.h"
+#import "FacebookManager.h"
 
 //Models
 #import "OFHTTPClient.h"
