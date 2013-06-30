@@ -35,7 +35,7 @@
     NSDictionary *params = @{@"product_id": product.product_id,
                              @"rquest": @"getimages"};
     
-    [[OFHTTPClient sharedClient] getPath:BASE_URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSArray *setOfImage = (NSArray *)responseObject;
         successBlock(operation.response.statusCode, [OFProductImages productImagesWithArray:setOfImage]);

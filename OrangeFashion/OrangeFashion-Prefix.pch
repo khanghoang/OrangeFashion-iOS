@@ -2,15 +2,66 @@
 // Prefix header for all source files of the 'OrangeFashion' target in the 'OrangeFashion' project
 //
 
-#import <Availability.h>
+//------------------------------------------------------------------------------------------------------
+// Debug vs Production configurations
+//------------------------------------------------------------------------------------------------------
 
-#ifndef __IPHONE_3_0
-#warning "This project uses features only available in iOS SDK 3.0 and later."
+#ifdef DEBUG
+
+#define API_SERVER_HOST                             @"http://orangefashion.vn/api/api.php"
+#define URBAN_AIRSHIP_APP_KEY                       @""
+#define URBAN_AIRSHIP_APP_SECRET                    @""
+
+#else
+
+#define API_SERVER_HOST                             @"http://orangefashion.vn/api/api.php"
+#define URBAN_AIRSHIP_APP_KEY                       @""
+#define URBAN_AIRSHIP_APP_SECRET                    @""
+
 #endif
 
-#ifdef __OBJC__
+//------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------
 
-//Native Libraries
+#define API_OAUTH_TOKEN                             @"/oauth/token"      //This is not inside API_PREFIX
+#define API_PREFIX                                  @"/api/v1"
+#define API_MY_PROFILE                              @"my_profile"
+#define API_SIGN_UP                                 @"sign_up"
+#define API_USERS                                   @"users"
+
+#define SERVER_RECEIVE_DATA_ERROR                   @"Failed to receive data from server"
+#define UNKNOWN_ERROR_STRING                        @"Unknown error. Please try again"
+#define NO_CAMERA_ERROR_STRING                      @"This device does not have camera"
+#define PHOTO_GALLERY_ERROR_TITLE                   @"Error accessing photo library"
+#define NO_PHOTO_GALLERY_STRING                     @"Device does not support a photo library"
+#define PLEASE_WAIT_STRING                          @"Please wait"
+#define NO_INTERNET_STRING                          @"Please check your network connection and try again"
+#define SERVER_TIMEOUT_STRING                       @"Failed to receive data from server"
+
+//Settings keys on server (should prefix with ios_)
+#define SETTINGS_CLIENT_ID                          @"ios_client_id"
+#define SETTINGS_CLIENT_SECRET                      @"ios_client_secret"
+#define SETTINGS_CRITERCISM_TOKEN                   @"ios_critercism_token"
+#define SETTINGS_UPLOAD_IMAGE_SIZE                  @"ios_upload_image_size"
+#define SETTINGS_UPLOAD_IMAGE_QUALITY               @"ios_upload_image_quality"
+#define SETTINGS_FEEDBACK_EMAIL                     @"ios_feedback_email"
+#define SETTINGS_FEEDBACK_SUBJECT                   @"ios_feedback_subject"
+#define SETTINGS_FEEDBACK_BODY                      @"ios_feedback_body"
+
+//Hardcoded default values
+#define SETTINGS_CLIENT_ID_DEFAULT                  @"d32ff267c592ae0228b9ecb54a2980a5d5bb10c4fdd48d7e77b9f5d01e2f511d"
+#define SETTINGS_CLIENT_SECRET_DEFAULT              @"bc093c1303223aa4c045d02fceea27a442337fe768282d40c4e4806000b979ea"
+#define SETTINGS_CRITERCISM_TOKEN_DEFAULT           @""
+#define SETTINGS_UPLOAD_IMAGE_SIZE_DEFAULT          1024
+#define SETTINGS_UPLOAD_IMAGE_QUALITY_DEFAULT       0.70
+#define SETTINGS_FEEDBACK_EMAIL_DEFAULT             @"feedback@hungrygowhere.com"
+#define SETTINGS_FEEDBACK_SUBJECT_DEFAULT           @"HungryGoWhere iOS Feedback"
+#define SETTINGS_FEEDBACK_BODY_DEFAULT              @"My feedback..."
+
+#define ENABLE_FAKE_LOCATION                        YES         //Use the coordinate below, ignore location server
+#define FAKE_COORDINATE                             CLLocationCoordinate2DMake(3.18985899, 101.64969727)
+
+#import <Availability.h>
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
@@ -18,6 +69,8 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <MapKit/MapKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <CoreLocation/CoreLocation.h>
 
 //Categories
 #import "ISO8601DateFormatter.h"
@@ -47,10 +100,23 @@
 
 //Vendors
 #import "SVProgressHUD.h"
-#import "AFHTTPClient.h"
+#import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
 #import "CoreData+MagicalRecord.h"
 #import "AFJSONRequestOperation.h"
+#import "Crittercism.h"
+#import "SSPullToRefresh.h"
+#import "PSAlertView.h"
+#import "PSActionSheet.h"
+#import "OpenUDID+Keychain.h"
+#import "OpenUDID.h"
+
+//Models
+#import "BaseModel.h"
+#import "OFSetting.h"
+#import "OFHTTPClient.h"
+#import "OFProduct.h"
+#import "OFProductImages.h"
 
 //Managers
 #import "BaseManager.h"
@@ -58,13 +124,7 @@
 #import "BaseLocationManager.h"
 #import "BaseStorageManager.h"
 #import "BaseNetworkManager.h"
-#import "BaseSharingManager.h"
 #import "FacebookManager.h"
-
-//Models
-#import "OFHTTPClient.h"
-#import "OFProduct.h"
-#import "OFProductImages.h"
 
 //Common VC
 #import "BaseViewController.h"
@@ -72,9 +132,6 @@
 #import "OFLeftMenuViewController.h"
 #import "OFNavigationViewController.h"
 
-#endif
-
-#define BASE_URL @"http://orangefashion.vn/api/api.php"
 
 //------------------------------------------------------------------------------------------------------
 

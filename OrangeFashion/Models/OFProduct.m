@@ -36,7 +36,7 @@
 + (void)getProductsOnSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock
 {
     NSDictionary *params = @{@"rquest": @"getproducts"};
-    [[OFHTTPClient sharedClient] getPath:BASE_URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         successBlock(operation.response.statusCode, responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failureBlock(operation.response.statusCode, error); 

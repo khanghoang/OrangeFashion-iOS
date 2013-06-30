@@ -21,7 +21,7 @@
 
 #pragma mark - Settings
 
-- (EGCSetting*)getSettingWithKey:(NSString*)key;
+- (OFSetting *)getSettingWithKey:(NSString*)key;
 - (NSString*)getSettingStringValueWithKey:(NSString*)key;
 - (NSNumber*)getSettingNumberValueWithKey:(NSString*)key;
 - (NSArray*)getSettingStringArrayValueWithKey:(NSString*)key;

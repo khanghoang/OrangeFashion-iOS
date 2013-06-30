@@ -15,7 +15,7 @@
     static OFHTTPClient *__sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedInstance = [[OFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
+        __sharedInstance = [[OFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:API_SERVER_HOST]];
     });
     
     return __sharedInstance;

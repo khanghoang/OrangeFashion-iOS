@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 #define GET_METHOD              @"GET"
 #define POST_METHOD             @"POST"
 #define PUT_METHOD              @"PUT"
