@@ -30,6 +30,7 @@
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
         [self.productsTableView reloadData];
+        
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
