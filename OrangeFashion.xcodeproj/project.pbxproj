@@ -53,6 +53,7 @@
 		0C2BE2F4177FEA4400CD2C5B /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE2D8177FEA4400CD2C5B /* UIViewController+Additions.m */; };
 		0C2BE2F5177FEA4400CD2C5B /* UIWebView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE2DA177FEA4400CD2C5B /* UIWebView+Additions.m */; };
 		0C2BE2F7177FEE1200CD2C5B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE2F6177FEE1200CD2C5B /* MapKit.framework */; };
+		0C2BE2FB177FEEF100CD2C5B /* BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE2FA177FEEF100CD2C5B /* BaseAppDelegate.m */; };
 		0C3527CC17647DE900E07AAB /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527C717647DE900E07AAB /* IISideController.m */; };
 		0C3527CD17647DE900E07AAB /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527C917647DE900E07AAB /* IIViewDeckController.m */; };
 		0C3527CE17647DE900E07AAB /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527CB17647DE900E07AAB /* IIWrapController.m */; };
@@ -225,6 +226,8 @@
 		0C2BE2D9177FEA4400CD2C5B /* UIWebView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Additions.h"; sourceTree = "<group>"; };
 		0C2BE2DA177FEA4400CD2C5B /* UIWebView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Additions.m"; sourceTree = "<group>"; };
 		0C2BE2F6177FEE1200CD2C5B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0C2BE2F9177FEEF100CD2C5B /* BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAppDelegate.h; sourceTree = "<group>"; };
+		0C2BE2FA177FEEF100CD2C5B /* BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAppDelegate.m; sourceTree = "<group>"; };
 		0C3527C617647DE900E07AAB /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
 		0C3527C717647DE900E07AAB /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
 		0C3527C817647DE900E07AAB /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
@@ -266,8 +269,8 @@
 		0C4C58E0170D6D9600ED0DF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C4C58E2170D6D9600ED0DF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0C4C58E4170D6D9600ED0DF8 /* OrangeFashion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrangeFashion-Prefix.pch"; sourceTree = "<group>"; };
-		0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OFAppDelegate.h; sourceTree = "<group>"; };
-		0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFAppDelegate.m; sourceTree = "<group>"; };
+		0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OFAppDelegate.h; path = ../OFAppDelegate.h; sourceTree = "<group>"; };
+		0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OFAppDelegate.m; path = ../OFAppDelegate.m; sourceTree = "<group>"; };
 		0C4C58E8170D6D9600ED0DF8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0C4C58EA170D6D9600ED0DF8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0C4C58EC170D6D9600ED0DF8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -482,6 +485,17 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		0C2BE2F8177FEEF100CD2C5B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				0C2BE2F9177FEEF100CD2C5B /* BaseAppDelegate.h */,
+				0C2BE2FA177FEEF100CD2C5B /* BaseAppDelegate.m */,
+				0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */,
+				0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		0C3527C517647DE900E07AAB /* ViewDeck */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +624,7 @@
 				0C4C592C170D6F4200ED0DF8 /* Models */,
 				0C2BE2A5177FEA4400CD2C5B /* Categories */,
 				0C4C5932170D6F4200ED0DF8 /* Vendors */,
+				0C2BE2F8177FEEF100CD2C5B /* Misc */,
 				0C3527EA17648A3200E07AAB /* Resources */,
 				0C4C58DD170D6D9600ED0DF8 /* Supporting Files */,
 			);
@@ -619,8 +634,6 @@
 		0C4C58DD170D6D9600ED0DF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0C4C58E5170D6D9600ED0DF8 /* OFAppDelegate.h */,
-				0C4C58E6170D6D9600ED0DF8 /* OFAppDelegate.m */,
 				0C4C5BEC170D71F000ED0DF8 /* OrangeFashion.xcdatamodeld */,
 				0C29A3B8170ED05600298265 /* Default@2x.png */,
 				0C29A3B6170ED04B00298265 /* Default.png */,
@@ -1167,6 +1180,7 @@
 				0C2BE2F3177FEA4400CD2C5B /* UIView+Nib.m in Sources */,
 				0C2BE2F4177FEA4400CD2C5B /* UIViewController+Additions.m in Sources */,
 				0C2BE2F5177FEA4400CD2C5B /* UIWebView+Additions.m in Sources */,
+				0C2BE2FB177FEEF100CD2C5B /* BaseAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

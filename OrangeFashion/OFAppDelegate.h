@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseAppDelegate.h"
 
-@interface OFAppDelegate : UIResponder <UIApplicationDelegate>
+@interface OFAppDelegate : BaseAppDelegate <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
