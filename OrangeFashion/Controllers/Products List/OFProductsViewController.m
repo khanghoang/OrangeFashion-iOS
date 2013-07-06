@@ -30,10 +30,20 @@
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
         [self.productsTableView reloadData];
+    
+        NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
+        [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            DLog(@"Finish save to magical record");
+        }];
         
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
+        NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
+        self.productsArr = arrProducts;
+        
+        [self.productsTableView reloadData];
+        
     }];
     
     [self.productsTableView reloadData];
@@ -74,10 +84,14 @@
     
     if(!cell)
         cell = [[OFProductsTableCell alloc]init];
-    
+ 
     // Configure the cell...
-    OFProduct *product = [OFProduct productWithDictionary:[self.productsArr objectAtIndex:indexPath.row]];
+    if ([[self.productsArr objectAtIndex:indexPath.row] isKindOfClass:[OFProduct class]]) {
+        [cell customProductCellWithProduct:[self.productsArr objectAtIndex:indexPath.row]];
+        return cell;
+    }
     
+    OFProduct *product = [OFProduct productWithDictionary:[self.productsArr objectAtIndex:indexPath.row]];
     [cell customProductCellWithProduct:product];
     
     return cell;
@@ -102,7 +116,13 @@
         
         int selectedRow = [self.tableView indexPathForSelectedRow].row;
         
-        desVC.productID = [[self.productsArr objectAtIndex:selectedRow] objectForKey:@"MaSanPham"];
+        if ([[self.productsArr objectAtIndex:selectedRow] isKindOfClass:[OFProduct class]]) {
+            OFProduct *product = [self.productsArr objectAtIndex:selectedRow];
+            desVC.productID = product.product_id;
+        }else
+        {
+            desVC.productID = [[self.productsArr objectAtIndex:selectedRow] objectForKey:@"MaSanPham"];
+        }
     }
 }
 

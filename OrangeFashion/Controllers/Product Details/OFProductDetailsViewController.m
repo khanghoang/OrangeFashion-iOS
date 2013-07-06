@@ -53,6 +53,11 @@
         [SVProgressHUD dismiss];
         
         self.images = obj;
+        
+        // store it to core-data
+        NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+        [context MR_saveToPersistentStoreWithCompletion:nil];
+        
         self.currentVC = 0;
 
         OFImageViewController *imageVC = [[OFImageViewController alloc] init];
@@ -80,6 +85,35 @@
     } failureBlock:^(NSInteger statusCode, id obj2) {
         //handle errors
         [SVProgressHUD showErrorWithStatus:@"Lỗi không tải được hình ảnh, vui lòng thử lại"];
+        
+//        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"product_id = %d", self.productID];
+//        self.images = [OFProductImages MR_findAllWithPredicate:predicate];
+        self.images = [OFProductImages MR_findAll];        
+        
+        self.currentVC = 0;
+        
+        OFImageViewController *imageVC = [[OFImageViewController alloc] init];
+        imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
+        DLog(@"imgURL = %@", [[self.images objectAtIndex:0] picasa_store_source]);
+        
+        [arrVC addObject:imageVC];
+        
+        DLog(@"Array ImagesVC = %@", [arrVC description]);
+        
+        [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        
+        [self addChildViewController:self.pageVC];
+        self.pageVC.view.frame = self.view.frame;
+        
+        [self.view addSubview:self.pageVC.view];
+        [self.pageVC didMoveToParentViewController:self];
+        
+        CGRect pageViewRect = self.view.frame;
+        pageViewRect = CGRectInset(pageViewRect, 0, 0);
+        self.pageVC.view.frame = pageViewRect;
+        
+        self.view.gestureRecognizers = self.pageVC.gestureRecognizers;
+        
     }];
 }
 
