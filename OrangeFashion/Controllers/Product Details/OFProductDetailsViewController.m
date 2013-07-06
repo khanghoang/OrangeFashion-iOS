@@ -11,6 +11,8 @@
 #import "OFProductImages.h"
 #import "OFProduct.h"
 
+typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
+
 @interface OFProductDetailsViewController ()
 
 @property (strong, nonatomic) NSArray *images;
@@ -52,14 +54,12 @@
         
         [SVProgressHUD dismiss];
         [self addPageViewControllerWithImagesArray:obj];
+        [self storeImagesWithID:obj completeBlock:nil];
         
     } failureBlock:^(NSInteger statusCode, id obj2) {
         //handle errors
         [SVProgressHUD showErrorWithStatus:@"Lỗi không tải được hình ảnh, vui lòng thử lại"];
-        
-//        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"product_id = %d", self.productID];
-//        self.images = [OFProductImages MR_findAllWithPredicate:predicate];
-        self.images = [OFProductImages MR_findAll];
+        [self addPageViewControllerWithImagesArray:[self getImages]];
     }];
 }
 
@@ -71,20 +71,23 @@
 
 #pragma mark - Add PageViewController
 
-- (void)addPageViewControllerWithImagesArray:(id)arrImages
+- (void)addPageViewControllerWithImagesArray:(NSArray *)arrImages
 {
+    if (arrImages.count == 0){
+        [SVProgressHUD showErrorWithStatus:@"Không thể tải hình ảnh, vui lòng thử lại sau."];
+        return;
+    }
+    
     self.images = arrImages;
     self.currentVC = 0;
     
-    __block NSMutableArray *arrVC = [[NSMutableArray alloc] init];
+    NSMutableArray *arrVC = [[NSMutableArray alloc] init];
     
     OFImageViewController *imageVC = [[OFImageViewController alloc] init];
+    
     imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
-    DLog(@"imgURL = %@", [[self.images objectAtIndex:0] picasa_store_source]);
     
     [arrVC addObject:imageVC];
-    
-    DLog(@"Array ImagesVC = %@", [arrVC description]);
     
     [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
@@ -139,6 +142,27 @@
     self.currentVC--;
     
     return imageVC;
+}
+
+#pragma mark - Store and get data
+
+- (void)storeImagesWithID:(id)arrImages completeBlock:(MRStoreCompletedBlock)completeBlock
+{
+    OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:self.productID] lastObject];
+    product.images = [NSSet setWithArray:arrImages];
+    
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    [context MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        DLog(@"Store finished");
+        if (completeBlock)
+            completeBlock(success, error);
+    }];
+}
+
+- (NSArray *)getImages
+{
+    OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:self.productID] lastObject];
+    return [product.images allObjects];
 }
 
 @end

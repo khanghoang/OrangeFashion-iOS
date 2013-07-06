@@ -4,7 +4,6 @@
 // Custom logic goes here.
 
 + (OFProduct *)productWithDictionary: (NSDictionary *)dictionary;
-
 + (void)getProductsOnSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock;
 
 @end

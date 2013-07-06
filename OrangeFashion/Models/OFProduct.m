@@ -10,6 +10,8 @@
 
 @implementation OFProduct
 
+#pragma mark - Helper methods
+
 + (OFProduct *)productWithDictionary:(NSDictionary *)dictionary
 {
     // look for the core data first
@@ -32,6 +34,8 @@
     
     return product;
 }
+
+#pragma mark - Get product details from server
 
 + (void)getProductsOnSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock
 {
