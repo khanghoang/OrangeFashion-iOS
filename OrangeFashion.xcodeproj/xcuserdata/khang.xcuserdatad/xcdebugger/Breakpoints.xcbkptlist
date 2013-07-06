@@ -538,32 +538,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "393013187.717919"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "46"
-         endingLineNumber = "46"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "393013187.717919"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Managers/TemplateClass/BaseStorageManager.h"
          timestampString = "394261458.284324"
          startingColumnNumber = "9223372036854775807"
@@ -578,11 +552,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "394802610.101423"
+         timestampString = "394803373.924791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "92"
-         endingLineNumber = "92"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>

@@ -30,6 +30,8 @@
     return self;
 }
 
+#pragma mark - Controller lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,8 +43,6 @@
     
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
     
-    __block NSMutableArray *arrVC = [[NSMutableArray alloc] init];
-    
     self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageVC.delegate = self;
@@ -51,36 +51,7 @@
     [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
         
         [SVProgressHUD dismiss];
-        
-        self.images = obj;
-        
-        // store it to core-data
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-        [context MR_saveToPersistentStoreWithCompletion:nil];
-        
-        self.currentVC = 0;
-
-        OFImageViewController *imageVC = [[OFImageViewController alloc] init];
-        imageVC.imageURL = [[obj objectAtIndex:0] picasa_store_source];
-        DLog(@"imgURL = %@", [[obj objectAtIndex:0] picasa_store_source]);
-        
-        [arrVC addObject:imageVC];
-        
-        DLog(@"Array ImagesVC = %@", [arrVC description]);
-        
-        [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        
-        [self addChildViewController:self.pageVC];
-        self.pageVC.view.frame = self.view.frame;
-        
-        [self.view addSubview:self.pageVC.view];
-        [self.pageVC didMoveToParentViewController:self];
-        
-        CGRect pageViewRect = self.view.frame;
-        pageViewRect = CGRectInset(pageViewRect, 0, 0);
-        self.pageVC.view.frame = pageViewRect;
-        
-        self.view.gestureRecognizers = self.pageVC.gestureRecognizers;
+        [self addPageViewControllerWithImagesArray:obj];
         
     } failureBlock:^(NSInteger statusCode, id obj2) {
         //handle errors
@@ -88,34 +59,60 @@
         
 //        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"product_id = %d", self.productID];
 //        self.images = [OFProductImages MR_findAllWithPredicate:predicate];
-        self.images = [OFProductImages MR_findAll];        
-        
-        self.currentVC = 0;
-        
-        OFImageViewController *imageVC = [[OFImageViewController alloc] init];
-        imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
-        DLog(@"imgURL = %@", [[self.images objectAtIndex:0] picasa_store_source]);
-        
-        [arrVC addObject:imageVC];
-        
-        DLog(@"Array ImagesVC = %@", [arrVC description]);
-        
-        [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        
-        [self addChildViewController:self.pageVC];
-        self.pageVC.view.frame = self.view.frame;
-        
-        [self.view addSubview:self.pageVC.view];
-        [self.pageVC didMoveToParentViewController:self];
-        
-        CGRect pageViewRect = self.view.frame;
-        pageViewRect = CGRectInset(pageViewRect, 0, 0);
-        self.pageVC.view.frame = pageViewRect;
-        
-        self.view.gestureRecognizers = self.pageVC.gestureRecognizers;
-        
+        self.images = [OFProductImages MR_findAll];
     }];
 }
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
+}
+
+#pragma mark - Add PageViewController
+
+- (void)addPageViewControllerWithImagesArray:(id)arrImages
+{
+    self.images = arrImages;
+    self.currentVC = 0;
+    
+    __block NSMutableArray *arrVC = [[NSMutableArray alloc] init];
+    
+    OFImageViewController *imageVC = [[OFImageViewController alloc] init];
+    imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
+    DLog(@"imgURL = %@", [[self.images objectAtIndex:0] picasa_store_source]);
+    
+    [arrVC addObject:imageVC];
+    
+    DLog(@"Array ImagesVC = %@", [arrVC description]);
+    
+    [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    [self addChildViewController:self.pageVC];
+    self.pageVC.view.frame = self.view.frame;
+    
+    [self.view addSubview:self.pageVC.view];
+    [self.pageVC didMoveToParentViewController:self];
+    
+    CGRect pageViewRect = self.view.frame;
+    pageViewRect = CGRectInset(pageViewRect, 0, 0);
+    self.pageVC.view.frame = pageViewRect;
+    
+    self.view.gestureRecognizers = self.pageVC.gestureRecognizers;
+}
+
+#pragma mark - PageViewController datasource
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return self.images.count;
+}
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
+}
+
+#pragma mark - PageViewController delegate
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
@@ -142,21 +139,6 @@
     self.currentVC--;
     
     return imageVC;
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return self.images.count;
-}
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [SVProgressHUD dismiss];
 }
 
 @end
