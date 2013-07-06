@@ -115,4 +115,17 @@
     //Support for 4.3
     return [self stretchableImageWithLeftCapWidth:self.size.width/2-1 topCapHeight:self.size.height/2-1];
 }
+
+- (UIImage *)resizableImageWithStandardInsetsTop:(CGFloat)top right:(CGFloat)right bottom:(CGFloat)bottom left:(CGFloat)left
+{
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0"))
+    {
+        UIEdgeInsets edgeInset = UIEdgeInsetsMake(top, right, bottom, left);
+        return [self resizableImageWithCapInsets:edgeInset];
+    }
+    
+    //Support for 4.3
+    return [self stretchableImageWithLeftCapWidth:right topCapHeight:top];
+}
+
 @end

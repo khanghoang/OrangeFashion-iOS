@@ -14,4 +14,5 @@
 -(UIImage *)crop:(CGRect)rect;
 -(UIImage *)squareCrop;
 -(UIImage *)resizableImageWithStandardInsets;
+-(UIImage *)resizableImageWithStandardInsetsTop:(CGFloat)top right:(CGFloat)right bottom:(CGFloat)bottom left:(CGFloat)left;
 @end
