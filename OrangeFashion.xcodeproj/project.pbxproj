@@ -21,6 +21,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0C1EE2CA178820C100EB606C /* BaseDeviceLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2BF178820C100EB606C /* BaseDeviceLibrary.m */; };
+		0C1EE2CB178820C100EB606C /* BaseLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C1178820C100EB606C /* BaseLocationManager.m */; };
+		0C1EE2CC178820C100EB606C /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C3178820C100EB606C /* BaseManager.m */; };
+		0C1EE2CD178820C100EB606C /* BaseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C5178820C100EB606C /* BaseNetworkManager.m */; };
+		0C1EE2CE178820C100EB606C /* BaseSharingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C7178820C100EB606C /* BaseSharingManager.m */; };
+		0C1EE2CF178820C100EB606C /* BaseStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C9178820C100EB606C /* BaseStorageManager.m */; };
+		0C1EE2D21788216600EB606C /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2D11788216600EB606C /* FacebookManager.m */; };
 		0C29A3B3170EC59D00298265 /* 114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B2170EC59D00298265 /* 114x114.png */; };
 		0C29A3B5170EC5DD00298265 /* 57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B4170EC5DD00298265 /* 57x57.png */; };
 		0C29A3B7170ED04B00298265 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B6170ED04B00298265 /* Default.png */; };
@@ -75,13 +82,6 @@
 		0C2BE3DD177FFB4200CD2C5B /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3DC177FFB4200CD2C5B /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C2BE3DF177FFBC700CD2C5B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3DE177FFBC700CD2C5B /* CoreLocation.framework */; };
 		0C2BE3E0177FFC0A00CD2C5B /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEFD71759E614004016E0 /* BaseModel.m */; };
-		0C2BE3F1177FFC9500CD2C5B /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3E3177FFC9500CD2C5B /* FacebookManager.m */; };
-		0C2BE3F2177FFC9500CD2C5B /* BaseDeviceLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3E6177FFC9500CD2C5B /* BaseDeviceLibrary.m */; };
-		0C2BE3F3177FFC9500CD2C5B /* BaseLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3E8177FFC9500CD2C5B /* BaseLocationManager.m */; };
-		0C2BE3F4177FFC9500CD2C5B /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3EA177FFC9500CD2C5B /* BaseManager.m */; };
-		0C2BE3F5177FFC9500CD2C5B /* BaseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3EC177FFC9500CD2C5B /* BaseNetworkManager.m */; };
-		0C2BE3F6177FFC9500CD2C5B /* BaseSharingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3EE177FFC9500CD2C5B /* BaseSharingManager.m */; };
-		0C2BE3F7177FFC9500CD2C5B /* BaseStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE3F0177FFC9500CD2C5B /* BaseStorageManager.m */; };
 		0C2BE3F9177FFD9100CD2C5B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3F8177FFD9100CD2C5B /* CoreTelephony.framework */; };
 		0C2BE3FB177FFDC900CD2C5B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3FA177FFDC900CD2C5B /* MessageUI.framework */; };
 		0C2BE3FD177FFE0A00CD2C5B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3FC177FFE0A00CD2C5B /* Twitter.framework */; };
@@ -201,6 +201,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1EE2BE178820C100EB606C /* BaseDeviceLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDeviceLibrary.h; sourceTree = "<group>"; };
+		0C1EE2BF178820C100EB606C /* BaseDeviceLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDeviceLibrary.m; sourceTree = "<group>"; };
+		0C1EE2C0178820C100EB606C /* BaseLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationManager.h; sourceTree = "<group>"; };
+		0C1EE2C1178820C100EB606C /* BaseLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLocationManager.m; sourceTree = "<group>"; };
+		0C1EE2C2178820C100EB606C /* BaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseManager.h; sourceTree = "<group>"; };
+		0C1EE2C3178820C100EB606C /* BaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseManager.m; sourceTree = "<group>"; };
+		0C1EE2C4178820C100EB606C /* BaseNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetworkManager.h; sourceTree = "<group>"; };
+		0C1EE2C5178820C100EB606C /* BaseNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworkManager.m; sourceTree = "<group>"; };
+		0C1EE2C6178820C100EB606C /* BaseSharingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSharingManager.h; sourceTree = "<group>"; };
+		0C1EE2C7178820C100EB606C /* BaseSharingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSharingManager.m; sourceTree = "<group>"; };
+		0C1EE2C8178820C100EB606C /* BaseStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseStorageManager.h; sourceTree = "<group>"; };
+		0C1EE2C9178820C100EB606C /* BaseStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseStorageManager.m; sourceTree = "<group>"; };
+		0C1EE2D01788216600EB606C /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookManager.h; path = ../FacebookManager.h; sourceTree = "<group>"; };
+		0C1EE2D11788216600EB606C /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookManager.m; path = ../FacebookManager.m; sourceTree = "<group>"; };
 		0C29A3B2170EC59D00298265 /* 114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 114x114.png; path = ../114x114.png; sourceTree = "<group>"; };
 		0C29A3B4170EC5DD00298265 /* 57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 57x57.png; path = ../57x57.png; sourceTree = "<group>"; };
 		0C29A3B6170ED04B00298265 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
@@ -298,20 +312,6 @@
 		0C2BE3DB177FFB4200CD2C5B /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		0C2BE3DC177FFB4200CD2C5B /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		0C2BE3DE177FFBC700CD2C5B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0C2BE3E2177FFC9500CD2C5B /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookManager.h; path = "../../../EagleChild-iOS/EagleChild/Managers/FacebookManager.h"; sourceTree = "<group>"; };
-		0C2BE3E3177FFC9500CD2C5B /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookManager.m; path = "../../../EagleChild-iOS/EagleChild/Managers/FacebookManager.m"; sourceTree = "<group>"; };
-		0C2BE3E5177FFC9500CD2C5B /* BaseDeviceLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDeviceLibrary.h; sourceTree = "<group>"; };
-		0C2BE3E6177FFC9500CD2C5B /* BaseDeviceLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDeviceLibrary.m; sourceTree = "<group>"; };
-		0C2BE3E7177FFC9500CD2C5B /* BaseLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationManager.h; sourceTree = "<group>"; };
-		0C2BE3E8177FFC9500CD2C5B /* BaseLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLocationManager.m; sourceTree = "<group>"; };
-		0C2BE3E9177FFC9500CD2C5B /* BaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseManager.h; sourceTree = "<group>"; };
-		0C2BE3EA177FFC9500CD2C5B /* BaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseManager.m; sourceTree = "<group>"; };
-		0C2BE3EB177FFC9500CD2C5B /* BaseNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetworkManager.h; sourceTree = "<group>"; };
-		0C2BE3EC177FFC9500CD2C5B /* BaseNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworkManager.m; sourceTree = "<group>"; };
-		0C2BE3ED177FFC9500CD2C5B /* BaseSharingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSharingManager.h; sourceTree = "<group>"; };
-		0C2BE3EE177FFC9500CD2C5B /* BaseSharingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSharingManager.m; sourceTree = "<group>"; };
-		0C2BE3EF177FFC9500CD2C5B /* BaseStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseStorageManager.h; sourceTree = "<group>"; };
-		0C2BE3F0177FFC9500CD2C5B /* BaseStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseStorageManager.m; sourceTree = "<group>"; };
 		0C2BE3F8177FFD9100CD2C5B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0C2BE3FA177FFDC900CD2C5B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0C2BE3FC177FFE0A00CD2C5B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -521,6 +521,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1EE2BD178820C100EB606C /* TemplateClass */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EE2BE178820C100EB606C /* BaseDeviceLibrary.h */,
+				0C1EE2BF178820C100EB606C /* BaseDeviceLibrary.m */,
+				0C1EE2C0178820C100EB606C /* BaseLocationManager.h */,
+				0C1EE2C1178820C100EB606C /* BaseLocationManager.m */,
+				0C1EE2C2178820C100EB606C /* BaseManager.h */,
+				0C1EE2C3178820C100EB606C /* BaseManager.m */,
+				0C1EE2C4178820C100EB606C /* BaseNetworkManager.h */,
+				0C1EE2C5178820C100EB606C /* BaseNetworkManager.m */,
+				0C1EE2C6178820C100EB606C /* BaseSharingManager.h */,
+				0C1EE2C7178820C100EB606C /* BaseSharingManager.m */,
+				0C1EE2C8178820C100EB606C /* BaseStorageManager.h */,
+				0C1EE2C9178820C100EB606C /* BaseStorageManager.m */,
+				0C1EE2D01788216600EB606C /* FacebookManager.h */,
+				0C1EE2D11788216600EB606C /* FacebookManager.m */,
+			);
+			path = TemplateClass;
+			sourceTree = "<group>";
+		};
 		0C2BE2F8177FEEF100CD2C5B /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,33 +1008,11 @@
 		0C2BE3E1177FFC8000CD2C5B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				0C2BE3E4177FFC9500CD2C5B /* TemplateClass */,
-				0C2BE3E2177FFC9500CD2C5B /* FacebookManager.h */,
-				0C2BE3E3177FFC9500CD2C5B /* FacebookManager.m */,
+				0C1EE2BD178820C100EB606C /* TemplateClass */,
 				0C2BE4001780088900CD2C5B /* OFProductManager.h */,
 				0C2BE4011780088900CD2C5B /* OFProductManager.m */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		0C2BE3E4177FFC9500CD2C5B /* TemplateClass */ = {
-			isa = PBXGroup;
-			children = (
-				0C2BE3E5177FFC9500CD2C5B /* BaseDeviceLibrary.h */,
-				0C2BE3E6177FFC9500CD2C5B /* BaseDeviceLibrary.m */,
-				0C2BE3E7177FFC9500CD2C5B /* BaseLocationManager.h */,
-				0C2BE3E8177FFC9500CD2C5B /* BaseLocationManager.m */,
-				0C2BE3E9177FFC9500CD2C5B /* BaseManager.h */,
-				0C2BE3EA177FFC9500CD2C5B /* BaseManager.m */,
-				0C2BE3EB177FFC9500CD2C5B /* BaseNetworkManager.h */,
-				0C2BE3EC177FFC9500CD2C5B /* BaseNetworkManager.m */,
-				0C2BE3ED177FFC9500CD2C5B /* BaseSharingManager.h */,
-				0C2BE3EE177FFC9500CD2C5B /* BaseSharingManager.m */,
-				0C2BE3EF177FFC9500CD2C5B /* BaseStorageManager.h */,
-				0C2BE3F0177FFC9500CD2C5B /* BaseStorageManager.m */,
-			);
-			name = TemplateClass;
-			path = "../../../EagleChild-iOS/EagleChild/Managers/TemplateClass";
 			sourceTree = "<group>";
 		};
 		0C3527C517647DE900E07AAB /* ViewDeck */ = {
@@ -1730,14 +1729,14 @@
 				0C2BE3D8177FFAA300CD2C5B /* OpenUDID.m in Sources */,
 				0C2BE3DD177FFB4200CD2C5B /* SFHFKeychainUtils.m in Sources */,
 				0C2BE3E0177FFC0A00CD2C5B /* BaseModel.m in Sources */,
-				0C2BE3F1177FFC9500CD2C5B /* FacebookManager.m in Sources */,
-				0C2BE3F2177FFC9500CD2C5B /* BaseDeviceLibrary.m in Sources */,
-				0C2BE3F3177FFC9500CD2C5B /* BaseLocationManager.m in Sources */,
-				0C2BE3F4177FFC9500CD2C5B /* BaseManager.m in Sources */,
-				0C2BE3F5177FFC9500CD2C5B /* BaseNetworkManager.m in Sources */,
-				0C2BE3F6177FFC9500CD2C5B /* BaseSharingManager.m in Sources */,
-				0C2BE3F7177FFC9500CD2C5B /* BaseStorageManager.m in Sources */,
 				0C2BE4021780088900CD2C5B /* OFProductManager.m in Sources */,
+				0C1EE2CA178820C100EB606C /* BaseDeviceLibrary.m in Sources */,
+				0C1EE2CB178820C100EB606C /* BaseLocationManager.m in Sources */,
+				0C1EE2CC178820C100EB606C /* BaseManager.m in Sources */,
+				0C1EE2CD178820C100EB606C /* BaseNetworkManager.m in Sources */,
+				0C1EE2CE178820C100EB606C /* BaseSharingManager.m in Sources */,
+				0C1EE2CF178820C100EB606C /* BaseStorageManager.m in Sources */,
+				0C1EE2D21788216600EB606C /* FacebookManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
