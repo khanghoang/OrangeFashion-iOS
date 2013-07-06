@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     self.menuList.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SidebarMenuTableCellBg"] resizableImageWithStandardInsetsTop:0 right:0 bottom:0 left:0]];
-    [self.menuList dequeueReusableCellWithIdentifier:@"SidebarMenuTableCell"];
+    [self.menuList registerNib:[UINib nibWithNibName:@"OFSidebarMenuTableCell" bundle:nil] forCellReuseIdentifier:@"SidebarMenuTableCell"];
 }
 
 #pragma mark - Tableview datasource

@@ -17,11 +17,37 @@
 
 @implementation OFSidebarMenuTableCell
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self == nil)
+        return self;
+    
+    DLog(@"menuTitle = %@", [self.menuTitle description]);
+    
+    [self customCell];
+    
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self == nil)
         return self;
+    
+    DLog(@"menuTitle = %@", [self.menuTitle description]);
+    
+    [self customCell];
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self == nil)
+        return nil;
     
     [self customCell];
     
