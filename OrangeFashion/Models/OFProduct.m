@@ -28,14 +28,25 @@
         product.material = dictionary[@"ChatLieu"];
         product.colors = dictionary[@"Mau"];
         
-    }
-    
-    DLog(@"%@", [dictionary description]);
-    
+    }    
     return product;
 }
 
 #pragma mark - Get product details from server
+
++ (void)getProductsWithCategoryID:(NSInteger)category_id onSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock
+{
+    NSDictionary *params = @{
+                             @"rquest"          : @"getProductsFromCategory",
+                             @"category_id"     : [NSNumber numberWithInteger:category_id]
+                             };
+    
+    [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        successBlock(operation.response.statusCode, responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failureBlock(operation.response.statusCode, error);
+    }];
+}
 
 + (void)getProductsOnSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock
 {

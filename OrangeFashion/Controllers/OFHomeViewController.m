@@ -36,14 +36,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self.navigationController setNavigationBarHidden:YES];
-    
-//    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fake home"]];
-//    bgImage.contentMode = UIViewContentModeScaleAspectFill;
-//    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-//    bgImage.frame = frame;
-//    [self.view addSubview:bgImage];
-    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.view bringSubviewToFront:self.lbViewProducts];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showProductsList)];

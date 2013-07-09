@@ -32,8 +32,11 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"OFProductsTableView"
                                                              bundle: nil];
     OFMenuViewController *centralViewController = (OFMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Home View Controller"];
+    
     OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
+    
     OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
+    
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController                                                           leftViewController:leftMenuController                                                                 rightViewController:nil];
 
     // Config ViewDeck

@@ -13,8 +13,8 @@
 
 @interface OFProductsViewController () <IIViewDeckControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *productsTableView;
-@property (strong, nonatomic) NSMutableArray *productsArr;
+@property (strong, nonatomic) IBOutlet UITableView      * productsTableView;
+@property (strong, nonatomic) NSMutableArray            * productsArr;
 
 @end
 
@@ -23,17 +23,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"Products Table Cell"];
     self.productsArr = [[NSMutableArray alloc] init];
     
     [SVProgressHUD showWithStatus:@"Đang tải sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
+
+    if (self.category_id > 0) {
+        [self fillUpTableProductWithCategoryID:self.category_id];
+        self.category_id = 0;
+        return;
+    }
     
-    [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
+    [self fillUpTableProductWithAllProducts];
+    
+}
+
+- (void)fillUpTableProductWithCategoryID:(NSInteger)categoryID
+{
+    [OFProduct getProductsWithCategoryID:categoryID onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
         [self.productsTableView reloadData];
-    
+        
         NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
         [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
             DLog(@"Finish save to magical record");
@@ -48,8 +61,29 @@
         [self.productsTableView reloadData];
         
     }];
-    
-    [self.productsTableView reloadData];
+}
+
+- (void)fillUpTableProductWithAllProducts
+{
+    [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
+        [SVProgressHUD dismiss];
+        [self.productsArr setArray:(NSArray *)obj];
+        [self.productsTableView reloadData];
+        
+        NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
+        [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            DLog(@"Finish save to magical record");
+        }];
+        
+    } failure:^(NSInteger statusCode, id obj) {
+        //Handle when failure
+        [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
+        NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
+        self.productsArr = arrProducts;
+        
+        [self.productsTableView reloadData];
+        
+    }];
 }
 
 #pragma mark - Table view data source

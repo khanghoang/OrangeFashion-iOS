@@ -10,4 +10,6 @@
 
 @interface OFProductsViewController : BaseTableViewController
 
+@property (assign, nonatomic) NSInteger                   category_id;
+
 @end

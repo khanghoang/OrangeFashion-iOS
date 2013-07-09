@@ -8,11 +8,14 @@
 
 #import "OFLeftMenuViewController.h"
 #import "OFSidebarMenuTableCell.h"
+#import "OFSidebarMenuTableCell.h"
+#import "OFAppDelegate.h"
 
 @interface OFLeftMenuViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *menuList;
-
+@property (weak, nonatomic) IBOutlet UITableView    * menuList;
+@property (strong, nonatomic) NSMutableArray        * arrMenu;
+@property (weak, nonatomic) IBOutlet UITableView    * tableMenu;
 
 @end
 
@@ -22,8 +25,17 @@
 
 - (void)viewDidLoad
 {
+    self.arrMenu = [[NSMutableArray alloc] init];
+    
     self.menuList.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SidebarMenuTableCellBg"] resizableImageWithStandardInsetsTop:0 right:0 bottom:0 left:0]];
     [self.menuList registerNib:[UINib nibWithNibName:@"OFSidebarMenuTableCell" bundle:nil] forCellReuseIdentifier:@"SidebarMenuTableCell"];
+    
+    [[OFHelperManager sharedInstance] getMenuListOnComplete:^(NSArray *menu) {
+        self.arrMenu = [[[menu objectAtIndex:1] objectForKey:@"session"] mutableCopy];
+        [self.tableMenu reloadData];
+    } orFailure:^(NSError *error) {
+        DLog(@"Error when load menu");
+    }];
 }
 
 #pragma mark - Tableview datasource
@@ -36,20 +48,35 @@
     if (!cell) {
         cell = [[OFSidebarMenuTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
     }
-    
-    NSDictionary *menu = @{@"title": @"dummy"};
-    [cell configWithData:menu];
+
+    if (indexPath.row < self.arrMenu.count)
+         [cell configWithData:[self.arrMenu objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.arrMenu.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 45;
+}
+
+#pragma mark - TableView Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"OFProductsTableView" bundle:nil];
+    OFProductsViewController *productsVC = [storyboard instantiateViewControllerWithIdentifier:@"OFProductsViewController"];
+    
+    productsVC.category_id = [[[self.arrMenu objectAtIndex:indexPath.row] objectForKey:CATEGORY_ID] integerValue];
+    
+    IIViewDeckController *deckViewController = (IIViewDeckController*)[[(OFAppDelegate*)[[UIApplication sharedApplication]delegate] window] rootViewController];
+    OFNavigationViewController *centralNavVC = (OFNavigationViewController *) deckViewController.centerController;
+    
+    [centralNavVC pushViewController:productsVC animated:YES];
+    [deckViewController toggleLeftView];
 }
 
 @end

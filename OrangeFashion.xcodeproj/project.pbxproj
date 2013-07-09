@@ -196,6 +196,7 @@
 		0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A1176DFDCC009CC776 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A3176DFDD4009CC776 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF317A6176DFDF5009CC776 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A5176DFDF5009CC776 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0CF35CFB178C4B64007C5649 /* OFHelperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF35CFA178C4B64007C5649 /* OFHelperManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -497,6 +498,8 @@
 		0CF317A1176DFDCC009CC776 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0CF317A3176DFDD4009CC776 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0CF317A5176DFDF5009CC776 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		0CF35CF9178C4B64007C5649 /* OFHelperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHelperManager.h; sourceTree = "<group>"; };
+		0CF35CFA178C4B64007C5649 /* OFHelperManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHelperManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1051,6 +1054,8 @@
 				0C1EE2BD178820C100EB606C /* TemplateClass */,
 				0C2BE4001780088900CD2C5B /* OFProductManager.h */,
 				0C2BE4011780088900CD2C5B /* OFProductManager.m */,
+				0CF35CF9178C4B64007C5649 /* OFHelperManager.h */,
+				0CF35CFA178C4B64007C5649 /* OFHelperManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1789,6 +1794,7 @@
 				0C1EE2D21788216600EB606C /* FacebookManager.m in Sources */,
 				0C1EE2D61788731C00EB606C /* OFSidebarMenuTableCell.m in Sources */,
 				0C263D701788B76F008A2C81 /* SMPageControl.m in Sources */,
+				0CF35CFB178C4B64007C5649 /* OFHelperManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1847,8 +1853,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1863,8 +1869,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "384F67EA-CD91-4D21-8A55-870DC6DE6396";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384F67EA-CD91-4D21-8A55-870DC6DE6396";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1882,8 +1888,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 2359 Media Pte Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1891,7 +1897,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0A281EA1-0EEC-4EC5-A94A-2B984BFA99B3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -10,58 +10,17 @@
 
 @interface OFSidebarMenuTableCell()
 
-@property (weak, nonatomic) IBOutlet UILabel *menuTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *menuIcon;
+@property (weak, nonatomic) IBOutlet UILabel        * menuTitle;
+@property (weak, nonatomic) IBOutlet UIImageView    * menuIcon;
 
 @end
 
 @implementation OFSidebarMenuTableCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self == nil)
-        return self;
-    
-    DLog(@"menuTitle = %@", [self.menuTitle description]);
-    
-    [self customCell];
-    
-    return self;
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self == nil)
-        return self;
-    
-    DLog(@"menuTitle = %@", [self.menuTitle description]);
-    
-    [self customCell];
-    
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self == nil)
-        return nil;
-    
-    [self customCell];
-    
-    return self;
-}
-
-+ (CGFloat)getHeight
-{
-    return 45;
-}
-
 - (void)configWithData:(id)data
 {
-    self.menuTitle.text = [data objectForKey:@"title"];
+    [self customCell];
+    self.menuTitle.text = [data objectForKey:MENU_TITLE];
 }
 
 - (void)customCell
@@ -79,5 +38,11 @@
     [self addSubview:topLine];
 }
 
+#pragma mark - Helpers
+
++ (CGFloat)getHeight
+{
+    return 45;
+}
 
 @end

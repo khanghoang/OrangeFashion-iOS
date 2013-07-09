@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define MENU_TITLE                      @"name"
+#define CATEGORY_ID                     @"id"
+
 @interface OFSidebarMenuTableCell : UITableViewCell
 
 - (void)configWithData:(id)data;
