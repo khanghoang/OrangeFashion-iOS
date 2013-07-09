@@ -482,9 +482,9 @@
 		0C4C5C5F170E8CD800ED0DF8 /* OFProductsTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OFProductsTableView.storyboard; sourceTree = "<group>"; };
 		0C8DEFD61759E614004016E0 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		0C8DEFD71759E614004016E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
-		0CD488311710256200C30EEF /* OFProductsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFProductsTableCell.xib; sourceTree = "<group>"; };
-		0CD488331710266600C30EEF /* OFProductsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFProductsTableCell.h; sourceTree = "<group>"; };
-		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFProductsTableCell.m; sourceTree = "<group>"; };
+		0CD488311710256200C30EEF /* OFProductsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFProductsTableCell.xib; path = ../OFProductsTableCell.xib; sourceTree = "<group>"; };
+		0CD488331710266600C30EEF /* OFProductsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductsTableCell.h; path = ../OFProductsTableCell.h; sourceTree = "<group>"; };
+		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductsTableCell.m; path = ../OFProductsTableCell.m; sourceTree = "<group>"; };
 		0CEF5313176CBAA7004447E1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0CEF5314176CBAA7004447E1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0CEF5316176CD379004447E1 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -563,6 +563,9 @@
 		0C1EE2D3178872B500EB606C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CD488331710266600C30EEF /* OFProductsTableCell.h */,
+				0CD488341710266600C30EEF /* OFProductsTableCell.m */,
+				0CD488311710256200C30EEF /* OFProductsTableCell.xib */,
 				0C1EE2D41788731C00EB606C /* OFSidebarMenuTableCell.h */,
 				0C1EE2D51788731C00EB606C /* OFSidebarMenuTableCell.m */,
 				0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */,
@@ -1335,9 +1338,6 @@
 			isa = PBXGroup;
 			children = (
 				0C1EE2D3178872B500EB606C /* Views */,
-				0CD488311710256200C30EEF /* OFProductsTableCell.xib */,
-				0CD488331710266600C30EEF /* OFProductsTableCell.h */,
-				0CD488341710266600C30EEF /* OFProductsTableCell.m */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";

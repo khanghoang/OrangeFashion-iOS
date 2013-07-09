@@ -12,5 +12,4 @@
 
 SINGLETON_MACRO
 
-
 @end

@@ -24,6 +24,9 @@
 {
     [super viewDidLoad];
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"Products Table Cell" bundle:nil] forCellReuseIdentifier:@"Products Table Cell"];
+    self.productsArr = [[NSMutableArray alloc] init];
+    
     [SVProgressHUD showWithStatus:@"Đang tải sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
     
     [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
@@ -49,21 +52,6 @@
     [self.productsTableView reloadData];
 }
 
-- (NSMutableArray *)productsArr
-{
-    if (!_productsArr) {
-        _productsArr = [[NSMutableArray alloc] init];
-    }
-    
-    return _productsArr;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -83,7 +71,7 @@
     OFProductsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(!cell)
-        cell = [[OFProductsTableCell alloc]init];
+        cell = [[OFProductsTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
  
     // Configure the cell...
     if ([[self.productsArr objectAtIndex:indexPath.row] isKindOfClass:[OFProduct class]]) {
@@ -126,8 +114,4 @@
     }
 }
 
-- (void)viewDidUnload {
-    [self setProductsTableView:nil];
-    [super viewDidUnload];
-}
 @end
