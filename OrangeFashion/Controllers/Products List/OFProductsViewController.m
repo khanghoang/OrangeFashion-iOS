@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"Products Table Cell" bundle:nil] forCellReuseIdentifier:@"Products Table Cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"Products Table Cell"];
     self.productsArr = [[NSMutableArray alloc] init];
     
     [SVProgressHUD showWithStatus:@"Đang tải sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
