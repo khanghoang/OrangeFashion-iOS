@@ -13,24 +13,16 @@
 
 typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
-@interface OFProductDetailsViewController ()
+@interface OFProductDetailsViewController () 
 
 @property (strong, nonatomic) NSArray *images;
 @property (strong, nonatomic) UIPageViewController *pageVC;
 @property (assign, nonatomic) int currentVC;
+@property (weak, nonatomic) IBOutlet SMPageControl *pageControl;
 
 @end
 
 @implementation OFProductDetailsViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 #pragma mark - Controller lifecycle
 
@@ -39,7 +31,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor grayColor];
     
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
     
@@ -49,6 +41,14 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     
     self.pageVC.delegate = self;
     self.pageVC.dataSource = self;
+    
+    [[self.pageVC view] setFrame:[[self view] bounds]];
+    
+    UIPageControl *pageControl = [[UIPageControl alloc] init];
+    [pageControl setNumberOfPages:10];
+    pageControl.frame = CGRectMake(0, 0, 50, 200);
+    [self.view addSubview:pageControl];
+    [self.view bringSubviewToFront:pageControl];
     
     [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
         
@@ -79,11 +79,12 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     }
     
     self.images = arrImages;
+    
     self.currentVC = 0;
     
     NSMutableArray *arrVC = [[NSMutableArray alloc] init];
     
-    OFImageViewController *imageVC = [[OFImageViewController alloc] init];
+    OFImageViewController *imageVC = [[OFImageViewController alloc] initWithNibName:@"OFImageViewController" bundle:nil];
     
     imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
     
@@ -102,17 +103,24 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     self.pageVC.view.frame = pageViewRect;
     
     self.view.gestureRecognizers = self.pageVC.gestureRecognizers;
+    
+    [self addPageControlView];
 }
 
-#pragma mark - PageViewController datasource
+#pragma mark - Helpers
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+- (void)addPageControlView
 {
-    return self.images.count;
-}
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
+    // page control
+    UIImageView *pageControllWrap = [[UIImageView alloc] initWithFrame:CGRectMake(0, 380, 320, 40)];
+    [pageControllWrap setImage:[UIImage imageNamed:@"pagecontrol-bg"]];
+    [self.view addSubview:pageControllWrap];
+    [self.view bringSubviewToFront:pageControllWrap];
+    
+    self.pageControl.numberOfPages = self.images.count;
+    self.pageControl.currentPage = 0;
+    self.pageControl.frame = CGRectMake(0, 380, 320, 40);
+    [self.view addSubview:self.pageControl];
 }
 
 #pragma mark - PageViewController delegate
@@ -126,6 +134,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     imageVC.imageURL = [[self.images objectAtIndex:self.currentVC + 1] picasa_store_source];
     
     self.currentVC++;
+    self.pageControl.currentPage = self.currentVC;
     
     return imageVC;
 }
@@ -140,6 +149,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     imageVC.imageURL = [[self.images objectAtIndex:self.currentVC - 1] picasa_store_source];
     
     self.currentVC--;
+    self.pageControl.currentPage = self.currentVC;
     
     return imageVC;
 }

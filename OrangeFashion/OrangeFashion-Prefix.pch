@@ -110,6 +110,7 @@
 #import "PSActionSheet.h"
 #import "OpenUDID+Keychain.h"
 #import "OpenUDID.h"
+#import "SMPageControl.h"
 
 //Models
 #import "BaseModel.h"

@@ -31,22 +31,11 @@
     // Do any additional setup after loading the view from its nib.
 
     [self.productImage setImageWithURL:[[NSURL alloc] initWithString:self.imageURL] placeholderImage:nil];
+    self.view.frame = self.parentViewController.view.frame;
     
     self.view.backgroundColor = [UIColor blackColor];
 //    self.imgView.frame = [[super view] frame];
     
     self.productImage.userInteractionEnabled = YES;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-- (void)viewDidUnload {
-    [self setImgView:nil];
-    [super viewDidUnload];
 }
 @end

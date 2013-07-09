@@ -32,6 +32,10 @@
 		0C1EE2D81788738D00EB606C /* OFSidebarMenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */; };
 		0C1EE2DB1788761200EB606C /* SidebarMenuTableCellBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EE2D91788761200EB606C /* SidebarMenuTableCellBg.png */; };
 		0C1EE2DC1788761200EB606C /* SidebarMenuTableCellBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EE2DA1788761200EB606C /* SidebarMenuTableCellBg@2x.png */; };
+		0C263D701788B76F008A2C81 /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C263D6F1788B76F008A2C81 /* SMPageControl.m */; };
+		0C263D721788B7E9008A2C81 /* OFProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C263D711788B7E9008A2C81 /* OFProductDetailsViewController.xib */; };
+		0C263D751788BE71008A2C81 /* pagecontrol-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C263D731788BE71008A2C81 /* pagecontrol-bg.png */; };
+		0C263D761788BE71008A2C81 /* pagecontrol-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C263D741788BE71008A2C81 /* pagecontrol-bg@2x.png */; };
 		0C29A3B3170EC59D00298265 /* 114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B2170EC59D00298265 /* 114x114.png */; };
 		0C29A3B5170EC5DD00298265 /* 57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B4170EC5DD00298265 /* 57x57.png */; };
 		0C29A3B7170ED04B00298265 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C29A3B6170ED04B00298265 /* Default.png */; };
@@ -224,6 +228,11 @@
 		0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFSidebarMenuTableCell.xib; sourceTree = "<group>"; };
 		0C1EE2D91788761200EB606C /* SidebarMenuTableCellBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SidebarMenuTableCellBg.png; sourceTree = "<group>"; };
 		0C1EE2DA1788761200EB606C /* SidebarMenuTableCellBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SidebarMenuTableCellBg@2x.png"; sourceTree = "<group>"; };
+		0C263D6E1788B76F008A2C81 /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
+		0C263D6F1788B76F008A2C81 /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		0C263D711788B7E9008A2C81 /* OFProductDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFProductDetailsViewController.xib; sourceTree = "<group>"; };
+		0C263D731788BE71008A2C81 /* pagecontrol-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagecontrol-bg.png"; sourceTree = "<group>"; };
+		0C263D741788BE71008A2C81 /* pagecontrol-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagecontrol-bg@2x.png"; sourceTree = "<group>"; };
 		0C29A3B2170EC59D00298265 /* 114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 114x114.png; path = ../114x114.png; sourceTree = "<group>"; };
 		0C29A3B4170EC5DD00298265 /* 57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 57x57.png; path = ../57x57.png; sourceTree = "<group>"; };
 		0C29A3B6170ED04B00298265 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
@@ -559,6 +568,15 @@
 				0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0C263D6D1788B76F008A2C81 /* SMPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				0C263D6E1788B76F008A2C81 /* SMPageControl.h */,
+				0C263D6F1788B76F008A2C81 /* SMPageControl.m */,
+			);
+			path = SMPageControl;
 			sourceTree = "<group>";
 		};
 		0C2BE2F8177FEEF100CD2C5B /* Misc */ = {
@@ -1073,6 +1091,7 @@
 				0C3527DC176480DF00E07AAB /* OFImageViewController.xib */,
 				0C3527DD176480DF00E07AAB /* OFProductDetailsViewController.h */,
 				0C3527DE176480DF00E07AAB /* OFProductDetailsViewController.m */,
+				0C263D711788B7E9008A2C81 /* OFProductDetailsViewController.xib */,
 			);
 			name = "Product Details";
 			sourceTree = "<group>";
@@ -1090,6 +1109,8 @@
 		0C3527EA17648A3200E07AAB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0C263D731788BE71008A2C81 /* pagecontrol-bg.png */,
+				0C263D741788BE71008A2C81 /* pagecontrol-bg@2x.png */,
 				0C1EE2D91788761200EB606C /* SidebarMenuTableCellBg.png */,
 				0C1EE2DA1788761200EB606C /* SidebarMenuTableCellBg@2x.png */,
 				0C3527F2176493E000E07AAB /* fake home@2x-568h.PNG */,
@@ -1243,6 +1264,7 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0C263D6D1788B76F008A2C81 /* SMPageControl */,
 				0C2BE3DA177FFB4200CD2C5B /* SFHFKeychainUtils */,
 				0C2BE3CE177FFAA300CD2C5B /* OpenUDID */,
 				0C2BE3C4177FFA4800CD2C5B /* PSAlertView */,
@@ -1606,6 +1628,9 @@
 				0C1EE2D81788738D00EB606C /* OFSidebarMenuTableCell.xib in Resources */,
 				0C1EE2DB1788761200EB606C /* SidebarMenuTableCellBg.png in Resources */,
 				0C1EE2DC1788761200EB606C /* SidebarMenuTableCellBg@2x.png in Resources */,
+				0C263D721788B7E9008A2C81 /* OFProductDetailsViewController.xib in Resources */,
+				0C263D751788BE71008A2C81 /* pagecontrol-bg.png in Resources */,
+				0C263D761788BE71008A2C81 /* pagecontrol-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1763,6 +1788,7 @@
 				0C1EE2CF178820C100EB606C /* BaseStorageManager.m in Sources */,
 				0C1EE2D21788216600EB606C /* FacebookManager.m in Sources */,
 				0C1EE2D61788731C00EB606C /* OFSidebarMenuTableCell.m in Sources */,
+				0C263D701788B76F008A2C81 /* SMPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
