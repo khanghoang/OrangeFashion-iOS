@@ -45,13 +45,7 @@
     [OFProduct getProductsWithCategoryID:categoryID onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
-        [self.productsTableView reloadData];
-        
-        NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
-        [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-            DLog(@"Finish save to magical record");
-        }];
-        
+        [self.productsTableView reloadData];        
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];

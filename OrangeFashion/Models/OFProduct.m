@@ -21,6 +21,7 @@
         product.price = dictionary[@"GiaBan"];
         product.material = dictionary[@"ChatLieu"];
         product.colors = dictionary[@"Mau"];
+        product.product_code = dictionary[@"MaHienThi"];
         
     }    
     return product;
@@ -46,9 +47,27 @@
 {
     NSDictionary *params = @{@"rquest": @"getproducts"};
     [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        successBlock(operation.response.statusCode, responseObject);
+        if (successBlock) {
+            
+            NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
+            [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+                DLog(@"Finish save to magical record");
+                
+            successBlock(operation.response.statusCode, responseObject);
+                
+            }];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failureBlock(operation.response.statusCode, error); 
+        
+        NSArray *arrProduct = [OFProduct MR_findAll];
+        
+        if (arrProduct && successBlock) {
+            successBlock(operation.response.statusCode, arrProduct);
+        }
+        
+        if (failureBlock) {
+            failureBlock(operation.response.statusCode, error);
+        }
     }];
 }
 

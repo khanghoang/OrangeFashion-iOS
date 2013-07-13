@@ -24,6 +24,10 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 @property (weak, nonatomic) IBOutlet UIView             * pageControllWrap;
 @property (weak, nonatomic) IBOutlet SMPageControl      * pageControl;
 @property (weak, nonatomic) IBOutlet UILabel            * lblProductName;
+@property (weak, nonatomic) IBOutlet UILabel            * lblProductDisplayID;
+@property (weak, nonatomic) IBOutlet UILabel            * lblProductMaterial;
+@property (weak, nonatomic) IBOutlet UILabel            * lblProductPrice;
+
 
 @end
 
@@ -39,8 +43,14 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
     
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
-    self.lblProductName.text = product.name;
     
+    // set product info
+    self.lblProductName.text = product.name;
+    self.lblProductDisplayID.text = [NSString stringWithFormat:@"%@ %@", self.lblProductDisplayID.text, product.product_code];
+    self.lblProductMaterial.text = [NSString stringWithFormat:@"%@ %@, %@", self.lblProductMaterial.text, product.colors, product.material];
+    self.lblProductPrice.text = [NSString stringWithFormat:@"%@ %@", self.lblProductPrice.text, product.price];
+    
+    // add pageVC
     self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageVC.delegate = self;
@@ -59,6 +69,11 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
         [SVProgressHUD showErrorWithStatus:@"Lỗi không tải được hình ảnh, vui lòng thử lại"];
         [self addPageViewControllerWithImagesArray:[self getImages]];
     }];
+    
+    // add tap gesture in case there's no image.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapProductImages:)];
+    [self.view addGestureRecognizer:tap];
+    [self.view setUserInteractionEnabled:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
