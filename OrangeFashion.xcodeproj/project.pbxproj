@@ -486,6 +486,7 @@
 		0CD488311710256200C30EEF /* OFProductsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFProductsTableCell.xib; path = ../OFProductsTableCell.xib; sourceTree = "<group>"; };
 		0CD488331710266600C30EEF /* OFProductsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductsTableCell.h; path = ../OFProductsTableCell.h; sourceTree = "<group>"; };
 		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductsTableCell.m; path = ../OFProductsTableCell.m; sourceTree = "<group>"; };
+		0CE73EBF178C779E005BD3BA /* OrangeFashion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OrangeFashion.entitlements; sourceTree = "<group>"; };
 		0CEF5313176CBAA7004447E1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0CEF5314176CBAA7004447E1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0CEF5316176CD379004447E1 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -1190,6 +1191,7 @@
 		0C4C58DC170D6D9600ED0DF8 /* OrangeFashion */ = {
 			isa = PBXGroup;
 			children = (
+				0CE73EBF178C779E005BD3BA /* OrangeFashion.entitlements */,
 				0C2BE3E1177FFC8000CD2C5B /* Manager */,
 				0C2BE354177FF13700CD2C5B /* Categories */,
 				0C4C5C5E170E8CD800ED0DF8 /* Storyboards */,
@@ -1853,8 +1855,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1869,8 +1871,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "384F67EA-CD91-4D21-8A55-870DC6DE6396";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384F67EA-CD91-4D21-8A55-870DC6DE6396";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

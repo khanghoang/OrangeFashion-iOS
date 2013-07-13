@@ -16,15 +16,6 @@
 
 @implementation OFHomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -40,21 +31,13 @@
     [self.view bringSubviewToFront:self.lbViewProducts];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showProductsList)];
-    
-    tapGesture.numberOfTapsRequired = 1;
-    
+    tapGesture.numberOfTapsRequired = 1;    
     [self.lbViewProducts addGestureRecognizer:tapGesture];
 }
 
 - (void)showProductsList
 {
     [self performSegueWithIdentifier:@"From Home To Products List" sender:self];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

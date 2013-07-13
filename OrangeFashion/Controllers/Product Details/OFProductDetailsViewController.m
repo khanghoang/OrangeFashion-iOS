@@ -31,8 +31,6 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor grayColor];
-    
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
     
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
