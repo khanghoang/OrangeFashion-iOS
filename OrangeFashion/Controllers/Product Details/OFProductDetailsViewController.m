@@ -13,7 +13,7 @@
 
 typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
-@interface OFProductDetailsViewController () 
+@interface OFProductDetailsViewController ()  <OFImageViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray                   * images;
 @property (strong, nonatomic) UIPageViewController      * pageVC;
@@ -35,6 +35,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
     
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
@@ -82,6 +83,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     NSMutableArray *arrVC = [[NSMutableArray alloc] init];
     
     OFImageViewController *imageVC = [[OFImageViewController alloc] initWithNibName:@"OFImageViewController" bundle:nil];
+    imageVC.delegate = self;
     
     imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
     
@@ -121,6 +123,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
         return nil;
     
     OFImageViewController *imageVC = [[OFImageViewController alloc] init];
+    imageVC.delegate = self;
     imageVC.imageURL = [[self.images objectAtIndex:self.currentVC + 1] picasa_store_source];
     
     self.currentVC++;
@@ -136,6 +139,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
         return nil;
     
     OFImageViewController *imageVC = [[OFImageViewController alloc] init];
+    imageVC.delegate = self;
     imageVC.imageURL = [[self.images objectAtIndex:self.currentVC - 1] picasa_store_source];
     
     self.currentVC--;
@@ -163,6 +167,14 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 {
     OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:self.productID] lastObject];
     return [product.images allObjects];
+}
+
+#pragma mark - Action
+
+- (void)onTapProductImages:(id)sender
+{
+    BOOL isNavBarHidden = self.navigationController.navigationBarHidden;
+    [self.navigationController setNavigationBarHidden:!isNavBarHidden animated:NO];
 }
 
 @end

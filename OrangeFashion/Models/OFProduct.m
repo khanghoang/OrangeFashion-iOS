@@ -1,12 +1,6 @@
+#define STORE_PRODUCT_BOOKMARK          @"bookmark_products"
+
 #import "OFProduct.h"
-
-
-@interface OFProduct ()
-
-// Private interface goes here.
-
-@end
-
 
 @implementation OFProduct
 
@@ -70,6 +64,40 @@
     } failureBlock:^(NSInteger statusCode, id obj) {
         //Hanlder when failure
     }];
+}
+
+#pragma mark - Store and get bookmark products
+
++ (void)saveBookmarkProductWithArray:(NSArray *)array
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:array forKey:STORE_PRODUCT_BOOKMARK];
+    [userDefault synchronize];
+}
+
++ (void)saveBookmarkProductWithMutableArray:(NSMutableArray *)array
+{
+    [self saveBookmarkProductWithMutableArray:array];
+}
+
++ (NSMutableArray *)getBookmarkProducts
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    return [[userDefault objectForKey:STORE_PRODUCT_BOOKMARK] mutableCopy];
+}
+
++ (void)bookmarkProductWithProduct:(OFProduct *)product
+{
+    NSNumber *productID = product.product_id;
+    [self bookmarkProductWithProductID:productID];
+}
+
++ (void)bookmarkProductWithProductID:(NSNumber *)productID
+{
+    NSMutableArray *bookmarkProducts = [self getBookmarkProducts];
+    [bookmarkProducts addObject:productID];
+    
+    [self saveBookmarkProductWithMutableArray:bookmarkProducts];
 }
 
 @end

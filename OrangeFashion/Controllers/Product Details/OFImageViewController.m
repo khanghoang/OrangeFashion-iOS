@@ -34,8 +34,22 @@
     self.view.frame = self.parentViewController.view.frame;
     
     self.view.backgroundColor = [UIColor blackColor];
-//    self.imgView.frame = [[super view] frame];
-    
     self.productImage.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapImages:)];
+    [tap setNumberOfTapsRequired:1];
+    [self.view addGestureRecognizer:tap];
 }
+
+#pragma mark - OFImageViewController delegate
+
+- (void)onTapImages:(id)sender
+{
+    DLog("Tapped");
+    if ([self.delegate respondsToSelector:@selector(onTapProductImages:)]) {
+        [self.delegate performSelector:@selector(onTapProductImages:) withObject:self];
+    }
+}
+
+
 @end
