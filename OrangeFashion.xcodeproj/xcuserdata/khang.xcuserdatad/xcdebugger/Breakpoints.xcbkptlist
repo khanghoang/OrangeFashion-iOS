@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Models/OFProduct.m"
-         timestampString = "395413774.310615"
+         timestampString = "395415319.174737"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "+getProductsOnSuccess:failure:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Models/OFProduct.m"
-         timestampString = "395413774.310615"
+         timestampString = "395415319.174737"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "-getImagesForProductOnSuccess:failure:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Models/OFProduct.m"
-         timestampString = "395413774.310615"
+         timestampString = "395415319.174737"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
          landmarkName = "-getImagesForProductOnSuccess:failure:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,24 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Models/OFProduct.m"
-         timestampString = "395413774.310615"
+         timestampString = "395415319.174737"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "71"
-         endingLineNumber = "71"
-         landmarkName = "+getProductsOnSuccess:failure:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Models/OFProduct.m"
-         timestampString = "395413774.310615"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
          landmarkName = "+getProductsOnSuccess:failure:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -591,11 +578,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Products List/OFProductsViewController.m"
-         timestampString = "395413774.310615"
+         timestampString = "395414328.383782"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -623,6 +610,19 @@
          startingLineNumber = "13"
          endingLineNumber = "13"
          landmarkName = "+productWithDictionary:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "OrangeFashion/Models/OFProduct.m"
+         timestampString = "395415146.543101"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "+getProductsOnSuccess:failure:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

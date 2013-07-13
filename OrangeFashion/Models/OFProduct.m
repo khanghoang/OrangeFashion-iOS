@@ -37,9 +37,13 @@
                              };
     
     [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        successBlock(operation.response.statusCode, responseObject);
+        if (successBlock) {
+            successBlock(operation.response.statusCode, responseObject);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failureBlock(operation.response.statusCode, error);
+        if (failureBlock) {
+            failureBlock(operation.response.statusCode, error);
+        }
     }];
 }
 
@@ -61,13 +65,14 @@
         
         NSArray *arrProduct = [OFProduct MR_findAll];
         
-        if (arrProduct && successBlock) {
+        if (arrProduct.count > 0 && successBlock) {
             successBlock(operation.response.statusCode, arrProduct);
         }
         
         if (failureBlock) {
             failureBlock(operation.response.statusCode, error);
         }
+        
     }];
 }
 
@@ -79,9 +84,24 @@
             [self addImagesObject:obj];
         }];
         
-        successBlock(statusCode, self);
+        if (successBlock) {
+            successBlock(statusCode, self);
+        }
+        
     } failureBlock:^(NSInteger statusCode, id obj) {
+        
+        // set offline data from coredata
+        OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:self.product_id] lastObject];
+        
+        if (product&&successBlock) {
+            successBlock(statusCode, product);
+        }
+        
         //Hanlder when failure
+        if (failureBlock) {
+            failureBlock(statusCode, obj);
+        }
+        
     }];
 }
 

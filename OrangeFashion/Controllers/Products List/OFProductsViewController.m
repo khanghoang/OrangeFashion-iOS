@@ -64,17 +64,9 @@
         [self.productsArr setArray:(NSArray *)obj];
         [self.productsTableView reloadData];
         
-        NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
-        [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-            DLog(@"Finish save to magical record");
-        }];
-        
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
-        [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
-        NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
-        self.productsArr = arrProducts;
-        
+        [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];        
         [self.productsTableView reloadData];
         
     }];
