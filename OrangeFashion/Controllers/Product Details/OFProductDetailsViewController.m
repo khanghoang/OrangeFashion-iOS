@@ -15,10 +15,15 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
 @interface OFProductDetailsViewController () 
 
-@property (strong, nonatomic) NSArray *images;
-@property (strong, nonatomic) UIPageViewController *pageVC;
-@property (assign, nonatomic) int currentVC;
-@property (weak, nonatomic) IBOutlet SMPageControl *pageControl;
+@property (strong, nonatomic) NSArray                   * images;
+@property (strong, nonatomic) UIPageViewController      * pageVC;
+@property (assign, nonatomic) int                         currentVC;
+
+
+
+@property (weak, nonatomic) IBOutlet UIView             * pageControllWrap;
+@property (weak, nonatomic) IBOutlet SMPageControl      * pageControl;
+@property (weak, nonatomic) IBOutlet UILabel            * lblProductName;
 
 @end
 
@@ -29,11 +34,11 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
+    // Do any additional setup after loading the view.
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
     
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
+    self.lblProductName.text = product.name;
     
     self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
@@ -41,12 +46,6 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     self.pageVC.dataSource = self;
     
     [[self.pageVC view] setFrame:[[self view] bounds]];
-    
-    UIPageControl *pageControl = [[UIPageControl alloc] init];
-    [pageControl setNumberOfPages:10];
-    pageControl.frame = CGRectMake(0, 0, 50, 200);
-    [self.view addSubview:pageControl];
-    [self.view bringSubviewToFront:pageControl];
     
     [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
         
@@ -108,17 +107,10 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 #pragma mark - Helpers
 
 - (void)addPageControlView
-{
-    // page control
-    UIImageView *pageControllWrap = [[UIImageView alloc] initWithFrame:CGRectMake(0, 380, 320, 40)];
-    [pageControllWrap setImage:[UIImage imageNamed:@"pagecontrol-bg"]];
-    [self.view addSubview:pageControllWrap];
-    [self.view bringSubviewToFront:pageControllWrap];
-    
+{    
     self.pageControl.numberOfPages = self.images.count;
     self.pageControl.currentPage = 0;
-    self.pageControl.frame = CGRectMake(0, 380, 320, 40);
-    [self.view addSubview:self.pageControl];
+    [self.view bringSubviewToFront:self.pageControllWrap];
 }
 
 #pragma mark - PageViewController delegate
