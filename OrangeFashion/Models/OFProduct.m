@@ -36,7 +36,8 @@
                              @"category_id"     : [NSNumber numberWithInteger:category_id]
                              };
     
-    [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {        
+
         if (successBlock) {
             successBlock(operation.response.statusCode, responseObject);
         }
@@ -51,13 +52,8 @@
 {
     NSDictionary *params = @{@"rquest": @"getproducts"};
     [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
         if (successBlock) {
-            
-            NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
-            [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-                DLog(@"Finish save to magical record");
-            }];
-            
             successBlock(operation.response.statusCode, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -102,6 +98,30 @@
         }
         
     }];
+}
+
+#pragma mark - Helpers
+
++ (void)productsFromReponseObject:(id)responseObject
+{
+    NSMutableArray *arrProduct = [[NSMutableArray alloc] init];
+    
+    NSBlockOperation *saveInBackground = [NSBlockOperation blockOperationWithBlock:^{
+        [responseObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            OFProduct *product = [OFProduct MR_createEntity];
+            product = [OFProduct productWithDictionary:obj];
+            [arrProduct addObject:product];
+        }];
+    }];
+                                          
+    [saveInBackground setCompletionBlock:^{
+        NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
+        [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            DLog(@"Finish save to magical record");
+        }];
+    }];
+    
+    [saveInBackground start];
 }
 
 #pragma mark - Store and get bookmark products

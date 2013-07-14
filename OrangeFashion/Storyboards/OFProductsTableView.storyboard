@@ -189,6 +189,47 @@
     <resources>
         <image name="fake home.PNG" width="320" height="480"/>
     </resources>
+    <classes>
+        <class className="BaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="BaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="OFHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OFHomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lbViewProducts" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OFMenuViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OFMenuViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tapRecognizer" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="viewVayDam" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="OFProductDetailsViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OFProductDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblProductDisplayID" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblProductMaterial" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblProductName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblProductPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="SMPageControl"/>
+                <relationship kind="outlet" name="pageControllWrap" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="OFProductsViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OFProductsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productsTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SMPageControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SMPageControl.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
