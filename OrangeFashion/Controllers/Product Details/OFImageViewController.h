@@ -16,9 +16,10 @@
 
 @interface OFImageViewController : BaseViewController
 
-@property (assign, nonatomic) id<OFImageViewControllerDelegate> delegate;
+@property (assign, nonatomic) int                                index;
+@property (assign, nonatomic) id<OFImageViewControllerDelegate>  delegate;
 
-@property (nonatomic, strong) NSString *imageURL;
-@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (nonatomic, strong) NSString                          * imageURL;
+@property (weak, nonatomic) IBOutlet UIImageView                * imgView;
 
 @end

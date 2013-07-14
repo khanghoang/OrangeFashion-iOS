@@ -10,7 +10,7 @@
 
 @interface OFImageViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *productImage;
+@property (weak, nonatomic) IBOutlet UIImageView    * productImage;
 
 @end
 
@@ -36,6 +36,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.productImage.userInteractionEnabled = YES;
     
+    // tap gesture
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapImages:)];
     [tap setNumberOfTapsRequired:1];
     [self.view addGestureRecognizer:tap];
@@ -50,6 +51,5 @@
         [self.delegate performSelector:@selector(onTapProductImages:) withObject:self];
     }
 }
-
 
 @end

@@ -13,7 +13,7 @@
 
 typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
-@interface OFProductDetailsViewController ()  <OFImageViewControllerDelegate>
+@interface OFProductDetailsViewController ()  <OFImageViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) NSArray                   * images;
 @property (strong, nonatomic) UIPageViewController      * pageVC;
@@ -78,6 +78,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillDisappear:animated];
     [SVProgressHUD dismiss];
 }
@@ -91,20 +92,18 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
         return;
     }
     
-    self.images = arrImages;
+    NSMutableArray *arrDisplayImage = [arrImages mutableCopy];
+    [arrDisplayImage removeObjectAtIndex:0];
+    [arrDisplayImage removeObjectAtIndex:0];
     
-    self.currentVC = 0;
-    
-    NSMutableArray *arrVC = [[NSMutableArray alloc] init];
+    self.images = arrDisplayImage;
     
     OFImageViewController *imageVC = [[OFImageViewController alloc] initWithNibName:@"OFImageViewController" bundle:nil];
     imageVC.delegate = self;
-    
     imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
     
-    [arrVC addObject:imageVC];
-    
-    [self.pageVC setViewControllers:arrVC direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.pageVC setViewControllers:@[imageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    imageVC.index = 0;
     
     [self addChildViewController:self.pageVC];
     self.pageVC.view.frame = self.view.frame;
@@ -112,11 +111,16 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     [self.view addSubview:self.pageVC.view];
     [self.pageVC didMoveToParentViewController:self];
     
+    // swipe guesture
+    UISwipeGestureRecognizer *swipeBack = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToBack:)];
+    [swipeBack setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.pageVC.view addGestureRecognizer:swipeBack];
+    swipeBack.delegate = self;
+    
+    // config Page VC size
     CGRect pageViewRect = self.view.frame;
     pageViewRect = CGRectInset(pageViewRect, 0, 0);
     self.pageVC.view.frame = pageViewRect;
-    
-    self.view.gestureRecognizers = self.pageVC.gestureRecognizers;
     
     [self addPageControlView];
 }
@@ -134,33 +138,47 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    if (self.currentVC == self.images.count - 1)
+    OFImageViewController *imgVC = (OFImageViewController *)viewController;
+    int index = imgVC.index;
+    
+    if (index == self.images.count - 1)
         return nil;
-    
-    OFImageViewController *imageVC = [[OFImageViewController alloc] init];
-    imageVC.delegate = self;
-    imageVC.imageURL = [[self.images objectAtIndex:self.currentVC + 1] picasa_store_source];
-    
-    self.currentVC++;
-    self.pageControl.currentPage = self.currentVC;
-    
-    return imageVC;
+
+    index ++;    
+    return [self viewControllerWithIndex:index];
 }
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
+    OFImageViewController *imgVC = (OFImageViewController *)viewController;
+    int index = imgVC.index;
     
-    if (self.currentVC == 0)
+    if (index == 0)
         return nil;
     
+    index--;
+    
+    return [self viewControllerWithIndex:index];
+}
+
+- (OFImageViewController *)viewControllerWithIndex:(int)index
+{
     OFImageViewController *imageVC = [[OFImageViewController alloc] init];
     imageVC.delegate = self;
-    imageVC.imageURL = [[self.images objectAtIndex:self.currentVC - 1] picasa_store_source];
-    
-    self.currentVC--;
-    self.pageControl.currentPage = self.currentVC;
+    imageVC.imageURL = [[self.images objectAtIndex:index] picasa_store_source];
+    imageVC.index = index;
     
     return imageVC;
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    if (completed) {
+        OFImageViewController *imgVC = (OFImageViewController *)[pageViewController.viewControllers lastObject];
+        int index = imgVC.index;
+        self.pageControl.currentPage = index;
+        self.currentVC = index;
+    }
 }
 
 #pragma mark - Store and get data
@@ -190,6 +208,20 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 {
     BOOL isNavBarHidden = self.navigationController.navigationBarHidden;
     [self.navigationController setNavigationBarHidden:!isNavBarHidden animated:NO];
+}
+
+- (void)swipeToBack:(id)sender
+{
+    if (self.currentVC == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+#pragma mark - UIGestureRecognizer delegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
 }
 
 @end

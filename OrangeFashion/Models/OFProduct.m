@@ -56,10 +56,9 @@
             NSManagedObjectContext *mainContext  = [NSManagedObjectContext MR_defaultContext];
             [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
                 DLog(@"Finish save to magical record");
-                
-            successBlock(operation.response.statusCode, responseObject);
-                
             }];
+            
+            successBlock(operation.response.statusCode, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
