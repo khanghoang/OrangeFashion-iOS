@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-        // start MR
+    // start MR
     [MagicalRecord setupCoreDataStack];
     
     // Make the color of Navigation bar no more effects the status bar
@@ -47,9 +47,11 @@
     OFMenuViewController *centralViewController = [[OFMenuViewController alloc] init];
     OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
     
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController
-                                                                                    leftViewController:leftController
-                                                                                   rightViewController:nil];
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController];
+    
+    deckController.leftController = leftController;
+    deckController.rightController = rightController;
+    
     deckController.rightSize = 100;
     
     return deckController;
