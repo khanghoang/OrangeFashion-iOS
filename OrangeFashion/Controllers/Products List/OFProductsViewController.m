@@ -13,7 +13,6 @@
 
 @interface OFProductsViewController () <IIViewDeckControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView      * productsTableView;
 @property (strong, nonatomic) NSMutableArray            * productsArr;
 
 @end
@@ -25,7 +24,7 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"Products Table Cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"OFProductsTableCell"];
     self.productsArr = [[NSMutableArray alloc] init];
     
     [SVProgressHUD showWithStatus:@"Đang tải sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
@@ -45,14 +44,13 @@
     [OFProduct getProductsWithCategoryID:categoryID onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
-        [self.productsTableView reloadData];        
+        [self.tableView reloadData];
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
         NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
         self.productsArr = arrProducts;
-        
-        [self.productsTableView reloadData];
+        [self.tableView reloadData];
         
     }];
 }
@@ -62,12 +60,12 @@
     [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
-        [self.productsTableView reloadData];
+        [self.tableView reloadData];
         
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];        
-        [self.productsTableView reloadData];
+        [self.tableView reloadData];
         
     }];
 }
@@ -87,7 +85,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *CellIdentifier = @"Products Table Cell";
+    NSString *CellIdentifier = @"OFProductsTableCell";
     OFProductsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(!cell)
@@ -114,24 +112,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"View Product Details" sender:self];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"View Product Details"]) {
-        OFProductDetailsViewController *desVC = (OFProductDetailsViewController *)[segue destinationViewController];
-        
-        int selectedRow = [self.tableView indexPathForSelectedRow].row;
-        
-        if ([[self.productsArr objectAtIndex:selectedRow] isKindOfClass:[OFProduct class]]) {
-            OFProduct *product = [self.productsArr objectAtIndex:selectedRow];
-            desVC.productID = product.product_id;
-        }else
-        {
-            desVC.productID = [[self.productsArr objectAtIndex:selectedRow] objectForKey:@"MaSanPham"];
-        }
+    OFProductDetailsViewController *desVC = [[OFProductDetailsViewController alloc] init];
+    int selectedRow = [self.tableView indexPathForSelectedRow].row;
+    
+    if ([[self.productsArr objectAtIndex:selectedRow] isKindOfClass:[OFProduct class]]) {
+        OFProduct *product = [self.productsArr objectAtIndex:selectedRow];
+        desVC.productID = product.product_id;
+    }else
+    {
+        desVC.productID = [[self.productsArr objectAtIndex:selectedRow] objectForKey:@"MaSanPham"];
     }
+    
+    OFNavigationViewController *centralNavVC = (OFNavigationViewController *) self.viewDeckController.centerController;
+    [centralNavVC pushViewController:desVC animated:YES];
+
 }
 
 @end

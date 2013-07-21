@@ -500,24 +500,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Products List/OFProductsViewController.m"
-         timestampString = "395076699.75299"
+         timestampString = "396123107.502364"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
-         landmarkName = "-fillUpTableProductWithCategoryID:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Controllers/Products List/OFProductsViewController.m"
-         timestampString = "395414328.383782"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "103"
-         endingLineNumber = "103"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>

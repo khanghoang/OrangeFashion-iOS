@@ -70,17 +70,16 @@
 
 #pragma mark - UITableView delegate
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    if (![[segue identifier] isEqualToString:@"SegueFromMenuToListProducts"])
-        return;
-    
     NSInteger selectIndex = [self.tableMenu indexPathForSelectedRow].row;
     NSInteger categoryID = [[[self.arrMenu objectAtIndex:selectIndex] objectForKey:@"id"] integerValue];
     
-    OFProductsViewController *productsVC = (OFProductsViewController *)[segue destinationViewController];
+    OFProductsViewController *productsVC = [[OFProductsViewController alloc] init];
     productsVC.category_id = categoryID;
+    
+    OFNavigationViewController *navVC = (OFNavigationViewController *)self.viewDeckController.centerController;
+    [navVC pushViewController:productsVC animated:YES];
 }
 
 @end

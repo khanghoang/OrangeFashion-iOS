@@ -13,7 +13,6 @@
 
 @interface OFLeftMenuViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView    * menuList;
 @property (strong, nonatomic) NSMutableArray        * arrMenu;
 @property (weak, nonatomic) IBOutlet UITableView    * tableMenu;
 
@@ -27,8 +26,8 @@
 {
     self.arrMenu = [[NSMutableArray alloc] init];
     
-    self.menuList.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SidebarMenuTableCellBg"] resizableImageWithStandardInsetsTop:0 right:0 bottom:0 left:0]];
-    [self.menuList registerNib:[UINib nibWithNibName:@"OFSidebarMenuTableCell" bundle:nil] forCellReuseIdentifier:@"SidebarMenuTableCell"];
+    self.tableMenu.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SidebarMenuTableCellBg"] resizableImageWithStandardInsetsTop:0 right:0 bottom:0 left:0]];
+    [self.tableMenu registerNib:[UINib nibWithNibName:@"OFSidebarMenuTableCell" bundle:nil] forCellReuseIdentifier:@"SidebarMenuTableCell"];
     
     [[OFHelperManager sharedInstance] getMenuListOnComplete:^(NSArray *menu) {
         self.arrMenu = [[[menu objectAtIndex:1] objectForKey:@"session"] mutableCopy];
@@ -67,8 +66,7 @@
 #pragma mark - TableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"OFProductsTableView" bundle:nil];
-    OFProductsViewController *productsVC = [storyboard instantiateViewControllerWithIdentifier:@"OFProductsViewController"];
+    OFProductsViewController *productsVC = [[OFProductsViewController alloc] init];
     
     productsVC.category_id = [[[self.arrMenu objectAtIndex:indexPath.row] objectForKey:CATEGORY_ID] integerValue];
     

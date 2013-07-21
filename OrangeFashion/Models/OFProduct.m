@@ -174,7 +174,7 @@
     
     for (int i = 0; i < count; i++) {
         NSNumber *product = [bookmarkProducts objectAtIndex:i];
-        if ([productID isEqualToNumber:product]) {
+        if ([productID integerValue] == [product integerValue]) {
             return YES;
         }
     }

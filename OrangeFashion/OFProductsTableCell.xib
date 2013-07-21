@@ -111,6 +111,7 @@
 								<string key="NSFrame">{{111, 102}, {38, 27}}</string>
 								<reference key="NSSuperview" ref="1028595473"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="952893137"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -131,7 +132,7 @@
 								<string key="NSFrame">{{111, 32}, {198, 63}}</string>
 								<reference key="NSSuperview" ref="1028595473"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="952893137"/>
+								<reference key="NSNextKeyView" ref="890546008"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -210,7 +211,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISelectionStyle">2</int>
 				<reference key="IBUIContentView" ref="1028595473"/>
-				<string key="IBUIReuseIdentifier">Products Table Cell</string>
+				<string key="IBUIReuseIdentifier">OFProductsTableCell</string>
 				<real value="133" key="IBUIRowHeight"/>
 			</object>
 		</array>

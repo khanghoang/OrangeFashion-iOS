@@ -47,10 +47,7 @@
     OFMenuViewController *centralViewController = [[OFMenuViewController alloc] init];
     OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
     
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController];
-    
-    deckController.leftController = leftController;
-    deckController.rightController = rightController;
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController leftViewController:leftController rightViewController:rightController];
     
     deckController.rightSize = 100;
     
