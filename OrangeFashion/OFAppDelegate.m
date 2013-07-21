@@ -49,6 +49,9 @@
     
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController leftViewController:leftController rightViewController:rightController];
     
+    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
+    [deckController setCenterhiddenInteractivity:IIViewDeckCenterHiddenNotUserInteractiveWithTapToCloseBouncing];
+    
     deckController.rightSize = 100;
     
     return deckController;

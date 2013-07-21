@@ -29,6 +29,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.arrBookmarkedProducts = [OFProduct getBookmarkProducts];
+    [self.tableViewBookmarkedProducts reloadData];
 }
 
 #pragma marks - TableView datasouce
