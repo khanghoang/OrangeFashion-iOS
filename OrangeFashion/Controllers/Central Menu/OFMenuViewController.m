@@ -7,53 +7,80 @@
 //
 
 #import "OFMenuViewController.h"
+#import "OFHomeTableViewCell.h"
+#import "OFHelperManager.h"
+#import "OFProductsViewController.h"
+#import "OFAppDelegate.h"
 
-@interface OFMenuViewController ()
+@interface OFMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIView *viewVayDam;
-
-@property (nonatomic, strong) IBOutlet UITapGestureRecognizer *tapRecognizer;
+@property (weak, nonatomic) IBOutlet UITableView    * tableMenu;
+@property (strong, nonatomic) NSMutableArray        * arrMenu;
 
 @end
 
 @implementation OFMenuViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
     [self.navigationController setNavigationBarHidden:NO];
     
-	// Do any additional setup after loading the view.
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap)];
+    [[OFHelperManager sharedInstance] getMenuListOnComplete:^(NSArray *menu) {
+        self.arrMenu = [[[menu mutableCopy] objectAtIndex:1] objectForKey:@"session"];
+        [self.tableMenu reloadData];
+    } orFailure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"Không tải được menu, vui lòng thử lại sau"];
+    }];
     
-    tapGesture.numberOfTapsRequired = 1;
+    [self.tableMenu registerNib:[UINib nibWithNibName:@"OFHomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"OFHomeTableViewCell"];
     
-    [self.view addGestureRecognizer:tapGesture];
+    self.tableMenu.delegate = self;
+    self.tableMenu.dataSource = self;    
 }
 
-- (void)viewTap{
-    DLog(@"Tapped");
-    
-    [self performSegueWithIdentifier:@"SegueFromMenuToListProducts" sender:self];
-}
+#pragma mark - UITableView datasource
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 1;
 }
 
-- (void)viewDidUnload {
-    [self setViewVayDam:nil];
-    [super viewDidUnload];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.arrMenu.count;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"OFHomeTableViewCell";
+    OFHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (!cell)
+        cell = (OFHomeTableViewCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    
+    [cell configWithData:[self.arrMenu objectAtIndex:indexPath.row]];
+    return cell;        
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130;
+}
+
+#pragma mark - UITableView delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if (![[segue identifier] isEqualToString:@"SegueFromMenuToListProducts"])
+        return;
+    
+    NSInteger selectIndex = [self.tableMenu indexPathForSelectedRow].row;
+    NSInteger categoryID = [[[self.arrMenu objectAtIndex:selectIndex] objectForKey:@"id"] integerValue];
+    
+    OFProductsViewController *productsVC = (OFProductsViewController *)[segue destinationViewController];
+    productsVC.category_id = categoryID;
+}
+
 @end

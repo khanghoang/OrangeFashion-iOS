@@ -10,7 +10,7 @@
 
 @interface OFHomeViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *lbViewProducts;
+@property (weak, nonatomic) IBOutlet UILabel *lblShowAllProducts;
 
 @end
 
@@ -28,11 +28,9 @@
 	// Do any additional setup after loading the view.
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    [self.view bringSubviewToFront:self.lbViewProducts];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showProductsList)];
-    tapGesture.numberOfTapsRequired = 1;    
-    [self.lbViewProducts addGestureRecognizer:tapGesture];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showProductsList)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)showProductsList

@@ -135,13 +135,19 @@
 
 + (void)saveBookmarkProductWithMutableArray:(NSMutableArray *)array
 {
-    [self saveBookmarkProductWithMutableArray:array];
+    [self saveBookmarkProductWithArray:array];
 }
 
 + (NSMutableArray *)getBookmarkProducts
 {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    return [[userDefault objectForKey:STORE_PRODUCT_BOOKMARK] mutableCopy];
+    NSMutableArray *arr = [[userDefault objectForKey:STORE_PRODUCT_BOOKMARK] mutableCopy];
+    
+    if (arr) {
+        return arr;
+    }
+    
+    return [[NSMutableArray alloc] init];
 }
 
 + (void)bookmarkProductWithProduct:(OFProduct *)product
@@ -153,9 +159,27 @@
 + (void)bookmarkProductWithProductID:(NSNumber *)productID
 {
     NSMutableArray *bookmarkProducts = [self getBookmarkProducts];
-    [bookmarkProducts addObject:productID];
     
+    if ([OFProduct isBookmarkedAlreadyWithProductID:productID])
+        return;
+    
+    [bookmarkProducts addObject:productID];    
     [self saveBookmarkProductWithMutableArray:bookmarkProducts];
+}
+
++ (BOOL)isBookmarkedAlreadyWithProductID:(NSNumber *)productID
+{
+    NSMutableArray *bookmarkProducts = [OFProduct getBookmarkProducts];
+    int count = bookmarkProducts.count;
+    
+    for (int i = 0; i < count; i++) {
+        NSNumber *product = [bookmarkProducts objectAtIndex:i];
+        if ([productID isEqualToNumber:product]) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 @end

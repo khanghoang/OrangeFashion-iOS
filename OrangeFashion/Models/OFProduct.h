@@ -1,7 +1,6 @@
 #import "_OFProduct.h"
 
 @interface OFProduct : _OFProduct {}
-// Custom logic goes here.
 
 + (OFProduct *)productWithDictionary: (NSDictionary *)dictionary;
 
@@ -10,5 +9,9 @@
 + (void)getProductsWithCategoryID:(NSInteger)category_id
                         onSuccess:(OFJSONRequestSuccessBlock)successBlock
                           failure:(OFJSONRequestFailureBlock)failureBlock;
+
+// Bookmark
++ (void)bookmarkProductWithProductID:(NSNumber *)productID;
++ (NSMutableArray *)getBookmarkProducts;
 
 @end

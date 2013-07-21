@@ -135,6 +135,7 @@
 #import "OFLeftMenuViewController.h"
 #import "OFNavigationViewController.h"
 #import "OFProductsViewController.h"
+#import "OFBookmarkViewViewController.h"
 
 
 //------------------------------------------------------------------------------------------------------

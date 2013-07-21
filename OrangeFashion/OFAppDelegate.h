@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseAppDelegate.h"
+#import "IIViewDeckController.h"
 
 @interface OFAppDelegate : BaseAppDelegate <UIApplicationDelegate>
+
+@property (retain, nonatomic) UIViewController *centerController;
+@property (retain, nonatomic) UIViewController *leftController;
+
+- (IIViewDeckController*)generateControllerStack;
 
 @property (strong, nonatomic) UIWindow *window;
 

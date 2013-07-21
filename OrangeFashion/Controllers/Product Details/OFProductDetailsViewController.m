@@ -18,6 +18,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 @property (strong, nonatomic) NSArray                   * images;
 @property (strong, nonatomic) UIPageViewController      * pageVC;
 @property (assign, nonatomic) int                         currentVC;
+@property (weak, nonatomic) IBOutlet UIButton *btnBookmark;
 
 
 
@@ -72,6 +73,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     
     // add tap gesture in case there's no image.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapProductImages:)];
+    [tap setNumberOfTapsRequired:2];
     [self.view addGestureRecognizer:tap];
     [self.view setUserInteractionEnabled:YES];
 }
@@ -125,10 +127,13 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     [self addPageControlView];
 }
 
-#pragma mark - Helpers
+#pragma mark - UI Helpers
 
 - (void)addPageControlView
-{    
+{
+    [self.view bringSubviewToFront:self.btnBookmark];
+    [self.btnBookmark becomeFirstResponder];
+    
     self.pageControl.numberOfPages = self.images.count;
     self.pageControl.currentPage = 0;
     [self.view bringSubviewToFront:self.pageControllWrap];
@@ -215,6 +220,14 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     if (self.currentVC == 0) {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (IBAction)onBtnBookmark:(id)sender {
+    [OFProduct bookmarkProductWithProductID:self.productID];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
 }
 
 #pragma mark - UIGestureRecognizer delegate

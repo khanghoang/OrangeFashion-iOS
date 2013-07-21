@@ -28,25 +28,59 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque
                                                 animated:NO];
     
-    // Set up ViewDeck
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"OFProductsTableView"
-                                                             bundle: nil];
-    OFMenuViewController *centralViewController = (OFMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Home View Controller"];
+    // Set up ViewDeck central
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"OFProductsTableView"
+//                                                             bundle: nil];
+//    OFMenuViewController *centralViewController = (OFMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Home View Controller"];
+//    OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
+//    
+//    // Left
+//    OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
+//    
+//    // Right
+//    OFBookmarkViewViewController *bookmarkVC = [[OFBookmarkViewViewController alloc] init];
+//    
+//    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController                                                           leftViewController:leftMenuController                                                              rightViewController:bookmarkVC];
+//
+//    // Config ViewDeck
+//    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
+//    deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToCloseBouncing;
+//
+//    // Add to Root ViewController
+//    self.window.rootViewController = deckController;
+//
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
+    IIViewDeckController *deckController = [self generateControllerStack];
+//    self.leftController = deckController.leftController;
+//    self.centerController = deckController.centerController;
     
-    OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
+    /* To adjust speed of open/close animations, set either of these two properties. */
+    // deckController.openSlideAnimationDuration = 0.15f;
+    // deckController.closeSlideAnimationDuration = 0.5f;
     
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController                                                           leftViewController:leftMenuController                                                                 rightViewController:nil];
-
-    // Config ViewDeck
-    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
-    deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToCloseBouncing;
-
-    // Add to Root ViewController
     self.window.rootViewController = deckController;
+    [self.window makeKeyAndVisible];
+    return YES;
     
     return YES;
+}
+
+- (IIViewDeckController*)generateControllerStack {
+    
+    OFLeftMenuViewController* leftController = [[OFLeftMenuViewController alloc] init];
+    OFBookmarkViewViewController* rightController = [[OFBookmarkViewViewController alloc] init];
+    
+    // Set up ViewDeck central
+    OFMenuViewController *centralViewController = [[OFMenuViewController alloc] init];
+    OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
+    
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController
+                                                                                    leftViewController:leftController
+                                                                                   rightViewController:nil];
+    deckController.rightSize = 100;
+    
+    return deckController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
