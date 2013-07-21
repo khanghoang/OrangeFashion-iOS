@@ -9,6 +9,7 @@
 #import "OFAppDelegate.h"
 #import "OFMenuViewController.h"
 #import "IIViewDeckController.h"
+#import "OFHomeViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @implementation OFAppDelegate
@@ -19,50 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [FBLoginView class];
-    
-    // start MR
+        // start MR
     [MagicalRecord setupCoreDataStack];
     
     // Make the color of Navigation bar no more effects the status bar
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque
                                                 animated:NO];
-    
-    // Set up ViewDeck central
-//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"OFProductsTableView"
-//                                                             bundle: nil];
-//    OFMenuViewController *centralViewController = (OFMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Home View Controller"];
-//    OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
-//    
-//    // Left
-//    OFLeftMenuViewController *leftMenuController = [[OFLeftMenuViewController alloc] init];
-//    
-//    // Right
-//    OFBookmarkViewViewController *bookmarkVC = [[OFBookmarkViewViewController alloc] init];
-//    
-//    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController                                                           leftViewController:leftMenuController                                                              rightViewController:bookmarkVC];
-//
-//    // Config ViewDeck
-//    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
-//    deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToCloseBouncing;
-//
-//    // Add to Root ViewController
-//    self.window.rootViewController = deckController;
-//
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     IIViewDeckController *deckController = [self generateControllerStack];
-//    self.leftController = deckController.leftController;
-//    self.centerController = deckController.centerController;
-    
-    /* To adjust speed of open/close animations, set either of these two properties. */
-    // deckController.openSlideAnimationDuration = 0.15f;
-    // deckController.closeSlideAnimationDuration = 0.5f;
+    self.leftController = deckController.leftController;
+    self.centerController = deckController.centerController;
     
     self.window.rootViewController = deckController;
     [self.window makeKeyAndVisible];
-    return YES;
-    
     return YES;
 }
 
