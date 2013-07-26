@@ -150,6 +150,19 @@
     return [[NSMutableArray alloc] init];
 }
 
++ (void)removeBookmarkProductWithProductID:(NSNumber *)productID
+{
+    NSMutableArray *bookmarkedProducts = [OFProduct getBookmarkProducts];
+    int count = bookmarkedProducts.count;
+    for (int i = 0; i < count; i++) {
+        NSNumber *bookmarkedProductID = [bookmarkedProducts objectAtIndex:i];
+        if ([bookmarkedProductID integerValue] == [productID integerValue])
+            [bookmarkedProducts removeObject:bookmarkedProductID];
+    }
+    
+    [OFProduct saveBookmarkProductWithArray:bookmarkedProducts];
+}
+
 + (void)bookmarkProductWithProduct:(OFProduct *)product
 {
     NSNumber *productID = product.product_id;
@@ -163,7 +176,7 @@
     if ([OFProduct isBookmarkedAlreadyWithProductID:productID])
         return;
     
-    [bookmarkProducts addObject:productID];    
+    [bookmarkProducts insertObject:productID atIndex:0];
     [self saveBookmarkProductWithMutableArray:bookmarkProducts];
 }
 

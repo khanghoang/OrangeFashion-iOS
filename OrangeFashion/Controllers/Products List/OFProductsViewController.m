@@ -24,7 +24,7 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"OFProductsTableCell"];
+    [self.tableProducts registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"OFProductsTableCell"];
     self.productsArr = [[NSMutableArray alloc] init];
     
     [SVProgressHUD showWithStatus:@"Đang tải sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
@@ -44,13 +44,13 @@
     [OFProduct getProductsWithCategoryID:categoryID onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
-        [self.tableView reloadData];
+        [self.tableProducts reloadData];
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
         NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
         self.productsArr = arrProducts;
-        [self.tableView reloadData];
+        [self.tableProducts reloadData];
         
     }];
 }
@@ -60,12 +60,12 @@
     [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
-        [self.tableView reloadData];
+        [self.tableProducts reloadData];
         
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];        
-        [self.tableView reloadData];
+        [self.tableProducts reloadData];
         
     }];
 }
@@ -113,7 +113,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OFProductDetailsViewController *desVC = [[OFProductDetailsViewController alloc] init];
-    int selectedRow = [self.tableView indexPathForSelectedRow].row;
+    int selectedRow = [self.tableProducts indexPathForSelectedRow].row;
     
     if ([[self.productsArr objectAtIndex:selectedRow] isKindOfClass:[OFProduct class]]) {
         OFProduct *product = [self.productsArr objectAtIndex:selectedRow];

@@ -190,6 +190,8 @@
 		0C8690D8179C443C005AC30C /* OFHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8690D7179C443C005AC30C /* OFHomeTableViewCell.xib */; };
 		0C8DEFD81759E614004016E0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEFD71759E614004016E0 /* BaseModel.m */; };
 		0CAF779F17926BC700E3B084 /* OFHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */; };
+		0CCB1E8217A2C21C001480EC /* OFBookmarkTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB1E8017A2C21C001480EC /* OFBookmarkTableCell.m */; };
+		0CCB1E8317A2C21C001480EC /* OFBookmarkTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB1E8117A2C21C001480EC /* OFBookmarkTableCell.xib */; };
 		0CD488321710256200C30EEF /* OFProductsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD488311710256200C30EEF /* OFProductsTableCell.xib */; };
 		0CD488351710266600C30EEF /* OFProductsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD488341710266600C30EEF /* OFProductsTableCell.m */; };
 		0CEF5315176CBAA7004447E1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF5314176CBAA7004447E1 /* BaseViewController.m */; };
@@ -497,6 +499,9 @@
 		0C8DEFD71759E614004016E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0CAF779D17926BC700E3B084 /* OFHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHomeTableViewCell.h; sourceTree = "<group>"; };
 		0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHomeTableViewCell.m; sourceTree = "<group>"; };
+		0CCB1E7F17A2C21B001480EC /* OFBookmarkTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBookmarkTableCell.h; sourceTree = "<group>"; };
+		0CCB1E8017A2C21C001480EC /* OFBookmarkTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBookmarkTableCell.m; sourceTree = "<group>"; };
+		0CCB1E8117A2C21C001480EC /* OFBookmarkTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFBookmarkTableCell.xib; sourceTree = "<group>"; };
 		0CD488311710256200C30EEF /* OFProductsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFProductsTableCell.xib; path = ../OFProductsTableCell.xib; sourceTree = "<group>"; };
 		0CD488331710266600C30EEF /* OFProductsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductsTableCell.h; path = ../OFProductsTableCell.h; sourceTree = "<group>"; };
 		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductsTableCell.m; path = ../OFProductsTableCell.m; sourceTree = "<group>"; };
@@ -1496,6 +1501,9 @@
 				0C8690C2179C2CD4005AC30C /* OFBookmarkViewViewController.h */,
 				0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */,
 				0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */,
+				0CCB1E7F17A2C21B001480EC /* OFBookmarkTableCell.h */,
+				0CCB1E8017A2C21C001480EC /* OFBookmarkTableCell.m */,
+				0CCB1E8117A2C21C001480EC /* OFBookmarkTableCell.xib */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -1664,6 +1672,7 @@
 				0C8690D4179C4214005AC30C /* OFHomeViewController.xib in Resources */,
 				0C8690D6179C42C6005AC30C /* OFMenuViewController.xib in Resources */,
 				0C8690D8179C443C005AC30C /* OFHomeTableViewCell.xib in Resources */,
+				0CCB1E8317A2C21C001480EC /* OFBookmarkTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1825,6 +1834,7 @@
 				0C8690CE179C3E6C005AC30C /* IISideController.m in Sources */,
 				0C8690CF179C3E6C005AC30C /* IIViewDeckController.m in Sources */,
 				0C8690D0179C3E6C005AC30C /* IIWrapController.m in Sources */,
+				0CCB1E8217A2C21C001480EC /* OFBookmarkTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1883,8 +1893,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1899,8 +1909,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "4B9C7562-F1FA-4B83-99F3-09B6C8EEF0B8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384F67EA-CD91-4D21-8A55-870DC6DE6396";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1918,8 +1928,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: 2359 Media Pte Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1927,8 +1937,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "0A281EA1-0EEC-4EC5-A94A-2B984BFA99B3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "4B9C7562-F1FA-4B83-99F3-09B6C8EEF0B8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "070C95DB-B5D4-46A8-81A7-1D17C952C2FF";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

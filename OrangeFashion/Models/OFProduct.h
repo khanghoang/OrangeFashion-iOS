@@ -11,6 +11,7 @@
                           failure:(OFJSONRequestFailureBlock)failureBlock;
 
 // Bookmark
++ (void)removeBookmarkProductWithProductID:(NSNumber *)productID;
 + (void)bookmarkProductWithProductID:(NSNumber *)productID;
 + (NSMutableArray *)getBookmarkProducts;
 

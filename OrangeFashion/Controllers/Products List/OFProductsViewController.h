@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OFProductsViewController : BaseTableViewController
+@interface OFProductsViewController : BaseViewController
 
-@property (assign, nonatomic) NSInteger                   category_id;
+@property (assign, nonatomic) NSInteger                     category_id;
+@property (weak, nonatomic) IBOutlet UITableView          * tableProducts;
 
 @end
