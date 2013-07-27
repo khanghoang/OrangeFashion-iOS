@@ -7,14 +7,28 @@
 //
 
 #import "OFHomeViewController.h"
+#import "OFAppDelegate.h"
 
-@interface OFHomeViewController ()
+@interface OFHomeViewController () <FBLoginViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblShowAllProducts;
+@property (weak, nonatomic) IBOutlet FBLoginView *FBLoginView;
 
 @end
 
 @implementation OFHomeViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Facebook SDK * pro-tip *
+        // We wire up the FBLoginView using the interface builder
+        // but we could have also explicitly wired its delegate here.
+        self.FBLoginView.readPermissions = @[@"publish_actions", @"email", @"user_likes"];
+        self.FBLoginView.defaultAudience = FBSessionDefaultAudienceFriends;
+    }
+    return self;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -35,7 +49,38 @@
 
 - (void)showProductsList
 {
-    [self performSegueWithIdentifier:@"From Home To Products List" sender:self];
+//    [self performSegueWithIdentifier:@"From Home To Products List" sender:self];
+}
+
+- (IBAction)performLogin:(id)sender
+{
+    OFAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    [appDelegate openSession];
+}
+
+- (void)loginFailed
+{
+    // User switched back to the app without authorizing. Stay here, but
+    // stop the spinner.
+}
+
+- (void)showLoginView
+{
+    UIViewController *topViewController = [self.navigationController topViewController];
+    UIViewController *modalViewController = [topViewController modalViewController];
+    
+    // If the login screen is not already displayed, display it. If the login screen is
+    // displayed, then getting back here means the login in progress did not successfully
+    // complete. In that case, notify the login view so it can update its UI appropriately.
+    if (![modalViewController isKindOfClass:[OFHomeViewController class]]) {
+        OFHomeViewController* loginViewController = [[OFHomeViewController alloc]
+                                                      initWithNibName:@"OFHomeViewController"
+                                                      bundle:nil];
+        [topViewController presentModalViewController:loginViewController animated:NO];
+    } else {
+        OFHomeViewController* loginViewController = (OFHomeViewController*)modalViewController;
+        [loginViewController loginFailed];
+    }
 }
 
 @end

@@ -23,6 +23,9 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+// Facebook stuff
+- (void)openSession;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

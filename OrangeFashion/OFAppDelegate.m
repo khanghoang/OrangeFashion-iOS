@@ -12,6 +12,12 @@
 #import "OFHomeViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
+@interface OFAppDelegate()
+
+@property (strong, nonatomic) OFNavigationViewController        *navController;
+
+@end
+
 @implementation OFAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -22,6 +28,9 @@
 {
     // start MR
     [MagicalRecord setupCoreDataStack];
+    [FBLoginView class];
+    
+    [FacebookManager sharedInstance].delegate = self;
     
     // Make the color of Navigation bar no more effects the status bar
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque
@@ -32,9 +41,22 @@
     IIViewDeckController *deckController = [self generateControllerStack];
     self.leftController = deckController.leftController;
     self.centerController = deckController.centerController;
+    self.navController = (OFNavigationViewController *)deckController.centerController;
     
     self.window.rootViewController = deckController;
     [self.window makeKeyAndVisible];
+    
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        // Yes, so just open the session (this won't display any UX).
+        [self openSession];
+        
+#warning DO IT LATER
+//        [self.navController pushViewController:[[OFMenuViewController alloc] init] animated:YES];
+    } else {
+        // No, display the login page.
+        [self showLoginView];
+    }
+    
     return YES;
 }
 
@@ -77,10 +99,15 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // We need to properly handle activation of the application with regards to Facebook Login
+    // (e.g., returning from iOS 6.0 Login Dialog or from fast app switching).
+    [FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [FBSession.activeSession close];
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
@@ -178,6 +205,58 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Facebook
+
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
+                      error:(NSError *)error
+{
+    switch (state) {
+        case FBSessionStateOpen: {
+            UIViewController *topViewController = [self.navController topViewController];
+            if ([[topViewController modalViewController]
+                 isKindOfClass:[OFHomeViewController class]]) {
+                [topViewController dismissModalViewControllerAnimated:YES];
+            }
+        }
+            break;
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:
+            // Once the user has logged in, we want them to
+            // be looking at the root view.
+            [self.navController popToRootViewControllerAnimated:NO];
+            
+            [FBSession.activeSession closeAndClearTokenInformation];
+            
+            [self showLoginView];
+            break;
+        default:
+            break;
+    }
+    
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:error.localizedDescription
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+- (void)openSession
+{
+    [[FacebookManager sharedInstance] openSession];
+}
+
+- (void)showLoginView
+{
+    UIViewController *topViewController = [self.navController topViewController];    
+    OFHomeViewController* loginViewController = [[OFHomeViewController alloc]initWithNibName:@"OFHomeViewController" bundle:nil];
+    [topViewController presentModalViewController:loginViewController animated:NO];
 }
 
 @end

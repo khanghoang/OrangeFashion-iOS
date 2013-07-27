@@ -55,6 +55,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    if ([[OFUserManager sharedInstance] isLoggedUser])
+        return 1;
+    
     return self.arrMenu.count;
 }
 

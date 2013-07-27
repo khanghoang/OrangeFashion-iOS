@@ -10,4 +10,6 @@
 
 @interface OFHomeViewController : UIViewController
 
+- (void)loginFailed;
+
 @end

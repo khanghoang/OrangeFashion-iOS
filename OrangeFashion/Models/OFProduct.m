@@ -175,8 +175,7 @@
     
     if ([OFProduct isBookmarkedAlreadyWithProductID:productID])
         return;
-    
-    [bookmarkProducts insertObject:productID atIndex:0];
+    [bookmarkProducts addObject:productID];
     [self saveBookmarkProductWithMutableArray:bookmarkProducts];
 }
 
