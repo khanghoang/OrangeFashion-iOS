@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblShowAllProducts;
 @property (weak, nonatomic) IBOutlet FBLoginView *FBLoginView;
+@property (weak, nonatomic) IBOutlet UIImageView *imgFBAvatar;
+@property (weak, nonatomic) IBOutlet UILabel *lblFBUsername;
 
 @end
 
@@ -81,6 +83,19 @@
         OFHomeViewController* loginViewController = (OFHomeViewController*)modalViewController;
         [loginViewController loginFailed];
     }
+}
+
+- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
+                            user:(id<FBGraphUser>)user {
+    [[OFUserManager sharedInstance] setLoggedUser:user];
+    
+    [self.imgFBAvatar setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", user.id]]placeholderImage:nil];
+    [self.imgFBAvatar roundCorner];
+    self.imgFBAvatar.layer.borderColor = [UIColor whiteColor].CGColor;
+    [self.imgFBAvatar.layer shouldRasterize];
+    self.imgFBAvatar.layer.borderWidth = 3;
+    
+    self.lblFBUsername.text = [[OFUserManager sharedInstance].loggedUser username];
 }
 
 @end

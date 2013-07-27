@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define LABEL_SPACING             5
+
 @interface BaseViewController : UIViewController
 
 @end

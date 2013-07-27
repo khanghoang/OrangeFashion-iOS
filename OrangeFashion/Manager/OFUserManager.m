@@ -22,7 +22,7 @@ SINGLETON_MACRO
 
 - (void)setLoggedUser:(id<FBGraphUser>)loggedUser
 {
-    self.loggedUser = loggedUser;
+    _loggedUser = loggedUser;
 }
 
 - (void)logOut

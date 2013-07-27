@@ -90,6 +90,11 @@
 @property (nonatomic) CGPoint origin;
 
 /**
+ * Center of bounds, not frame
+ */
+@property (nonatomic) CGPoint boundCenter;
+
+/**
  * Shortcut for frame.size
  */
 @property (nonatomic) CGSize size;
@@ -111,6 +116,7 @@
 @property (nonatomic, readonly) CGPoint contentCenter;
 
 
+
 #pragma mark - Alignment
 
 /**
@@ -129,11 +135,29 @@
 - (void)resizeWidthTo:(CGFloat)value keepRight:(BOOL)keepRight;
 - (void)resizeWidthToParentKeepRight:(BOOL)keepRight;
 
+- (void)fitSubviews;
+
+//Mainly for UIScrollView
+- (void)autoPushUpAllElements;
+
+
+
+//Mainly for UITextField & UITextView
+- (void)showHighlightBorder;
+- (void)hideHighlightBorder;
+- (void)clearHighlightBorder;
+- (void)roundCorner;
+
+- (UIImage *)capture;
+
+
 
 #pragma mark - Animation
 
 - (void)fadeInWithDuration:(CGFloat)duration;
 
 - (void)fadeOutWithDuration:(CGFloat)duration;
+
+- (void)growAndShrinkOnCompletion:(void (^)(BOOL finished))completion;
 
 @end
