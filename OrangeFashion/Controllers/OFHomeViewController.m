@@ -8,6 +8,7 @@
 
 #import "OFHomeViewController.h"
 #import "OFAppDelegate.h"
+#import "OFMenuViewController.h"
 
 @interface OFHomeViewController () <FBLoginViewDelegate>
 
@@ -51,7 +52,8 @@
 
 - (void)showProductsList
 {
-//    [self performSegueWithIdentifier:@"From Home To Products List" sender:self];
+    OFNavigationViewController *navVC = (OFNavigationViewController *)self.viewDeckController.centerController;
+    [navVC pushViewController:[[OFMenuViewController alloc] init] animated:YES];
 }
 
 - (IBAction)performLogin:(id)sender
