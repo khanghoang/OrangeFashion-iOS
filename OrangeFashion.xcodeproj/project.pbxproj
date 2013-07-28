@@ -57,6 +57,8 @@
 		0C1DE5EC17A5032F00239D31 /* detail-shadow-top-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE5E817A5032F00239D31 /* detail-shadow-top-bg@2x.png */; };
 		0C1DE5ED17A5032F00239D31 /* details-done-btn-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE5E917A5032F00239D31 /* details-done-btn-bg.png */; };
 		0C1DE5EE17A5032F00239D31 /* details-done-btn-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE5EA17A5032F00239D31 /* details-done-btn-bg@2x.png */; };
+		0C1DE5F517A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5F217A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m */; settings = {COMPILER_FLAGS = "-fobjc-ar"; }; };
+		0C1DE5F617A5084A00239D31 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5F417A5084A00239D31 /* UIScrollView+SVPullToRefresh.m */; settings = {COMPILER_FLAGS = "-fobjc-ar"; }; };
 		0C1EE2CA178820C100EB606C /* BaseDeviceLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2BF178820C100EB606C /* BaseDeviceLibrary.m */; };
 		0C1EE2CB178820C100EB606C /* BaseLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C1178820C100EB606C /* BaseLocationManager.m */; };
 		0C1EE2CC178820C100EB606C /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C3178820C100EB606C /* BaseManager.m */; };
@@ -297,6 +299,11 @@
 		0C1DE5E817A5032F00239D31 /* detail-shadow-top-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail-shadow-top-bg@2x.png"; sourceTree = "<group>"; };
 		0C1DE5E917A5032F00239D31 /* details-done-btn-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details-done-btn-bg.png"; sourceTree = "<group>"; };
 		0C1DE5EA17A5032F00239D31 /* details-done-btn-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details-done-btn-bg@2x.png"; sourceTree = "<group>"; };
+		0C1DE5F017A5084A00239D31 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		0C1DE5F117A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		0C1DE5F217A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		0C1DE5F317A5084A00239D31 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		0C1DE5F417A5084A00239D31 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		0C1EE2BE178820C100EB606C /* BaseDeviceLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDeviceLibrary.h; sourceTree = "<group>"; };
 		0C1EE2BF178820C100EB606C /* BaseDeviceLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDeviceLibrary.m; sourceTree = "<group>"; };
 		0C1EE2C0178820C100EB606C /* BaseLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationManager.h; sourceTree = "<group>"; };
@@ -694,6 +701,18 @@
 				0C1DE5C217A4D2AF00239D31 /* NavBarLandscape@2x1.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C1DE5EF17A5084A00239D31 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DE5F017A5084A00239D31 /* SVPullToRefresh.h */,
+				0C1DE5F117A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.h */,
+				0C1DE5F217A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m */,
+				0C1DE5F317A5084A00239D31 /* UIScrollView+SVPullToRefresh.h */,
+				0C1DE5F417A5084A00239D31 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		0C1EE2BD178820C100EB606C /* TemplateClass */ = {
@@ -1423,6 +1442,7 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0C1DE5EF17A5084A00239D31 /* SVPullToRefresh */,
 				0C1DE59E17A4D2AF00239D31 /* FacebookComposeViewController */,
 				0C8690C7179C3E6C005AC30C /* ViewDeck */,
 				0C263D6D1788B76F008A2C81 /* SMPageControl */,
@@ -2012,6 +2032,8 @@
 				0C1DE5CC17A4D2AF00239D31 /* DERuledView.m in Sources */,
 				0C1DE5E517A4D2AF00239D31 /* UIApplication+DEFacebookComposeViewController.m in Sources */,
 				0C1DE5E617A4D2AF00239D31 /* UIDevice+DEFacebookComposeViewController.m in Sources */,
+				0C1DE5F517A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				0C1DE5F617A5084A00239D31 /* UIScrollView+SVPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

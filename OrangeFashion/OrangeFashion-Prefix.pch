@@ -112,6 +112,9 @@
 #import "OpenUDID.h"
 #import "SMPageControl.h"
 #import "IIViewDeckController.h"
+#import "SVPullToRefresh.h"
+#import "UIScrollView+SVPullToRefresh.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
 
 //Models
 #import "BaseModel.h"
