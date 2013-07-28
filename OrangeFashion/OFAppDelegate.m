@@ -54,7 +54,7 @@
 //        [self.navController pushViewController:[[OFMenuViewController alloc] init] animated:YES];
     } else {
         // No, display the login page.
-        [self showLoginView];
+//        [self showLoginView];
     }
     
     return YES;

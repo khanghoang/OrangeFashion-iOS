@@ -54,7 +54,7 @@
     //TODO: something need to configed here
     NSNumber *productId = [self.arrBookmarkedProducts objectAtIndex:indexPath.row];
     OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:productId] lastObject];
-    NSDictionary *data = @{PRODUCT_NAME: product.name, PRODUCT_ID: product.product_id};
+    NSDictionary *data = @{PRODUCT_NAME: product.name ? product.name : @"", PRODUCT_ID: product.product_id};
     [cell configWithData:data];
     return cell;
 }

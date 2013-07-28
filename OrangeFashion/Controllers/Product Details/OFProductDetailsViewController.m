@@ -18,7 +18,9 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 @property (strong, nonatomic) NSArray                   * images;
 @property (strong, nonatomic) UIPageViewController      * pageVC;
 @property (assign, nonatomic) int                         currentVC;
-@property (weak, nonatomic) IBOutlet UIButton *btnBookmark;
+@property (weak, nonatomic) IBOutlet UIButton           * btnBookmark;
+@property (weak, nonatomic) IBOutlet UIButton           * btnShareFacebook;
+@property (weak, nonatomic) IBOutlet UIView             * buttonsWrapView;
 
 
 
@@ -134,6 +136,21 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     [self.view bringSubviewToFront:self.btnBookmark];
     [self.btnBookmark becomeFirstResponder];
     
+    UIImage *imageBg = [UIImage imageNamed:@"details-done-btn-bg"];
+    [self.btnBookmark setBackgroundImage:[imageBg resizableImageWithStandardInsets]
+                                forState:UIControlStateNormal];
+    [self.btnBookmark setBackgroundImage:[imageBg resizableImageWithStandardInsets]
+                                forState:UIControlStateHighlighted];
+    
+    [self.view bringSubviewToFront:self.btnShareFacebook];
+    [self.btnShareFacebook becomeFirstResponder];
+    [self.btnShareFacebook setBackgroundImage:[imageBg resizableImageWithStandardInsets]
+                                forState:UIControlStateNormal];
+    [self.btnShareFacebook setBackgroundImage:[imageBg resizableImageWithStandardInsets]
+                                     forState:UIControlStateHighlighted];
+    
+    [self.view bringSubviewToFront:self.buttonsWrapView];
+    
     self.pageControl.numberOfPages = self.images.count;
     self.pageControl.currentPage = 0;
     [self.view bringSubviewToFront:self.pageControllWrap];
@@ -222,6 +239,44 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     }
 }
 
+- (IBAction)onBtnShareFacebook:(id)sender {
+    DEFacebookComposeViewController *facebookViewComposer = [[DEFacebookComposeViewController alloc] init];
+    
+    // If you want to use the Facebook app with multiple iOS apps you can set an URL scheme suffix
+    //    facebookViewComposer.urlSchemeSuffix = @"facebooksample";
+    
+    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:self.productID] lastObject];
+    [facebookViewComposer setInitialText:[NSString stringWithFormat:@"%@ \nLink sản phẩm: http://orangefashion.vn/san-pham/%@", product.name, self.productID]];
+    
+    // optional
+    NSString *imgUrl = [(OFProductImages *)[self.images objectAtIndex:0] picasa_store_source];
+    UIImageView *fakeImageView = [[UIImageView alloc] init];
+    [fakeImageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        [facebookViewComposer addImage:fakeImageView.image];
+    }
+
+    [facebookViewComposer setCompletionHandler:^(DEFacebookComposeViewControllerResult result) {
+        switch (result) {
+            case DEFacebookComposeViewControllerResultCancelled:
+                NSLog(@"Facebook Result: Cancelled");
+                break;
+            case DEFacebookComposeViewControllerResultDone:
+                NSLog(@"Facebook Result: Sent");
+                break;
+        }
+        
+        [self dismissModalViewControllerAnimated:YES];
+    }];
+    
+    [SVProgressHUD showWithStatus:@"Đang tải Facebook Share" maskType:SVProgressHUDMaskTypeGradient];    
+    [self presentViewController:facebookViewComposer animated:YES completion:^{
+        [SVProgressHUD dismiss];
+    }];
+}
+
 - (IBAction)onBtnBookmark:(id)sender {
     [OFProduct bookmarkProductWithProductID:self.productID];
 }
@@ -237,4 +292,8 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     return YES;
 }
 
+- (void)viewDidUnload {
+    [self setButtonsWrapView:nil];
+    [super viewDidUnload];
+}
 @end

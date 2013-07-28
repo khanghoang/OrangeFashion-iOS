@@ -14,7 +14,7 @@
 
 @end
 
-#define PRODUCT_NAME                        @"name"
+#define PRODUCT_NAME                        @"product_name"
 #define PRODUCT_ID                          @"product_id"
 
 @interface OFBookmarkTableCell : UITableViewCell
