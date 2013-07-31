@@ -274,6 +274,10 @@
 		0C5B0A5A17A9048700B56D3A /* UAPushSettingsUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5B0A2217A9048700B56D3A /* UAPushSettingsUserInfoView.xib */; };
 		0C5B0A5B17A9048700B56D3A /* UAPushSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5B0A2317A9048700B56D3A /* UAPushSettingsView.xib */; };
 		0C5B0A5F17A9082400B56D3A /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C5B0A5E17A9082400B56D3A /* AirshipConfig.plist */; };
+		0C5B0A6417A9200600B56D3A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A6217A91FF000B56D3A /* CFNetwork.framework */; };
+		0C5B0A6517A9200F00B56D3A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A6017A91FC600B56D3A /* AudioToolbox.framework */; };
+		0C5B0A6717A9217700B56D3A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */; };
+		0C5B0A6917A9219600B56D3A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A6817A9219600B56D3A /* libz.dylib */; };
 		0C8690C5179C2CD4005AC30C /* OFBookmarkViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */; };
 		0C8690C6179C2CD4005AC30C /* OFBookmarkViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */; };
 		0C8690CE179C3E6C005AC30C /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8690C9179C3E6C005AC30C /* IISideController.m */; };
@@ -758,6 +762,10 @@
 		0C5B0A2217A9048700B56D3A /* UAPushSettingsUserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UAPushSettingsUserInfoView.xib; sourceTree = "<group>"; };
 		0C5B0A2317A9048700B56D3A /* UAPushSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UAPushSettingsView.xib; sourceTree = "<group>"; };
 		0C5B0A5E17A9082400B56D3A /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
+		0C5B0A6017A91FC600B56D3A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0C5B0A6217A91FF000B56D3A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0C5B0A6817A9219600B56D3A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0C8690C2179C2CD4005AC30C /* OFBookmarkViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBookmarkViewViewController.h; sourceTree = "<group>"; };
 		0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBookmarkViewViewController.m; sourceTree = "<group>"; };
 		0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFBookmarkViewViewController.xib; sourceTree = "<group>"; };
@@ -806,20 +814,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C5B0A2417A9048700B56D3A /* libUAirship-2.0.0.a in Frameworks */,
-				0C2BE3FF177FFE2F00CD2C5B /* SystemConfiguration.framework in Frameworks */,
-				0C2BE3FD177FFE0A00CD2C5B /* Twitter.framework in Frameworks */,
-				0C2BE3FB177FFDC900CD2C5B /* MessageUI.framework in Frameworks */,
-				0C2BE3F9177FFD9100CD2C5B /* CoreTelephony.framework in Frameworks */,
-				0C2BE3DF177FFBC700CD2C5B /* CoreLocation.framework in Frameworks */,
 				0C2BE2F7177FEE1200CD2C5B /* MapKit.framework in Frameworks */,
-				0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */,
-				0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */,
+				0C5B0A6517A9200F00B56D3A /* AudioToolbox.framework in Frameworks */,
+				0C2BE3FB177FFDC900CD2C5B /* MessageUI.framework in Frameworks */,
+				0C2BE3DF177FFBC700CD2C5B /* CoreLocation.framework in Frameworks */,
+				0C2BE3F9177FFD9100CD2C5B /* CoreTelephony.framework in Frameworks */,
 				0CF317A0176DFDC5009CC776 /* libsqlite3.dylib in Frameworks */,
+				0C5B0A6917A9219600B56D3A /* libz.dylib in Frameworks */,
+				0C4C58D5170D6D9600ED0DF8 /* UIKit.framework in Frameworks */,
+				0C2BE3FF177FFE2F00CD2C5B /* SystemConfiguration.framework in Frameworks */,
+				0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */,
+				0C5B0A6717A9217700B56D3A /* MobileCoreServices.framework in Frameworks */,
+				0C5B0A6417A9200600B56D3A /* CFNetwork.framework in Frameworks */,
+				0C5B0A2417A9048700B56D3A /* libUAirship-2.0.0.a in Frameworks */,
+				0C2BE3FD177FFE0A00CD2C5B /* Twitter.framework in Frameworks */,
+				0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */,
 				0CF3179E176DFDB3009CC776 /* Accounts.framework in Frameworks */,
 				0CF3179C176DFDAA009CC776 /* AdSupport.framework in Frameworks */,
 				0C3527D017647DFA00E07AAB /* QuartzCore.framework in Frameworks */,
-				0C4C58D5170D6D9600ED0DF8 /* UIKit.framework in Frameworks */,
 				0C4C58D7170D6D9600ED0DF8 /* Foundation.framework in Frameworks */,
 				0C4C58D9170D6D9600ED0DF8 /* CoreGraphics.framework in Frameworks */,
 				0C4C58DB170D6D9600ED0DF8 /* CoreData.framework in Frameworks */,
@@ -1198,6 +1210,8 @@
 		0C4C58C8170D6D9600ED0DF8 = {
 			isa = PBXGroup;
 			children = (
+				0C5B0A6817A9219600B56D3A /* libz.dylib */,
+				0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */,
 				0C4C58DC170D6D9600ED0DF8 /* OrangeFashion */,
 				0C4C58FE170D6D9600ED0DF8 /* OrangeFashionTests */,
 				0C4C58D3170D6D9600ED0DF8 /* Frameworks */,
@@ -1217,6 +1231,8 @@
 		0C4C58D3170D6D9600ED0DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C5B0A6217A91FF000B56D3A /* CFNetwork.framework */,
+				0C5B0A6017A91FC600B56D3A /* AudioToolbox.framework */,
 				0CE1832717A4037700DE04E9 /* FacebookSDKOverrides.bundle */,
 				0CE1832517A39D9400DE04E9 /* FacebookSDK.framework */,
 				0C2BE3FE177FFE2F00CD2C5B /* SystemConfiguration.framework */,
@@ -2332,8 +2348,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2348,8 +2364,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4B9C7562-F1FA-4B83-99F3-09B6C8EEF0B8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384F67EA-CD91-4D21-8A55-870DC6DE6396";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2367,8 +2383,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoang Trieu (68MBTBFLPU)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2376,8 +2392,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "4B9C7562-F1FA-4B83-99F3-09B6C8EEF0B8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "070C95DB-B5D4-46A8-81A7-1D17C952C2FF";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
