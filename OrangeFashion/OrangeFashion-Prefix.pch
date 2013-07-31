@@ -9,14 +9,14 @@
 #ifdef DEBUG
 
 #define API_SERVER_HOST                             @"http://orangefashion.vn/api/api.php"
-#define URBAN_AIRSHIP_APP_KEY                       @""
-#define URBAN_AIRSHIP_APP_SECRET                    @""
+#define URBAN_AIRSHIP_APP_KEY                       @"S4NTYF0UReqCkkxBtTsjgQ"
+#define URBAN_AIRSHIP_APP_SECRET                    @"gOhq1D_yQmuS7FcKIzu0SQ"
 
 #else
 
 #define API_SERVER_HOST                             @"http://orangefashion.vn/api/api.php"
-#define URBAN_AIRSHIP_APP_KEY                       @""
-#define URBAN_AIRSHIP_APP_SECRET                    @""
+#define URBAN_AIRSHIP_APP_KEY                       @"S4NTYF0UReqCkkxBtTsjgQ"
+#define URBAN_AIRSHIP_APP_SECRET                    @"gOhq1D_yQmuS7FcKIzu0SQ"
 
 #endif
 
@@ -51,7 +51,7 @@
 //Hardcoded default values
 #define SETTINGS_CLIENT_ID_DEFAULT                  @""
 #define SETTINGS_CLIENT_SECRET_DEFAULT              @""
-#define SETTINGS_FLURRY_TOKEN_DEFAULT               @"51f8bef646b7c2316f000007"
+#define SETTINGS_FLURRY_TOKEN_DEFAULT               @""
 #define SETTINGS_CRITERCISM_TOKEN_DEFAULT           @"51f8bef646b7c2316f000007"
 #define SETTINGS_UPLOAD_IMAGE_SIZE_DEFAULT          1024
 #define SETTINGS_UPLOAD_IMAGE_QUALITY_DEFAULT       0.70
@@ -102,6 +102,7 @@
 //Vendors
 #import "SVProgressHUD.h"
 #import "AFNetworking.h"
+#import "AFUrbanAirshipClient.h"
 #import "UIImageView+AFNetworking.h"
 #import "CoreData+MagicalRecord.h"
 #import "AFJSONRequestOperation.h"
@@ -117,6 +118,7 @@
 #import "UIScrollView+SVPullToRefresh.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "Flurry.h"
+#import "UAirship.h"
 
 //Models
 #import "BaseModel.h"

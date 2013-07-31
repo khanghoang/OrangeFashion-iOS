@@ -11,6 +11,10 @@
 #import "IIViewDeckController.h"
 #import "OFHomeViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "UAConfig.h"
+#import "UAirship.h"
+#import "UAPush.h"
+#import "UAAnalytics.h"
 
 @interface OFAppDelegate()
 
@@ -27,6 +31,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Flurry startSession:SETTINGS_FLURRY_TOKEN_DEFAULT];
+    
     // start MR
     [MagicalRecord setupCoreDataStack];
     [FBLoginView class];
@@ -57,6 +62,17 @@
         // No, display the login page.
 //        [self showLoginView];
     }
+    
+    // Urban Airship
+    UAConfig *config = [UAConfig defaultConfig];
+    
+    // Call takeOff (which creates the UAirship singleton)
+    [UAirship takeOff:config];
+    
+    // Request a custom set of notification types
+    [UAPush shared].notificationTypes = (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeNewsstandContentAvailability);
+     
+    [[UAPush shared] setPushEnabled:YES];
     
     return YES;
 }
