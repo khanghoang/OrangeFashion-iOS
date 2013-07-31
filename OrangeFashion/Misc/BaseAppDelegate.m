@@ -28,7 +28,7 @@ SINGLETON_MACRO
         [Crittercism enableWithAppID:critercismToken];
     
     //Full offline restore (async)
-    [[BaseStorageManager sharedInstance] restore];
+    [[BaseStorageManager sharedInstance] restore]; 
     
     //---------------------------------------------------------------------------
         

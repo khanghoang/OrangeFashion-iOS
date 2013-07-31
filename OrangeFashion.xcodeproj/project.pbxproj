@@ -216,6 +216,7 @@
 		0C4C5C65170E91FB00ED0DF8 /* OFProductImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5BFC170E7CFD00ED0DF8 /* OFProductImages.m */; };
 		0C4C5C66170E926200ED0DF8 /* _OFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5BF6170E7CFD00ED0DF8 /* _OFProduct.m */; };
 		0C4C5C67170E926400ED0DF8 /* _OFProductImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5BF8170E7CFD00ED0DF8 /* _OFProductImages.m */; };
+		0C5B098C17A8FACF00B56D3A /* libFlurry_4.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B098B17A8FACF00B56D3A /* libFlurry_4.2.2.a */; };
 		0C8690C5179C2CD4005AC30C /* OFBookmarkViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */; };
 		0C8690C6179C2CD4005AC30C /* OFBookmarkViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */; };
 		0C8690CE179C3E6C005AC30C /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8690C9179C3E6C005AC30C /* IISideController.m */; };
@@ -566,6 +567,8 @@
 		0C4C5C3C170E803900ED0DF8 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		0C4C5C57170E824400ED0DF8 /* OFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHTTPClient.h; sourceTree = "<group>"; };
 		0C4C5C58170E824400ED0DF8 /* OFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHTTPClient.m; sourceTree = "<group>"; };
+		0C5B098A17A8FACF00B56D3A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		0C5B098B17A8FACF00B56D3A /* libFlurry_4.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.2.a; sourceTree = "<group>"; };
 		0C8690C2179C2CD4005AC30C /* OFBookmarkViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBookmarkViewViewController.h; sourceTree = "<group>"; };
 		0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBookmarkViewViewController.m; sourceTree = "<group>"; };
 		0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFBookmarkViewViewController.xib; sourceTree = "<group>"; };
@@ -632,6 +635,7 @@
 				0C4C58DB170D6D9600ED0DF8 /* CoreData.framework in Frameworks */,
 				0C2BE339177FEFDB00CD2C5B /* libCrittercism_v3_5_1.a in Frameworks */,
 				0CE1832617A39D9400DE04E9 /* FacebookSDK.framework in Frameworks */,
+				0C5B098C17A8FACF00B56D3A /* libFlurry_4.2.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1442,6 +1446,7 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0C5B098917A8FACF00B56D3A /* Flurry */,
 				0C1DE5EF17A5084A00239D31 /* SVPullToRefresh */,
 				0C1DE59E17A4D2AF00239D31 /* FacebookComposeViewController */,
 				0C8690C7179C3E6C005AC30C /* ViewDeck */,
@@ -1653,6 +1658,15 @@
 				0C3527D31764803000E07AAB /* Product Details */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0C5B098917A8FACF00B56D3A /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				0C5B098A17A8FACF00B56D3A /* Flurry.h */,
+				0C5B098B17A8FACF00B56D3A /* libFlurry_4.2.2.a */,
+			);
+			path = Flurry;
 			sourceTree = "<group>";
 		};
 		0C8690C1179C2CBD005AC30C /* Bookmark */ = {
@@ -2163,6 +2177,7 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Flurry iPhone SDK v4.0.6/FlurryAds\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/ZBarSDK\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/CrittercismSDK\"",
+					"\"$(SRCROOT)/OrangeFashion/Vendors/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2189,6 +2204,7 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Flurry iPhone SDK v4.0.6/FlurryAds\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/ZBarSDK\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/CrittercismSDK\"",
+					"\"$(SRCROOT)/OrangeFashion/Vendors/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

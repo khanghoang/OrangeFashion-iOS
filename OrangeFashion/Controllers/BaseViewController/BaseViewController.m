@@ -20,6 +20,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    [self trackCritercismBreadCrumb:__LINE__];
     
     // Nav left button
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -42,6 +43,17 @@
 - (void)rightButtonClicked
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)trackCritercismBreadCrumb:(NSUInteger)lineNumber
+{
+    NSString *breadcrumb = [NSString stringWithFormat:@"%@:%d", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], lineNumber];
+    [Crittercism leaveBreadcrumb:breadcrumb];
+}
+
+- (void)trackAnalytics:(NSString*)eventName
+{
+//    [Flurry logEvent:];
 }
 
 @end

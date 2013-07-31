@@ -26,6 +26,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Flurry startSession:SETTINGS_FLURRY_TOKEN_DEFAULT];
     // start MR
     [MagicalRecord setupCoreDataStack];
     [FBLoginView class];

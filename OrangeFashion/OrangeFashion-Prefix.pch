@@ -49,9 +49,10 @@
 #define SETTINGS_FEEDBACK_BODY                      @"ios_feedback_body"
 
 //Hardcoded default values
-#define SETTINGS_CLIENT_ID_DEFAULT                  @"d32ff267c592ae0228b9ecb54a2980a5d5bb10c4fdd48d7e77b9f5d01e2f511d"
-#define SETTINGS_CLIENT_SECRET_DEFAULT              @"bc093c1303223aa4c045d02fceea27a442337fe768282d40c4e4806000b979ea"
-#define SETTINGS_CRITERCISM_TOKEN_DEFAULT           @""
+#define SETTINGS_CLIENT_ID_DEFAULT                  @""
+#define SETTINGS_CLIENT_SECRET_DEFAULT              @""
+#define SETTINGS_FLURRY_TOKEN_DEFAULT               @"51f8bef646b7c2316f000007"
+#define SETTINGS_CRITERCISM_TOKEN_DEFAULT           @"51f8bef646b7c2316f000007"
 #define SETTINGS_UPLOAD_IMAGE_SIZE_DEFAULT          1024
 #define SETTINGS_UPLOAD_IMAGE_QUALITY_DEFAULT       0.70
 #define SETTINGS_FEEDBACK_EMAIL_DEFAULT             @"feedback@hungrygowhere.com"
@@ -115,6 +116,7 @@
 #import "SVPullToRefresh.h"
 #import "UIScrollView+SVPullToRefresh.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
+#import "Flurry.h"
 
 //Models
 #import "BaseModel.h"
