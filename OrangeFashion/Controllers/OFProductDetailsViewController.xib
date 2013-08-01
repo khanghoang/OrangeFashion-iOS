@@ -183,7 +183,6 @@
 								<array class="NSMutableArray" key="NSSubviews"/>
 								<string key="NSFrame">{{0, 96}, {320, 34}}</string>
 								<reference key="NSSuperview" ref="42259613"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="933778781"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>

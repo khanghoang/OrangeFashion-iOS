@@ -307,6 +307,14 @@
 		0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A1176DFDCC009CC776 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A3176DFDD4009CC776 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF35CFB178C4B64007C5649 /* OFHelperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF35CFA178C4B64007C5649 /* OFHelperManager.m */; };
+		0CFFE35917AA3F9600308B6A /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE35517AA3F9600308B6A /* CAAnimation+Blocks.m */; };
+		0CFFE35A17AA3F9600308B6A /* SKBounceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE35817AA3F9600308B6A /* SKBounceAnimation.m */; };
+		0CFFE36417AA3FC300308B6A /* CHAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE35D17AA3FC300308B6A /* CHAvatarView.m */; };
+		0CFFE36517AA3FC300308B6A /* CHDraggableView+Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE35F17AA3FC300308B6A /* CHDraggableView+Avatar.m */; };
+		0CFFE36617AA3FC300308B6A /* CHDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE36117AA3FC300308B6A /* CHDraggableView.m */; };
+		0CFFE36717AA3FC300308B6A /* CHDraggingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE36317AA3FC300308B6A /* CHDraggingCoordinator.m */; };
+		0CFFE36E17AA46DE00308B6A /* bookmark-icons@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CFFE36C17AA46DE00308B6A /* bookmark-icons@2x.png */; };
+		0CFFE36F17AA46DE00308B6A /* bookmark-icons.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CFFE36D17AA46DE00308B6A /* bookmark-icons.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -816,6 +824,20 @@
 		0CF317A3176DFDD4009CC776 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0CF35CF9178C4B64007C5649 /* OFHelperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHelperManager.h; sourceTree = "<group>"; };
 		0CF35CFA178C4B64007C5649 /* OFHelperManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHelperManager.m; sourceTree = "<group>"; };
+		0CFFE35417AA3F9600308B6A /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
+		0CFFE35517AA3F9600308B6A /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
+		0CFFE35717AA3F9600308B6A /* SKBounceAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBounceAnimation.h; sourceTree = "<group>"; };
+		0CFFE35817AA3F9600308B6A /* SKBounceAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBounceAnimation.m; sourceTree = "<group>"; };
+		0CFFE35C17AA3FC300308B6A /* CHAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatarView.h; sourceTree = "<group>"; };
+		0CFFE35D17AA3FC300308B6A /* CHAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarView.m; sourceTree = "<group>"; };
+		0CFFE35E17AA3FC300308B6A /* CHDraggableView+Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHDraggableView+Avatar.h"; sourceTree = "<group>"; };
+		0CFFE35F17AA3FC300308B6A /* CHDraggableView+Avatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHDraggableView+Avatar.m"; sourceTree = "<group>"; };
+		0CFFE36017AA3FC300308B6A /* CHDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDraggableView.h; sourceTree = "<group>"; };
+		0CFFE36117AA3FC300308B6A /* CHDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDraggableView.m; sourceTree = "<group>"; };
+		0CFFE36217AA3FC300308B6A /* CHDraggingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDraggingCoordinator.h; sourceTree = "<group>"; };
+		0CFFE36317AA3FC300308B6A /* CHDraggingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDraggingCoordinator.m; sourceTree = "<group>"; };
+		0CFFE36C17AA46DE00308B6A /* bookmark-icons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark-icons@2x.png"; sourceTree = "<group>"; };
+		0CFFE36D17AA46DE00308B6A /* bookmark-icons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark-icons.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1190,6 +1212,8 @@
 		0C3527EA17648A3200E07AAB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0CFFE36C17AA46DE00308B6A /* bookmark-icons@2x.png */,
+				0CFFE36D17AA46DE00308B6A /* bookmark-icons.png */,
 				0C1DE5E717A5032E00239D31 /* detail-shadow-top-bg.png */,
 				0C1DE5E817A5032F00239D31 /* detail-shadow-top-bg@2x.png */,
 				0C1DE5E917A5032F00239D31 /* details-done-btn-bg.png */,
@@ -1354,6 +1378,7 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0CFFE35B17AA3FC300308B6A /* GraggableView */,
 				0C5B0A6A17A95F5F00B56D3A /* Google Analytics */,
 				0C5B098D17A9048700B56D3A /* Airship */,
 				0C5B098917A8FACF00B56D3A /* Flurry */,
@@ -1372,6 +1397,8 @@
 				0C4C5933170D6F4200ED0DF8 /* AFNetworking */,
 				0C4C5AB6170D6F4300ED0DF8 /* JSONKit */,
 				0C4C5AD5170D6F4300ED0DF8 /* SVProgressHUD */,
+				0CFFE35317AA3F9600308B6A /* CAAnimationBlocks */,
+				0CFFE35617AA3F9600308B6A /* SKBounceAnimation */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -1946,6 +1973,40 @@
 			path = "Resources/Facebook login";
 			sourceTree = "<group>";
 		};
+		0CFFE35317AA3F9600308B6A /* CAAnimationBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				0CFFE35417AA3F9600308B6A /* CAAnimation+Blocks.h */,
+				0CFFE35517AA3F9600308B6A /* CAAnimation+Blocks.m */,
+			);
+			path = CAAnimationBlocks;
+			sourceTree = "<group>";
+		};
+		0CFFE35617AA3F9600308B6A /* SKBounceAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0CFFE35717AA3F9600308B6A /* SKBounceAnimation.h */,
+				0CFFE35817AA3F9600308B6A /* SKBounceAnimation.m */,
+			);
+			path = SKBounceAnimation;
+			sourceTree = "<group>";
+		};
+		0CFFE35B17AA3FC300308B6A /* GraggableView */ = {
+			isa = PBXGroup;
+			children = (
+				0CFFE35C17AA3FC300308B6A /* CHAvatarView.h */,
+				0CFFE35D17AA3FC300308B6A /* CHAvatarView.m */,
+				0CFFE35E17AA3FC300308B6A /* CHDraggableView+Avatar.h */,
+				0CFFE35F17AA3FC300308B6A /* CHDraggableView+Avatar.m */,
+				0CFFE36017AA3FC300308B6A /* CHDraggableView.h */,
+				0CFFE36117AA3FC300308B6A /* CHDraggableView.m */,
+				0CFFE36217AA3FC300308B6A /* CHDraggingCoordinator.h */,
+				0CFFE36317AA3FC300308B6A /* CHDraggingCoordinator.m */,
+			);
+			name = GraggableView;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2120,6 +2181,8 @@
 				0C5B0A5A17A9048700B56D3A /* UAPushSettingsUserInfoView.xib in Resources */,
 				0C5B0A5B17A9048700B56D3A /* UAPushSettingsView.xib in Resources */,
 				0C5B0A5F17A9082400B56D3A /* AirshipConfig.plist in Resources */,
+				0CFFE36E17AA46DE00308B6A /* bookmark-icons@2x.png in Resources */,
+				0CFFE36F17AA46DE00308B6A /* bookmark-icons.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2316,6 +2379,12 @@
 				0C5B0A4817A9048700B56D3A /* UAPushSettingsUserInfoViewController.m in Sources */,
 				0C5B0A4917A9048700B56D3A /* UAPushSettingsViewController.m in Sources */,
 				0C5B0A4A17A9048700B56D3A /* UAPushUI.m in Sources */,
+				0CFFE35917AA3F9600308B6A /* CAAnimation+Blocks.m in Sources */,
+				0CFFE35A17AA3F9600308B6A /* SKBounceAnimation.m in Sources */,
+				0CFFE36417AA3FC300308B6A /* CHAvatarView.m in Sources */,
+				0CFFE36517AA3FC300308B6A /* CHDraggableView+Avatar.m in Sources */,
+				0CFFE36617AA3FC300308B6A /* CHDraggableView.m in Sources */,
+				0CFFE36717AA3FC300308B6A /* CHDraggingCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

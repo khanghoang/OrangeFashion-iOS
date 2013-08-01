@@ -15,10 +15,14 @@
 #import "UAirship.h"
 #import "UAPush.h"
 #import "UAAnalytics.h"
+#import "CHDraggableView.h"
+#import "CHDraggableView+Avatar.h"
+#import "CHDraggingCoordinator.h"
 
-@interface OFAppDelegate()
+@interface OFAppDelegate() <CHDraggingCoordinatorDelegate>
 
-@property (strong, nonatomic) OFNavigationViewController        *navController;
+@property (strong, nonatomic) OFNavigationViewController        * navController;
+@property (strong, nonatomic) CHDraggingCoordinator             * draggingCoordinator;
 
 @end
 
@@ -78,7 +82,20 @@
      
     [[UAPush shared] setPushEnabled:YES];
     
+    [self addDraggableBookmark];
+    
     return YES;
+}
+
+- (void)addDraggableBookmark
+{
+    CHDraggableView *draggableView = [CHDraggableView draggableViewWithImage:[UIImage imageNamed:@"bookmark-icons"]];    
+    self.draggingCoordinator = [[CHDraggingCoordinator alloc] initWithWindow:self.window draggableViewBounds:draggableView.bounds];
+    self.draggingCoordinator.delegate = self;
+    self.draggingCoordinator.snappingEdge = CHSnappingEdgeBoth;
+    draggableView.delegate = self.draggingCoordinator;
+    
+    [self.window addSubview:draggableView];
 }
 
 - (void)setUpGoogleAnalytic
@@ -253,6 +270,13 @@
     UIViewController *topViewController = [self.navController topViewController];    
     OFHomeViewController* loginViewController = [[OFHomeViewController alloc]initWithNibName:@"OFHomeViewController" bundle:nil];
     [topViewController presentModalViewController:loginViewController animated:NO];
+}
+
+#pragma mark - CHDragging delegate
+- (UIViewController *)draggingCoordinator:(CHDraggingCoordinator *)coordinator viewControllerForDraggableView:(CHDraggableView *)draggableView
+{
+//    return [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    return [[OFBookmarkViewViewController alloc] init];
 }
 
 @end
