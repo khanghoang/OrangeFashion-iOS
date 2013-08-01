@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
 #define LABEL_SPACING             5
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : GAITrackedViewController
 
 @end

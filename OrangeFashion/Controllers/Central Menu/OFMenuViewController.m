@@ -23,7 +23,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    self.title = @"Danh mục sản phẩm";
     [self.navigationController setNavigationBarHidden:NO];
     
     [[OFHelperManager sharedInstance] getMenuListOnComplete:^(NSArray *menu) {

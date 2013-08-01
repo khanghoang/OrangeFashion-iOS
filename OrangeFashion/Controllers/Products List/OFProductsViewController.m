@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Danh sách sản phẩm";
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     [self.tableProducts registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"OFProductsTableCell"];
@@ -33,15 +34,11 @@
     self.isSearching = NO;
     self.filteredList = [[NSMutableArray alloc] init];
     
-//    CGRect frame = self.tableProducts.contentStretch;
-//    frame.origin.y -= 44;
-//    self.tableProducts.contentStretch = frame;
-    
     [SVProgressHUD showWithStatus:@"Đang tải sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
     
     [self.tableProducts addPullToRefreshWithActionHandler:^{
         if (self.category_id > 0) {
-            [self fillUpTableProductWithCategoryID:self.category_id];
+            [self fillUpTableProductWithCategoryID:self.category_id];            
             return;
         }
         
@@ -54,7 +51,6 @@
     }
     
     [self fillUpTableProductWithAllProducts];
-    
 }
 
 - (void)fillUpTableProductWithCategoryID:(NSInteger)categoryID
@@ -62,8 +58,7 @@
     [OFProduct getProductsWithCategoryID:categoryID onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
-        [self.tableProducts reloadData];
-        
+        [self.tableProducts reloadData];        
         [self.tableProducts.pullToRefreshView stopAnimating];
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
@@ -71,7 +66,6 @@
         NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
         self.productsArr = arrProducts;
         [self.tableProducts reloadData];
-        
         [self.tableProducts.pullToRefreshView stopAnimating];
     }];
 }
@@ -82,17 +76,16 @@
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
         [self.tableProducts reloadData];
-        
         [self.tableProducts.pullToRefreshView stopAnimating];
         
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];        
         [self.tableProducts reloadData];
-        
-        [self.tableProducts.pullToRefreshView stopAnimating];        
+        [self.tableProducts.pullToRefreshView stopAnimating];
     }];
 }
+
 
 #pragma mark - Table view data source
 

@@ -11,12 +11,14 @@
 #define API_SERVER_HOST                             @"http://orangefashion.vn/api/api.php"
 #define URBAN_AIRSHIP_APP_KEY                       @"S4NTYF0UReqCkkxBtTsjgQ"
 #define URBAN_AIRSHIP_APP_SECRET                    @"gOhq1D_yQmuS7FcKIzu0SQ"
+#define GOOGLE_TRACKING_ID                          @"UA-22523153-3"
 
 #else
 
 #define API_SERVER_HOST                             @"http://orangefashion.vn/api/api.php"
 #define URBAN_AIRSHIP_APP_KEY                       @"S4NTYF0UReqCkkxBtTsjgQ"
 #define URBAN_AIRSHIP_APP_SECRET                    @"gOhq1D_yQmuS7FcKIzu0SQ"
+#define GOOGLE_TRACKING_ID                          @"UA-22523153-3"
 
 #endif
 
@@ -119,6 +121,11 @@
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "Flurry.h"
 #import "UAirship.h"
+#import "GAI.h"
+#import "GAITracker.h"
+#import "GAITrackedViewController.h"
+#import "GAITransaction.h"
+#import "GAITransactionItem.h"
 
 //Models
 #import "BaseModel.h"

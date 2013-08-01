@@ -41,11 +41,15 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
     
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
+    
+    self.trackedViewName = [NSString stringWithFormat:@"%@ - %@", product.product_code, product.name ];
+    self.title = product.name;
+    // Do any additional setup after loading the view
     
     // set product info
     self.lblProductName.text = product.name;

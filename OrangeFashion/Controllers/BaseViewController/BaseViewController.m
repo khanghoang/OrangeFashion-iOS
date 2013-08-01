@@ -21,7 +21,17 @@
 {
     [super viewDidLoad];
     [self trackCritercismBreadCrumb:__LINE__];
-    
+    [self addNavigationItems];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.trackedViewName = self.title;
+}
+
+- (void)addNavigationItems
+{
     // Nav left button
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftButton setImage:[UIImage imageNamed:@"left-nav-button"] forState:UIControlStateNormal];

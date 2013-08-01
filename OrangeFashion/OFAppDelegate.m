@@ -30,7 +30,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Setup Flurry
     [Flurry startSession:SETTINGS_FLURRY_TOKEN_DEFAULT];
+    
+    // Setup Google Analytics
+    [self setUpGoogleAnalytic];
     
     // start MR
     [MagicalRecord setupCoreDataStack];
@@ -75,6 +79,19 @@
     [[UAPush shared] setPushEnabled:YES];
     
     return YES;
+}
+
+- (void)setUpGoogleAnalytic
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    // Optional: set debug to YES for extra debugging information.
+    [GAI sharedInstance].debug = YES;
+    // Create tracker instance.
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_TRACKING_ID];
+    [GAI sharedInstance].debug = YES;
 }
 
 - (IIViewDeckController*)generateControllerStack {

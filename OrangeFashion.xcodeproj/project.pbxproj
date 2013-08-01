@@ -278,6 +278,8 @@
 		0C5B0A6517A9200F00B56D3A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A6017A91FC600B56D3A /* AudioToolbox.framework */; };
 		0C5B0A6717A9217700B56D3A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */; };
 		0C5B0A6917A9219600B56D3A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A6817A9219600B56D3A /* libz.dylib */; };
+		0C5B0A7217A95F5F00B56D3A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A7017A95F5F00B56D3A /* libGoogleAnalytics.a */; };
+		0C5B0A7517A95FEB00B56D3A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5B0A7417A95FEB00B56D3A /* libGoogleAnalytics.a */; };
 		0C8690C5179C2CD4005AC30C /* OFBookmarkViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */; };
 		0C8690C6179C2CD4005AC30C /* OFBookmarkViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */; };
 		0C8690CE179C3E6C005AC30C /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8690C9179C3E6C005AC30C /* IISideController.m */; };
@@ -766,6 +768,13 @@
 		0C5B0A6217A91FF000B56D3A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0C5B0A6817A9219600B56D3A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0C5B0A6B17A95F5F00B56D3A /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		0C5B0A6C17A95F5F00B56D3A /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		0C5B0A6D17A95F5F00B56D3A /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		0C5B0A6E17A95F5F00B56D3A /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		0C5B0A6F17A95F5F00B56D3A /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		0C5B0A7017A95F5F00B56D3A /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		0C5B0A7417A95FEB00B56D3A /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		0C8690C2179C2CD4005AC30C /* OFBookmarkViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBookmarkViewViewController.h; sourceTree = "<group>"; };
 		0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBookmarkViewViewController.m; sourceTree = "<group>"; };
 		0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFBookmarkViewViewController.xib; sourceTree = "<group>"; };
@@ -838,6 +847,8 @@
 				0C2BE339177FEFDB00CD2C5B /* libCrittercism_v3_5_1.a in Frameworks */,
 				0CE1832617A39D9400DE04E9 /* FacebookSDK.framework in Frameworks */,
 				0C5B098C17A8FACF00B56D3A /* libFlurry_4.2.2.a in Frameworks */,
+				0C5B0A7217A95F5F00B56D3A /* libGoogleAnalytics.a in Frameworks */,
+				0C5B0A7517A95FEB00B56D3A /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1210,8 +1221,6 @@
 		0C4C58C8170D6D9600ED0DF8 = {
 			isa = PBXGroup;
 			children = (
-				0C5B0A6817A9219600B56D3A /* libz.dylib */,
-				0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */,
 				0C4C58DC170D6D9600ED0DF8 /* OrangeFashion */,
 				0C4C58FE170D6D9600ED0DF8 /* OrangeFashionTests */,
 				0C4C58D3170D6D9600ED0DF8 /* Frameworks */,
@@ -1231,6 +1240,9 @@
 		0C4C58D3170D6D9600ED0DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C5B0A7417A95FEB00B56D3A /* libGoogleAnalytics.a */,
+				0C5B0A6817A9219600B56D3A /* libz.dylib */,
+				0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */,
 				0C5B0A6217A91FF000B56D3A /* CFNetwork.framework */,
 				0C5B0A6017A91FC600B56D3A /* AudioToolbox.framework */,
 				0CE1832717A4037700DE04E9 /* FacebookSDKOverrides.bundle */,
@@ -1342,6 +1354,7 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0C5B0A6A17A95F5F00B56D3A /* Google Analytics */,
 				0C5B098D17A9048700B56D3A /* Airship */,
 				0C5B098917A8FACF00B56D3A /* Flurry */,
 				0C1DE5EF17A5084A00239D31 /* SVPullToRefresh */,
@@ -1853,6 +1866,19 @@
 				0C5B0A2317A9048700B56D3A /* UAPushSettingsView.xib */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		0C5B0A6A17A95F5F00B56D3A /* Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				0C5B0A6B17A95F5F00B56D3A /* GAI.h */,
+				0C5B0A6C17A95F5F00B56D3A /* GAITrackedViewController.h */,
+				0C5B0A6D17A95F5F00B56D3A /* GAITracker.h */,
+				0C5B0A6E17A95F5F00B56D3A /* GAITransaction.h */,
+				0C5B0A6F17A95F5F00B56D3A /* GAITransactionItem.h */,
+				0C5B0A7017A95F5F00B56D3A /* libGoogleAnalytics.a */,
+			);
+			path = "Google Analytics";
 			sourceTree = "<group>";
 		};
 		0C8690C1179C2CBD005AC30C /* Bookmark */ = {
@@ -2421,6 +2447,8 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/ZBarSDK\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/CrittercismSDK\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Flurry\"",
+					"\"$(SRCROOT)/OrangeFashion/Vendors/Google Analytics\"",
+					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2449,6 +2477,8 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/ZBarSDK\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/CrittercismSDK\"",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Flurry\"",
+					"\"$(SRCROOT)/OrangeFashion/Vendors/Google Analytics\"",
+					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
