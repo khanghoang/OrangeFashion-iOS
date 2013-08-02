@@ -55,6 +55,7 @@
 #define SETTINGS_CLIENT_SECRET_DEFAULT              @""
 #define SETTINGS_FLURRY_TOKEN_DEFAULT               @""
 #define SETTINGS_CRITERCISM_TOKEN_DEFAULT           @"51f8bef646b7c2316f000007"
+#define SETTINGS_GOOGLE_MAP_API_TOKEN               @"AIzaSyAlynEo-Ftk1P95arG4D5Pm2jkte6nxBqo"
 #define SETTINGS_UPLOAD_IMAGE_SIZE_DEFAULT          1024
 #define SETTINGS_UPLOAD_IMAGE_QUALITY_DEFAULT       0.70
 #define SETTINGS_FEEDBACK_EMAIL_DEFAULT             @"feedback@hungrygowhere.com"

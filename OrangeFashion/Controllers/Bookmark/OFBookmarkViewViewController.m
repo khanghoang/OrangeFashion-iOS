@@ -7,12 +7,13 @@
 //
 
 #import "OFBookmarkViewViewController.h"
-#import "OFBookmarkTableCell.h"
+#import "OFBookmarkTableViewCell.h"
 #import "OFProductDetailsViewController.h"
+#import "OFBookmarkSectionHeader.h"
 #import <objc/runtime.h>
 
 @interface OFBookmarkViewViewController ()
-<UITableViewDataSource, UITableViewDelegate, OFBookmarkTableCellDelegate, UIAlertViewDelegate>
+<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, OFBookmarkTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView        * tableViewBookmarkedProducts;
 @property (strong, nonatomic) NSMutableArray            * arrBookmarkedProducts;
@@ -24,10 +25,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableViewBookmarkedProducts.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SidebarMenuTableCellBg"] resizableImageWithStandardInsetsTop:0 right:0 bottom:0 left:0]];
     self.arrBookmarkedProducts = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
-    [self.tableViewBookmarkedProducts registerNib:[UINib nibWithNibName:@"OFBookmarkTableCell" bundle:nil] forCellReuseIdentifier:@"OFBookmarkTableCell"];
+    [self.tableViewBookmarkedProducts registerNib:[UINib nibWithNibName:@"OFBookmarkTableViewCell" bundle:nil] forCellReuseIdentifier:@"OFBookmarkTableViewCell"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -44,24 +44,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIndentifier = @"OFBookmarkTableCell";
-    OFBookmarkTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+    static NSString *cellIndentifier = @"OFBookmarkTableViewCell";
+    OFBookmarkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
     if (!cell)
-        cell = (OFBookmarkTableCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OFBookmarkTableCell"];
+        cell = (OFBookmarkTableViewCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OFBookmarkTableViewCell"];
     
     cell.delegate = self;
     
     //TODO: something need to configed here
     NSNumber *productId = [self.arrBookmarkedProducts objectAtIndex:indexPath.row];
     OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:productId] lastObject];
-    NSDictionary *data = @{PRODUCT_NAME: product.name ? product.name : @"", PRODUCT_ID: product.product_id};
-    [cell configWithData:data];
+    [cell configWithProduct:product];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.arrBookmarkedProducts.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [OFBookmarkTableViewCell getHeight];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    OFBookmarkSectionHeader *header = [[OFBookmarkSectionHeader alloc] init];
+    [header changeNumberOfBookmarkProduct:[OFProduct getBookmarkProducts].count];
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return [OFBookmarkSectionHeader getHeight];
 }
 
 #pragma mark - UITableview Delegate

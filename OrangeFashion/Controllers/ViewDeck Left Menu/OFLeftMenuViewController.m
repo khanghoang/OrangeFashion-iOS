@@ -9,11 +9,13 @@
 #import "OFLeftMenuViewController.h"
 #import "OFSidebarMenuTableCell.h"
 #import "OFSidebarMenuTableCell.h"
+#import "OFLeftMenuSectionHeader.h"
 #import "OFAppDelegate.h"
 
 @interface OFLeftMenuViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray        * arrMenu;
+@property (strong, nonatomic) NSArray               * arrSection;
 @property (weak, nonatomic) IBOutlet UITableView    * tableMenu;
 
 @end
@@ -25,9 +27,10 @@
 - (void)viewDidLoad
 {
     self.arrMenu = [[NSMutableArray alloc] init];
+    self.arrSection = @[@"About me", @"Danh mục", @"Thông tin", @"Tuỳ chỉnh"];
     
     self.tableMenu.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SidebarMenuTableCellBg"] resizableImageWithStandardInsetsTop:0 right:0 bottom:0 left:0]];
-    [self.tableMenu registerNib:[UINib nibWithNibName:@"OFSidebarMenuTableCell" bundle:nil] forCellReuseIdentifier:@"SidebarMenuTableCell"];
+    [self.tableMenu registerNib:[UINib nibWithNibName:NSStringFromClass([OFSidebarMenuTableCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([OFSidebarMenuTableCell class])];
     
     [[OFHelperManager sharedInstance] getMenuListOnComplete:^(NSArray *menu) {
         self.arrMenu = [[[menu objectAtIndex:1] objectForKey:@"session"] mutableCopy];
@@ -39,9 +42,47 @@
 
 #pragma mark - Tableview datasource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.arrSection.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return [OFLeftMenuSectionHeader getHeight];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    OFLeftMenuSectionHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([OFLeftMenuSectionHeader class])];
+    if (!header) {
+        header = [[OFLeftMenuSectionHeader alloc] init];
+    }
+    
+    if ([[self.arrSection objectAtIndex:section] isKindOfClass:[NSString class]]) {
+        NSString *title = [self.arrSection objectAtIndex:section];
+        [header configTitleNameWithString:[title uppercaseString]];
+    }
+    
+    return header;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellIndentifier = @"SidebarMenuTableCell";
+    if (indexPath.section == 3) {
+        NSString *cellIndentifier =  NSStringFromClass([OFSidebarMenuTableCell class]);
+        OFSidebarMenuTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        
+        if (!cell) {
+            cell = [[OFSidebarMenuTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+        }
+        
+        NSDictionary *data = @{MENU_TITLE : @"Bản đồ"};
+        [cell configWithData:data];
+        return cell;
+    }
+    
+    NSString *cellIndentifier = NSStringFromClass([OFSidebarMenuTableCell class]);
     OFSidebarMenuTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
     
     if (!cell) {
@@ -56,8 +97,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    if ([[OFUserManager sharedInstance] isLoggedUser])
+    // Person
+    if (section == 0) {
+        if ([[OFUserManager sharedInstance] isLoggedUser])
+            return 1;
+    }
+    
+    // Menu
+    if (section == 1) {
+        return self.arrMenu.count;
+    }
+    
+    // Information
+    if (section == 2) {
         return 1;
+    }
+    
+    // Log out
+    if (section == 3) {
+        return 1;
+    }
     
     return self.arrMenu.count;
 }

@@ -114,7 +114,7 @@
 				<reference key="IBUIBackgroundColor" ref="893975531"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<reference key="IBUIContentView" ref="1001259509"/>
-				<string key="IBUIReuseIdentifier">SidebarMenuTableCell</string>
+				<string key="IBUIReuseIdentifier">OFSidebarMenuTableCell</string>
 				<real value="45" key="IBUIRowHeight"/>
 			</object>
 		</array>

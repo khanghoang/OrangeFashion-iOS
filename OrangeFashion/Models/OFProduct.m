@@ -37,7 +37,9 @@
                              };
     
     [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {        
-
+        
+        [OFProduct productsFromReponseObject:responseObject];
+        
         if (successBlock) {
             successBlock(operation.response.statusCode, responseObject);
         }
@@ -52,6 +54,8 @@
 {
     NSDictionary *params = @{@"rquest": @"getproducts"};
     [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [OFProduct productsFromReponseObject:responseObject];
         
         if (successBlock) {
             successBlock(operation.response.statusCode, responseObject);

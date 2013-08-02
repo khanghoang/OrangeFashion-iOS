@@ -132,6 +132,21 @@
 		0C2BE3FD177FFE0A00CD2C5B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3FC177FFE0A00CD2C5B /* Twitter.framework */; };
 		0C2BE3FF177FFE2F00CD2C5B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2BE3FE177FFE2F00CD2C5B /* SystemConfiguration.framework */; };
 		0C2BE4021780088900CD2C5B /* OFProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE4011780088900CD2C5B /* OFProductManager.m */; };
+		0C2D8DDD17ABB7030069DC32 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DDC17ABB7030069DC32 /* GoogleMaps.framework */; };
+		0C2D8DDF17ABB7390069DC32 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DDE17ABB7390069DC32 /* AVFoundation.framework */; };
+		0C2D8DE117ABB7450069DC32 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DE017ABB7450069DC32 /* CoreText.framework */; };
+		0C2D8DE317ABB74B0069DC32 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DE217ABB74B0069DC32 /* GLKit.framework */; };
+		0C2D8DE517ABB7520069DC32 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DE417ABB7520069DC32 /* ImageIO.framework */; };
+		0C2D8DE717ABB75B0069DC32 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DE617ABB75B0069DC32 /* OpenGLES.framework */; };
+		0C2D8DE917ABB7620069DC32 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DE817ABB7620069DC32 /* libc++.dylib */; };
+		0C2D8DEB17ABB7680069DC32 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D8DEA17ABB7680069DC32 /* libicucore.dylib */; };
+		0C3262C617AB5F78001DEB95 /* OFBookmarkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3262C517AB5F78001DEB95 /* OFBookmarkTableViewCell.m */; };
+		0C3262C817AB5FA0001DEB95 /* OFBookmarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3262C717AB5FA0001DEB95 /* OFBookmarkTableViewCell.xib */; };
+		0C3262CA17AB7371001DEB95 /* bookmark-cell-dash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3262C917AB7371001DEB95 /* bookmark-cell-dash.png */; };
+		0C3262CD17AB7451001DEB95 /* OFBookmarkSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3262CC17AB7451001DEB95 /* OFBookmarkSectionHeader.m */; };
+		0C3262CF17AB745E001DEB95 /* OFBookmarkSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3262CE17AB745E001DEB95 /* OFBookmarkSectionHeader.xib */; };
+		0C3262D117AB9EB9001DEB95 /* OFLeftMenuSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3262D017AB9EB9001DEB95 /* OFLeftMenuSectionHeader.xib */; };
+		0C3262D417ABA10A001DEB95 /* OFLeftMenuSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3262D317ABA10A001DEB95 /* OFLeftMenuSectionHeader.m */; };
 		0C3527D017647DFA00E07AAB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C3527CF17647DFA00E07AAB /* QuartzCore.framework */; };
 		0C3527D6176480A500E07AAB /* OFProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527D5176480A500E07AAB /* OFProductsViewController.m */; };
 		0C3527D9176480BC00E07AAB /* OFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3527D8176480BC00E07AAB /* OFMenuViewController.m */; };
@@ -291,8 +306,6 @@
 		0C8690D8179C443C005AC30C /* OFHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8690D7179C443C005AC30C /* OFHomeTableViewCell.xib */; };
 		0C8DEFD81759E614004016E0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEFD71759E614004016E0 /* BaseModel.m */; };
 		0CAF779F17926BC700E3B084 /* OFHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */; };
-		0CCB1E8217A2C21C001480EC /* OFBookmarkTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB1E8017A2C21C001480EC /* OFBookmarkTableCell.m */; };
-		0CCB1E8317A2C21C001480EC /* OFBookmarkTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB1E8117A2C21C001480EC /* OFBookmarkTableCell.xib */; };
 		0CD488321710256200C30EEF /* OFProductsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD488311710256200C30EEF /* OFProductsTableCell.xib */; };
 		0CD488351710266600C30EEF /* OFProductsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD488341710266600C30EEF /* OFProductsTableCell.m */; };
 		0CE1832617A39D9400DE04E9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE1832517A39D9400DE04E9 /* FacebookSDK.framework */; };
@@ -388,9 +401,9 @@
 		0C1EE2C7178820C100EB606C /* BaseSharingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSharingManager.m; sourceTree = "<group>"; };
 		0C1EE2C8178820C100EB606C /* BaseStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseStorageManager.h; sourceTree = "<group>"; };
 		0C1EE2C9178820C100EB606C /* BaseStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseStorageManager.m; sourceTree = "<group>"; };
-		0C1EE2D41788731C00EB606C /* OFSidebarMenuTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFSidebarMenuTableCell.h; sourceTree = "<group>"; };
-		0C1EE2D51788731C00EB606C /* OFSidebarMenuTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFSidebarMenuTableCell.m; sourceTree = "<group>"; };
-		0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFSidebarMenuTableCell.xib; sourceTree = "<group>"; };
+		0C1EE2D41788731C00EB606C /* OFSidebarMenuTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFSidebarMenuTableCell.h; path = ../Views/OFSidebarMenuTableCell.h; sourceTree = "<group>"; };
+		0C1EE2D51788731C00EB606C /* OFSidebarMenuTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFSidebarMenuTableCell.m; path = ../Views/OFSidebarMenuTableCell.m; sourceTree = "<group>"; };
+		0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFSidebarMenuTableCell.xib; path = ../Views/OFSidebarMenuTableCell.xib; sourceTree = "<group>"; };
 		0C1EE2D91788761200EB606C /* SidebarMenuTableCellBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SidebarMenuTableCellBg.png; sourceTree = "<group>"; };
 		0C1EE2DA1788761200EB606C /* SidebarMenuTableCellBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SidebarMenuTableCellBg@2x.png"; sourceTree = "<group>"; };
 		0C263D6E1788B76F008A2C81 /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
@@ -501,6 +514,24 @@
 		0C2BE3FE177FFE2F00CD2C5B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0C2BE4001780088900CD2C5B /* OFProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFProductManager.h; sourceTree = "<group>"; };
 		0C2BE4011780088900CD2C5B /* OFProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFProductManager.m; sourceTree = "<group>"; };
+		0C2D8DDC17ABB7030069DC32 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		0C2D8DDE17ABB7390069DC32 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0C2D8DE017ABB7450069DC32 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0C2D8DE217ABB74B0069DC32 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		0C2D8DE417ABB7520069DC32 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		0C2D8DE617ABB75B0069DC32 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		0C2D8DE817ABB7620069DC32 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		0C2D8DEA17ABB7680069DC32 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		0C3262C417AB5F78001DEB95 /* OFBookmarkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBookmarkTableViewCell.h; sourceTree = "<group>"; };
+		0C3262C517AB5F78001DEB95 /* OFBookmarkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBookmarkTableViewCell.m; sourceTree = "<group>"; };
+		0C3262C717AB5FA0001DEB95 /* OFBookmarkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFBookmarkTableViewCell.xib; sourceTree = "<group>"; };
+		0C3262C917AB7371001DEB95 /* bookmark-cell-dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark-cell-dash.png"; sourceTree = "<group>"; };
+		0C3262CB17AB7450001DEB95 /* OFBookmarkSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBookmarkSectionHeader.h; sourceTree = "<group>"; };
+		0C3262CC17AB7451001DEB95 /* OFBookmarkSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBookmarkSectionHeader.m; sourceTree = "<group>"; };
+		0C3262CE17AB745E001DEB95 /* OFBookmarkSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFBookmarkSectionHeader.xib; sourceTree = "<group>"; };
+		0C3262D017AB9EB9001DEB95 /* OFLeftMenuSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFLeftMenuSectionHeader.xib; sourceTree = "<group>"; };
+		0C3262D217ABA10A001DEB95 /* OFLeftMenuSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFLeftMenuSectionHeader.h; sourceTree = "<group>"; };
+		0C3262D317ABA10A001DEB95 /* OFLeftMenuSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFLeftMenuSectionHeader.m; sourceTree = "<group>"; };
 		0C3527CF17647DFA00E07AAB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0C3527D4176480A500E07AAB /* OFProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductsViewController.h; path = "Products List/OFProductsViewController.h"; sourceTree = "<group>"; };
 		0C3527D5176480A500E07AAB /* OFProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductsViewController.m; path = "Products List/OFProductsViewController.m"; sourceTree = "<group>"; };
@@ -800,9 +831,6 @@
 		0C8DEFD71759E614004016E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0CAF779D17926BC700E3B084 /* OFHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHomeTableViewCell.h; sourceTree = "<group>"; };
 		0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHomeTableViewCell.m; sourceTree = "<group>"; };
-		0CCB1E7F17A2C21B001480EC /* OFBookmarkTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBookmarkTableCell.h; sourceTree = "<group>"; };
-		0CCB1E8017A2C21C001480EC /* OFBookmarkTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBookmarkTableCell.m; sourceTree = "<group>"; };
-		0CCB1E8117A2C21C001480EC /* OFBookmarkTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFBookmarkTableCell.xib; sourceTree = "<group>"; };
 		0CD488311710256200C30EEF /* OFProductsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFProductsTableCell.xib; path = ../OFProductsTableCell.xib; sourceTree = "<group>"; };
 		0CD488331710266600C30EEF /* OFProductsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductsTableCell.h; path = ../OFProductsTableCell.h; sourceTree = "<group>"; };
 		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductsTableCell.m; path = ../OFProductsTableCell.m; sourceTree = "<group>"; };
@@ -845,13 +873,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5B0A6917A9219600B56D3A /* libz.dylib in Frameworks */,
+				0C2D8DEB17ABB7680069DC32 /* libicucore.dylib in Frameworks */,
+				0C2D8DE917ABB7620069DC32 /* libc++.dylib in Frameworks */,
+				0C2D8DE717ABB75B0069DC32 /* OpenGLES.framework in Frameworks */,
+				0C2D8DE517ABB7520069DC32 /* ImageIO.framework in Frameworks */,
+				0C2D8DE317ABB74B0069DC32 /* GLKit.framework in Frameworks */,
+				0C2D8DE117ABB7450069DC32 /* CoreText.framework in Frameworks */,
+				0C2D8DDF17ABB7390069DC32 /* AVFoundation.framework in Frameworks */,
 				0C2BE2F7177FEE1200CD2C5B /* MapKit.framework in Frameworks */,
 				0C5B0A6517A9200F00B56D3A /* AudioToolbox.framework in Frameworks */,
 				0C2BE3FB177FFDC900CD2C5B /* MessageUI.framework in Frameworks */,
 				0C2BE3DF177FFBC700CD2C5B /* CoreLocation.framework in Frameworks */,
 				0C2BE3F9177FFD9100CD2C5B /* CoreTelephony.framework in Frameworks */,
 				0CF317A0176DFDC5009CC776 /* libsqlite3.dylib in Frameworks */,
-				0C5B0A6917A9219600B56D3A /* libz.dylib in Frameworks */,
 				0C4C58D5170D6D9600ED0DF8 /* UIKit.framework in Frameworks */,
 				0C2BE3FF177FFE2F00CD2C5B /* SystemConfiguration.framework in Frameworks */,
 				0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */,
@@ -871,6 +906,7 @@
 				0C5B098C17A8FACF00B56D3A /* libFlurry_4.2.2.a in Frameworks */,
 				0C5B0A7217A95F5F00B56D3A /* libGoogleAnalytics.a in Frameworks */,
 				0C5B0A7517A95FEB00B56D3A /* libGoogleAnalytics.a in Frameworks */,
+				0C2D8DDD17ABB7030069DC32 /* GoogleMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,9 +1017,6 @@
 				0CD488331710266600C30EEF /* OFProductsTableCell.h */,
 				0CD488341710266600C30EEF /* OFProductsTableCell.m */,
 				0CD488311710256200C30EEF /* OFProductsTableCell.xib */,
-				0C1EE2D41788731C00EB606C /* OFSidebarMenuTableCell.h */,
-				0C1EE2D51788731C00EB606C /* OFSidebarMenuTableCell.m */,
-				0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1205,6 +1238,12 @@
 				0C3527E31764817200E07AAB /* OFLeftMenuViewController.h */,
 				0C3527E41764817200E07AAB /* OFLeftMenuViewController.m */,
 				0C3527E51764817200E07AAB /* OFLeftMenuViewController.xib */,
+				0C3262D217ABA10A001DEB95 /* OFLeftMenuSectionHeader.h */,
+				0C3262D317ABA10A001DEB95 /* OFLeftMenuSectionHeader.m */,
+				0C3262D017AB9EB9001DEB95 /* OFLeftMenuSectionHeader.xib */,
+				0C1EE2D41788731C00EB606C /* OFSidebarMenuTableCell.h */,
+				0C1EE2D51788731C00EB606C /* OFSidebarMenuTableCell.m */,
+				0C1EE2D71788738D00EB606C /* OFSidebarMenuTableCell.xib */,
 			);
 			name = "ViewDeck Left Menu";
 			sourceTree = "<group>";
@@ -1212,6 +1251,7 @@
 		0C3527EA17648A3200E07AAB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0C3262C917AB7371001DEB95 /* bookmark-cell-dash.png */,
 				0CFFE36C17AA46DE00308B6A /* bookmark-icons@2x.png */,
 				0CFFE36D17AA46DE00308B6A /* bookmark-icons.png */,
 				0C1DE5E717A5032E00239D31 /* detail-shadow-top-bg.png */,
@@ -1245,6 +1285,13 @@
 		0C4C58C8170D6D9600ED0DF8 = {
 			isa = PBXGroup;
 			children = (
+				0C2D8DEA17ABB7680069DC32 /* libicucore.dylib */,
+				0C2D8DE817ABB7620069DC32 /* libc++.dylib */,
+				0C2D8DE617ABB75B0069DC32 /* OpenGLES.framework */,
+				0C2D8DE417ABB7520069DC32 /* ImageIO.framework */,
+				0C2D8DE217ABB74B0069DC32 /* GLKit.framework */,
+				0C2D8DE017ABB7450069DC32 /* CoreText.framework */,
+				0C2D8DDE17ABB7390069DC32 /* AVFoundation.framework */,
 				0C4C58DC170D6D9600ED0DF8 /* OrangeFashion */,
 				0C4C58FE170D6D9600ED0DF8 /* OrangeFashionTests */,
 				0C4C58D3170D6D9600ED0DF8 /* Frameworks */,
@@ -1264,6 +1311,7 @@
 		0C4C58D3170D6D9600ED0DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D8DDC17ABB7030069DC32 /* GoogleMaps.framework */,
 				0C5B0A7417A95FEB00B56D3A /* libGoogleAnalytics.a */,
 				0C5B0A6817A9219600B56D3A /* libz.dylib */,
 				0C5B0A6617A9217700B56D3A /* MobileCoreServices.framework */,
@@ -1914,9 +1962,12 @@
 				0C8690C2179C2CD4005AC30C /* OFBookmarkViewViewController.h */,
 				0C8690C3179C2CD4005AC30C /* OFBookmarkViewViewController.m */,
 				0C8690C4179C2CD4005AC30C /* OFBookmarkViewViewController.xib */,
-				0CCB1E7F17A2C21B001480EC /* OFBookmarkTableCell.h */,
-				0CCB1E8017A2C21C001480EC /* OFBookmarkTableCell.m */,
-				0CCB1E8117A2C21C001480EC /* OFBookmarkTableCell.xib */,
+				0C3262C417AB5F78001DEB95 /* OFBookmarkTableViewCell.h */,
+				0C3262C517AB5F78001DEB95 /* OFBookmarkTableViewCell.m */,
+				0C3262C717AB5FA0001DEB95 /* OFBookmarkTableViewCell.xib */,
+				0C3262CB17AB7450001DEB95 /* OFBookmarkSectionHeader.h */,
+				0C3262CC17AB7451001DEB95 /* OFBookmarkSectionHeader.m */,
+				0C3262CE17AB745E001DEB95 /* OFBookmarkSectionHeader.xib */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -2118,7 +2169,6 @@
 				0C8690D4179C4214005AC30C /* OFHomeViewController.xib in Resources */,
 				0C8690D6179C42C6005AC30C /* OFMenuViewController.xib in Resources */,
 				0C8690D8179C443C005AC30C /* OFHomeTableViewCell.xib in Resources */,
-				0CCB1E8317A2C21C001480EC /* OFBookmarkTableCell.xib in Resources */,
 				0CE1832817A4037700DE04E9 /* FacebookSDKOverrides.bundle in Resources */,
 				0C1DE5C717A4D2AF00239D31 /* DEFacebookComposeView.xib in Resources */,
 				0C1DE5CD17A4D2AF00239D31 /* DEFacebookAttachmentFrame.png in Resources */,
@@ -2183,6 +2233,10 @@
 				0C5B0A5F17A9082400B56D3A /* AirshipConfig.plist in Resources */,
 				0CFFE36E17AA46DE00308B6A /* bookmark-icons@2x.png in Resources */,
 				0CFFE36F17AA46DE00308B6A /* bookmark-icons.png in Resources */,
+				0C3262C817AB5FA0001DEB95 /* OFBookmarkTableViewCell.xib in Resources */,
+				0C3262CA17AB7371001DEB95 /* bookmark-cell-dash.png in Resources */,
+				0C3262CF17AB745E001DEB95 /* OFBookmarkSectionHeader.xib in Resources */,
+				0C3262D117AB9EB9001DEB95 /* OFLeftMenuSectionHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2343,7 +2397,6 @@
 				0C8690CE179C3E6C005AC30C /* IISideController.m in Sources */,
 				0C8690CF179C3E6C005AC30C /* IIViewDeckController.m in Sources */,
 				0C8690D0179C3E6C005AC30C /* IIWrapController.m in Sources */,
-				0CCB1E8217A2C21C001480EC /* OFBookmarkTableCell.m in Sources */,
 				0CE1832E17A41E9900DE04E9 /* OFUserManager.m in Sources */,
 				0CE1833017A41FC700DE04E9 /* FacebookManager.m in Sources */,
 				0C1DE5C817A4D2AF00239D31 /* DEFacebookComposeViewController.m in Sources */,
@@ -2385,6 +2438,9 @@
 				0CFFE36517AA3FC300308B6A /* CHDraggableView+Avatar.m in Sources */,
 				0CFFE36617AA3FC300308B6A /* CHDraggableView.m in Sources */,
 				0CFFE36717AA3FC300308B6A /* CHDraggingCoordinator.m in Sources */,
+				0C3262C617AB5F78001DEB95 /* OFBookmarkTableViewCell.m in Sources */,
+				0C3262CD17AB7451001DEB95 /* OFBookmarkSectionHeader.m in Sources */,
+				0C3262D417ABA10A001DEB95 /* OFLeftMenuSectionHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2498,6 +2554,7 @@
 		0C4C590A170D6D9600ED0DF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = armv7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2519,6 +2576,7 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Google Analytics\"",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -2528,6 +2586,7 @@
 		0C4C590B170D6D9600ED0DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = armv7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2549,6 +2608,7 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Google Analytics\"",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

@@ -41,16 +41,7 @@
     self.productPrice.text = aProduct.price;
     
     self.productDetails.text = [NSString stringWithFormat:@"Màu: %@ \nChất liệu: %@", aProduct.colors, aProduct.material];
-    [self.productDetails setNumberOfLines:0];
-    [self.productDetails sizeToFit];
-    
-//    [OFProductImages getImagesForProduct:aProduct successBlock:^(NSInteger statusCode, id obj) {
-//        NSString *imgUrl = [[obj objectAtIndex:0] picasa_store_source];
-//        DLog(@"%@", imgUrl);
-//        [self.productCoverImage setImageWithURL:[[NSURL alloc] initWithString:imgUrl] placeholderImage:nil];    
-//    } failureBlock:^(NSInteger statusCode, id obj) {
-//        
-//    }];
+    [self.productDetails sizeToFitKeepWidth];
     
     NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", aProduct.product_id, aProduct.product_id];
     

@@ -18,6 +18,7 @@
 #import "CHDraggableView.h"
 #import "CHDraggableView+Avatar.h"
 #import "CHDraggingCoordinator.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface OFAppDelegate() <CHDraggingCoordinatorDelegate>
 
@@ -34,8 +35,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
     // Setup Flurry
     [Flurry startSession:SETTINGS_FLURRY_TOKEN_DEFAULT];
+    
+    // Setup Google map
+    [GMSServices provideAPIKey:SETTINGS_GOOGLE_MAP_API_TOKEN];
     
     // Setup Google Analytics
     [self setUpGoogleAnalytic];
@@ -125,7 +130,7 @@
     [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerIntegrated];
     [deckController setCenterhiddenInteractivity:IIViewDeckCenterHiddenNotUserInteractiveWithTapToCloseBouncing];
     
-    deckController.rightSize = 100;
+    deckController.rightSize = 60;
     
     return deckController;
 }

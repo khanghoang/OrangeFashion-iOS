@@ -12,7 +12,7 @@
 #import "IIViewDeckController.h"
 
 @interface OFProductsViewController ()
-<IIViewDeckControllerDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
+<UITableViewDataSource, UITableViewDelegate, IIViewDeckControllerDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) NSMutableArray            * productsArr;
 @property (assign, nonatomic) BOOL                        isSearching;
