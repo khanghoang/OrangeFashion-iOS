@@ -21,6 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0C187F2117ACAFA70083AA8A /* DAPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F1C17ACAFA70083AA8A /* DAPageIndicatorView.m */; };
+		0C187F2217ACAFA70083AA8A /* DAPagesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F1E17ACAFA70083AA8A /* DAPagesContainer.m */; };
+		0C187F2317ACAFA70083AA8A /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F2017ACAFA70083AA8A /* DAPagesContainerTopBar.m */; };
+		0C187F2717ACB20A0083AA8A /* OFPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */; };
+		0C187F2817ACB20A0083AA8A /* OFPageMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */; };
 		0C1DE5C717A4D2AF00239D31 /* DEFacebookComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */; };
 		0C1DE5C817A4D2AF00239D31 /* DEFacebookComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C1DE5C917A4D2AF00239D31 /* DEFacebookGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A317A4D2AF00239D31 /* DEFacebookGradientView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -59,6 +64,26 @@
 		0C1DE5EE17A5032F00239D31 /* details-done-btn-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE5EA17A5032F00239D31 /* details-done-btn-bg@2x.png */; };
 		0C1DE5F517A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5F217A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m */; settings = {COMPILER_FLAGS = "-fobjc-ar"; }; };
 		0C1DE5F617A5084A00239D31 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5F417A5084A00239D31 /* UIScrollView+SVPullToRefresh.m */; settings = {COMPILER_FLAGS = "-fobjc-ar"; }; };
+		0C1EC48917ABBA2700BC0382 /* OFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC48717ABBA2700BC0382 /* OFMapViewController.m */; };
+		0C1EC48A17ABBA2700BC0382 /* OFMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EC48817ABBA2700BC0382 /* OFMapViewController.xib */; };
+		0C1EC48C17ABBD3C00BC0382 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EC48B17ABBD3C00BC0382 /* GoogleMaps.bundle */; };
+		0C1EC49E17ABF98E00BC0382 /* OFWaterFallProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC49C17ABF98E00BC0382 /* OFWaterFallProductsViewController.m */; };
+		0C1EC49F17ABF98E00BC0382 /* OFWaterFallProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EC49D17ABF98E00BC0382 /* OFWaterFallProductsViewController.xib */; };
+		0C1EC4BD17AC0E8700BC0382 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4A217AC0E8700BC0382 /* NSIndexPath+PSTCollectionViewAdditions.m */; };
+		0C1EC4BE17AC0E8700BC0382 /* PSTCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4A417AC0E8700BC0382 /* PSTCollectionView.m */; };
+		0C1EC4BF17AC0E8700BC0382 /* PSTCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4A617AC0E8700BC0382 /* PSTCollectionViewCell.m */; };
+		0C1EC4C017AC0E8700BC0382 /* PSTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4A917AC0E8700BC0382 /* PSTCollectionViewController.m */; };
+		0C1EC4C117AC0E8700BC0382 /* PSTCollectionViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4AB17AC0E8700BC0382 /* PSTCollectionViewData.m */; };
+		0C1EC4C217AC0E8700BC0382 /* PSTCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4AD17AC0E8700BC0382 /* PSTCollectionViewFlowLayout.m */; };
+		0C1EC4C317AC0E8700BC0382 /* PSTCollectionViewItemKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4AF17AC0E8700BC0382 /* PSTCollectionViewItemKey.m */; };
+		0C1EC4C417AC0E8700BC0382 /* PSTCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4B217AC0E8700BC0382 /* PSTCollectionViewLayout.m */; };
+		0C1EC4C517AC0E8700BC0382 /* PSTCollectionViewUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4B417AC0E8700BC0382 /* PSTCollectionViewUpdateItem.m */; };
+		0C1EC4C617AC0E8700BC0382 /* PSTGridLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4B617AC0E8700BC0382 /* PSTGridLayoutInfo.m */; };
+		0C1EC4C717AC0E8700BC0382 /* PSTGridLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4B817AC0E8700BC0382 /* PSTGridLayoutItem.m */; };
+		0C1EC4C817AC0E8700BC0382 /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4BA17AC0E8700BC0382 /* PSTGridLayoutRow.m */; };
+		0C1EC4C917AC0E8700BC0382 /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4BC17AC0E8700BC0382 /* PSTGridLayoutSection.m */; };
+		0C1EC4CC17AC0F7200BC0382 /* OFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EC4CB17AC0F7200BC0382 /* OFCollectionViewCell.m */; };
+		0C1EC4CE17AC0FD600BC0382 /* OFCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EC4CD17AC0FD600BC0382 /* OFCollectionViewCell.xib */; };
 		0C1EE2CA178820C100EB606C /* BaseDeviceLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2BF178820C100EB606C /* BaseDeviceLibrary.m */; };
 		0C1EE2CB178820C100EB606C /* BaseLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C1178820C100EB606C /* BaseLocationManager.m */; };
 		0C1EE2CC178820C100EB606C /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE2C3178820C100EB606C /* BaseManager.m */; };
@@ -341,6 +366,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C187F1B17ACAFA70083AA8A /* DAPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPageIndicatorView.h; sourceTree = "<group>"; };
+		0C187F1C17ACAFA70083AA8A /* DAPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPageIndicatorView.m; sourceTree = "<group>"; };
+		0C187F1D17ACAFA70083AA8A /* DAPagesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainer.h; sourceTree = "<group>"; };
+		0C187F1E17ACAFA70083AA8A /* DAPagesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainer.m; sourceTree = "<group>"; };
+		0C187F1F17ACAFA70083AA8A /* DAPagesContainerTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainerTopBar.h; sourceTree = "<group>"; };
+		0C187F2017ACAFA70083AA8A /* DAPagesContainerTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainerTopBar.m; sourceTree = "<group>"; };
+		0C187F2417ACB20A0083AA8A /* OFPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFPageMenuViewController.h; sourceTree = "<group>"; };
+		0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFPageMenuViewController.m; sourceTree = "<group>"; };
+		0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFPageMenuViewController.xib; sourceTree = "<group>"; };
 		0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DEFacebookComposeView.xib; sourceTree = "<group>"; };
 		0C1DE5A017A4D2AF00239D31 /* DEFacebookComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEFacebookComposeViewController.h; sourceTree = "<group>"; };
 		0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEFacebookComposeViewController.m; sourceTree = "<group>"; };
@@ -389,6 +423,44 @@
 		0C1DE5F217A5084A00239D31 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		0C1DE5F317A5084A00239D31 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		0C1DE5F417A5084A00239D31 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		0C1EC48617ABBA2700BC0382 /* OFMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFMapViewController.h; sourceTree = "<group>"; };
+		0C1EC48717ABBA2700BC0382 /* OFMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFMapViewController.m; sourceTree = "<group>"; };
+		0C1EC48817ABBA2700BC0382 /* OFMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFMapViewController.xib; sourceTree = "<group>"; };
+		0C1EC48B17ABBD3C00BC0382 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
+		0C1EC49B17ABF98E00BC0382 /* OFWaterFallProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFWaterFallProductsViewController.h; sourceTree = "<group>"; };
+		0C1EC49C17ABF98E00BC0382 /* OFWaterFallProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFWaterFallProductsViewController.m; sourceTree = "<group>"; };
+		0C1EC49D17ABF98E00BC0382 /* OFWaterFallProductsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFWaterFallProductsViewController.xib; sourceTree = "<group>"; };
+		0C1EC4A117AC0E8700BC0382 /* NSIndexPath+PSTCollectionViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+PSTCollectionViewAdditions.h"; sourceTree = "<group>"; };
+		0C1EC4A217AC0E8700BC0382 /* NSIndexPath+PSTCollectionViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+PSTCollectionViewAdditions.m"; sourceTree = "<group>"; };
+		0C1EC4A317AC0E8700BC0382 /* PSTCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionView.h; sourceTree = "<group>"; };
+		0C1EC4A417AC0E8700BC0382 /* PSTCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionView.m; sourceTree = "<group>"; };
+		0C1EC4A517AC0E8700BC0382 /* PSTCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewCell.h; sourceTree = "<group>"; };
+		0C1EC4A617AC0E8700BC0382 /* PSTCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewCell.m; sourceTree = "<group>"; };
+		0C1EC4A717AC0E8700BC0382 /* PSTCollectionViewCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewCommon.h; sourceTree = "<group>"; };
+		0C1EC4A817AC0E8700BC0382 /* PSTCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewController.h; sourceTree = "<group>"; };
+		0C1EC4A917AC0E8700BC0382 /* PSTCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewController.m; sourceTree = "<group>"; };
+		0C1EC4AA17AC0E8700BC0382 /* PSTCollectionViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewData.h; sourceTree = "<group>"; };
+		0C1EC4AB17AC0E8700BC0382 /* PSTCollectionViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewData.m; sourceTree = "<group>"; };
+		0C1EC4AC17AC0E8700BC0382 /* PSTCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		0C1EC4AD17AC0E8700BC0382 /* PSTCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		0C1EC4AE17AC0E8700BC0382 /* PSTCollectionViewItemKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewItemKey.h; sourceTree = "<group>"; };
+		0C1EC4AF17AC0E8700BC0382 /* PSTCollectionViewItemKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewItemKey.m; sourceTree = "<group>"; };
+		0C1EC4B017AC0E8700BC0382 /* PSTCollectionViewLayout+Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTCollectionViewLayout+Internals.h"; sourceTree = "<group>"; };
+		0C1EC4B117AC0E8700BC0382 /* PSTCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewLayout.h; sourceTree = "<group>"; };
+		0C1EC4B217AC0E8700BC0382 /* PSTCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewLayout.m; sourceTree = "<group>"; };
+		0C1EC4B317AC0E8700BC0382 /* PSTCollectionViewUpdateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewUpdateItem.h; sourceTree = "<group>"; };
+		0C1EC4B417AC0E8700BC0382 /* PSTCollectionViewUpdateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewUpdateItem.m; sourceTree = "<group>"; };
+		0C1EC4B517AC0E8700BC0382 /* PSTGridLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutInfo.h; sourceTree = "<group>"; };
+		0C1EC4B617AC0E8700BC0382 /* PSTGridLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutInfo.m; sourceTree = "<group>"; };
+		0C1EC4B717AC0E8700BC0382 /* PSTGridLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutItem.h; sourceTree = "<group>"; };
+		0C1EC4B817AC0E8700BC0382 /* PSTGridLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutItem.m; sourceTree = "<group>"; };
+		0C1EC4B917AC0E8700BC0382 /* PSTGridLayoutRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutRow.h; sourceTree = "<group>"; };
+		0C1EC4BA17AC0E8700BC0382 /* PSTGridLayoutRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutRow.m; sourceTree = "<group>"; };
+		0C1EC4BB17AC0E8700BC0382 /* PSTGridLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutSection.h; sourceTree = "<group>"; };
+		0C1EC4BC17AC0E8700BC0382 /* PSTGridLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutSection.m; sourceTree = "<group>"; };
+		0C1EC4CA17AC0F7200BC0382 /* OFCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFCollectionViewCell.h; sourceTree = "<group>"; };
+		0C1EC4CB17AC0F7200BC0382 /* OFCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFCollectionViewCell.m; sourceTree = "<group>"; };
+		0C1EC4CD17AC0FD600BC0382 /* OFCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFCollectionViewCell.xib; sourceTree = "<group>"; };
 		0C1EE2BE178820C100EB606C /* BaseDeviceLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDeviceLibrary.h; sourceTree = "<group>"; };
 		0C1EE2BF178820C100EB606C /* BaseDeviceLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDeviceLibrary.m; sourceTree = "<group>"; };
 		0C1EE2C0178820C100EB606C /* BaseLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationManager.h; sourceTree = "<group>"; };
@@ -924,6 +996,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C187F1A17ACAFA70083AA8A /* DAPagesContainer */ = {
+			isa = PBXGroup;
+			children = (
+				0C187F1B17ACAFA70083AA8A /* DAPageIndicatorView.h */,
+				0C187F1C17ACAFA70083AA8A /* DAPageIndicatorView.m */,
+				0C187F1D17ACAFA70083AA8A /* DAPagesContainer.h */,
+				0C187F1E17ACAFA70083AA8A /* DAPagesContainer.m */,
+				0C187F1F17ACAFA70083AA8A /* DAPagesContainerTopBar.h */,
+				0C187F2017ACAFA70083AA8A /* DAPagesContainerTopBar.m */,
+			);
+			name = DAPagesContainer;
+			path = "../../../../Downloads/DAPagesContainer-master/DAPagesContainer";
+			sourceTree = "<group>";
+		};
 		0C1DE59E17A4D2AF00239D31 /* FacebookComposeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -988,6 +1074,64 @@
 				0C1DE5F417A5084A00239D31 /* UIScrollView+SVPullToRefresh.m */,
 			);
 			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		0C1EC48517ABBA2700BC0382 /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EC48617ABBA2700BC0382 /* OFMapViewController.h */,
+				0C1EC48717ABBA2700BC0382 /* OFMapViewController.m */,
+				0C1EC48817ABBA2700BC0382 /* OFMapViewController.xib */,
+			);
+			path = "Map View";
+			sourceTree = "<group>";
+		};
+		0C1EC49A17ABF7BB00BC0382 /* OFWaterfallProducts */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EC49B17ABF98E00BC0382 /* OFWaterFallProductsViewController.h */,
+				0C1EC49C17ABF98E00BC0382 /* OFWaterFallProductsViewController.m */,
+				0C1EC49D17ABF98E00BC0382 /* OFWaterFallProductsViewController.xib */,
+				0C1EC4CA17AC0F7200BC0382 /* OFCollectionViewCell.h */,
+				0C1EC4CB17AC0F7200BC0382 /* OFCollectionViewCell.m */,
+				0C1EC4CD17AC0FD600BC0382 /* OFCollectionViewCell.xib */,
+			);
+			path = OFWaterfallProducts;
+			sourceTree = "<group>";
+		};
+		0C1EC4A017AC0E8700BC0382 /* PSTCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EC4A117AC0E8700BC0382 /* NSIndexPath+PSTCollectionViewAdditions.h */,
+				0C1EC4A217AC0E8700BC0382 /* NSIndexPath+PSTCollectionViewAdditions.m */,
+				0C1EC4A317AC0E8700BC0382 /* PSTCollectionView.h */,
+				0C1EC4A417AC0E8700BC0382 /* PSTCollectionView.m */,
+				0C1EC4A517AC0E8700BC0382 /* PSTCollectionViewCell.h */,
+				0C1EC4A617AC0E8700BC0382 /* PSTCollectionViewCell.m */,
+				0C1EC4A717AC0E8700BC0382 /* PSTCollectionViewCommon.h */,
+				0C1EC4A817AC0E8700BC0382 /* PSTCollectionViewController.h */,
+				0C1EC4A917AC0E8700BC0382 /* PSTCollectionViewController.m */,
+				0C1EC4AA17AC0E8700BC0382 /* PSTCollectionViewData.h */,
+				0C1EC4AB17AC0E8700BC0382 /* PSTCollectionViewData.m */,
+				0C1EC4AC17AC0E8700BC0382 /* PSTCollectionViewFlowLayout.h */,
+				0C1EC4AD17AC0E8700BC0382 /* PSTCollectionViewFlowLayout.m */,
+				0C1EC4AE17AC0E8700BC0382 /* PSTCollectionViewItemKey.h */,
+				0C1EC4AF17AC0E8700BC0382 /* PSTCollectionViewItemKey.m */,
+				0C1EC4B017AC0E8700BC0382 /* PSTCollectionViewLayout+Internals.h */,
+				0C1EC4B117AC0E8700BC0382 /* PSTCollectionViewLayout.h */,
+				0C1EC4B217AC0E8700BC0382 /* PSTCollectionViewLayout.m */,
+				0C1EC4B317AC0E8700BC0382 /* PSTCollectionViewUpdateItem.h */,
+				0C1EC4B417AC0E8700BC0382 /* PSTCollectionViewUpdateItem.m */,
+				0C1EC4B517AC0E8700BC0382 /* PSTGridLayoutInfo.h */,
+				0C1EC4B617AC0E8700BC0382 /* PSTGridLayoutInfo.m */,
+				0C1EC4B717AC0E8700BC0382 /* PSTGridLayoutItem.h */,
+				0C1EC4B817AC0E8700BC0382 /* PSTGridLayoutItem.m */,
+				0C1EC4B917AC0E8700BC0382 /* PSTGridLayoutRow.h */,
+				0C1EC4BA17AC0E8700BC0382 /* PSTGridLayoutRow.m */,
+				0C1EC4BB17AC0E8700BC0382 /* PSTGridLayoutSection.h */,
+				0C1EC4BC17AC0E8700BC0382 /* PSTGridLayoutSection.m */,
+			);
+			path = PSTCollectionView;
 			sourceTree = "<group>";
 		};
 		0C1EE2BD178820C100EB606C /* TemplateClass */ = {
@@ -1215,6 +1359,9 @@
 				0CAF779D17926BC700E3B084 /* OFHomeTableViewCell.h */,
 				0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */,
 				0C8690D7179C443C005AC30C /* OFHomeTableViewCell.xib */,
+				0C187F2417ACB20A0083AA8A /* OFPageMenuViewController.h */,
+				0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */,
+				0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */,
 			);
 			name = "Central Menu";
 			sourceTree = "<group>";
@@ -1285,13 +1432,6 @@
 		0C4C58C8170D6D9600ED0DF8 = {
 			isa = PBXGroup;
 			children = (
-				0C2D8DEA17ABB7680069DC32 /* libicucore.dylib */,
-				0C2D8DE817ABB7620069DC32 /* libc++.dylib */,
-				0C2D8DE617ABB75B0069DC32 /* OpenGLES.framework */,
-				0C2D8DE417ABB7520069DC32 /* ImageIO.framework */,
-				0C2D8DE217ABB74B0069DC32 /* GLKit.framework */,
-				0C2D8DE017ABB7450069DC32 /* CoreText.framework */,
-				0C2D8DDE17ABB7390069DC32 /* AVFoundation.framework */,
 				0C4C58DC170D6D9600ED0DF8 /* OrangeFashion */,
 				0C4C58FE170D6D9600ED0DF8 /* OrangeFashionTests */,
 				0C4C58D3170D6D9600ED0DF8 /* Frameworks */,
@@ -1311,6 +1451,14 @@
 		0C4C58D3170D6D9600ED0DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D8DEA17ABB7680069DC32 /* libicucore.dylib */,
+				0C2D8DE817ABB7620069DC32 /* libc++.dylib */,
+				0C2D8DE617ABB75B0069DC32 /* OpenGLES.framework */,
+				0C2D8DE417ABB7520069DC32 /* ImageIO.framework */,
+				0C2D8DE217ABB74B0069DC32 /* GLKit.framework */,
+				0C2D8DE017ABB7450069DC32 /* CoreText.framework */,
+				0C2D8DDE17ABB7390069DC32 /* AVFoundation.framework */,
+				0C1EC48B17ABBD3C00BC0382 /* GoogleMaps.bundle */,
 				0C2D8DDC17ABB7030069DC32 /* GoogleMaps.framework */,
 				0C5B0A7417A95FEB00B56D3A /* libGoogleAnalytics.a */,
 				0C5B0A6817A9219600B56D3A /* libz.dylib */,
@@ -1426,6 +1574,8 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0C187F1A17ACAFA70083AA8A /* DAPagesContainer */,
+				0C1EC4A017AC0E8700BC0382 /* PSTCollectionView */,
 				0CFFE35B17AA3FC300308B6A /* GraggableView */,
 				0C5B0A6A17A95F5F00B56D3A /* Google Analytics */,
 				0C5B098D17A9048700B56D3A /* Airship */,
@@ -1640,6 +1790,8 @@
 				0CEF5311176C918D004447E1 /* Home Page */,
 				0C3527D117647FC700E07AAB /* Products List */,
 				0C3527D31764803000E07AAB /* Product Details */,
+				0C1EC48517ABBA2700BC0382 /* Map View */,
+				0C1EC49A17ABF7BB00BC0382 /* OFWaterfallProducts */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2237,6 +2389,11 @@
 				0C3262CA17AB7371001DEB95 /* bookmark-cell-dash.png in Resources */,
 				0C3262CF17AB745E001DEB95 /* OFBookmarkSectionHeader.xib in Resources */,
 				0C3262D117AB9EB9001DEB95 /* OFLeftMenuSectionHeader.xib in Resources */,
+				0C1EC48A17ABBA2700BC0382 /* OFMapViewController.xib in Resources */,
+				0C1EC48C17ABBD3C00BC0382 /* GoogleMaps.bundle in Resources */,
+				0C1EC49F17ABF98E00BC0382 /* OFWaterFallProductsViewController.xib in Resources */,
+				0C1EC4CE17AC0FD600BC0382 /* OFCollectionViewCell.xib in Resources */,
+				0C187F2817ACB20A0083AA8A /* OFPageMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2441,6 +2598,26 @@
 				0C3262C617AB5F78001DEB95 /* OFBookmarkTableViewCell.m in Sources */,
 				0C3262CD17AB7451001DEB95 /* OFBookmarkSectionHeader.m in Sources */,
 				0C3262D417ABA10A001DEB95 /* OFLeftMenuSectionHeader.m in Sources */,
+				0C1EC48917ABBA2700BC0382 /* OFMapViewController.m in Sources */,
+				0C1EC49E17ABF98E00BC0382 /* OFWaterFallProductsViewController.m in Sources */,
+				0C1EC4BD17AC0E8700BC0382 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				0C1EC4BE17AC0E8700BC0382 /* PSTCollectionView.m in Sources */,
+				0C1EC4BF17AC0E8700BC0382 /* PSTCollectionViewCell.m in Sources */,
+				0C1EC4C017AC0E8700BC0382 /* PSTCollectionViewController.m in Sources */,
+				0C1EC4C117AC0E8700BC0382 /* PSTCollectionViewData.m in Sources */,
+				0C1EC4C217AC0E8700BC0382 /* PSTCollectionViewFlowLayout.m in Sources */,
+				0C1EC4C317AC0E8700BC0382 /* PSTCollectionViewItemKey.m in Sources */,
+				0C1EC4C417AC0E8700BC0382 /* PSTCollectionViewLayout.m in Sources */,
+				0C1EC4C517AC0E8700BC0382 /* PSTCollectionViewUpdateItem.m in Sources */,
+				0C1EC4C617AC0E8700BC0382 /* PSTGridLayoutInfo.m in Sources */,
+				0C1EC4C717AC0E8700BC0382 /* PSTGridLayoutItem.m in Sources */,
+				0C1EC4C817AC0E8700BC0382 /* PSTGridLayoutRow.m in Sources */,
+				0C1EC4C917AC0E8700BC0382 /* PSTGridLayoutSection.m in Sources */,
+				0C1EC4CC17AC0F7200BC0382 /* OFCollectionViewCell.m in Sources */,
+				0C187F2117ACAFA70083AA8A /* DAPageIndicatorView.m in Sources */,
+				0C187F2217ACAFA70083AA8A /* DAPagesContainer.m in Sources */,
+				0C187F2317ACAFA70083AA8A /* DAPagesContainerTopBar.m in Sources */,
+				0C187F2717ACB20A0083AA8A /* OFPageMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

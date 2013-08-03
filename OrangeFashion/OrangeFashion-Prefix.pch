@@ -51,6 +51,12 @@
 #define SETTINGS_FEEDBACK_BODY                      @"ios_feedback_body"
 
 //Hardcoded default values
+
+#define SETTINGS_ORANGE_SHOP_LONGITUDE              106.650958
+#define SETTINGS_ORANGE_SHOP_LATITUDE               10.779831
+
+#define ORANGE_SHOP_MAP_SNIPPET                     @"Address : 888/89 Lạc Long Quân, F8, Quận Tân Bình, thành phố Hồ Chí Minh\nContact : 0168 687 0687 - Hân"
+
 #define SETTINGS_CLIENT_ID_DEFAULT                  @""
 #define SETTINGS_CLIENT_SECRET_DEFAULT              @""
 #define SETTINGS_FLURRY_TOKEN_DEFAULT               @""
@@ -127,6 +133,7 @@
 #import "GAITrackedViewController.h"
 #import "GAITransaction.h"
 #import "GAITransactionItem.h"
+#import "PSTCollectionView.h"
 
 //Models
 #import "BaseModel.h"

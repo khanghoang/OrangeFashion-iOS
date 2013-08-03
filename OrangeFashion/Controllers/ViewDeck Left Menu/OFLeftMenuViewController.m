@@ -10,6 +10,8 @@
 #import "OFSidebarMenuTableCell.h"
 #import "OFSidebarMenuTableCell.h"
 #import "OFLeftMenuSectionHeader.h"
+#import "OFWaterFallProductsViewController.h"
+#import "OFMapViewController.h"
 #import "OFAppDelegate.h"
 
 @interface OFLeftMenuViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -129,12 +131,25 @@
 #pragma mark - TableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OFProductsViewController *productsVC = [[OFProductsViewController alloc] init];
-    
-    productsVC.category_id = [[[self.arrMenu objectAtIndex:indexPath.row] objectForKey:CATEGORY_ID] integerValue];
     
     IIViewDeckController *deckViewController = (IIViewDeckController*)[[(OFAppDelegate*)[[UIApplication sharedApplication]delegate] window] rootViewController];
     OFNavigationViewController *centralNavVC = (OFNavigationViewController *) deckViewController.centerController;
+    
+    if (indexPath.section == 3) {
+        [centralNavVC pushViewController:[[OFMapViewController alloc] init] animated:YES];
+        [deckViewController toggleLeftView];
+        return;
+    }
+    
+    if (indexPath.section == 2) {
+        [centralNavVC pushViewController:[[OFWaterFallProductsViewController alloc] init] animated:YES];
+        [deckViewController toggleLeftView];
+        return;
+    }
+    
+    OFProductsViewController *productsVC = [[OFProductsViewController alloc] init];
+    
+    productsVC.category_id = [[[self.arrMenu objectAtIndex:indexPath.row] objectForKey:CATEGORY_ID] integerValue];
     
     [centralNavVC pushViewController:productsVC animated:YES];
     [deckViewController toggleLeftView];

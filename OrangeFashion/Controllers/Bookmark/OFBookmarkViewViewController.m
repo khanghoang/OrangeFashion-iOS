@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Bookmark";
     self.arrBookmarkedProducts = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
     [self.tableViewBookmarkedProducts registerNib:[UINib nibWithNibName:@"OFBookmarkTableViewCell" bundle:nil] forCellReuseIdentifier:@"OFBookmarkTableViewCell"];

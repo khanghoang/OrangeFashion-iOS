@@ -11,6 +11,7 @@
 #import "OFHelperManager.h"
 #import "OFProductsViewController.h"
 #import "OFAppDelegate.h"
+#import "DAPagesContainer.h"
 
 @interface OFMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -37,7 +38,7 @@
     [self.tableMenu registerNib:[UINib nibWithNibName:@"OFHomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"OFHomeTableViewCell"];
     
     self.tableMenu.delegate = self;
-    self.tableMenu.dataSource = self;    
+    self.tableMenu.dataSource = self;
 }
 
 #pragma mark - UITableView datasource
