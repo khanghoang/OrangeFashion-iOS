@@ -52,7 +52,7 @@
 
 - (void)rightButtonClicked
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)trackCritercismBreadCrumb:(NSUInteger)lineNumber

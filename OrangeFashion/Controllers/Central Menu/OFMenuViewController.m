@@ -76,9 +76,11 @@
 {
     NSInteger selectIndex = [self.tableMenu indexPathForSelectedRow].row;
     NSInteger categoryID = [[[self.arrMenu objectAtIndex:selectIndex] objectForKey:@"id"] integerValue];
+    NSString *title = [[self.arrMenu objectAtIndex:indexPath.row] objectForKey:MENU_TITLE];
     
     OFProductsViewController *productsVC = [[OFProductsViewController alloc] init];
     productsVC.category_id = categoryID;
+    productsVC.lblTitle = title;
     
     OFNavigationViewController *navVC = (OFNavigationViewController *)self.viewDeckController.centerController;
     [navVC pushViewController:productsVC animated:YES];

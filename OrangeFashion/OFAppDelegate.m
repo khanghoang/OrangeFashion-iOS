@@ -18,6 +18,7 @@
 #import "CHDraggableView.h"
 #import "CHDraggableView+Avatar.h"
 #import "CHDraggingCoordinator.h"
+#import "OFPageMenuViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface OFAppDelegate() <CHDraggingCoordinatorDelegate>
@@ -122,7 +123,7 @@
     OFBookmarkViewViewController* rightController = [[OFBookmarkViewViewController alloc] init];
     
     // Set up ViewDeck central
-    OFHomeViewController *centralViewController = [[OFHomeViewController alloc] init];
+    OFPageMenuViewController *centralViewController = [[OFPageMenuViewController alloc] init];
     OFNavigationViewController *centralNavController = [[OFNavigationViewController alloc] initWithRootViewController:centralViewController];
     
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centralNavController leftViewController:leftController rightViewController:rightController];

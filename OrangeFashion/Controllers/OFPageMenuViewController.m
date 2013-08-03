@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Orange Fashion";
     // Do any additional setup after loading the view from its nib.
     
     [self.navigationController setNavigationBarHidden:NO];
@@ -37,10 +38,10 @@
     menu.title = @"Danh Mục";
     
     OFMenuViewController *menu2 = [[OFMenuViewController alloc] init];
-    menu2.title = @"Bản đồ";
+    menu2.title = @"Dummy 1";
     
     OFMenuViewController *menu3 = [[OFMenuViewController alloc] init];
-    menu3.title = @"Bản đồ";
+    menu3.title = @"Dummy 2";
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];
 }

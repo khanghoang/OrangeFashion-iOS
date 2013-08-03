@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString* const DEFAULT_NAVIGATION_TITLE = @"Danh sách sản phẩm";
+
 @interface OFProductsViewController : BaseViewController
 
+@property (strong, nonatomic) NSString                    * lblTitle;
 @property (assign, nonatomic) NSInteger                     category_id;
 @property (weak, nonatomic) IBOutlet UITableView          * tableProducts;
 

@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView    * imgBackground;
 @property (weak, nonatomic) IBOutlet UILabel        * lblCategoryName;
 
-
 @end
 
 @implementation OFHomeTableViewCell

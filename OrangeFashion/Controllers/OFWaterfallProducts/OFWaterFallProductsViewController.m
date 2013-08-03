@@ -49,14 +49,14 @@
         cell = [[OFCollectionViewCell alloc] init];
     }
     
-    NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
-    NSValue *value = [self.arrSize objectAtIndex:index];
-    CGSize size;
-    [value getValue:&size];
-    
-    CGRect frame = cell.frame;
-    frame.size = size;
-    cell.frame = frame;
+//    NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
+//    NSValue *value = [self.arrSize objectAtIndex:index];
+//    CGSize size;
+//    [value getValue:&size];
+//    
+//    CGRect frame = cell.frame;
+//    frame.size = size;
+//    cell.frame = frame;
     
     return cell;
 }
@@ -70,12 +70,14 @@
 
 - (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
-    NSValue *value = [self.arrSize objectAtIndex:index];
-    CGSize size;
-    [value getValue:&size];
+//    NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
+//    NSValue *value = [self.arrSize objectAtIndex:index];
+//    CGSize size;
+//    [value getValue:&size];
+//    
+//    return size;
     
-    return size;
+    return CGSizeMake(145, 230);
 }
 
 - (CGFloat)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {

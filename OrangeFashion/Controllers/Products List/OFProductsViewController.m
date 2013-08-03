@@ -25,7 +25,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Danh sách sản phẩm";
+    
+    self.title = DEFAULT_NAVIGATION_TITLE;    
+    if (![self.lblTitle isEqualToString:@""]) {
+        self.title = self.lblTitle;
+    }
+    
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     [self.tableProducts registerNib:[UINib nibWithNibName:@"OFProductsTableCell" bundle:nil] forCellReuseIdentifier:@"OFProductsTableCell"];

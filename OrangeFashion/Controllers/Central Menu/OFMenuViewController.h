@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OFSidebarMenuTableCell.h"
 
 @interface OFMenuViewController : BaseViewController
 

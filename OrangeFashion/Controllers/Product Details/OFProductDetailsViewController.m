@@ -232,8 +232,25 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
 - (void)onTapProductImages:(id)sender
 {
-    BOOL isNavBarHidden = self.navigationController.navigationBarHidden;
-    [self.navigationController setNavigationBarHidden:!isNavBarHidden animated:NO];
+//    BOOL isNavBarHidden = self.navigationController.navigationBarHidden;
+//    [self.navigationController setNavigationBarHidden:!isNavBarHidden animated:NO];
+    BOOL willVisible = self.pageControllWrap.alpha;
+    
+    CGFloat animationDuration = 0.3;
+    
+    if (willVisible) {
+        [UIView animateWithDuration:animationDuration animations:^{
+            self.pageControllWrap.alpha = 0;
+            self.buttonsWrapView.alpha = 0;
+        }];
+        return;
+    }
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        self.pageControllWrap.alpha = 1;
+        self.buttonsWrapView.alpha = 1;
+    }];
+    return;
 }
 
 - (void)swipeToBack:(id)sender
@@ -294,10 +311,5 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
-}
-
-- (void)viewDidUnload {
-    [self setButtonsWrapView:nil];
-    [super viewDidUnload];
 }
 @end
