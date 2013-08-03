@@ -9,6 +9,7 @@
 #import "OFPageMenuViewController.h"
 #import "DAPagesContainer.h"
 #import "OFMenuViewController.h"
+#import "OFWaterFallProductsViewController.h"
 
 @interface OFPageMenuViewController ()
 
@@ -35,10 +36,10 @@
     self.pagesContainer.scrollView.gestureRecognizers = nil;
     
     OFMenuViewController *menu = [[OFMenuViewController alloc] init];
-    menu.title = @"Danh Mục";
+    menu.title = @"Danh mục";
     
-    OFMenuViewController *menu2 = [[OFMenuViewController alloc] init];
-    menu2.title = @"Dummy 1";
+    OFWaterFallProductsViewController *menu2 = [[OFWaterFallProductsViewController alloc] init];
+    menu2.title = @"Hàng mới về";
     
     OFMenuViewController *menu3 = [[OFMenuViewController alloc] init];
     menu3.title = @"Dummy 2";

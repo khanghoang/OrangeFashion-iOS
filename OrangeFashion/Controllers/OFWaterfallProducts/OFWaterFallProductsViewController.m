@@ -13,6 +13,8 @@
 <PSUICollectionViewDataSource, PSUICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet PSUICollectionView * collectionView;
+
+@property (strong, nonatomic) NSMutableArray            * arrProducts;
 @property (strong, nonatomic) NSArray                   * arrSize;
 
 @end
@@ -22,6 +24,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.arrProducts = [[NSMutableArray alloc] init];
+    
+    [OFProduct getProductsWithCategoryID:21 onSuccess:^(NSInteger statusCode, id obj) {
+        self.arrProducts = obj;
+    } failure:^(NSInteger statusCode, id obj) {
+        
+    }];
+    
     [self.navigationController setNavigationBarHidden:NO];
     
     [self.collectionView registerClass:[OFCollectionViewCell class] forCellWithReuseIdentifier:@"OFCollectionViewCell"];
@@ -58,12 +69,16 @@
 //    frame.size = size;
 //    cell.frame = frame;
     
+    CGRect frame = cell.frame;
+    frame.origin.x += 20;
+    cell.frame = frame;
+    
     return cell;
 }
 
 - (NSInteger)collectionView:(PSUICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return self.arrProducts.count;
 }
 
 #pragma mark - PSTCollectionViewDelegateFlowLayout

@@ -34,24 +34,30 @@
 {
     // Nav left button
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftButton setImage:[UIImage imageNamed:@"left-nav-button"] forState:UIControlStateNormal];
-    [leftButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
     
-    leftButton.frame = CGRectMake(0, 0, 50, 40);
+    if (self == [[self.navigationController viewControllers] objectAtIndex:0]) {
+        [leftButton setImage:[UIImage imageNamed:@"left-nav-button"] forState:UIControlStateNormal];
+        [leftButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
+    }else{
+        [leftButton setImage:[UIImage imageNamed:@"nav-back-btn-bg"] forState:UIControlStateNormal];
+        [leftButton addTarget:self action:@selector(onBtnBack) forControlEvents:UIControlEventTouchUpInside];
+    }
+
+    leftButton.frame = CGRectMake(0, 0, 40, 40);
     UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = leftButtonItem;
     
     // Nav right button
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setTitle:@"Back" forState:UIControlStateNormal];
-    rightButton.frame = CGRectMake(0, 0, 44, 60);
-    [rightButton addTarget:self action:@selector(rightButtonClicked) forControlEvents:UIControlEventAllTouchEvents];
+    [rightButton setImage:[UIImage imageNamed:@"bookmark_list"] forState:UIControlStateNormal];
+    [rightButton addTarget:self.viewDeckController action:@selector(toggleRightView) forControlEvents:UIControlEventTouchUpInside];
+    rightButton.frame = CGRectMake(0, 0, 40, 40);
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
 }
 
-- (void)rightButtonClicked
-{
+- (void)onBtnBack
+{    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

@@ -8,6 +8,13 @@
 
 #import "OFCollectionViewCell.h"
 
+@interface OFCollectionViewCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgProductImage;
+@property (weak, nonatomic) IBOutlet UILabel *lblProductName;
+
+@end
+
 @implementation OFCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame

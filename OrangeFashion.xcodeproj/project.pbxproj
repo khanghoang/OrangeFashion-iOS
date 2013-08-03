@@ -26,6 +26,10 @@
 		0C187F2317ACAFA70083AA8A /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F2017ACAFA70083AA8A /* DAPagesContainerTopBar.m */; };
 		0C187F2717ACB20A0083AA8A /* OFPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */; };
 		0C187F2817ACB20A0083AA8A /* OFPageMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */; };
+		0C187F2D17ACE85E0083AA8A /* nav-back-btn-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2917ACE85E0083AA8A /* nav-back-btn-bg.png */; };
+		0C187F3017ACE85E0083AA8A /* nav-back-btn-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2C17ACE85E0083AA8A /* nav-back-btn-bg@2x.png */; };
+		0C187F3317ACEE7A0083AA8A /* bookmark_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F3117ACEE7A0083AA8A /* bookmark_list.png */; };
+		0C187F3417ACEE7A0083AA8A /* bookmark_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F3217ACEE7A0083AA8A /* bookmark_list@2x.png */; };
 		0C1DE5C717A4D2AF00239D31 /* DEFacebookComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */; };
 		0C1DE5C817A4D2AF00239D31 /* DEFacebookComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C1DE5C917A4D2AF00239D31 /* DEFacebookGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A317A4D2AF00239D31 /* DEFacebookGradientView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -375,6 +379,10 @@
 		0C187F2417ACB20A0083AA8A /* OFPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFPageMenuViewController.h; sourceTree = "<group>"; };
 		0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFPageMenuViewController.m; sourceTree = "<group>"; };
 		0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFPageMenuViewController.xib; sourceTree = "<group>"; };
+		0C187F2917ACE85E0083AA8A /* nav-back-btn-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back-btn-bg.png"; sourceTree = "<group>"; };
+		0C187F2C17ACE85E0083AA8A /* nav-back-btn-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back-btn-bg@2x.png"; sourceTree = "<group>"; };
+		0C187F3117ACEE7A0083AA8A /* bookmark_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_list.png; sourceTree = "<group>"; };
+		0C187F3217ACEE7A0083AA8A /* bookmark_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_list@2x.png"; sourceTree = "<group>"; };
 		0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DEFacebookComposeView.xib; sourceTree = "<group>"; };
 		0C1DE5A017A4D2AF00239D31 /* DEFacebookComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEFacebookComposeViewController.h; sourceTree = "<group>"; };
 		0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEFacebookComposeViewController.m; sourceTree = "<group>"; };
@@ -1398,6 +1406,10 @@
 		0C3527EA17648A3200E07AAB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0C187F3117ACEE7A0083AA8A /* bookmark_list.png */,
+				0C187F3217ACEE7A0083AA8A /* bookmark_list@2x.png */,
+				0C187F2917ACE85E0083AA8A /* nav-back-btn-bg.png */,
+				0C187F2C17ACE85E0083AA8A /* nav-back-btn-bg@2x.png */,
 				0C3262C917AB7371001DEB95 /* bookmark-cell-dash.png */,
 				0CFFE36C17AA46DE00308B6A /* bookmark-icons@2x.png */,
 				0CFFE36D17AA46DE00308B6A /* bookmark-icons.png */,
@@ -2394,6 +2406,10 @@
 				0C1EC49F17ABF98E00BC0382 /* OFWaterFallProductsViewController.xib in Resources */,
 				0C1EC4CE17AC0FD600BC0382 /* OFCollectionViewCell.xib in Resources */,
 				0C187F2817ACB20A0083AA8A /* OFPageMenuViewController.xib in Resources */,
+				0C187F2D17ACE85E0083AA8A /* nav-back-btn-bg.png in Resources */,
+				0C187F3017ACE85E0083AA8A /* nav-back-btn-bg@2x.png in Resources */,
+				0C187F3317ACEE7A0083AA8A /* bookmark_list.png in Resources */,
+				0C187F3417ACEE7A0083AA8A /* bookmark_list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
