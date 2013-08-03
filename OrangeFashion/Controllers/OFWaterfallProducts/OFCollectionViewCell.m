@@ -26,4 +26,13 @@
     return self;
 }
 
+- (void)configCellWithProduct:(OFProduct *)product
+{
+    [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
+        OFProductImages *image = [obj objectAtIndex:0];
+        [self.imgProductImage setImageWithURL:[NSURL URLWithString:image.picasa_store_source] placeholderImage:nil];
+    } failureBlock:nil];
+    self.lblProductName.text = product.name;
+}
+
 @end

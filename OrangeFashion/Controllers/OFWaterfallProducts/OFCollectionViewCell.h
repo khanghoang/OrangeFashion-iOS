@@ -10,4 +10,6 @@
 
 @interface OFCollectionViewCell : PSUICollectionViewCell
 
+- (void)configCellWithProduct:(OFProduct *)product;
+
 @end

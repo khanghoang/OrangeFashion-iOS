@@ -30,6 +30,10 @@
 		0C187F3017ACE85E0083AA8A /* nav-back-btn-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2C17ACE85E0083AA8A /* nav-back-btn-bg@2x.png */; };
 		0C187F3317ACEE7A0083AA8A /* bookmark_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F3117ACEE7A0083AA8A /* bookmark_list.png */; };
 		0C187F3417ACEE7A0083AA8A /* bookmark_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F3217ACEE7A0083AA8A /* bookmark_list@2x.png */; };
+		0C187F3F17AD0A120083AA8A /* FRGWaterfallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F3A17AD0A120083AA8A /* FRGWaterfallCollectionViewCell.m */; };
+		0C187F4017AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F3C17AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m */; };
+		0C187F4117AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F3E17AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m */; };
+		0C187F4517AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F4417AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m */; };
 		0C1DE5C717A4D2AF00239D31 /* DEFacebookComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */; };
 		0C1DE5C817A4D2AF00239D31 /* DEFacebookComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C1DE5C917A4D2AF00239D31 /* DEFacebookGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A317A4D2AF00239D31 /* DEFacebookGradientView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -383,6 +387,14 @@
 		0C187F2C17ACE85E0083AA8A /* nav-back-btn-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back-btn-bg@2x.png"; sourceTree = "<group>"; };
 		0C187F3117ACEE7A0083AA8A /* bookmark_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_list.png; sourceTree = "<group>"; };
 		0C187F3217ACEE7A0083AA8A /* bookmark_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_list@2x.png"; sourceTree = "<group>"; };
+		0C187F3917AD0A120083AA8A /* FRGWaterfallCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGWaterfallCollectionViewCell.h; sourceTree = "<group>"; };
+		0C187F3A17AD0A120083AA8A /* FRGWaterfallCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGWaterfallCollectionViewCell.m; sourceTree = "<group>"; };
+		0C187F3B17AD0A120083AA8A /* FRGWaterfallDecorationReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGWaterfallDecorationReusableView.h; sourceTree = "<group>"; };
+		0C187F3C17AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGWaterfallDecorationReusableView.m; sourceTree = "<group>"; };
+		0C187F3D17AD0A120083AA8A /* FRGWaterfallHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGWaterfallHeaderReusableView.h; sourceTree = "<group>"; };
+		0C187F3E17AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGWaterfallHeaderReusableView.m; sourceTree = "<group>"; };
+		0C187F4317AD44040083AA8A /* FRGWaterfallCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGWaterfallCollectionViewLayout.h; sourceTree = "<group>"; };
+		0C187F4417AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGWaterfallCollectionViewLayout.m; sourceTree = "<group>"; };
 		0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DEFacebookComposeView.xib; sourceTree = "<group>"; };
 		0C1DE5A017A4D2AF00239D31 /* DEFacebookComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEFacebookComposeViewController.h; sourceTree = "<group>"; };
 		0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEFacebookComposeViewController.m; sourceTree = "<group>"; };
@@ -1018,6 +1030,22 @@
 			path = "../../../../Downloads/DAPagesContainer-master/DAPagesContainer";
 			sourceTree = "<group>";
 		};
+		0C187F3517AD09870083AA8A /* Water */ = {
+			isa = PBXGroup;
+			children = (
+				0C187F4317AD44040083AA8A /* FRGWaterfallCollectionViewLayout.h */,
+				0C187F4417AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m */,
+				0C187F3917AD0A120083AA8A /* FRGWaterfallCollectionViewCell.h */,
+				0C187F3A17AD0A120083AA8A /* FRGWaterfallCollectionViewCell.m */,
+				0C187F3B17AD0A120083AA8A /* FRGWaterfallDecorationReusableView.h */,
+				0C187F3C17AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m */,
+				0C187F3D17AD0A120083AA8A /* FRGWaterfallHeaderReusableView.h */,
+				0C187F3E17AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m */,
+			);
+			name = Water;
+			path = ../Water;
+			sourceTree = "<group>";
+		};
 		0C1DE59E17A4D2AF00239D31 /* FacebookComposeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1586,6 +1614,7 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0C187F3517AD09870083AA8A /* Water */,
 				0C187F1A17ACAFA70083AA8A /* DAPagesContainer */,
 				0C1EC4A017AC0E8700BC0382 /* PSTCollectionView */,
 				0CFFE35B17AA3FC300308B6A /* GraggableView */,
@@ -2634,6 +2663,10 @@
 				0C187F2217ACAFA70083AA8A /* DAPagesContainer.m in Sources */,
 				0C187F2317ACAFA70083AA8A /* DAPagesContainerTopBar.m in Sources */,
 				0C187F2717ACB20A0083AA8A /* OFPageMenuViewController.m in Sources */,
+				0C187F3F17AD0A120083AA8A /* FRGWaterfallCollectionViewCell.m in Sources */,
+				0C187F4017AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m in Sources */,
+				0C187F4117AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m in Sources */,
+				0C187F4517AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

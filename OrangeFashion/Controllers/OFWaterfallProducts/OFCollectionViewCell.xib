@@ -52,6 +52,7 @@
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 								</object>
+								<int key="IBUIContentMode">2</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -200,7 +201,7 @@
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">OFCollectionViewCell</string>
-					<string key="superclassName">PSUICollectionViewCell</string>
+					<string key="superclassName">PSUICollectionViewCell_</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="imgProductImage">UIImageView</string>
 						<string key="lblProductName">UILabel</string>
@@ -218,6 +219,30 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/OFCollectionViewCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PSTCollectionReusableView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PSTCollectionReusableView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PSTCollectionViewCell</string>
+					<string key="superclassName">PSTCollectionReusableView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PSTCollectionViewCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PSUICollectionViewCell_</string>
+					<string key="superclassName">PSTCollectionViewCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PSUICollectionViewCell_.h</string>
 					</object>
 				</object>
 			</array>
