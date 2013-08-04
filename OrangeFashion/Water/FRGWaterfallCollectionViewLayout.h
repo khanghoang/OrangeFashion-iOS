@@ -10,15 +10,15 @@
 
 @class FRGWaterfallCollectionViewLayout;
 
-@protocol FRGWaterfallCollectionViewDelegate <UICollectionViewDelegate>
+@protocol FRGWaterfallCollectionViewDelegate <PSUICollectionViewDelegate>
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView
+- (CGFloat)collectionView:(PSUICollectionView *)collectionView
                    layout:(FRGWaterfallCollectionViewLayout *)collectionViewLayout
  heightForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
-@interface FRGWaterfallCollectionViewLayout : UICollectionViewLayout
+@interface FRGWaterfallCollectionViewLayout : PSUICollectionViewLayout
 
 @property (nonatomic, weak) IBOutlet id<FRGWaterfallCollectionViewDelegate> delegate;
 @property (nonatomic) CGFloat itemWidth;

@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet PSUICollectionView * collectionView;
 
 @property (strong, nonatomic) NSMutableArray            * arrProducts;
-@property (strong, nonatomic) NSArray                   * arrSize;
+@property (strong, nonatomic) NSMutableArray            * arrSize;
 
 @end
 
@@ -46,13 +46,14 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    self.arrSize = @[
+    self.arrSize = [@[
                          [NSValue valueWithCGSize:CGSizeMake(145, 380)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 340)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 240)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 280)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 300)],
-                         ];
+                         ] mutableCopy];
+    [self.arrSize shuffle];
     
     FRGWaterfallCollectionViewLayout *cvLayout = [[FRGWaterfallCollectionViewLayout alloc] init];
     cvLayout.delegate = self;
@@ -77,12 +78,8 @@
     if (!cell) {
         cell = [[OFCollectionViewCell alloc] init];
     }
-    
-    NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
-    NSValue *value = [self.arrSize objectAtIndex:index];
-    CGSize size;
-    [value getValue:&size];
 
+    CGSize size = [self getSizeAtIndexPath:indexPath];
     CGRect frame = cell.frame;
     frame.size = size;
     cell.frame = frame;
@@ -106,15 +103,8 @@
 #pragma mark - PSTCollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
-    NSValue *value = [self.arrSize objectAtIndex:index];
-    CGSize size;
-    [value getValue:&size];
-    
+    CGSize size = [self getSizeAtIndexPath:indexPath];
     return size;
-    
-    return CGSizeMake(145, 230);
 }
 
 - (CGFloat)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
@@ -127,12 +117,16 @@
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FRGWaterfallCollectionViewLayout *)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    CGSize size = [self getSizeAtIndexPath:indexPath];
+    return size.height;
+}
+
+- (CGSize)getSizeAtIndexPath:(NSIndexPath *)indexPath
+{
     NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
     NSValue *value = [self.arrSize objectAtIndex:index];
     CGSize size;
     [value getValue:&size];
-    
-    return size.height;
 }
 
 @end

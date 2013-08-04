@@ -107,6 +107,7 @@
 #import "UIScrollView+Additions.h"
 #import "UIViewController+Additions.h"
 #import "UIWebView+Additions.h"
+#import "NSMutableArray+Additions.h"
 
 //Vendors
 #import "SVProgressHUD.h"

@@ -80,9 +80,9 @@ NSString* const FRGWaterfallLayouDecorationKind = @"Decoration";
                                                          NSDictionary *elementsInfo,
                                                          BOOL *stop) {
         [elementsInfo enumerateKeysAndObjectsUsingBlock:^(NSIndexPath *indexPath,
-                                                          UICollectionViewLayoutAttributes *attributes,
+                                                          PSUICollectionViewLayoutAttributes *attributes,
                                                           BOOL *innerStop) {
-            if (CGRectIntersectsRect(rect, attributes.frame) || [elementIdentifier isEqualToString:UICollectionElementKindSectionHeader]) {
+            if (CGRectIntersectsRect(rect, attributes.frame) || [elementIdentifier isEqualToString:PSTCollectionElementKindSectionHeader]) {
                 [allAttributes addObject:attributes];
             }
         }];
@@ -92,11 +92,11 @@ NSString* const FRGWaterfallLayouDecorationKind = @"Decoration";
         return allAttributes;
     }
 
-    for (UICollectionViewLayoutAttributes *layoutAttributes in allAttributes) {
-        if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+    for (PSUICollectionViewLayoutAttributes *layoutAttributes in allAttributes) {
+        if ([layoutAttributes.representedElementKind isEqualToString:PSTCollectionElementKindSectionHeader]) {
             NSInteger section = layoutAttributes.indexPath.section;
             NSIndexPath *firstCellIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
-            UICollectionViewLayoutAttributes *firstCellAttrs = [self layoutAttributesForItemAtIndexPath:firstCellIndexPath];
+            PSUICollectionViewLayoutAttributes *firstCellAttrs = (PSUICollectionViewLayoutAttributes*) [self layoutAttributesForItemAtIndexPath:firstCellIndexPath];
 			
             CGFloat headerHeight = CGRectGetHeight(layoutAttributes.frame) + self.itemInnerMargin;
             CGPoint origin = layoutAttributes.frame.origin;
@@ -127,16 +127,16 @@ NSString* const FRGWaterfallLayouDecorationKind = @"Decoration";
     return allAttributes;
 }
 
-- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (PSUICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     return self.layoutInfo[FRGWaterfallLayoutCellKind][indexPath];
 }
 
-- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind
+- (PSUICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind
                                                                      atIndexPath:(NSIndexPath *)indexPath {
-    return self.layoutInfo[UICollectionElementKindSectionHeader][indexPath];
+    return self.layoutInfo[PSTCollectionElementKindSectionHeader][indexPath];
 }
 
-- (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:
+- (PSUICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:
 (NSString*)decorationViewKind atIndexPath:(NSIndexPath *)indexPath {
     return self.layoutInfo[FRGWaterfallLayouDecorationKind][indexPath];
 }
@@ -237,8 +237,8 @@ NSString* const FRGWaterfallLayouDecorationKind = @"Decoration";
     NSMutableDictionary *titleLayoutInfo = [NSMutableDictionary dictionary];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
-    UICollectionViewLayoutAttributes *emblemAttributes =
-    [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:FRGWaterfallLayouDecorationKind
+    PSUICollectionViewLayoutAttributes *emblemAttributes =
+    [PSUICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:FRGWaterfallLayouDecorationKind
                                                                 withIndexPath:indexPath];
     emblemAttributes.frame = [self frameForWaterfallDecoration];
     
@@ -246,14 +246,14 @@ NSString* const FRGWaterfallLayouDecorationKind = @"Decoration";
         for (NSInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {
             indexPath = [NSIndexPath indexPathForItem:item inSection:section];
             
-            UICollectionViewLayoutAttributes *itemAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+            PSUICollectionViewLayoutAttributes *itemAttributes = [PSUICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
             itemAttributes.frame = [self frameForWaterfallCellIndexPath:indexPath];
             cellLayoutInfo[indexPath] = itemAttributes;
             
             //Only one header in section, so we get only item at 0 position
             if (indexPath.item == 0) {
-                UICollectionViewLayoutAttributes *titleAttributes = [UICollectionViewLayoutAttributes
-                                                                     layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                PSUICollectionViewLayoutAttributes *titleAttributes = [PSUICollectionViewLayoutAttributes
+                                                                     layoutAttributesForSupplementaryViewOfKind:PSTCollectionElementKindSectionHeader
                                                                      withIndexPath:indexPath];
                 titleAttributes.frame = [self frameForWaterfallHeaderAtIndexPath:indexPath];
                 titleLayoutInfo[indexPath] = titleAttributes;
@@ -262,7 +262,7 @@ NSString* const FRGWaterfallLayouDecorationKind = @"Decoration";
     }
     
     newLayoutInfo[FRGWaterfallLayoutCellKind] = cellLayoutInfo;
-    newLayoutInfo[UICollectionElementKindSectionHeader] = titleLayoutInfo;
+    newLayoutInfo[PSTCollectionElementKindSectionHeader] = titleLayoutInfo;
     newLayoutInfo[FRGWaterfallLayouDecorationKind] = @{indexPath: emblemAttributes};
     
     self.layoutInfo = newLayoutInfo;

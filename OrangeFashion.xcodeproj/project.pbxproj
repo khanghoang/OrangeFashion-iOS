@@ -34,6 +34,7 @@
 		0C187F4017AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F3C17AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m */; };
 		0C187F4117AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F3E17AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m */; };
 		0C187F4517AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F4417AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m */; };
+		0C187F4817AE08760083AA8A /* NSMutableArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F4717AE08760083AA8A /* NSMutableArray+Additions.m */; };
 		0C1DE5C717A4D2AF00239D31 /* DEFacebookComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */; };
 		0C1DE5C817A4D2AF00239D31 /* DEFacebookComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C1DE5C917A4D2AF00239D31 /* DEFacebookGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DE5A317A4D2AF00239D31 /* DEFacebookGradientView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -395,6 +396,8 @@
 		0C187F3E17AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGWaterfallHeaderReusableView.m; sourceTree = "<group>"; };
 		0C187F4317AD44040083AA8A /* FRGWaterfallCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGWaterfallCollectionViewLayout.h; sourceTree = "<group>"; };
 		0C187F4417AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGWaterfallCollectionViewLayout.m; sourceTree = "<group>"; };
+		0C187F4617AE08760083AA8A /* NSMutableArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Additions.h"; sourceTree = "<group>"; };
+		0C187F4717AE08760083AA8A /* NSMutableArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Additions.m"; sourceTree = "<group>"; };
 		0C1DE59F17A4D2AF00239D31 /* DEFacebookComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DEFacebookComposeView.xib; sourceTree = "<group>"; };
 		0C1DE5A017A4D2AF00239D31 /* DEFacebookComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEFacebookComposeViewController.h; sourceTree = "<group>"; };
 		0C1DE5A117A4D2AF00239D31 /* DEFacebookComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEFacebookComposeViewController.m; sourceTree = "<group>"; };
@@ -1269,6 +1272,8 @@
 		0C2BE354177FF13700CD2C5B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				0C187F4617AE08760083AA8A /* NSMutableArray+Additions.h */,
+				0C187F4717AE08760083AA8A /* NSMutableArray+Additions.m */,
 				0C2BE355177FF13700CD2C5B /* ActiveSupportInflector.h */,
 				0C2BE356177FF13700CD2C5B /* ActiveSupportInflector.m */,
 				0C2BE357177FF13700CD2C5B /* ActiveSupportInflector.plist */,
@@ -2680,6 +2685,7 @@
 				0C4C5BFF170E7CFD00ED0DF8 /* OFProduct.m in Sources */,
 				0C4C5C00170E7CFD00ED0DF8 /* OFProductImages.m in Sources */,
 				0C8DEFD81759E614004016E0 /* BaseModel.m in Sources */,
+				0C187F4817AE08760083AA8A /* NSMutableArray+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
