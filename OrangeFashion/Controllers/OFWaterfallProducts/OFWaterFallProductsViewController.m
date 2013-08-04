@@ -50,10 +50,9 @@
                          [NSValue valueWithCGSize:CGSizeMake(145, 380)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 340)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 240)],
-                         [NSValue valueWithCGSize:CGSizeMake(145, 280)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 300)],
+                         [NSValue valueWithCGSize:CGSizeMake(145, 280)]
                          ] mutableCopy];
-    [self.arrSize shuffle];
     
     FRGWaterfallCollectionViewLayout *cvLayout = [[FRGWaterfallCollectionViewLayout alloc] init];
     cvLayout.delegate = self;
@@ -127,6 +126,7 @@
     NSValue *value = [self.arrSize objectAtIndex:index];
     CGSize size;
     [value getValue:&size];
+    return size;
 }
 
 @end
