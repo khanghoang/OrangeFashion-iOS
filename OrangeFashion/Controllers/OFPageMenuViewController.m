@@ -50,7 +50,7 @@
     menu2.parentVC = self;
     menu2.title = @"Hàng mới về";
     
-    OFMenuViewController *menu3 = [[OFMenuViewController alloc] init];
+    BaseViewController *menu3 = [[BaseViewController alloc] init];
     menu3.title = @"Dummy 2";
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];

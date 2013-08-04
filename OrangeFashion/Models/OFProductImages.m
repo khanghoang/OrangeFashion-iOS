@@ -38,12 +38,31 @@
     [[OFHTTPClient sharedClient] getPath:API_SERVER_HOST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSArray *setOfImage = (NSArray *)responseObject;
-        successBlock(operation.response.statusCode, [OFProductImages productImagesWithArray:setOfImage]);
+        OFProduct *storedProduct = [[OFProduct MR_findByAttribute:@"product_id" withValue:product.product_id] lastObject];
+        NSArray *arrImages =  [OFProductImages productImagesWithArray:setOfImage];
+        storedProduct.images = [NSSet setWithArray:arrImages];
+        
+        NSManagedObjectContext *mainContext = [NSManagedObjectContext MR_defaultContext];
+        [mainContext MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            DLog(@"Finish save to magical record");
+        }];
+        
+        successBlock(operation.response.statusCode, arrImages);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        OFProduct *storedProduct = [[OFProduct MR_findByAttribute:@"product_id" withValue:product.product_id] lastObject];
+        if (storedProduct.images.count > 0) {
+            successBlock(operation.response.statusCode, storedProduct.images);
+            return;
+        }
+        
         //Handler when no internet
         DLog(@"%@", [error description]);
-        failureBlock(-1, @"error");
+        
+        if (failureBlock) {
+            failureBlock(operation.response.statusCode, error);
+        }
     }];
 }
 

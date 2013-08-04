@@ -33,10 +33,8 @@
 - (void)configCellWithProduct:(OFProduct *)product
 {
     self.product = product;
-    [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
-        OFProductImages *image = [obj objectAtIndex:0];
-        [self.imgProductImage setImageWithURL:[NSURL URLWithString:image.picasa_store_source] placeholderImage:nil];
-    } failureBlock:nil];
+    NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", product.product_id, product.product_id];
+    [self.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];    
     self.lblProductName.text = product.name;
 }
 

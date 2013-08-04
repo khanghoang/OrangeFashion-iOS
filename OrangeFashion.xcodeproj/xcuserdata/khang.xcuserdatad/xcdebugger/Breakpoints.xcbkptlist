@@ -72,19 +72,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Models/OFProductImages.m"
-         timestampString = "391772080.396267"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
-         landmarkName = "+getImagesForProduct:successBlock:failureBlock:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "OrangeFashion/OFProductsTableCell.m"
          timestampString = "397301173.317195"
          startingColumnNumber = "9223372036854775807"
@@ -105,32 +92,6 @@
          startingLineNumber = "82"
          endingLineNumber = "82"
          landmarkName = "-getImagesForProductOnSuccess:failure:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Models/OFProductImages.m"
-         timestampString = "391772080.396267"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
-         landmarkName = "+getImagesForProduct:successBlock:failureBlock:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Models/OFProductImages.m"
-         timestampString = "391772080.396267"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
-         landmarkName = "+getImagesForProduct:successBlock:failureBlock:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -196,45 +157,6 @@
          startingLineNumber = "55"
          endingLineNumber = "55"
          landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Models/OFProductImages.m"
-         timestampString = "391803924.854793"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "37"
-         endingLineNumber = "37"
-         landmarkName = "+getImagesForProduct:successBlock:failureBlock:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Models/OFProductImages.m"
-         timestampString = "391803975.893797"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "+getImagesForProduct:successBlock:failureBlock:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "OrangeFashion/Models/OFProductImages.m"
-         timestampString = "391804264.111792"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
-         landmarkName = "+getImagesForProduct:successBlock:failureBlock:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -474,11 +396,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "397119229.440223"
+         timestampString = "397316539.75441"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "228"
-         endingLineNumber = "228"
+         startingLineNumber = "236"
+         endingLineNumber = "236"
          landmarkName = "-getImages"
          landmarkType = "5">
       </FileBreakpoint>
@@ -513,11 +435,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "397199943.414448"
+         timestampString = "397316539.75441"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "311"
-         endingLineNumber = "311"
+         startingLineNumber = "319"
+         endingLineNumber = "319"
          landmarkName = "-gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -526,11 +448,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "397119229.440223"
+         timestampString = "397316539.75441"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
+         startingLineNumber = "181"
+         endingLineNumber = "181"
          landmarkName = "-pageViewController:viewControllerAfterViewController:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -539,11 +461,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "397119229.440223"
+         timestampString = "397316539.75441"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "187"
-         endingLineNumber = "187"
+         startingLineNumber = "194"
+         endingLineNumber = "194"
          landmarkName = "-pageViewController:viewControllerBeforeViewController:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -565,11 +487,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "397119229.440223"
+         timestampString = "397316539.75441"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "170"
-         endingLineNumber = "170"
+         startingLineNumber = "177"
+         endingLineNumber = "177"
          landmarkName = "-pageViewController:viewControllerAfterViewController:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -578,11 +500,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "397119229.440223"
+         timestampString = "397316539.75441"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
          landmarkName = "-pageViewController:viewControllerAfterViewController:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -591,11 +513,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Product Details/OFProductDetailsViewController.m"
-         timestampString = "397119229.440223"
+         timestampString = "397316539.75441"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
+         startingLineNumber = "189"
+         endingLineNumber = "189"
          landmarkName = "-pageViewController:viewControllerBeforeViewController:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -630,11 +552,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Bookmark/OFBookmarkTableViewCell.m"
-         timestampString = "397114544.281832"
+         timestampString = "397313152.380677"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
          landmarkName = "-configWithProduct:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -643,11 +565,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Controllers/Bookmark/OFBookmarkViewViewController.m"
-         timestampString = "397133970.117951"
+         timestampString = "397303866.575187"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
          landmarkName = "-onLongPress:"
          landmarkType = "5">
       </FileBreakpoint>

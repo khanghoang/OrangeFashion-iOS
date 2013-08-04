@@ -37,8 +37,12 @@
     self.imgProductWrapImage.layer.borderColor = [UIColor colorWithHexString:@"beb7a9"].CGColor;
     
     [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
-        OFProductImages *image = [obj objectAtIndex:0];
-        [self.imgProductImage setImageWithURL:[NSURL URLWithString:image.picasa_store_source] placeholderImage:nil];
+//        self.product.images = obj;
+//        if (self.product.images.count > 0) {
+//            OFProductImages *image = [[self.product.images allObjects] objectAtIndex:0];
+            OFProductImages *image = [[self.product.images allObjects] objectAtIndex:0];
+            [self.imgProductImage setImageWithURL:[NSURL URLWithString:image.picasa_store_source] placeholderImage:nil];
+//        }
     } failureBlock:nil];
     
     self.lblProductName.text = product.name;

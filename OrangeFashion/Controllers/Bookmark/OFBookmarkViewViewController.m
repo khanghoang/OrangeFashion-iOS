@@ -90,9 +90,10 @@
     detailsVC.productID = productId;
     
     OFNavigationViewController *centralNavVC = (OFNavigationViewController *) self.viewDeckController.centerController;
-    [centralNavVC pushViewController:detailsVC animated:YES];
     
-    [self.viewDeckController toggleRightView];
+    [self.viewDeckController toggleRightViewAnimated:YES completion:^(IIViewDeckController *controller, BOOL success) {
+        [centralNavVC pushViewController:detailsVC animated:YES];
+    }];
 }
 
 #pragma mark - OFBookmarkProduct delegate

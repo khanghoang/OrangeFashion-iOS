@@ -110,6 +110,13 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     imageVC.delegate = self;
     imageVC.imageURL = [[self.images objectAtIndex:0] picasa_store_source];
     
+    // fake to preload
+    if (self.images.count > 1) {
+        UIImageView *image = [[UIImageView alloc] init];
+        NSString *imageURL = [[self.images objectAtIndex:1] picasa_store_source];
+        [image setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil];
+    }
+    
     [self.pageVC setViewControllers:@[imageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     imageVC.index = 0;
     
@@ -192,6 +199,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     OFImageViewController *imageVC = [[OFImageViewController alloc] init];
     imageVC.delegate = self;
     imageVC.imageURL = [[self.images objectAtIndex:index] picasa_store_source];
+    [imageVC.imgView setImageWithURL:[NSURL URLWithString:imageVC.imageURL] placeholderImage:nil];
     imageVC.index = index;
     
     return imageVC;
