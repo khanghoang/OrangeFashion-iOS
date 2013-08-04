@@ -136,7 +136,7 @@
 - (CGSize)getSizeAtIndexPath:(NSIndexPath *)indexPath
 {
     int randomNumber = self.randomValueForWaterSize;
-    NSInteger index = ((indexPath.section + 1) * randomNumber + indexPath.row  ) % self.arrSize.count;
+    NSInteger index = ((indexPath.section + 1) * randomNumber + indexPath.row ) % self.arrSize.count;
     NSValue *value = [self.arrSize objectAtIndex:index];
     CGSize size;
     [value getValue:&size];

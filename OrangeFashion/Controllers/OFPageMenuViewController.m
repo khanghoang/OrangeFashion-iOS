@@ -40,7 +40,9 @@
     
     // Disable page wrapper scroll view
     self.pagesContainer.scrollView.gestureRecognizers = nil;
-    self.pagesContainer.observingScrollView.gestureRecognizers = nil;
+    [self.pagesContainer setSelectedIndex:0];
+    [self.pagesContainer setSelectedIndex:1];
+    [self.pagesContainer setSelectedIndex:2];
     
     OFMenuViewController *menu = [[OFMenuViewController alloc] init];
     menu.parentVC = self;
@@ -51,7 +53,7 @@
     menu2.title = @"Hàng mới về";
     
     BaseViewController *menu3 = [[BaseViewController alloc] init];
-    menu3.title = @"Dummy 2";
+    menu3.title = @"Hướng dẫn đặt hàng";
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];
 }
