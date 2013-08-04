@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) NSMutableArray            * arrProducts;
 @property (strong, nonatomic) NSMutableArray            * arrSize;
+@property (assign, nonatomic) NSInteger                   randomValueForWaterSize;
 
 @end
 
@@ -31,12 +32,14 @@
     [OFProduct getProductsWithCategoryID:21 onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.arrProducts setArray:(NSArray *)obj];
+        [self calculateRandomValueForCollectionViewCellSize];
         [self.collectionView reloadData];
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
         NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
         self.arrProducts = arrProducts;
+        [self calculateRandomValueForCollectionViewCellSize];
         [self.collectionView reloadData];
     }];
     
@@ -120,9 +123,17 @@
     return size.height;
 }
 
+- (void)calculateRandomValueForCollectionViewCellSize
+{
+    int nElements = self.arrSize.count - 1;
+    int n = arc4random_uniform(nElements);
+    self.randomValueForWaterSize = n;
+}
+
 - (CGSize)getSizeAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger index = indexPath.section * 3 + indexPath.row % self.arrSize.count;
+    int randomNumber = self.randomValueForWaterSize;
+    NSInteger index = ((indexPath.section + 1) * randomNumber + indexPath.row  ) % self.arrSize.count;
     NSValue *value = [self.arrSize objectAtIndex:index];
     CGSize size;
     [value getValue:&size];
