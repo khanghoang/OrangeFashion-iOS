@@ -9,6 +9,7 @@
 #import "OFWaterFallProductsViewController.h"
 #import "OFCollectionViewCell.h"
 #import "FRGWaterfallCollectionViewLayout.h"
+#import "OFProductDetailsViewController.h"
 
 @interface OFWaterFallProductsViewController ()
 <PSUICollectionViewDataSource, FRGWaterfallCollectionViewDelegate>
@@ -60,7 +61,7 @@
     FRGWaterfallCollectionViewLayout *cvLayout = [[FRGWaterfallCollectionViewLayout alloc] init];
     cvLayout.delegate = self;
     
-    cvLayout.headerHeight = 10.0f;
+    cvLayout.headerHeight = 0.0f;
     cvLayout.itemWidth = 145.0f;
     cvLayout.topInset = 10.0f;
     cvLayout.bottomInset = 10.0f;
@@ -90,6 +91,8 @@
         [cell configCellWithProduct:[self.arrProducts objectAtIndex:indexPath.row]];
         return cell;
     }
+    
+    cell.delegate = (id) self.parentVC;
     
     OFProduct *product = [OFProduct productWithDictionary:[self.arrProducts objectAtIndex:indexPath.row]];
     [cell configCellWithProduct:product];

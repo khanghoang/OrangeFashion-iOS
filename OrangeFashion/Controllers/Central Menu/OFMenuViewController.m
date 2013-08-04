@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView    * tableMenu;
 @property (strong, nonatomic) NSMutableArray        * arrMenu;
+@property (strong, nonatomic) UIViewController      * parentVC;
 
 @end
 

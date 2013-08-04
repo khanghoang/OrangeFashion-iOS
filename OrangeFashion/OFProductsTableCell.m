@@ -35,6 +35,7 @@
 }
 
 #pragma marks Custom Product Cell
+
 - (void)customProductCellWithProduct:(OFProduct *)aProduct
 {
     self.productName.text = aProduct.name;

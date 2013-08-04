@@ -50,7 +50,7 @@
     [MagicalRecord setupCoreDataStack];
     [FBLoginView class];
     
-    [FacebookManager sharedInstance].delegate = self;
+    [FacebookManager sharedInstance].delegate = (id) self;
     
     // Make the color of Navigation bar no more effects the status bar
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque

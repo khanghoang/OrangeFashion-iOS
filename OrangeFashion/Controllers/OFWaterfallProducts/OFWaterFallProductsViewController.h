@@ -10,4 +10,6 @@
 
 @interface OFWaterFallProductsViewController : BaseViewController
 
+@property (strong, nonatomic) UIViewController          * parentVC;
+
 @end

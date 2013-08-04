@@ -10,8 +10,10 @@
 #import "DAPagesContainer.h"
 #import "OFMenuViewController.h"
 #import "OFWaterFallProductsViewController.h"
+#import "OFProductDetailsViewController.h"
+#import "OFCollectionViewCell.h"
 
-@interface OFPageMenuViewController ()
+@interface OFPageMenuViewController () <OFCollectionViewCellDelegate>
 
 @property (strong, nonatomic) DAPagesContainer *pagesContainer;
 
@@ -34,23 +36,32 @@
     [self.view addSubview:self.pagesContainer.view];
     [self.pagesContainer didMoveToParentViewController:self];
     
+    // Disable page wrapper scroll view
     self.pagesContainer.scrollView.gestureRecognizers = nil;
     self.pagesContainer.observingScrollView.gestureRecognizers = nil;
     
     OFMenuViewController *menu = [[OFMenuViewController alloc] init];
-//    menu.view.frame = frame;
+    
     menu.title = @"Danh mục";
     
     OFWaterFallProductsViewController *menu2 = [[OFWaterFallProductsViewController alloc] init];
-//    menu2.view.frame = frame;
+    menu2.parentVC = self;
     menu2.title = @"Hàng mới về";
     
     OFMenuViewController *menu3 = [[OFMenuViewController alloc] init];
-//    menu3.view.frame = frame;
     menu3.title = @"Dummy 2";
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];
 }
 
+#pragma mark - OFCollectionViewCellDelegate
+
+- (void)onTapCollectionViewCell:(NSNumber *)productID
+{
+    OFProductDetailsViewController *desVC = [[OFProductDetailsViewController alloc] init];
+    desVC.productID = productID;
+    OFNavigationViewController *centralNavVC = (OFNavigationViewController *) self.viewDeckController.centerController;
+    [centralNavVC pushViewController:desVC animated:YES];
+}
 
 @end

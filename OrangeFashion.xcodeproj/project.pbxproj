@@ -1125,7 +1125,7 @@
 			path = "Map View";
 			sourceTree = "<group>";
 		};
-		0C1EC49A17ABF7BB00BC0382 /* OFWaterfallProducts */ = {
+		0C1EC49A17ABF7BB00BC0382 /* Waterfall Products */ = {
 			isa = PBXGroup;
 			children = (
 				0C1EC49B17ABF98E00BC0382 /* OFWaterFallProductsViewController.h */,
@@ -1135,6 +1135,7 @@
 				0C1EC4CB17AC0F7200BC0382 /* OFCollectionViewCell.m */,
 				0C1EC4CD17AC0FD600BC0382 /* OFCollectionViewCell.xib */,
 			);
+			name = "Waterfall Products";
 			path = OFWaterfallProducts;
 			sourceTree = "<group>";
 		};
@@ -1837,7 +1838,7 @@
 				0C3527D117647FC700E07AAB /* Products List */,
 				0C3527D31764803000E07AAB /* Product Details */,
 				0C1EC48517ABBA2700BC0382 /* Map View */,
-				0C1EC49A17ABF7BB00BC0382 /* OFWaterfallProducts */,
+				0C1EC49A17ABF7BB00BC0382 /* Waterfall Products */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

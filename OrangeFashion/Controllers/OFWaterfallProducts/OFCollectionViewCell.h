@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol OFCollectionViewCellDelegate <NSObject>
+
+- (void)onTapCollectionViewCell:(NSNumber *)productID;
+
+@end
+
 @interface OFCollectionViewCell : PSUICollectionViewCell
 
+@property (strong, nonatomic) id<OFCollectionViewCellDelegate> delegate;
 - (void)configCellWithProduct:(OFProduct *)product;
 
 @end
