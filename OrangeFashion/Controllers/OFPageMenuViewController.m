@@ -12,10 +12,12 @@
 #import "OFWaterFallProductsViewController.h"
 #import "OFProductDetailsViewController.h"
 #import "OFCollectionViewCell.h"
+#import "OFHomeTableViewCell.h"
+#import "OFSidebarMenuTableCell.h"
 
-@interface OFPageMenuViewController () <OFCollectionViewCellDelegate>
+@interface OFPageMenuViewController () <OFCollectionViewCellDelegate, OFHomeTableViewCellDelegate>
 
-@property (strong, nonatomic) DAPagesContainer *pagesContainer;
+@property (strong, nonatomic) DAPagesContainer * pagesContainer;
 
 @end
 
@@ -41,7 +43,7 @@
     self.pagesContainer.observingScrollView.gestureRecognizers = nil;
     
     OFMenuViewController *menu = [[OFMenuViewController alloc] init];
-    
+    menu.parentVC = self;
     menu.title = @"Danh mục";
     
     OFWaterFallProductsViewController *menu2 = [[OFWaterFallProductsViewController alloc] init];
@@ -62,6 +64,24 @@
     desVC.productID = productID;
     OFNavigationViewController *centralNavVC = (OFNavigationViewController *) self.viewDeckController.centerController;
     [centralNavVC pushViewController:desVC animated:YES];
+}
+
+#pragma mark - OFHomeTableViewCell
+
+- (void)onTapHomeTableViewCell:(NSDictionary *)data
+{
+    OFProductsViewController *productsVC = [[OFProductsViewController alloc] init];
+    
+    int categoryID = 0;
+    if ([data[CATEGORY_ID] isKindOfClass:[NSNumber class]]) {
+        categoryID = [data[CATEGORY_ID] integerValue];
+    }
+    
+    productsVC.category_id = categoryID;
+    productsVC.lblTitle = data[MENU_TITLE];
+    
+    OFNavigationViewController *navVC = (OFNavigationViewController *)self.viewDeckController.centerController;
+    [navVC pushViewController:productsVC animated:YES];
 }
 
 @end

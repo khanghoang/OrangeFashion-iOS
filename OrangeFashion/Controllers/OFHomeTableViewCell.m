@@ -21,10 +21,19 @@
 
 - (void)configWithData:(id)data
 {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
+    [self addGestureRecognizer:tap];
     NSString *urlBg = data[HOME_MENU_BACKGROUND];
-//    NSString *title = data[HOME_MENU_TITLE];
-    
     [self.imgBackground setImageWithURL:[NSURL URLWithString:urlBg] placeholderImage:nil];
+}
+
+- (void)onTap:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(onTapHomeTableViewCell:)]) {
+        NSDictionary *data = @{ MENU_TITLE: self.title,
+                                CATEGORY_ID : self.categoryID};
+        [self.delegate performSelector:@selector(onTapHomeTableViewCell:) withObject:data];
+    }
 }
 
 @end

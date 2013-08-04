@@ -16,8 +16,6 @@
 @interface OFMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView    * tableMenu;
-@property (strong, nonatomic) NSMutableArray        * arrMenu;
-@property (strong, nonatomic) UIViewController      * parentVC;
 
 @end
 
@@ -61,6 +59,15 @@
     
     if (!cell)
         cell = (OFHomeTableViewCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    
+    cell.delegate = (id)self.parentVC;
+
+    NSInteger selectIndex = indexPath.row;
+    NSInteger categoryID = [[[self.arrMenu objectAtIndex:selectIndex] objectForKey:@"id"] integerValue];
+    NSString *title = [[self.arrMenu objectAtIndex:selectIndex] objectForKey:MENU_TITLE];
+    
+    cell.categoryID = @(categoryID);
+    cell.title = title;
     
     [cell configWithData:[self.arrMenu objectAtIndex:indexPath.row]];
     return cell;        

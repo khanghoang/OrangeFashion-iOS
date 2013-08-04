@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OFSidebarMenuTableCell.h"
+
+@protocol OFHomeTableViewCellDelegate <NSObject>
+
+- (void)onTapHomeTableViewCell:(NSDictionary *)data;
+
+@end
 
 @interface OFHomeTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) NSString                          * title;
+@property (assign, nonatomic) NSNumber                          * categoryID;
+@property (assign, nonatomic) id<OFHomeTableViewCellDelegate>     delegate;
 - (void)configWithData:(id)data;
 
 @end

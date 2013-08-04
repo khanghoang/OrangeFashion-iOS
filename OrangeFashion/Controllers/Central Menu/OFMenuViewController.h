@@ -11,4 +11,7 @@
 
 @interface OFMenuViewController : BaseViewController
 
+@property (strong, nonatomic) UIViewController      * parentVC;
+@property (strong, nonatomic) NSMutableArray        * arrMenu;
+
 @end
