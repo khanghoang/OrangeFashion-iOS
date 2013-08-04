@@ -88,7 +88,7 @@
      
     [[UAPush shared] setPushEnabled:YES];
     
-    [self addDraggableBookmark];
+//    [self addDraggableBookmark];
     
     return YES;
 }
