@@ -33,15 +33,20 @@
     self.pagesContainer.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.pagesContainer.view];
     [self.pagesContainer didMoveToParentViewController:self];
+    
     self.pagesContainer.scrollView.gestureRecognizers = nil;
+    self.pagesContainer.observingScrollView.gestureRecognizers = nil;
     
     OFMenuViewController *menu = [[OFMenuViewController alloc] init];
+//    menu.view.frame = frame;
     menu.title = @"Danh mục";
     
     OFWaterFallProductsViewController *menu2 = [[OFWaterFallProductsViewController alloc] init];
+//    menu2.view.frame = frame;
     menu2.title = @"Hàng mới về";
     
     OFMenuViewController *menu3 = [[OFMenuViewController alloc] init];
+//    menu3.view.frame = frame;
     menu3.title = @"Dummy 2";
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];
