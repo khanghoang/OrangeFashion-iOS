@@ -14,7 +14,6 @@
 @interface OFHomeTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView    * imgBackground;
-@property (weak, nonatomic) IBOutlet UILabel        * lblCategoryName;
 
 @end
 
@@ -23,10 +22,9 @@
 - (void)configWithData:(id)data
 {
     NSString *urlBg = data[HOME_MENU_BACKGROUND];
-    NSString *title = data[HOME_MENU_TITLE];
+//    NSString *title = data[HOME_MENU_TITLE];
     
     [self.imgBackground setImageWithURL:[NSURL URLWithString:urlBg] placeholderImage:nil];
-    self.lblCategoryName.text = title;
 }
 
 @end
