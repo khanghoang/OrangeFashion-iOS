@@ -157,8 +157,7 @@
 + (void)removeBookmarkProductWithProductID:(NSNumber *)productID
 {
     NSMutableArray *bookmarkedProducts = [OFProduct getBookmarkProducts];
-    int count = bookmarkedProducts.count;
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < bookmarkedProducts.count; i++) {
         NSNumber *bookmarkedProductID = [bookmarkedProducts objectAtIndex:i];
         if ([bookmarkedProductID integerValue] == [productID integerValue])
             [bookmarkedProducts removeObject:bookmarkedProductID];
