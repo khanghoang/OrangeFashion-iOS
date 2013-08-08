@@ -17,6 +17,10 @@
 @interface OFCollectionViewCell : PSUICollectionViewCell
 
 @property (strong, nonatomic) id<OFCollectionViewCellDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UILabel                * lblProductName;
+@property (weak, nonatomic) IBOutlet UIImageView            * imgProductImage;
+
 - (void)configCellWithProduct:(OFProduct *)product;
 
 @end
