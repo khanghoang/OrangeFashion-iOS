@@ -36,23 +36,19 @@
 - (void)configCellWithProduct:(OFProduct *)product
 {
     self.product = product;
+    
     NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", product.product_id, product.product_id];
+    __weak OFCollectionViewCell *weakCell = self;
+    weakCell.imgProductImage.alpha = 0;
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:imgUrl] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+    [request setHTTPShouldHandleCookies:NO];
+    [request setHTTPShouldUsePipelining:YES];
     
-    __weak OFCollectionViewCell *weakSelf = self;
-    weakSelf.imgProductImage.image = nil;
-    
-    double delayInSeconds = 0.3;
-    dispatch_queue_t myQueue = dispatch_queue_create("myQueue", nil);;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, myQueue, ^(void){
-        if(weakSelf){
-            weakSelf.imgProductImage.alpha = 0;
-            [weakSelf.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
-            [UIView animateWithDuration:0.3 animations:^{
-                weakSelf.imgProductImage.alpha = 1;
-            }];
-        }
-    });
+    [weakCell.imgProductImage setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        [UIView animateWithDuration:0.3 animations:^{
+            weakCell.imgProductImage.alpha = 1;
+        }];
+    } failure:nil];
     
     CGRect lblFrame = self.lblProductName.frame;
     

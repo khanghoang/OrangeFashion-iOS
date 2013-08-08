@@ -20,8 +20,6 @@
 @property (strong, nonatomic) NSMutableArray            * arrSize;
 @property (assign, nonatomic) NSInteger                   randomValueForWaterSize;
 
-@property (strong, nonatomic) NSMutableArray            * arrRequest;
-
 @end
 
 @implementation OFWaterFallProductsViewController
@@ -31,7 +29,6 @@
     [super viewDidLoad];
     
     self.arrProducts = [[NSMutableArray alloc] init];
-    self.arrRequest  = [[NSMutableArray alloc] init];
     
     [OFProduct getProductsWithCategoryID:21 onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
@@ -95,36 +92,6 @@
         [cell configCellWithProduct:product];
     }
     cell.delegate = (id) self.parentVC;
-    
-//    NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", product.product_id, product.product_id];
-//    
-//    __block OFCollectionViewCell *weakCell = cell;
-//    weakCell.imgProductImage.image = nil;
-//    
-//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-//    [queue addOperationWithBlock:^{
-//        weakCell.imgProductImage.alpha = 0;
-//        [weakCell.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
-//        [UIView animateWithDuration:0.3 animations:^{
-//            weakCell.imgProductImage.alpha = 1;
-//        }];
-//    }];
-//    
-//    [self.arrRequest addObject:queue];
-    
-//    double delayInSeconds = 0.3;
-//    dispatch_queue_t myQueue = dispatch_queue_create("myQueue", nil);;
-//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-//    dispatch_after(popTime, myQueue, ^(void){
-//        if(weakCell){
-//            weakCell.imgProductImage.alpha = 0;
-//            [weakCell.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
-//            [UIView animateWithDuration:0.3 animations:^{
-//                weakCell.imgProductImage.alpha = 1;
-//            }];
-//        }
-//    });
-
     
     return cell;
 }
