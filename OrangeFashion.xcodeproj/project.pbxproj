@@ -21,9 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0C187F2117ACAFA70083AA8A /* DAPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F1C17ACAFA70083AA8A /* DAPageIndicatorView.m */; };
-		0C187F2217ACAFA70083AA8A /* DAPagesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F1E17ACAFA70083AA8A /* DAPagesContainer.m */; };
-		0C187F2317ACAFA70083AA8A /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F2017ACAFA70083AA8A /* DAPagesContainerTopBar.m */; };
 		0C187F2717ACB20A0083AA8A /* OFPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */; };
 		0C187F2817ACB20A0083AA8A /* OFPageMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */; };
 		0C187F2D17ACE85E0083AA8A /* nav-back-btn-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2917ACE85E0083AA8A /* nav-back-btn-bg.png */; };
@@ -340,6 +337,9 @@
 		0C8690D8179C443C005AC30C /* OFHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8690D7179C443C005AC30C /* OFHomeTableViewCell.xib */; };
 		0C8DEFD81759E614004016E0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEFD71759E614004016E0 /* BaseModel.m */; };
 		0CAF779F17926BC700E3B084 /* OFHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */; };
+		0CD4318F17B3488B0038C06B /* DAPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4318A17B3488B0038C06B /* DAPageIndicatorView.m */; };
+		0CD4319017B3488B0038C06B /* DAPagesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4318C17B3488B0038C06B /* DAPagesContainer.m */; };
+		0CD4319117B3488B0038C06B /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4318E17B3488B0038C06B /* DAPagesContainerTopBar.m */; };
 		0CD488321710256200C30EEF /* OFProductsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD488311710256200C30EEF /* OFProductsTableCell.xib */; };
 		0CD488351710266600C30EEF /* OFProductsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD488341710266600C30EEF /* OFProductsTableCell.m */; };
 		0CE1832617A39D9400DE04E9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE1832517A39D9400DE04E9 /* FacebookSDK.framework */; };
@@ -375,12 +375,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C187F1B17ACAFA70083AA8A /* DAPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPageIndicatorView.h; sourceTree = "<group>"; };
-		0C187F1C17ACAFA70083AA8A /* DAPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPageIndicatorView.m; sourceTree = "<group>"; };
-		0C187F1D17ACAFA70083AA8A /* DAPagesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainer.h; sourceTree = "<group>"; };
-		0C187F1E17ACAFA70083AA8A /* DAPagesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainer.m; sourceTree = "<group>"; };
-		0C187F1F17ACAFA70083AA8A /* DAPagesContainerTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainerTopBar.h; sourceTree = "<group>"; };
-		0C187F2017ACAFA70083AA8A /* DAPagesContainerTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainerTopBar.m; sourceTree = "<group>"; };
 		0C187F2417ACB20A0083AA8A /* OFPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFPageMenuViewController.h; sourceTree = "<group>"; };
 		0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFPageMenuViewController.m; sourceTree = "<group>"; };
 		0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFPageMenuViewController.xib; sourceTree = "<group>"; };
@@ -926,6 +920,12 @@
 		0C8DEFD71759E614004016E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0CAF779D17926BC700E3B084 /* OFHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHomeTableViewCell.h; sourceTree = "<group>"; };
 		0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHomeTableViewCell.m; sourceTree = "<group>"; };
+		0CD4318917B3488B0038C06B /* DAPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPageIndicatorView.h; sourceTree = "<group>"; };
+		0CD4318A17B3488B0038C06B /* DAPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPageIndicatorView.m; sourceTree = "<group>"; };
+		0CD4318B17B3488B0038C06B /* DAPagesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainer.h; sourceTree = "<group>"; };
+		0CD4318C17B3488B0038C06B /* DAPagesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainer.m; sourceTree = "<group>"; };
+		0CD4318D17B3488B0038C06B /* DAPagesContainerTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainerTopBar.h; sourceTree = "<group>"; };
+		0CD4318E17B3488B0038C06B /* DAPagesContainerTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainerTopBar.m; sourceTree = "<group>"; };
 		0CD488311710256200C30EEF /* OFProductsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFProductsTableCell.xib; path = ../OFProductsTableCell.xib; sourceTree = "<group>"; };
 		0CD488331710266600C30EEF /* OFProductsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFProductsTableCell.h; path = ../OFProductsTableCell.h; sourceTree = "<group>"; };
 		0CD488341710266600C30EEF /* OFProductsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFProductsTableCell.m; path = ../OFProductsTableCell.m; sourceTree = "<group>"; };
@@ -1019,20 +1019,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C187F1A17ACAFA70083AA8A /* DAPagesContainer */ = {
-			isa = PBXGroup;
-			children = (
-				0C187F1B17ACAFA70083AA8A /* DAPageIndicatorView.h */,
-				0C187F1C17ACAFA70083AA8A /* DAPageIndicatorView.m */,
-				0C187F1D17ACAFA70083AA8A /* DAPagesContainer.h */,
-				0C187F1E17ACAFA70083AA8A /* DAPagesContainer.m */,
-				0C187F1F17ACAFA70083AA8A /* DAPagesContainerTopBar.h */,
-				0C187F2017ACAFA70083AA8A /* DAPagesContainerTopBar.m */,
-			);
-			name = DAPagesContainer;
-			path = "../../../../Downloads/DAPagesContainer-master/DAPagesContainer";
-			sourceTree = "<group>";
-		};
 		0C187F3517AD09870083AA8A /* Water */ = {
 			isa = PBXGroup;
 			children = (
@@ -1620,8 +1606,8 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0CD4318817B3488B0038C06B /* DAPagesContainer */,
 				0C187F3517AD09870083AA8A /* Water */,
-				0C187F1A17ACAFA70083AA8A /* DAPagesContainer */,
 				0C1EC4A017AC0E8700BC0382 /* PSTCollectionView */,
 				0CFFE35B17AA3FC300308B6A /* GraggableView */,
 				0C5B0A6A17A95F5F00B56D3A /* Google Analytics */,
@@ -2184,6 +2170,19 @@
 			path = ViewDeck;
 			sourceTree = "<group>";
 		};
+		0CD4318817B3488B0038C06B /* DAPagesContainer */ = {
+			isa = PBXGroup;
+			children = (
+				0CD4318917B3488B0038C06B /* DAPageIndicatorView.h */,
+				0CD4318A17B3488B0038C06B /* DAPageIndicatorView.m */,
+				0CD4318B17B3488B0038C06B /* DAPagesContainer.h */,
+				0CD4318C17B3488B0038C06B /* DAPagesContainer.m */,
+				0CD4318D17B3488B0038C06B /* DAPagesContainerTopBar.h */,
+				0CD4318E17B3488B0038C06B /* DAPagesContainerTopBar.m */,
+			);
+			path = DAPagesContainer;
+			sourceTree = "<group>";
+		};
 		0CEF5310176C9175004447E1 /* Navigation Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -2665,14 +2664,14 @@
 				0C1EC4C817AC0E8700BC0382 /* PSTGridLayoutRow.m in Sources */,
 				0C1EC4C917AC0E8700BC0382 /* PSTGridLayoutSection.m in Sources */,
 				0C1EC4CC17AC0F7200BC0382 /* OFCollectionViewCell.m in Sources */,
-				0C187F2117ACAFA70083AA8A /* DAPageIndicatorView.m in Sources */,
-				0C187F2217ACAFA70083AA8A /* DAPagesContainer.m in Sources */,
-				0C187F2317ACAFA70083AA8A /* DAPagesContainerTopBar.m in Sources */,
 				0C187F2717ACB20A0083AA8A /* OFPageMenuViewController.m in Sources */,
 				0C187F3F17AD0A120083AA8A /* FRGWaterfallCollectionViewCell.m in Sources */,
 				0C187F4017AD0A120083AA8A /* FRGWaterfallDecorationReusableView.m in Sources */,
 				0C187F4117AD0A120083AA8A /* FRGWaterfallHeaderReusableView.m in Sources */,
 				0C187F4517AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m in Sources */,
+				0CD4318F17B3488B0038C06B /* DAPageIndicatorView.m in Sources */,
+				0CD4319017B3488B0038C06B /* DAPagesContainer.m in Sources */,
+				0CD4319117B3488B0038C06B /* DAPagesContainerTopBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

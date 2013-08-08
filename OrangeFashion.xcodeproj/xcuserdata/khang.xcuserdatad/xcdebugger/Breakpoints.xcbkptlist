@@ -526,11 +526,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OrangeFashion/Models/OFProduct.m"
-         timestampString = "397119904.47813"
+         timestampString = "397452100.436542"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "161"
-         endingLineNumber = "161"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
          landmarkName = "+removeBookmarkProductWithProductID:"
          landmarkType = "5">
       </FileBreakpoint>

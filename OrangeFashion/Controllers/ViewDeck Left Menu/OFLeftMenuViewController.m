@@ -60,7 +60,12 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    OFLeftMenuSectionHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([OFLeftMenuSectionHeader class])];
+    OFLeftMenuSectionHeader *header;
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([OFLeftMenuSectionHeader class])];
+    }else{
+        header = [[OFLeftMenuSectionHeader alloc] init];
+    }
     if (!header) {
         header = [[OFLeftMenuSectionHeader alloc] init];
     }
