@@ -33,7 +33,7 @@
     self.arrMenu = [[NSMutableArray alloc] init];
     
     self.arrSubMenuSectionOne = @[@"Orange Fashion", @"Hàng mới về", @"Liên hệ"];
-    self.arrSection = @[@"Nổi bật", @"Danh mục", @"Thông tin", @"Tuỳ chỉnh"];
+    self.arrSection = @[@"Nổi bật", @"Danh mục", @"Tuỳ chỉnh", @"Thông tin"];
     
     self.tableMenu.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SidebarMenuTableCellBg"] resizableImageWithStandardInsetsTop:0 right:0 bottom:0 left:0]];
     [self.tableMenu registerNib:[UINib nibWithNibName:NSStringFromClass([OFSidebarMenuTableCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([OFSidebarMenuTableCell class])];
@@ -90,6 +90,12 @@
     if (indexPath.section == 0) {
         NSString *title = [self.arrSubMenuSectionOne objectAtIndex:indexPath.row];
         NSDictionary *data = @{MENU_TITLE : title};
+        [cell configWithData:data];
+        return cell;
+    }
+    
+    if (indexPath.section == 2) {
+        NSDictionary *data = @{MENU_TITLE : @"Cấu hình"};
         [cell configWithData:data];
         return cell;
     }
@@ -165,6 +171,21 @@
         
         // Contact screen
         if (indexPath.row == 2) {
+            BaseViewController *menu3 = [[BaseViewController alloc] init];
+            CGRect frame = self.view.frame;
+            
+            UIWebView *web = [[UIWebView alloc] initWithFrame:frame];
+            [menu3.view addSubview:web];
+            
+            NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"thong-tin-thanh-toan.html"];
+            NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            [web loadRequest:request];
+            
+            menu3.title = @"Hướng dẫn đặt hàng";
+            
+            [centralNavVC pushViewController:menu3 animated:YES];
+            [deckViewController toggleLeftView];
             return;
         }
     }
@@ -176,8 +197,7 @@
     }
     
     if (indexPath.section == 2) {
-        [centralNavVC pushViewController:[[OFWaterFallProductsViewController alloc] init] animated:YES];
-        [deckViewController toggleLeftView];
+        [SVProgressHUD showWithStatus:@"Chức năng hiện đang trong quá trình phát triển"];
         return;
     }
     

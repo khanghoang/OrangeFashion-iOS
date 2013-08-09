@@ -29,16 +29,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [SVProgressHUD dismiss];
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     self.title = @"Bản đồ";
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     // Do any additional setup after loading the view from its nib.
+    
+    self.view = self.mapView;
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:SETTINGS_ORANGE_SHOP_LATITUDE
                                                             longitude:SETTINGS_ORANGE_SHOP_LONGITUDE
                                                                  zoom:16];
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     self.mapView.myLocationEnabled = YES;
-    self.view = self.mapView;
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];

@@ -52,7 +52,20 @@
     menu2.parentVC = self;
     menu2.title = @"Hàng mới về";
     
-    BaseViewController *menu3 = [[BaseViewController alloc] init];
+    BaseViewController *menu3 = [[BaseViewController alloc] init];    
+    CGRect frame = self.view.frame;
+    frame.size.height -= 170;
+    
+    UIWebView *web = [[UIWebView alloc] initWithFrame:frame];
+    [menu3.view addSubview:web];
+//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://orangefashion.vn/thong-tin-thanh-toan.html"]];
+//    [web loadRequest:request];
+
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"thong-tin-thanh-toan.html"];
+    NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [web loadRequest:request];
+    
     menu3.title = @"Hướng dẫn đặt hàng";
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];

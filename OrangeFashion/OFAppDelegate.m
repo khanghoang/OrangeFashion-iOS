@@ -19,6 +19,7 @@
 #import "CHDraggableView+Avatar.h"
 #import "CHDraggingCoordinator.h"
 #import "OFPageMenuViewController.h"
+#import "OFProductDetailsViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface OFAppDelegate() <CHDraggingCoordinatorDelegate>
@@ -134,6 +135,24 @@
     deckController.rightSize = 60;
     
     return deckController;
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [super application:application didReceiveRemoteNotification:userInfo];
+    NSDictionary *data = userInfo[@"aps"];
+    if (!data)
+        return;
+    
+    NSString *productID = data[@"productid"];
+    if (!productID)
+        return;
+    
+    NSNumber *productNumber = [NSNumber numberWithInteger:[productID integerValue]];
+    OFProductDetailsViewController *detailsVC = [[OFProductDetailsViewController alloc] init];
+    detailsVC.productID = productNumber;
+    OFNavigationViewController *navVC = (OFNavigationViewController *)self.centerController;
+    [navVC pushViewController:detailsVC animated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
