@@ -47,6 +47,10 @@
     // Setup Google Analytics
     [self setUpGoogleAnalytic];
     
+    // Setup Cache image
+    NSString *bundledPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Orange Cached Images"];
+    [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];
+    
     // start MR
     [MagicalRecord setupCoreDataStack];
     [FBLoginView class];

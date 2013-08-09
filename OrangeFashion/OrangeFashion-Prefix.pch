@@ -81,6 +81,7 @@
 #import <MapKit/MapKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <CoreLocation/CoreLocation.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 //Categories
 #import "ISO8601DateFormatter.h"
@@ -113,7 +114,7 @@
 #import "SVProgressHUD.h"
 #import "AFNetworking.h"
 #import "AFUrbanAirshipClient.h"
-#import "UIImageView+AFNetworking.h"
+//#import "UIImageView+AFNetworking.h"
 #import "CoreData+MagicalRecord.h"
 #import "AFJSONRequestOperation.h"
 #import "Crittercism.h"

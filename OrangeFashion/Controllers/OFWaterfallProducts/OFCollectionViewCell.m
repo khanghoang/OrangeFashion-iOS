@@ -39,16 +39,17 @@
     
     NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", product.product_id, product.product_id];
     __weak OFCollectionViewCell *weakCell = self;
-    weakCell.imgProductImage.alpha = 0;
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:imgUrl] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
-    [request setHTTPShouldHandleCookies:NO];
-    [request setHTTPShouldUsePipelining:YES];
     
-    [weakCell.imgProductImage setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+    weakCell.imgProductImage.alpha = 0;
+    [weakCell.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl]
+                             placeholderImage:[UIImage imageNamed:@"placeholder"]
+                                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
+    {
+        [weakCell.imgProductImage setImage:image];
         [UIView animateWithDuration:0.3 animations:^{
             weakCell.imgProductImage.alpha = 1;
         }];
-    } failure:nil];
+    }];
     
     CGRect lblFrame = self.lblProductName.frame;
     

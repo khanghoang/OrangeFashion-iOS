@@ -338,6 +338,7 @@
 		0C8690D8179C443C005AC30C /* OFHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8690D7179C443C005AC30C /* OFHomeTableViewCell.xib */; };
 		0C8DEFD81759E614004016E0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEFD71759E614004016E0 /* BaseModel.m */; };
 		0CAF779F17926BC700E3B084 /* OFHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */; };
+		0CD2317417B4E799009B7E35 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD2317317B4E799009B7E35 /* SDWebImage.framework */; };
 		0CD4318F17B3488B0038C06B /* DAPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4318A17B3488B0038C06B /* DAPageIndicatorView.m */; };
 		0CD4319017B3488B0038C06B /* DAPagesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4318C17B3488B0038C06B /* DAPagesContainer.m */; };
 		0CD4319117B3488B0038C06B /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4318E17B3488B0038C06B /* DAPagesContainerTopBar.m */; };
@@ -922,6 +923,7 @@
 		0C8DEFD71759E614004016E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0CAF779D17926BC700E3B084 /* OFHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHomeTableViewCell.h; sourceTree = "<group>"; };
 		0CAF779E17926BC700E3B084 /* OFHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHomeTableViewCell.m; sourceTree = "<group>"; };
+		0CD2317317B4E799009B7E35 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		0CD4318917B3488B0038C06B /* DAPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPageIndicatorView.h; sourceTree = "<group>"; };
 		0CD4318A17B3488B0038C06B /* DAPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPageIndicatorView.m; sourceTree = "<group>"; };
 		0CD4318B17B3488B0038C06B /* DAPagesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainer.h; sourceTree = "<group>"; };
@@ -1004,6 +1006,7 @@
 				0C5B0A7217A95F5F00B56D3A /* libGoogleAnalytics.a in Frameworks */,
 				0C5B0A7517A95FEB00B56D3A /* libGoogleAnalytics.a in Frameworks */,
 				0C2D8DDD17ABB7030069DC32 /* GoogleMaps.framework in Frameworks */,
+				0CD2317417B4E799009B7E35 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1485,6 +1488,7 @@
 		0C4C58D3170D6D9600ED0DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CD2317317B4E799009B7E35 /* SDWebImage.framework */,
 				0C2D8DEA17ABB7680069DC32 /* libicucore.dylib */,
 				0C2D8DE817ABB7620069DC32 /* libc++.dylib */,
 				0C2D8DE617ABB75B0069DC32 /* OpenGLES.framework */,
