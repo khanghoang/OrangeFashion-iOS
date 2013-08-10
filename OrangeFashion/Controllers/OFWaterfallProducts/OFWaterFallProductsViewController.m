@@ -38,9 +38,6 @@
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
-        NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
-        self.arrProducts = arrProducts;
-        [self calculateRandomValueForCollectionViewCellSize];
         [self.collectionView reloadData];
     }];
     

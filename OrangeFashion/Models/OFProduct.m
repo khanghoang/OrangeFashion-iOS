@@ -20,7 +20,8 @@
         product.material = dictionary[@"ChatLieu"];
         product.colors = dictionary[@"Mau"];
         product.product_code = dictionary[@"MaHienThi"];
-        
+        product.category_id = @([dictionary[@"MaLoaiSanPham"] integerValue]);
+        product.collection_id = @([dictionary[@"MaBoSuuTap"] integerValue]);
     }    
     return product;
 }

@@ -8,7 +8,7 @@
 
 #import "OFProductManager.h"
 
-static NSString const * STORE_PRODUCT_BOOKMARK = @"bookmark_products";
+static NSString * STORE_PRODUCT_BOOKMARK = @"bookmark_products";
 
 @implementation OFProductManager
 
@@ -31,10 +31,23 @@ SINGLETON_MACRO
             successBlock(operation.response.statusCode, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSArray *arr = [self getStoredProductsWithCategoryId:category_id];
+        if (arr.count > 0) {
+            successBlock(operation.response.statusCode, arr);
+        }
+        
         if (failureBlock) {
             failureBlock(operation.response.statusCode, error);
         }
     }];
+}
+
+- (NSArray *)getStoredProductsWithCategoryId:(NSInteger)category_id
+{
+    NSNumber *catID = @(category_id);
+    NSArray *arrProducts = [OFProduct MR_findByAttribute:@"category_id" withValue:catID];
+    return arrProducts;
 }
 
 - (void)getProductsOnSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock
@@ -99,7 +112,7 @@ SINGLETON_MACRO
     
     NSBlockOperation *saveInBackground = [NSBlockOperation blockOperationWithBlock:^{
         [responseObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            OFProduct *product = [OFProduct MR_createEntity];
+            OFProduct *product;
             product = [OFProduct productWithDictionary:obj];
             [arrProduct addObject:product];
         }];

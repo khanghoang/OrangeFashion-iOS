@@ -68,9 +68,6 @@
     } failure:^(NSInteger statusCode, id obj) {
         //Handle when failure
         [SVProgressHUD showErrorWithStatus:@"Xin vui lòng kiểm tra kết nối mạng và thử lại"];
-        NSMutableArray *arrProducts = [[OFProduct MR_findAll] mutableCopy];
-        self.productsArr = arrProducts;
-        [self.tableProducts reloadData];
         [self.tableProducts.pullToRefreshView stopAnimating];
     }];
 }
@@ -202,14 +199,31 @@
 - (void)filterListForSearchText:(NSString *)searchText
 {
     [self.filteredList removeAllObjects]; //clears the array from all the string objects it might contain from the previous searches
-    
+    self.filteredList = [self arrProductsForSearchText:searchText];
+}
+
+- (NSMutableArray *)arrProductsForSearchText:(NSString *)searchText
+{
+    NSMutableArray *arrResultProduct = [[NSMutableArray alloc] init];
     NSArray *arrProduct = [OFProduct MR_findAll];
+    
     for (OFProduct *product in arrProduct) {
         NSRange nameRange = [product.name rangeOfString:searchText options:NSCaseInsensitiveSearch];
         if (nameRange.location != NSNotFound) {
-            [self.filteredList addObject:product];
+            [arrResultProduct addObject:product];
         }
     }
+    
+    if (arrResultProduct.count == 0) {
+        for (OFProduct *product in arrProduct) {
+            NSRange nameRange = [product.product_code rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (nameRange.location != NSNotFound) {
+                [arrResultProduct addObject:product];
+            }
+        }
+    }
+    
+    return arrResultProduct;
 }
 
 @end
