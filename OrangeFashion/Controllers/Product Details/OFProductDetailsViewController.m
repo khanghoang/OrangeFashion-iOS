@@ -101,6 +101,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     }
     
     NSMutableArray *arrDisplayImage = [arrImages mutableCopy];
+    
     [arrDisplayImage removeObjectAtIndex:0];
     [arrDisplayImage removeObjectAtIndex:0];
     

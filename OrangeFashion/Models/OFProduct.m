@@ -22,6 +22,10 @@
         product.product_code = dictionary[@"MaHienThi"];
         product.category_id = @([dictionary[@"MaLoaiSanPham"] integerValue]);
         product.collection_id = @([dictionary[@"MaBoSuuTap"] integerValue]);
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];        
+        product.public_date = [dateFormatter dateFromString:dictionary[@"NgayDang"]];
     }    
     return product;
 }

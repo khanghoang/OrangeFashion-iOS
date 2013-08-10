@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Khang. All rights reserved.
 //
 
-#define HOME_MENU_BACKGROUND            @"background_url"
-#define HOME_MENU_TITLE                 @"name"
-
 #import "OFHomeTableViewCell.h"
 
 @interface OFHomeTableViewCell()

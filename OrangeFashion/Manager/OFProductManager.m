@@ -46,7 +46,15 @@ SINGLETON_MACRO
 - (NSArray *)getStoredProductsWithCategoryId:(NSInteger)category_id
 {
     NSNumber *catID = @(category_id);
-    NSArray *arrProducts = [OFProduct MR_findByAttribute:@"category_id" withValue:catID];
+    NSArray *arrProducts = [[NSArray alloc] init];
+    
+    // if new arrived
+    if (category_id == 21) {
+        arrProducts = [OFProduct MR_findAllSortedBy:@"public_date" ascending:NO];
+        return arrProducts;
+    }
+    
+    arrProducts = [OFProduct MR_findByAttribute:@"category_id" withValue:catID];
     return arrProducts;
 }
 
@@ -74,35 +82,6 @@ SINGLETON_MACRO
         
     }];
 }
-
-//- (void)getImagesForProductOnSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock
-//{
-//    [OFProductImages getImagesForProduct:self successBlock:^(NSInteger statusCode, id obj){
-//        NSArray *imgsArr = (NSArray *)obj;
-//        [imgsArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//            [self addImagesObject:obj];
-//        }];
-//        
-//        if (successBlock) {
-//            successBlock(statusCode, self);
-//        }
-//        
-//    } failureBlock:^(NSInteger statusCode, id obj) {
-//        
-//        // set offline data from coredata
-//        OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:self.product_id] lastObject];
-//        
-//        if (product&&successBlock) {
-//            successBlock(statusCode, product);
-//        }
-//        
-//        //Hanlder when failure
-//        if (failureBlock) {
-//            failureBlock(statusCode, obj);
-//        }
-//        
-//    }];
-//}
 
 #pragma mark - Helpers
 

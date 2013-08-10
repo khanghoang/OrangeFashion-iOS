@@ -30,6 +30,7 @@
     [[OFHelperManager sharedInstance] getMenuListOnComplete:^(NSArray *menu) {
         self.arrMenu = [[[menu mutableCopy] objectAtIndex:1] objectForKey:@"session"];
         [self.tableMenu reloadData];
+        
     } orFailure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"Không tải được menu, vui lòng thử lại sau"];
     }];
@@ -92,6 +93,15 @@
     
     OFNavigationViewController *navVC = (OFNavigationViewController *)self.viewDeckController.centerController;
     [navVC pushViewController:productsVC animated:YES];
+}
+
+#pragma mark - Precache menu background images
+- (void)preCacheMenuBackgroundImages
+{
+    int count = self.arrMenu.count;
+    for (int i = 0; i < count; i++) {
+        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[[self.arrMenu objectAtIndex:i] objectForKey:HOME_MENU_BACKGROUND] options:SDWebImageDownloaderLowPriority progress:nil completed:nil];
+    }
 }
 
 @end

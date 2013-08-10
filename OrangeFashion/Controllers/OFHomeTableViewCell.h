@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "OFSidebarMenuTableCell.h"
 
+#define HOME_MENU_BACKGROUND            @"background_url"
+#define HOME_MENU_TITLE                 @"name"
+
 @protocol OFHomeTableViewCellDelegate <NSObject>
 
 - (void)onTapHomeTableViewCell:(NSDictionary *)data;

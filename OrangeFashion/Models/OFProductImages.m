@@ -53,15 +53,14 @@
         
         OFProduct *storedProduct = [[OFProduct MR_findByAttribute:@"product_id" withValue:product.product_id] lastObject];
         if (storedProduct.images.count > 0) {
-            successBlock(operation.response.statusCode, storedProduct.images);
-            return;
+            successBlock(operation.response.statusCode, [storedProduct.images allObjects]);
         }
-        
-        //Handler when no internet
-        DLog(@"%@", [error description]);
-        
-        if (failureBlock) {
-            failureBlock(operation.response.statusCode, error);
+        else{
+            //Handler when no internet
+            DLog(@"%@", [error description]);
+            if (failureBlock) {
+                failureBlock(operation.response.statusCode, error);
+            }
         }
     }];
 }
