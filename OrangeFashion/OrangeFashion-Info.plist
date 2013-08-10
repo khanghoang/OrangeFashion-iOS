@@ -16,6 +16,8 @@
 			<array>
 				<string>icon organge 114.png</string>
 				<string>icon organge copy.png</string>
+				<string>57x57.png</string>
+				<string>114x114.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
