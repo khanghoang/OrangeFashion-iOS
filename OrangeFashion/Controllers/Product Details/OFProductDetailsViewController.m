@@ -307,7 +307,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 }
 
 - (IBAction)onBtnBookmark:(id)sender {
-    [OFProduct bookmarkProductWithProductID:self.productID];
+    [[OFProductManager sharedInstance] bookmarkProductWithProductID:self.productID];
 }
 
 - (BOOL)canBecomeFirstResponder {

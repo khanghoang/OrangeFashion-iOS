@@ -33,7 +33,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.arrBookmarkedProducts = [OFProduct getBookmarkProducts];
+    self.arrBookmarkedProducts = [[OFProductManager sharedInstance] getBookmarkProducts];
     [self.tableViewBookmarkedProducts reloadData];
 }
 
@@ -72,7 +72,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     OFBookmarkSectionHeader *header = [[OFBookmarkSectionHeader alloc] init];
-    [header changeNumberOfBookmarkProduct:[OFProduct getBookmarkProducts].count];
+    [header changeNumberOfBookmarkProduct:[[OFProductManager sharedInstance] getBookmarkProducts].count];
     return header;
 }
 
@@ -118,8 +118,8 @@
     NSNumber *producID = objc_getAssociatedObject(alertView, @"productID");
     if ([buttonTitle isEqualToString:@"Đồng ý"])
     {
-        [OFProduct removeBookmarkProductWithProductID:producID];
-        self.arrBookmarkedProducts = [OFProduct getBookmarkProducts];
+        [[OFProductManager sharedInstance] removeBookmarkProductWithProductID:producID];
+        self.arrBookmarkedProducts = [[OFProductManager sharedInstance] getBookmarkProducts];
         [self.tableViewBookmarkedProducts reloadData];
     }
 }

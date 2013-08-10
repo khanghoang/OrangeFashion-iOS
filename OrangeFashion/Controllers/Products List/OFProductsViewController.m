@@ -60,7 +60,7 @@
 
 - (void)fillUpTableProductWithCategoryID:(NSInteger)categoryID
 {
-    [OFProduct getProductsWithCategoryID:categoryID onSuccess:^(NSInteger statusCode, id obj) {
+    [[OFProductManager sharedInstance] getProductsWithCategoryID:categoryID onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
         [self.tableProducts reloadData];        
@@ -77,7 +77,7 @@
 
 - (void)fillUpTableProductWithAllProducts
 {
-    [OFProduct getProductsOnSuccess:^(NSInteger statusCode, id obj) {
+    [[OFProductManager sharedInstance] getProductsOnSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.productsArr setArray:(NSArray *)obj];
         [self.tableProducts reloadData];

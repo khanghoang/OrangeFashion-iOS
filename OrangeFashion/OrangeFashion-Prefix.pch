@@ -114,7 +114,6 @@
 #import "SVProgressHUD.h"
 #import "AFNetworking.h"
 #import "AFUrbanAirshipClient.h"
-//#import "UIImageView+AFNetworking.h"
 #import "CoreData+MagicalRecord.h"
 #import "AFJSONRequestOperation.h"
 #import "Crittercism.h"
@@ -153,6 +152,7 @@
 #import "FacebookManager.h"
 #import "OFHelperManager.h"
 #import "OFUserManager.h"
+#import "OFProductManager.h"
 
 //Common VC
 #import "BaseViewController.h"

@@ -30,7 +30,7 @@
     
     self.arrProducts = [[NSMutableArray alloc] init];
     
-    [OFProduct getProductsWithCategoryID:21 onSuccess:^(NSInteger statusCode, id obj) {
+    [[OFProductManager sharedInstance] getProductsWithCategoryID:21 onSuccess:^(NSInteger statusCode, id obj) {
         [SVProgressHUD dismiss];
         [self.arrProducts setArray:(NSArray *)obj];
         [self calculateRandomValueForCollectionViewCellSize];
