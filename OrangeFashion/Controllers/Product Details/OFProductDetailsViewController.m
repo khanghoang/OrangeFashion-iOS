@@ -46,8 +46,8 @@ UIGestureRecognizerDelegate>
     
     // Disable swipe of ViewDeck
     [self.viewDeckController setPanningMode:IIViewDeckNoPanning];
-    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
     
     OFProduct *product = [OFProduct productWithDictionary:@{ @"MaSanPham" : self.productID}];
@@ -247,8 +247,6 @@ UIGestureRecognizerDelegate>
 
 - (void)onTapProductImages:(id)sender
 {
-//    BOOL isNavBarHidden = self.navigationController.navigationBarHidden;
-//    [self.navigationController setNavigationBarHidden:!isNavBarHidden animated:NO];
     BOOL willVisible = self.pageControllWrap.alpha;
     
     CGFloat animationDuration = 0.3;
@@ -278,9 +276,6 @@ UIGestureRecognizerDelegate>
 - (IBAction)onBtnShareFacebook:(id)sender {
     DEFacebookComposeViewController *facebookViewComposer = [[DEFacebookComposeViewController alloc] init];
     
-    // If you want to use the Facebook app with multiple iOS apps you can set an URL scheme suffix
-    //    facebookViewComposer.urlSchemeSuffix = @"facebooksample";
-    
     self.modalPresentationStyle = UIModalPresentationCurrentContext;
     OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:self.productID] lastObject];
     [facebookViewComposer setInitialText:[NSString stringWithFormat:@"%@ \nLink sản phẩm: http://orangefashion.vn/san-pham/%@", product.name, self.productID]];
@@ -289,10 +284,7 @@ UIGestureRecognizerDelegate>
     NSString *imgUrl = [(OFProductImages *)[self.images objectAtIndex:0] picasa_store_source];
     UIImageView *fakeImageView = [[UIImageView alloc] init];
     [fakeImageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
-    
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
-        [facebookViewComposer addImage:fakeImageView.image];
-    }
+    [facebookViewComposer addImage:fakeImageView.image];
 
     [facebookViewComposer setCompletionHandler:^(DEFacebookComposeViewControllerResult result) {
         switch (result) {
@@ -314,7 +306,14 @@ UIGestureRecognizerDelegate>
 }
 
 - (IBAction)onBtnBookmark:(id)sender {
+    
+    if ([[OFProductManager sharedInstance] isBookmarkedAlreadyWithProductID:self.productID]) {
+        [SVProgressHUD showSuccessWithStatus:@"Sản phẩm đã được Bookmark rồi!"];
+        return;
+    }
+    
     [[OFProductManager sharedInstance] bookmarkProductWithProductID:self.productID];
+    [SVProgressHUD showSuccessWithStatus:@"Bookmark thành công"];
 }
 
 - (BOOL)canBecomeFirstResponder {

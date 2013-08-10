@@ -643,17 +643,17 @@ enum {
     if ([attachmentImages count] >= 1) {
         self.paperClipView.hidden = NO;
         self.attachment1FrameView.hidden = NO;
-        [self.attachment1ImageView setImageWithURL:[attachmentImages objectAtIndex:0]];
+        [self.attachment1ImageView setImage:[attachmentImages objectAtIndex:0]];
         
         if ([attachmentImages count] >= 2) {
             self.paperClipView.hidden = NO;
             self.attachment2FrameView.hidden = NO;
-            [self.attachment1ImageView setImageWithURL:[attachmentImages objectAtIndex:1]];
+            [self.attachment1ImageView setImage:[attachmentImages objectAtIndex:1]];
             
             if ([attachmentImages count] >= 3) {
                 self.paperClipView.hidden = NO;
                 self.attachment3FrameView.hidden = NO;
-                [self.attachment1ImageView setImageWithURL:[attachmentImages objectAtIndex:2]];
+                [self.attachment1ImageView setImage1:[attachmentImages objectAtIndex:2]];
             }
         }
     }

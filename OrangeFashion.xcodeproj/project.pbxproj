@@ -1402,12 +1402,12 @@
 		0C3527D31764803000E07AAB /* Product Details */ = {
 			isa = PBXGroup;
 			children = (
-				0C3527DA176480DF00E07AAB /* OFImageViewController.h */,
-				0C3527DB176480DF00E07AAB /* OFImageViewController.m */,
-				0C3527DC176480DF00E07AAB /* OFImageViewController.xib */,
 				0C3527DD176480DF00E07AAB /* OFProductDetailsViewController.h */,
 				0C3527DE176480DF00E07AAB /* OFProductDetailsViewController.m */,
 				0C263D711788B7E9008A2C81 /* OFProductDetailsViewController.xib */,
+				0C3527DA176480DF00E07AAB /* OFImageViewController.h */,
+				0C3527DB176480DF00E07AAB /* OFImageViewController.m */,
+				0C3527DC176480DF00E07AAB /* OFImageViewController.xib */,
 			);
 			name = "Product Details";
 			sourceTree = "<group>";
