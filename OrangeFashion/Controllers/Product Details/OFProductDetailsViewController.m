@@ -13,7 +13,9 @@
 
 typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 
-@interface OFProductDetailsViewController ()  <OFImageViewControllerDelegate, UIGestureRecognizerDelegate>
+@interface OFProductDetailsViewController ()
+<OFImageViewControllerDelegate,
+UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) NSArray                   * images;
 @property (strong, nonatomic) UIPageViewController      * pageVC;
@@ -41,6 +43,9 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Disable swipe of ViewDeck
+    [self.viewDeckController setPanningMode:IIViewDeckNoPanning];
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [SVProgressHUD showWithStatus:@"Đang tải hình ảnh cho sản phẩm"];
@@ -89,6 +94,7 @@ typedef void (^MRStoreCompletedBlock)(BOOL success, NSError *error);
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillDisappear:animated];
     [SVProgressHUD dismiss];
+    [self.viewDeckController setPanningMode:IIViewDeckFullViewPanning];
 }
 
 #pragma mark - Add PageViewController
