@@ -18,7 +18,7 @@
 
 @property (assign, nonatomic) id<OFBookmarkTableViewCellDelegate> delegate;
 
-- (void)configWithProduct:(OFProduct *)product;
+- (void)configWithProduct:(OFProduct *)product andNumber:(NSInteger)number;
 + (CGFloat)getHeight;
 
 @end

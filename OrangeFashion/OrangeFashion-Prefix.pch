@@ -137,6 +137,7 @@
 #import "GAITransactionItem.h"
 #import "PSTCollectionView.h"
 #import "AGWindowView.h"
+#import "TVPickerView.h"
 
 
 //Models

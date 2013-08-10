@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel        * lblProductPrice;
 
 @property (strong, nonatomic) OFProduct             * product;
+@property (assign, nonatomic) NSInteger               number;
+@property (weak, nonatomic) IBOutlet UILabel        * lblNumber;
 
 @end
 
@@ -30,7 +32,7 @@
     return self;
 }
 
-- (void)configWithProduct:(OFProduct *)product
+- (void)configWithProduct:(OFProduct *)product andNumber:(NSInteger)number
 {
     self.product = product;
     self.imgProductWrapImage.layer.borderWidth = 1;
@@ -46,6 +48,8 @@
     CGRect priceFrame = self.lblProductPrice.frame;
     priceFrame.origin.y = CGRectGetMaxY(self.lblProductName.frame);
     self.lblProductPrice.frame = priceFrame;
+    
+    self.lblNumber.text = [NSString stringWithFormat:@"x %d", number];
     
     // Add delete action
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDeleteBookmark:)];

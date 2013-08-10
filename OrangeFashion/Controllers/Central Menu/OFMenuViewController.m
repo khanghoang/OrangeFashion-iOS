@@ -29,6 +29,7 @@
     
     [[OFHelperManager sharedInstance] getMenuListOnComplete:^(NSArray *menu) {
         self.arrMenu = [[[menu mutableCopy] objectAtIndex:1] objectForKey:@"session"];
+        [self preCacheMenuBackgroundImages];
         [self.tableMenu reloadData];
         
     } orFailure:^(NSError *error) {
@@ -100,7 +101,8 @@
 {
     int count = self.arrMenu.count;
     for (int i = 0; i < count; i++) {
-        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[[self.arrMenu objectAtIndex:i] objectForKey:HOME_MENU_BACKGROUND] options:SDWebImageDownloaderLowPriority progress:nil completed:nil];
+        NSString *url = [[self.arrMenu objectAtIndex:i] objectForKey:HOME_MENU_BACKGROUND];
+        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageDownloaderLowPriority progress:nil completed:nil];
     }
 }
 

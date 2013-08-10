@@ -7,6 +7,9 @@
 //
 
 #import "BaseManager.h"
+
+static NSString * STORE_PRODUCT_ID          = @"bookmark_product_id";
+static NSString * STORE_PRODUCT_NUMBER      = @"bookmark_product_number";
  
 @interface OFProductManager : BaseManager
 
@@ -20,7 +23,11 @@
 // Bookmark
 - (BOOL)isBookmarkedAlreadyWithProductID:(NSNumber *)productID;
 - (void)removeBookmarkProductWithProductID:(NSNumber *)productID;
+
 - (void)bookmarkProductWithProductID:(NSNumber *)productID;
+- (void)bookmarkProductWithProductID:(NSNumber *)productID withNumber:(NSInteger)number;
+- (void)updateProductWithProductID:(NSNumber *)productID withNumber:(NSInteger)number;
+
 - (NSMutableArray *)getBookmarkProducts;
 
 @end

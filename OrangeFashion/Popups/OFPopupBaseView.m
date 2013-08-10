@@ -9,9 +9,11 @@
 #import "OFPopupBaseView.h"
 #import <objc/runtime.h>
 
-@interface OFPopupBaseView()
+@interface OFPopupBaseView() <UIGestureRecognizerDelegate>
+
 @property (nonatomic, weak) IBOutlet UIImageView * imgBackground;
 @property (nonatomic, strong) AGWindowView * agWindowView;
+
 @end
 
 @implementation OFPopupBaseView
@@ -57,12 +59,6 @@
     
     self.imgBackground.image = [self.imgBackground.image resizableImageWithStandardInsets];
     
-    //Coloring
-    for (UIButton * subview in self.subviews)
-        if ([subview isKindOfClass:[UIButton class]] && [subview isEqual:self.btnClose] == NO) {
-            [subview setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        }
-    
     return self;
 }
 
@@ -98,10 +94,11 @@
 - (void)showOnCompletion:(void(^)(void))completionBlock
 {
     self.agWindowView = [[AGWindowView alloc] initAndAddToKeyWindow];
-    [self.agWindowView addSubview:self];
     
-    UITapGestureRecognizer *tapOutsideToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOutsideToClose)];
+    UITapGestureRecognizer *tapOutsideToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOutsideToClose:)];
     [self.agWindowView addGestureRecognizer:tapOutsideToClose];
+    
+    [self.agWindowView addSubview:self];
     
     self.center = [self getWindowCenter];
     self.alpha = 0;
@@ -176,9 +173,16 @@
     return CGPointMake(CGRectGetMidY(screenRect), CGRectGetMidX(screenRect));
 }
 
-- (void)tapOutsideToClose
+- (void)tapOutsideToClose:(id)sender
 {
     [self dismiss];
+}
+
+#pragma mark - UIGestureDelegate
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return NO;
 }
 
 @end

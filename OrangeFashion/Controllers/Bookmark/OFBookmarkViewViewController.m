@@ -10,14 +10,21 @@
 #import "OFBookmarkTableViewCell.h"
 #import "OFProductDetailsViewController.h"
 #import "OFBookmarkSectionHeader.h"
-#import "OFPopupBaseView.h"
+#import "OFPopupBookmark.h"
 #import <objc/runtime.h>
 
 @interface OFBookmarkViewViewController ()
-<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, OFBookmarkTableViewCellDelegate>
+<UITableViewDataSource,
+UITableViewDelegate,
+UIAlertViewDelegate,
+OFBookmarkTableViewCellDelegate,
+TVPickerViewDatasource,
+TVPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView        * tableViewBookmarkedProducts;
 @property (strong, nonatomic) NSMutableArray            * arrBookmarkedProducts;
+
+@property (strong, nonatomic) NSArray                   * currentAvailableNumbers;
 
 @end
 
@@ -26,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.currentAvailableNumbers = [[NSArray alloc] init];    
     self.title = @"Bookmark";
     self.arrBookmarkedProducts = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
@@ -54,9 +62,11 @@
     cell.delegate = self;
     
     //TODO: something need to configed here
-    NSNumber *productId = [self.arrBookmarkedProducts objectAtIndex:indexPath.row];
+    NSNumber *productId = [[self.arrBookmarkedProducts objectAtIndex:indexPath.row] objectForKey:STORE_PRODUCT_ID];
+    NSInteger number = [[[self.arrBookmarkedProducts objectAtIndex:indexPath.row] objectForKey:STORE_PRODUCT_NUMBER] intValue];
     OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:productId] lastObject];
-    [cell configWithProduct:product];
+    
+    [cell configWithProduct:product andNumber:number];
     return cell;
 }
 
@@ -86,24 +96,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSNumber *productId = [self.arrBookmarkedProducts objectAtIndex:indexPath.row];
+    NSNumber *productId = [[self.arrBookmarkedProducts objectAtIndex:indexPath.row] objectForKey:STORE_PRODUCT_ID];
     
     OFProduct *product = [[OFProductManager sharedInstance] productWithProductID:[productId integerValue]];
     
     if (!product)
         return;
     
-    OFPopupBaseView *popup =[OFPopupBaseView initPopupWithTitle:product.name message:@"Dummy Message" dismissBlock:nil];
-    [popup show];
+    OFPopupBookmark *popup =[OFPopupBookmark initPopupWithTitle:product.name message:@"Dummy Message" dismissBlock:^(OFPopupBookmark *popupView) {
+        DLog(@"Cancel");
+    } comfirmBlock:^(OFPopupBookmark *popupView) {
+        
+        NSInteger selectedIndex = [popupView.numberPicker selectedIndex];
+        NSNumber *value = [self.currentAvailableNumbers objectAtIndex:selectedIndex];
+        
+        [[OFProductManager sharedInstance] updateProductWithProductID:product.product_id withNumber:[value integerValue]];
+        
+        self.arrBookmarkedProducts = [[OFProductManager sharedInstance] getBookmarkProducts];
+        [self.tableViewBookmarkedProducts reloadData];
+        
+    }];
     
-//    OFProductDetailsViewController *detailsVC = [[OFProductDetailsViewController alloc] init];
-//    detailsVC.productID = productId;
-//    
-//    OFNavigationViewController *centralNavVC = (OFNavigationViewController *) self.viewDeckController.centerController;
-//    
-//    [self.viewDeckController toggleRightViewAnimated:YES completion:^(IIViewDeckController *controller, BOOL success) {
-//        [centralNavVC pushViewController:detailsVC animated:YES];
-//    }];
+    self.currentAvailableNumbers = @[@1, @2, @3];
+    
+    popup.numberPicker.delegate = self;
+    popup.numberPicker.datasource = self;
+    
+    [popup show];
 }
 
 #pragma mark - OFBookmarkProduct delegate
@@ -123,7 +142,7 @@
         if (!product)
             return;
         
-        OFPopupBaseView *popup =[OFPopupBaseView initPopupWithTitle:product.name message:@"Dummy Message" dismissBlock:nil];
+        OFPopupBookmark *popup =[OFPopupBookmark initPopupWithTitle:product.name message:@"Dummy Message" dismissBlock:nil];
         [popup show];
     }
 }
@@ -140,6 +159,18 @@
         self.arrBookmarkedProducts = [[OFProductManager sharedInstance] getBookmarkProducts];
         [self.tableViewBookmarkedProducts reloadData];
     }
+}
+
+#pragma mark - TVPickerView datasource
+
+- (NSInteger)numberOfElementsInTVPickerViewView
+{
+    return self.currentAvailableNumbers.count;
+}
+
+-(NSString *)tvPickerView:(TVPickerView *)tvPickerView titleForIndex:(NSInteger)index
+{
+    return [NSString stringWithFormat:@"%@", [[self.currentAvailableNumbers objectAtIndex:index] stringValue]];
 }
 
 @end
