@@ -356,6 +356,12 @@
 		0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A1176DFDCC009CC776 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A3176DFDD4009CC776 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF35CFB178C4B64007C5649 /* OFHelperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF35CFA178C4B64007C5649 /* OFHelperManager.m */; };
+		0CFF096417B645370090887A /* AGWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF096317B645370090887A /* AGWindowView.m */; };
+		0CFF097817B6454D0090887A /* OFPopupBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF096717B6454D0090887A /* OFPopupBaseView.m */; };
+		0CFF097917B6454D0090887A /* OFPopupBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFF096817B6454D0090887A /* OFPopupBaseView.xib */; };
+		0CFF098C17B648B90090887A /* MTMatrixInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF098717B648B90090887A /* MTMatrixInterpolation.m */; };
+		0CFF098D17B648B90090887A /* MTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF098917B648B90090887A /* MTTimingFunctions.m */; };
+		0CFF098E17B648B90090887A /* UIView+MTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF098B17B648B90090887A /* UIView+MTAnimation.m */; };
 		0CFFE35917AA3F9600308B6A /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE35517AA3F9600308B6A /* CAAnimation+Blocks.m */; };
 		0CFFE35A17AA3F9600308B6A /* SKBounceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE35817AA3F9600308B6A /* SKBounceAnimation.m */; };
 		0CFFE36417AA3FC300308B6A /* CHAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFE35D17AA3FC300308B6A /* CHAvatarView.m */; };
@@ -951,6 +957,18 @@
 		0CF317A3176DFDD4009CC776 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0CF35CF9178C4B64007C5649 /* OFHelperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHelperManager.h; sourceTree = "<group>"; };
 		0CF35CFA178C4B64007C5649 /* OFHelperManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHelperManager.m; sourceTree = "<group>"; };
+		0CFF096217B645370090887A /* AGWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGWindowView.h; sourceTree = "<group>"; };
+		0CFF096317B645370090887A /* AGWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGWindowView.m; sourceTree = "<group>"; };
+		0CFF096617B6454D0090887A /* OFPopupBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFPopupBaseView.h; sourceTree = "<group>"; };
+		0CFF096717B6454D0090887A /* OFPopupBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFPopupBaseView.m; sourceTree = "<group>"; };
+		0CFF096817B6454D0090887A /* OFPopupBaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFPopupBaseView.xib; sourceTree = "<group>"; };
+		0CFF098517B648B90090887A /* MTAnimationTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAnimationTypes.h; sourceTree = "<group>"; };
+		0CFF098617B648B90090887A /* MTMatrixInterpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMatrixInterpolation.h; sourceTree = "<group>"; };
+		0CFF098717B648B90090887A /* MTMatrixInterpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMatrixInterpolation.m; sourceTree = "<group>"; };
+		0CFF098817B648B90090887A /* MTTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTimingFunctions.h; sourceTree = "<group>"; };
+		0CFF098917B648B90090887A /* MTTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTimingFunctions.m; sourceTree = "<group>"; };
+		0CFF098A17B648B90090887A /* UIView+MTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTAnimation.h"; sourceTree = "<group>"; };
+		0CFF098B17B648B90090887A /* UIView+MTAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTAnimation.m"; sourceTree = "<group>"; };
 		0CFFE35417AA3F9600308B6A /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
 		0CFFE35517AA3F9600308B6A /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
 		0CFFE35717AA3F9600308B6A /* SKBounceAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBounceAnimation.h; sourceTree = "<group>"; };
@@ -1613,6 +1631,8 @@
 		0C4C5932170D6F4200ED0DF8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0CFF098417B648B90090887A /* MTAnimation */,
+				0CFF096117B645360090887A /* AGWindowView */,
 				0CD4318817B3488B0038C06B /* DAPagesContainer */,
 				0C187F3517AD09870083AA8A /* Water */,
 				0C1EC4A017AC0E8700BC0382 /* PSTCollectionView */,
@@ -1693,6 +1713,7 @@
 		0C4C5BE9170D6F6100ED0DF8 /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
+				0CFF096517B6454C0090887A /* Popups */,
 				0C1EE2D3178872B500EB606C /* Views */,
 			);
 			name = NIBs;
@@ -2229,6 +2250,39 @@
 			path = "Resources/Facebook login";
 			sourceTree = "<group>";
 		};
+		0CFF096117B645360090887A /* AGWindowView */ = {
+			isa = PBXGroup;
+			children = (
+				0CFF096217B645370090887A /* AGWindowView.h */,
+				0CFF096317B645370090887A /* AGWindowView.m */,
+			);
+			path = AGWindowView;
+			sourceTree = "<group>";
+		};
+		0CFF096517B6454C0090887A /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				0CFF096617B6454D0090887A /* OFPopupBaseView.h */,
+				0CFF096717B6454D0090887A /* OFPopupBaseView.m */,
+				0CFF096817B6454D0090887A /* OFPopupBaseView.xib */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
+		0CFF098417B648B90090887A /* MTAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0CFF098517B648B90090887A /* MTAnimationTypes.h */,
+				0CFF098617B648B90090887A /* MTMatrixInterpolation.h */,
+				0CFF098717B648B90090887A /* MTMatrixInterpolation.m */,
+				0CFF098817B648B90090887A /* MTTimingFunctions.h */,
+				0CFF098917B648B90090887A /* MTTimingFunctions.m */,
+				0CFF098A17B648B90090887A /* UIView+MTAnimation.h */,
+				0CFF098B17B648B90090887A /* UIView+MTAnimation.m */,
+			);
+			path = MTAnimation;
+			sourceTree = "<group>";
+		};
 		0CFFE35317AA3F9600308B6A /* CAAnimationBlocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2452,6 +2506,7 @@
 				0C187F3317ACEE7A0083AA8A /* bookmark_list.png in Resources */,
 				0C187F3417ACEE7A0083AA8A /* bookmark_list@2x.png in Resources */,
 				0C208BD017B485F00025161C /* thong-tin-thanh-toan.html in Resources */,
+				0CFF097917B6454D0090887A /* OFPopupBaseView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2680,6 +2735,11 @@
 				0CD4318F17B3488B0038C06B /* DAPageIndicatorView.m in Sources */,
 				0CD4319017B3488B0038C06B /* DAPagesContainer.m in Sources */,
 				0CD4319117B3488B0038C06B /* DAPagesContainerTopBar.m in Sources */,
+				0CFF096417B645370090887A /* AGWindowView.m in Sources */,
+				0CFF097817B6454D0090887A /* OFPopupBaseView.m in Sources */,
+				0CFF098C17B648B90090887A /* MTMatrixInterpolation.m in Sources */,
+				0CFF098D17B648B90090887A /* MTTimingFunctions.m in Sources */,
+				0CFF098E17B648B90090887A /* UIView+MTAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

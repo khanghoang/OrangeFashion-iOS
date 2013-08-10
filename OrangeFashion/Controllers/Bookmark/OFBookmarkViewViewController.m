@@ -10,6 +10,7 @@
 #import "OFBookmarkTableViewCell.h"
 #import "OFProductDetailsViewController.h"
 #import "OFBookmarkSectionHeader.h"
+#import "OFPopupBaseView.h"
 #import <objc/runtime.h>
 
 @interface OFBookmarkViewViewController ()
@@ -103,10 +104,13 @@
     UIGestureRecognizer *recognizer = (UIGestureRecognizer*) sender[@"guesture"];
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {        
-        NSNumber *productID = (NSNumber *)sender[@"productId"];
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Xoá sản phẩm" message:@"Bạn có chắc muốn xoá sản phẩm này khỏi danh sách ghi nhớ" delegate:self cancelButtonTitle:@"Huỷ" otherButtonTitles:@"Đồng ý", nil];
-        objc_setAssociatedObject(alertView, @"productID", productID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        [alertView show];
+//        NSNumber *productID = (NSNumber *)sender[@"productId"];
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Xoá sản phẩm" message:@"Bạn có chắc muốn xoá sản phẩm này khỏi danh sách ghi nhớ" delegate:self cancelButtonTitle:@"Huỷ" otherButtonTitles:@"Đồng ý", nil];
+//        objc_setAssociatedObject(alertView, @"productID", productID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//        [alertView show];
+        
+        OFPopupBaseView *popup =[OFPopupBaseView initPopupWithTitle:@"Dummy" message:@"Dummy Message" dismissBlock:nil];
+        [popup show];
     }
 }
 

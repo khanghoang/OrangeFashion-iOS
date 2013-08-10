@@ -36,10 +36,8 @@
     self.imgProductWrapImage.layer.borderWidth = 1;
     self.imgProductWrapImage.layer.borderColor = [UIColor colorWithHexString:@"beb7a9"].CGColor;
     
-    [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
-        OFProductImages *image = [[self.product.images allObjects] objectAtIndex:0];
-        [self.imgProductImage setImageWithURL:[NSURL URLWithString:image.picasa_store_source] placeholderImage:nil];
-    } failureBlock:nil];
+    NSString *imgUrl = [NSString stringWithFormat:@"http://orangefashion.vn/store/%@/%@_small.jpg", product.product_id, product.product_id];
+    [self.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
     
     self.lblProductName.text = product.name;
     [self.lblProductName sizeToFitKeepWidth];
@@ -66,7 +64,7 @@
     if ([self.delegate respondsToSelector:@selector(onLongPress:)]) {
         [self.delegate onLongPress:@{   @"guesture": sender,
                                         @"productId": self.product.product_id}];
-    }
+    }    
 }
 
 

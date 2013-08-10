@@ -109,6 +109,7 @@
 #import "UIViewController+Additions.h"
 #import "UIWebView+Additions.h"
 #import "NSMutableArray+Additions.h"
+#import "UIView+MTAnimation.h"
 
 //Vendors
 #import "SVProgressHUD.h"
@@ -135,6 +136,8 @@
 #import "GAITransaction.h"
 #import "GAITransactionItem.h"
 #import "PSTCollectionView.h"
+#import "AGWindowView.h"
+
 
 //Models
 #import "BaseModel.h"
