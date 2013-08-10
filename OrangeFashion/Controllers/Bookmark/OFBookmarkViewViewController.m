@@ -87,14 +87,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSNumber *productId = [self.arrBookmarkedProducts objectAtIndex:indexPath.row];
-    OFProductDetailsViewController *detailsVC = [[OFProductDetailsViewController alloc] init];
-    detailsVC.productID = productId;
     
-    OFNavigationViewController *centralNavVC = (OFNavigationViewController *) self.viewDeckController.centerController;
+    OFProduct *product = [[OFProductManager sharedInstance] productWithProductID:[productId integerValue]];
     
-    [self.viewDeckController toggleRightViewAnimated:YES completion:^(IIViewDeckController *controller, BOOL success) {
-        [centralNavVC pushViewController:detailsVC animated:YES];
-    }];
+    if (!product)
+        return;
+    
+    OFPopupBaseView *popup =[OFPopupBaseView initPopupWithTitle:product.name message:@"Dummy Message" dismissBlock:nil];
+    [popup show];
+    
+//    OFProductDetailsViewController *detailsVC = [[OFProductDetailsViewController alloc] init];
+//    detailsVC.productID = productId;
+//    
+//    OFNavigationViewController *centralNavVC = (OFNavigationViewController *) self.viewDeckController.centerController;
+//    
+//    [self.viewDeckController toggleRightViewAnimated:YES completion:^(IIViewDeckController *controller, BOOL success) {
+//        [centralNavVC pushViewController:detailsVC animated:YES];
+//    }];
 }
 
 #pragma mark - OFBookmarkProduct delegate
@@ -104,12 +113,17 @@
     UIGestureRecognizer *recognizer = (UIGestureRecognizer*) sender[@"guesture"];
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {        
-//        NSNumber *productID = (NSNumber *)sender[@"productId"];
+        NSNumber *productID = (NSNumber *)sender[@"productId"];
 //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Xoá sản phẩm" message:@"Bạn có chắc muốn xoá sản phẩm này khỏi danh sách ghi nhớ" delegate:self cancelButtonTitle:@"Huỷ" otherButtonTitles:@"Đồng ý", nil];
 //        objc_setAssociatedObject(alertView, @"productID", productID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 //        [alertView show];
         
-        OFPopupBaseView *popup =[OFPopupBaseView initPopupWithTitle:@"Dummy" message:@"Dummy Message" dismissBlock:nil];
+        OFProduct *product = [[OFProductManager sharedInstance] productWithProductID:[productID integerValue]];
+        
+        if (!product)
+            return;
+        
+        OFPopupBaseView *popup =[OFPopupBaseView initPopupWithTitle:product.name message:@"Dummy Message" dismissBlock:nil];
         [popup show];
     }
 }

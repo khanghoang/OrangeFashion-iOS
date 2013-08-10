@@ -100,6 +100,9 @@
     self.agWindowView = [[AGWindowView alloc] initAndAddToKeyWindow];
     [self.agWindowView addSubview:self];
     
+    UITapGestureRecognizer *tapOutsideToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOutsideToClose)];
+    [self.agWindowView addGestureRecognizer:tapOutsideToClose];
+    
     self.center = [self getWindowCenter];
     self.alpha = 0;
     self.layer.transform = CATransform3DMakeScale(0.8, 0.8, 0.8);
@@ -171,6 +174,11 @@
         return CGPointMake(CGRectGetMidX(screenRect), CGRectGetMidY(screenRect));
     
     return CGPointMake(CGRectGetMidY(screenRect), CGRectGetMidX(screenRect));
+}
+
+- (void)tapOutsideToClose
+{
+    [self dismiss];
 }
 
 @end

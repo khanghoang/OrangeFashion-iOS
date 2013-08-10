@@ -16,6 +16,14 @@ SINGLETON_MACRO
 
 #pragma mark - Get product details from server
 
+- (OFProduct *)productWithProductID:(NSInteger)productID
+{
+    // look for the core data first
+    OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:@(productID)] lastObject];
+    
+    return product;
+}
+
 - (void)getProductsWithCategoryID:(NSInteger)category_id onSuccess:(OFJSONRequestSuccessBlock)successBlock failure:(OFJSONRequestFailureBlock)failureBlock
 {
     NSDictionary *params = @{

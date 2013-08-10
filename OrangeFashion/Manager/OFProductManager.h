@@ -10,6 +10,7 @@
  
 @interface OFProductManager : BaseManager
 
+- (OFProduct *)productWithProductID:(NSInteger)productID;
 - (void)getProductsOnSuccess:(OFJSONRequestSuccessBlock)successBlock
                      failure:(OFJSONRequestFailureBlock)failureBlock;
 - (void)getProductsWithCategoryID:(NSInteger)category_id
