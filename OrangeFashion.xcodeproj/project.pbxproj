@@ -2935,6 +2935,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2958,6 +2960,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D3D2EA6A-A76C-4024-B076-2254716C9614";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3D2EA6A-A76C-4024-B076-2254716C9614";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

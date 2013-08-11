@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.tableProducts setContentOffset:CGPointMake(0, 44)];    
     self.title = DEFAULT_NAVIGATION_TITLE;    
     if (![self.lblTitle isEqualToString:@""]) {
         self.title = self.lblTitle;
