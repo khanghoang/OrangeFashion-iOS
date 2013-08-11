@@ -70,21 +70,30 @@ UIGestureRecognizerDelegate>
     
     [[self.pageVC view] setFrame:[[self view] bounds]];
     
-    [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {
-        
+    [OFProductImages getImagesForProduct:product successBlock:^(NSInteger statusCode, id obj) {        
         [SVProgressHUD dismiss];
         [self addPageViewControllerWithImagesArray:obj];
         [self storeImagesWithID:obj completeBlock:nil];
         
     } failureBlock:^(NSInteger statusCode, id obj2) {
         //handle errors
-        [SVProgressHUD showErrorWithStatus:@"Lỗi không tải được hình ảnh, vui lòng thử lại"];
-        [self addPageViewControllerWithImagesArray:[self getImages]];
+        if ([self getImages].count > 0) {
+            [self addPageViewControllerWithImagesArray:[self getImages]];
+        }else{
+            
+            // swipe to back when no image.
+            [SVProgressHUD showErrorWithStatus:@"Lỗi không tải được hình ảnh, vui lòng thử lại"];
+            UISwipeGestureRecognizer *swipeBack = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToBack:)];
+            [swipeBack setDirection:UISwipeGestureRecognizerDirectionRight];
+            [self.view addGestureRecognizer:swipeBack];
+            swipeBack.delegate = self;
+            
+        }
     }];
     
     // add tap gesture in case there's no image.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapProductImages:)];
-    [tap setNumberOfTapsRequired:2];
+    [tap setNumberOfTapsRequired:1];
     [self.view addGestureRecognizer:tap];
     [self.view setUserInteractionEnabled:YES];
 }
