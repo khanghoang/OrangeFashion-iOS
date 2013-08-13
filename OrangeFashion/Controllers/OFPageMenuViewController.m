@@ -63,16 +63,6 @@
     web.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
     menu3.title = @"Hướng dẫn đặt hàng";
     
-    if ([[web subviews] count] > 0) {
-        // hide the shadows
-        for (UIView* shadowView in [[[web subviews] objectAtIndex:0] subviews]) {
-            [shadowView setHidden:YES];
-        }
-        // show the content
-        [[[[[web subviews] objectAtIndex:0] subviews] lastObject] setHidden:NO];
-    }
-    web.backgroundColor = [UIColor greenColor];
-    
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];
 }
 
