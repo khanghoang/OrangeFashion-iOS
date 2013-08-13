@@ -8,12 +8,11 @@
 
 #import "OFWaterFallProductsViewController.h"
 #import "OFCollectionViewCell.h"
-#import "FRGWaterfallCollectionViewLayout.h"
 #import "OFProductDetailsViewController.h"
 #import "WaterFlowLayout.h"
 
 @interface OFWaterFallProductsViewController ()
-<PSUICollectionViewDataSource, FRGWaterfallCollectionViewDelegate>
+<PSUICollectionViewDataSource, UICollecitonViewDelegateWaterFlowLayout, UICollectionViewDataSourceWaterFlowLayout>
 
 @property (weak, nonatomic) IBOutlet PSUICollectionView * collectionView;
 
@@ -51,9 +50,9 @@
     self.arrSize = [@[
                          [NSValue valueWithCGSize:CGSizeMake(145, 380)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 340)],
-                         [NSValue valueWithCGSize:CGSizeMake(145, 250)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 300)],
-                         [NSValue valueWithCGSize:CGSizeMake(145, 280)]
+                         [NSValue valueWithCGSize:CGSizeMake(145, 280)],
+                         [NSValue valueWithCGSize:CGSizeMake(145, 250)]
                          ] mutableCopy];
     
     WaterFlowLayout *cvLayout = [[WaterFlowLayout alloc] init];
@@ -97,26 +96,6 @@
     return self.arrProducts.count;
 }
 
-#pragma mark - PSTCollectionViewDelegateFlowLayout
-
-- (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size = [self getSizeAtIndexPath:indexPath];
-    return size;
-}
-
-- (CGFloat)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 10;
-}
-
-- (CGFloat)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 10;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FRGWaterfallCollectionViewLayout *)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGSize size = [self getSizeAtIndexPath:indexPath];
-    return size.height;
-}
 - (void)calculateRandomValueForCollectionViewCellSize
 {
     int nElements = self.arrSize.count - 1;
@@ -136,10 +115,8 @@
 #pragma mark-  UICollecitonViewDelegateWaterFlowLayout
 - (CGFloat)flowLayout:(WaterFlowLayout *)flowView heightForRowAtIndex:(int)index
 {
-    NSValue *value = [self.arrSize objectAtIndex:index % self.arrSize.count];
-    CGSize size;
-    [value getValue:&size];
-    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    CGSize size = [self getSizeAtIndexPath:indexPath];    
     return size.height;
 }
 

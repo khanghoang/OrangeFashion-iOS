@@ -58,13 +58,7 @@
     
     UIWebView *web = [[UIWebView alloc] initWithFrame:frame];
     [menu3.view addSubview:web];
-//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://orangefashion.vn/thong-tin-thanh-toan.html"]];
-//    [web loadRequest:request];
-
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"index.html"];
-    NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://orangefashion.vn/thong-tin-thanh-toan.html"]];
     [web loadRequest:request];
     web.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
     menu3.title = @"Hướng dẫn đặt hàng";
