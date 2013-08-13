@@ -10,6 +10,7 @@
 #import "OFCollectionViewCell.h"
 #import "FRGWaterfallCollectionViewLayout.h"
 #import "OFProductDetailsViewController.h"
+#import "WaterFlowLayout.h"
 
 @interface OFWaterFallProductsViewController ()
 <PSUICollectionViewDataSource, FRGWaterfallCollectionViewDelegate>
@@ -50,21 +51,18 @@
     self.arrSize = [@[
                          [NSValue valueWithCGSize:CGSizeMake(145, 380)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 340)],
-                         [NSValue valueWithCGSize:CGSizeMake(145, 240)],
+                         [NSValue valueWithCGSize:CGSizeMake(145, 250)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 300)],
                          [NSValue valueWithCGSize:CGSizeMake(145, 280)]
                          ] mutableCopy];
     
-    FRGWaterfallCollectionViewLayout *cvLayout = [[FRGWaterfallCollectionViewLayout alloc] init];
-    cvLayout.delegate = self;
+    WaterFlowLayout *cvLayout = [[WaterFlowLayout alloc] init];
+    cvLayout.flowdatasource = self;
+    cvLayout.flowdelegate = self;
+    self.collectionView.collectionViewLayout = cvLayout;
     
-    cvLayout.headerHeight = 0.0f;
-    cvLayout.itemWidth = 145.0f;
-    cvLayout.topInset = 10.0f;
-    cvLayout.bottomInset = 10.0f;
-    cvLayout.stickyHeader = YES;
+    self.collectionView.decelerationRate = 3.3;
     
-    [self.collectionView setCollectionViewLayout:(PSTCollectionViewFlowLayout *)cvLayout];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(PSUICollectionView *)collectionView
@@ -88,6 +86,7 @@
         product = [OFProduct productWithDictionary:[self.arrProducts objectAtIndex:indexPath.row]];
         [cell configCellWithProduct:product];
     }
+    
     cell.delegate = (id) self.parentVC;
     
     return cell;
@@ -118,7 +117,6 @@
     CGSize size = [self getSizeAtIndexPath:indexPath];
     return size.height;
 }
-
 - (void)calculateRandomValueForCollectionViewCellSize
 {
     int nElements = self.arrSize.count - 1;
@@ -127,14 +125,29 @@
 }
 
 - (CGSize)getSizeAtIndexPath:(NSIndexPath *)indexPath
-{
-    int randomNumber = self.randomValueForWaterSize;
-    NSInteger index = ((indexPath.section + 1) * randomNumber + indexPath.row ) % self.arrSize.count;
-    NSValue *value = [self.arrSize objectAtIndex:index];
+{    
+    NSValue *value = [self.arrSize objectAtIndex:indexPath.row % self.arrSize.count];
     CGSize size;
     [value getValue:&size];
     
     return size;
+}
+
+#pragma mark-  UICollecitonViewDelegateWaterFlowLayout
+- (CGFloat)flowLayout:(WaterFlowLayout *)flowView heightForRowAtIndex:(int)index
+{
+    NSValue *value = [self.arrSize objectAtIndex:index % self.arrSize.count];
+    CGSize size;
+    [value getValue:&size];
+    
+    return size.height;
+}
+
+
+#pragma mark- UICollectionViewDatasourceFlowLayout
+- (NSInteger)numberOfColumnsInFlowLayout:(WaterFlowLayout*)flowlayout
+{
+    return 2;
 }
 
 @end

@@ -12,8 +12,7 @@
 
 @property (strong, nonatomic) OFProduct                     * product;
 @property (weak, nonatomic) IBOutlet UIView                 * viewNameWrapper;
-
-@property (strong, nonatomic) NSOperationQueue              *queue;
+@property (strong, nonatomic) UIImage                       * image;
 
 @end
 
@@ -28,7 +27,6 @@
         self.layer.borderColor = [UIColor colorWithHexString:@"#d4d2d3"].CGColor;
         UITapGestureRecognizer *tapGuesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
         [self addGestureRecognizer:tapGuesture];
-        self.queue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
@@ -41,15 +39,23 @@
     __weak OFCollectionViewCell *weakCell = self;
     
     weakCell.imgProductImage.alpha = 0;
-    [weakCell.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl]
-                             placeholderImage:[UIImage imageNamed:@"placeholder"]
-                                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
-    {
-        [weakCell.imgProductImage setImage:image];
-        [UIView animateWithDuration:0.3 animations:^{
-            weakCell.imgProductImage.alpha = 1;
-        }];
-    }];
+    
+    self.imgProductImage.image = nil;
+    
+    [SDWebImageDownloader.sharedDownloader
+     downloadImageWithURL:[NSURL URLWithString:imgUrl]
+     options:0
+     progress:nil
+     completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished){
+         if (image && finished)
+         {
+             weakCell.image = image;
+             [weakCell.imgProductImage setImage:image];
+             [UIView animateWithDuration:0.3 animations:^{
+                 weakCell.imgProductImage.alpha = 1;
+             }];
+         }
+     }];
     
     CGRect lblFrame = self.lblProductName.frame;
     
@@ -74,6 +80,22 @@
     if ([self.delegate respondsToSelector:@selector(onTapCollectionViewCell:)]) {
         [self.delegate performSelector:@selector(onTapCollectionViewCell:) withObject:self.product.product_id];
     }
+}
+
+- (void)drawImage
+{
+    CALayer *imageLayer = [CALayer layer];
+    imageLayer.contents = (id) self.image.CGImage;
+    
+    CGRect imageFrame = CGRectMake(0, 0, self.image.size.width, self.image.size.height) ;
+    
+    CGFloat ratio = self.image.size.height / self.image.size.width;
+    imageFrame.size.height = self.layer.bounds.size.height;
+    imageFrame.size.width = imageFrame.size.height / ratio;
+    imageFrame.origin.x = - (imageFrame.size.width - self.layer.frame.size.width) / 2;
+    
+    imageLayer.frame = imageFrame;
+    [self.layer addSublayer:imageLayer];
 }
 
 @end

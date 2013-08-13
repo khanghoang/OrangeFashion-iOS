@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0C075E9E17BA8B8200FAFF30 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C075E9D17BA8B8200FAFF30 /* WaterFlowLayout.m */; };
+		0C075E9F17BA8E0B00FAFF30 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C075E9D17BA8B8200FAFF30 /* WaterFlowLayout.m */; };
 		0C187F2717ACB20A0083AA8A /* OFPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */; };
 		0C187F2817ACB20A0083AA8A /* OFPageMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */; };
 		0C187F2D17ACE85E0083AA8A /* nav-back-btn-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C187F2917ACE85E0083AA8A /* nav-back-btn-bg.png */; };
@@ -356,6 +358,7 @@
 		0CF317A2176DFDCC009CC776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A1176DFDCC009CC776 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF317A4176DFDD4009CC776 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF317A3176DFDD4009CC776 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0CF35CFB178C4B64007C5649 /* OFHelperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF35CFA178C4B64007C5649 /* OFHelperManager.m */; };
+		0CF994AA17BA301D00B8BDAA /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 0CF994A917BA301D00B8BDAA /* index.html */; };
 		0CFF096417B645370090887A /* AGWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF096317B645370090887A /* AGWindowView.m */; };
 		0CFF097817B6454D0090887A /* OFPopupBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF096717B6454D0090887A /* OFPopupBaseView.m */; };
 		0CFF097917B6454D0090887A /* OFPopupBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFF096817B6454D0090887A /* OFPopupBaseView.xib */; };
@@ -396,6 +399,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C075E9C17BA8B8200FAFF30 /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
+		0C075E9D17BA8B8200FAFF30 /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
 		0C187F2417ACB20A0083AA8A /* OFPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFPageMenuViewController.h; sourceTree = "<group>"; };
 		0C187F2517ACB20A0083AA8A /* OFPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFPageMenuViewController.m; sourceTree = "<group>"; };
 		0C187F2617ACB20A0083AA8A /* OFPageMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFPageMenuViewController.xib; sourceTree = "<group>"; };
@@ -970,6 +975,7 @@
 		0CF317A3176DFDD4009CC776 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0CF35CF9178C4B64007C5649 /* OFHelperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHelperManager.h; sourceTree = "<group>"; };
 		0CF35CFA178C4B64007C5649 /* OFHelperManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHelperManager.m; sourceTree = "<group>"; };
+		0CF994A917BA301D00B8BDAA /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		0CFF096217B645370090887A /* AGWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGWindowView.h; sourceTree = "<group>"; };
 		0CFF096317B645370090887A /* AGWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGWindowView.m; sourceTree = "<group>"; };
 		0CFF096617B6454D0090887A /* OFPopupBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFPopupBaseView.h; sourceTree = "<group>"; };
@@ -1073,6 +1079,8 @@
 		0C187F3517AD09870083AA8A /* Water */ = {
 			isa = PBXGroup;
 			children = (
+				0C075E9C17BA8B8200FAFF30 /* WaterFlowLayout.h */,
+				0C075E9D17BA8B8200FAFF30 /* WaterFlowLayout.m */,
 				0C187F4317AD44040083AA8A /* FRGWaterfallCollectionViewLayout.h */,
 				0C187F4417AD44050083AA8A /* FRGWaterfallCollectionViewLayout.m */,
 				0C187F3917AD0A120083AA8A /* FRGWaterfallCollectionViewCell.h */,
@@ -1597,6 +1605,7 @@
 		0C4C58DD170D6D9600ED0DF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CF994A917BA301D00B8BDAA /* index.html */,
 				0C208BCF17B485F00025161C /* thong-tin-thanh-toan.html */,
 				0C5B0A5E17A9082400B56D3A /* AirshipConfig.plist */,
 				0C4C5BEC170D71F000ED0DF8 /* OrangeFashion.xcdatamodeld */,
@@ -2585,6 +2594,7 @@
 				0CFF09AB17B66C7B0090887A /* minus_press@2x.png in Resources */,
 				0CFF09AC17B66C7B0090887A /* plus@2x.png in Resources */,
 				0CFF09AD17B66C7B0090887A /* plus_press@2x.png in Resources */,
+				0CF994AA17BA301D00B8BDAA /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2820,6 +2830,7 @@
 				0CFF098E17B648B90090887A /* UIView+MTAnimation.m in Sources */,
 				0CFF099517B650F70090887A /* OFPopupBookmark.m in Sources */,
 				0CFF099B17B651F70090887A /* TVPickerView.m in Sources */,
+				0C075E9F17BA8E0B00FAFF30 /* WaterFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2834,6 +2845,7 @@
 				0C4C5C00170E7CFD00ED0DF8 /* OFProductImages.m in Sources */,
 				0C8DEFD81759E614004016E0 /* BaseModel.m in Sources */,
 				0C187F4817AE08760083AA8A /* NSMutableArray+Additions.m in Sources */,
+				0C075E9E17BA8B8200FAFF30 /* WaterFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

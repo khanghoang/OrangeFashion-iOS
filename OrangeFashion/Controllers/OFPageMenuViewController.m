@@ -61,12 +61,23 @@
 //    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://orangefashion.vn/thong-tin-thanh-toan.html"]];
 //    [web loadRequest:request];
 
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"thong-tin-thanh-toan.html"];
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"index.html"];
     NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [web loadRequest:request];
-    
+    web.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
     menu3.title = @"Hướng dẫn đặt hàng";
+    
+    if ([[web subviews] count] > 0) {
+        // hide the shadows
+        for (UIView* shadowView in [[[web subviews] objectAtIndex:0] subviews]) {
+            [shadowView setHidden:YES];
+        }
+        // show the content
+        [[[[[web subviews] objectAtIndex:0] subviews] lastObject] setHidden:NO];
+    }
+    web.backgroundColor = [UIColor greenColor];
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];
 }

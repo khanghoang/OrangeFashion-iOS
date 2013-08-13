@@ -9,6 +9,9 @@
     // look for the core data first
     OFProduct *product = [[OFProduct MR_findByAttribute:@"product_id" withValue:dictionary[@"MaSanPham"]] lastObject];
     
+    if (product)
+        return product;
+    
     if (!product && ![dictionary[@"MaSanPham"] isKindOfClass:[NSNull class]]) {
         product = [OFProduct MR_createEntity];
         
@@ -26,7 +29,8 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];        
         product.public_date = [dateFormatter dateFromString:dictionary[@"NgayDang"]];
-    }    
+    }
+    
     return product;
 }
 
