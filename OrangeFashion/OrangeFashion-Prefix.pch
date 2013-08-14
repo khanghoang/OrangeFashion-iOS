@@ -139,7 +139,6 @@
 #import "AGWindowView.h"
 #import "TVPickerView.h"
 
-
 //Models
 #import "BaseModel.h"
 #import "OFSetting.h"

@@ -54,16 +54,47 @@
     
     BaseViewController *menu3 = [[BaseViewController alloc] init];    
     CGRect frame = self.view.frame;
+    menu3.title = @"Hướng dẫn đặt hàng";
+    
     frame.size.height -= 170;
     
     UIWebView *web = [[UIWebView alloc] initWithFrame:frame];
+
     [menu3.view addSubview:web];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://orangefashion.vn/thong-tin-thanh-toan.html"]];
-    [web loadRequest:request];
+    NSURL *url = [NSURL URLWithString:@"http://orangefashion.vn/thong-tin-thanh-toan.html"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    // get document directory
+    NSString *documentPath = [self applicationDocumentsDirectory];
+    NSString* path=[documentPath stringByAppendingPathComponent:@"thong-tin-san-pham.html"];
+    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"Save html to disk %@", path);
+        [web loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // Deal with failure
+        [web loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
+        
+    }];
+    
     web.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
-    menu3.title = @"Hướng dẫn đặt hàng";
+    
+    [operation start];
     
     self.pagesContainer.viewControllers = @[menu, menu2, menu3];
+}
+
+- (NSString *)applicationDocumentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    return basePath;
 }
 
 #pragma mark - OFCollectionViewCellDelegate
