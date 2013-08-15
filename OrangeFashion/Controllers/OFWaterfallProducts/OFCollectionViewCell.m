@@ -41,22 +41,15 @@
     weakCell.imgProductImage.alpha = 0;
     
     self.imgProductImage.image = nil;
-    
-    [SDWebImageDownloader.sharedDownloader
-     downloadImageWithURL:[NSURL URLWithString:imgUrl]
-     options:0
-     progress:nil
-     completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished){
-         if (image && finished)
-         {
-             weakCell.image = image;
-             [weakCell.imgProductImage setImage:image];
-             [UIView animateWithDuration:0.3 animations:^{
-                 weakCell.imgProductImage.alpha = 1;
-             }];
-         }
-     }];
-    
+  
+    [self.imgProductImage setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+      weakCell.image = image;
+      [weakCell.imgProductImage setImage:image];
+      [UIView animateWithDuration:0.3 animations:^{
+        weakCell.imgProductImage.alpha = 1;
+      }];
+    }];
+  
     CGRect lblFrame = self.lblProductName.frame;
     
     self.lblProductName.text = product.name;
