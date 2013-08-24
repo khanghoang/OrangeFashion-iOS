@@ -55,9 +55,7 @@
     BaseViewController *menu3 = [[BaseViewController alloc] init];    
     CGRect frame = self.view.frame;
     menu3.title = @"Hướng dẫn đặt hàng";
-    
-    frame.size.height -= 170;
-    
+    frame.size.height -= 88;
     UIWebView *web = [[UIWebView alloc] initWithFrame:frame];
 
     [menu3.view addSubview:web];
