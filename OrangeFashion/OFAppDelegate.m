@@ -64,12 +64,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     IIViewDeckController *deckController = [self generateControllerStack];
-    self.leftController = deckController.leftController;
-    self.centerController = deckController.centerController;
-    self.navController = (OFNavigationViewController *)deckController.centerController;
-    
-    self.window.rootViewController = deckController;
-    [self.window makeKeyAndVisible];
     
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         // Yes, so just open the session (this won't display any UX).
@@ -92,6 +86,9 @@
     [UAPush shared].notificationTypes = (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeNewsstandContentAvailability);
      
     [[UAPush shared] setPushEnabled:YES];
+    
+    self.window.rootViewController = deckController;
+    [self.window makeKeyAndVisible];
     
 //    [self addDraggableBookmark];
     

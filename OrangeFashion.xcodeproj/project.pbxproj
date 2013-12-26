@@ -120,7 +120,7 @@
 		0C2BE33D177FEFDB00CD2C5B /* SSPullToRefresh.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0C2BE331177FEFDB00CD2C5B /* SSPullToRefresh.podspec */; };
 		0C2BE33E177FEFDB00CD2C5B /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE333177FEFDB00CD2C5B /* SSPullToRefreshDefaultContentView.m */; };
 		0C2BE33F177FEFDB00CD2C5B /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE335177FEFDB00CD2C5B /* SSPullToRefreshSimpleContentView.m */; };
-		0C2BE340177FEFDB00CD2C5B /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE337177FEFDB00CD2C5B /* SSPullToRefreshView.m */; };
+		0C2BE340177FEFDB00CD2C5B /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE337177FEFDB00CD2C5B /* SSPullToRefreshView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C2BE38A177FF13700CD2C5B /* ActiveSupportInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE356177FF13700CD2C5B /* ActiveSupportInflector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C2BE38B177FF13700CD2C5B /* ActiveSupportInflector.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C2BE357177FF13700CD2C5B /* ActiveSupportInflector.plist */; };
 		0C2BE38C177FF13700CD2C5B /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BE359177FF13700CD2C5B /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -2881,8 +2881,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2937,8 +2937,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2947,8 +2947,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OrangeFashion/OrangeFashion-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../Airship/**";
+				IBC_ERRORS = NO;
 				INFOPLIST_FILE = "OrangeFashion/OrangeFashion-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Airship\"",
@@ -2960,10 +2961,13 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Google Analytics\"",
 					"\"$(SRCROOT)\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3D2EA6A-A76C-4024-B076-2254716C9614";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3D2EA6A-A76C-4024-B076-2254716C9614";
+				PROVISIONING_PROFILE = "DC5D8FD6-6B83-409E-B7F2-6E3198B25298";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC5D8FD6-6B83-409E-B7F2-6E3198B25298";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2973,6 +2977,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 2359 Media Pte Ltd";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2981,8 +2986,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OrangeFashion/OrangeFashion-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../Airship/**";
+				IBC_ERRORS = NO;
 				INFOPLIST_FILE = "OrangeFashion/OrangeFashion-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Airship\"",
@@ -2994,8 +3000,12 @@
 					"\"$(SRCROOT)/OrangeFashion/Vendors/Google Analytics\"",
 					"\"$(SRCROOT)\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E75E1A66-846E-4E5D-A54F-77B9C8121F54";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
